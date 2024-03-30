@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
-    "@expo/webpack-config": "^18.0.1",
+    "@expo/webpack-config": "~19.0.1",
     "babel-loader": "^8.1.0",
     "babel-plugin-module-resolver": "^5.0.0"
   },
