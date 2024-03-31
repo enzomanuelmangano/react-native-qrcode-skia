@@ -1,7 +1,12 @@
 import {
+  Blend,
   BlurMask,
   DashPathEffect,
+  DiscretePathEffect,
+  RadialGradient,
   SweepGradient,
+  Turbulence,
+  TwoPointConicalGradient,
   vec,
 } from '@shopify/react-native-skia';
 import { StatusBar } from 'expo-status-bar';
@@ -12,7 +17,7 @@ import QRCode from 'react-native-qrcode-skia';
 
 const SPONSOR_URL = 'https://patreon.com/reactiive';
 
-const QRCodeSize = 190;
+const QRCodeSize = 140;
 const center = vec(QRCodeSize / 2, QRCodeSize / 2);
 
 const Padding = 25;
@@ -20,20 +25,38 @@ const Padding = 25;
 export default function App() {
   return (
     <View style={styles.container}>
-      <StatusBar style="light" />
-      <View style={styles.codeContainer}>
-        <QRCode
-          value={SPONSOR_URL}
-          size={QRCodeSize}
-          strokeWidthPercentage={0.65}
-        >
-          <SweepGradient
-            c={center}
-            colors={['cyan', 'magenta', 'yellow', 'cyan']}
-          />
-          <BlurMask blur={2} style={'solid'} />
-          <DashPathEffect intervals={[3.07, 3.85]} />
-        </QRCode>
+      <StatusBar style="light" hidden />
+      <View style={styles.codes}>
+        <View style={styles.codeContainer}>
+          <QRCode value={SPONSOR_URL} size={QRCodeSize} pathColor="#FFFFFF" />
+        </View>
+        <View style={styles.codeContainer}>
+          <QRCode
+            value={SPONSOR_URL}
+            size={QRCodeSize}
+            strokeWidthPercentage={0.7}
+          >
+            <SweepGradient
+              c={center}
+              colors={['cyan', 'magenta', 'yellow', 'cyan']}
+            />
+            <BlurMask blur={1} style={'solid'} />
+            <DashPathEffect intervals={[3.5, 0.5]} />
+          </QRCode>
+        </View>
+        <View style={styles.codeContainer}>
+          <QRCode value={SPONSOR_URL} size={QRCodeSize}>
+            <DiscretePathEffect length={10} deviation={2} />
+            <Blend mode="difference">
+              <RadialGradient
+                r={128}
+                c={center}
+                colors={['magenta', 'yellow']}
+              />
+              <Turbulence freqX={0.01} freqY={0.05} octaves={4} />
+            </Blend>
+          </QRCode>
+        </View>
       </View>
     </View>
   );
@@ -45,7 +68,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#000',
+    paddingVertical: 100,
   },
+  codes: { flex: 1, justifyContent: 'space-around' },
   codeContainer: {
     backgroundColor: '#080808',
     padding: Padding,
