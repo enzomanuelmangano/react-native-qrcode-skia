@@ -14761,6 +14761,7 @@ __metadata:
   dependencies:
     "@babel/core": ^7.20.0
     "@expo/webpack-config": ~19.0.1
+    "@shopify/react-native-skia": ^1.0.4
     babel-loader: ^8.1.0
     babel-plugin-module-resolver: ^5.0.0
     expo: ~50.0.14
@@ -14798,6 +14799,7 @@ __metadata:
     release-it: ^15.0.0
     typescript: ^5.2.2
   peerDependencies:
+    "@shopify/react-native-skia": ">=0.1.221"
     react: "*"
     react-native: "*"
   languageName: unknown

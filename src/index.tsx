@@ -6,36 +6,11 @@ import {
   Path as SkiaPath,
   Group,
 } from '@shopify/react-native-skia';
-import type { StyleProp, ViewStyle } from 'react-native';
-import {
-  generateMatrix,
-  type ErrorCorrectionLevelType,
-} from './qrcode/generate-matrix';
+
+import { generateMatrix } from './qrcode/generate-matrix';
 import { transformMatrixIntoPath } from './qrcode/transform-matrix-into-path';
-
-type SharedValue<T> = {
-  value: T;
-};
-
-type QRCodeProps = {
-  value: string;
-  style?: StyleProp<ViewStyle>;
-  // Level L 7%, level M 15%, level Q 25%, level H 30%.
-  errorCorrectionLevel?: ErrorCorrectionLevelType;
-  pathColor?: string;
-  strokeWidthPercentage?: number | SharedValue<number>;
-  children?: React.ReactNode;
-  pathStyle?: 'fill' | 'stroke';
-  padding?: number;
-  size: number;
-};
-
-const unwrapValue = <T,>(val: T | SharedValue<T>): T => {
-  if ((val as SharedValue<T>).value != null) {
-    return (val as SharedValue<T>).value;
-  }
-  return val as T;
-};
+import type { QRCodeProps } from './types';
+import { unwrapValue } from './utils/unwrap-value';
 
 const QRCode: React.FC<QRCodeProps> = React.memo(
   ({
@@ -69,24 +44,28 @@ const QRCode: React.FC<QRCodeProps> = React.memo(
       return computedPath.cellSize * normalizedStrokeWidthPercentage;
     }, [computedPath, strokeWidthPercentage]);
 
+    const canvasStyle = useMemo(() => {
+      return [
+        style,
+        {
+          width: canvasSize,
+          height: canvasSize,
+        },
+      ];
+    }, [style, canvasSize]);
+
+    const pathContainerStyle = useMemo(() => {
+      return [
+        {
+          translateX: padding,
+        },
+        { translateY: padding },
+      ];
+    }, [padding]);
+
     return (
-      <Canvas
-        style={[
-          style,
-          {
-            width: canvasSize,
-            height: canvasSize,
-          },
-        ]}
-      >
-        <Group
-          transform={[
-            {
-              translateX: padding,
-            },
-            { translateY: padding },
-          ]}
-        >
+      <Canvas style={canvasStyle}>
+        <Group transform={pathContainerStyle}>
           <SkiaPath
             path={path}
             color={pathColor}
