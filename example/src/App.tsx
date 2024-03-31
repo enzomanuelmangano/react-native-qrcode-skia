@@ -25,14 +25,14 @@ export default function App() {
         <QRCode
           value={SPONSOR_URL}
           size={QRCodeSize}
-          strokeWidthPercentage={0.5}
+          strokeWidthPercentage={0.65}
         >
           <SweepGradient
             c={center}
             colors={['cyan', 'magenta', 'yellow', 'cyan']}
           />
           <BlurMask blur={2} style={'solid'} />
-          <DashPathEffect intervals={[3, 3]} />
+          <DashPathEffect intervals={[3.07, 3.85]} />
         </QRCode>
       </View>
     </View>
