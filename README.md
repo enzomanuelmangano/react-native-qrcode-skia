@@ -4,6 +4,11 @@ React Native QRCode Skia 🎨
 
 A lightweight and high-performance QR code generator component for React Native, powered by Skia rendering engine.
 
+<div align="center">
+    <img src="https://github.com/enzomanuelmangano/react-native-qrcode-skia/blob/main/.assets/react-native-qrcode-skia.png" title="react-native-qrcode-skia">
+</div>
+
+
 ## Installation
 
 Before installing the package, make sure you have installed [RN Skia](https://shopify.github.io/react-native-skia/). 
