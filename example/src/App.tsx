@@ -6,7 +6,6 @@ import {
   RadialGradient,
   SweepGradient,
   Turbulence,
-  TwoPointConicalGradient,
   vec,
 } from '@shopify/react-native-skia';
 import { StatusBar } from 'expo-status-bar';
