@@ -26,6 +26,8 @@ yarn add react-native-qrcode-skia
 
 ## Usage
 
+You might need a very simple QRCode component in your app and you can achieve that by using the basic props (value and size). Here is an example:
+
 ```tsx
 import QRCode from 'react-native-qrcode-skia';
 
@@ -35,6 +37,31 @@ const App = () => {
       value="https://patreon.com/reactiive"
       size={200}
     />
+  );
+};
+
+export default App;
+```
+
+Under the hood, the QRCode is essentially a Skia Path. This means that customization is straightforward using the 'children' prop. Here's an example:
+
+```tsx
+import QRCode from 'react-native-qrcode-skia';
+
+const App = () => {
+  return (
+    <QRCode
+      value="https://patreon.com/reactiive"
+      size={200}
+      strokeWidthPercentage={0.7}
+    >
+        <SweepGradient
+            c={center}
+            colors={['cyan', 'magenta', 'yellow', 'cyan']}
+        />
+        <BlurMask blur={1} style={'solid'} />
+        <DashPathEffect intervals={[3.5, 0.5]} />
+    </QRCode>
   );
 };
 
