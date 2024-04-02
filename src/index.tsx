@@ -18,7 +18,7 @@ const QRCode: React.FC<QRCodeProps> = React.memo(
     pathColor = '#000000',
     children,
     errorCorrectionLevel = 'H',
-    strokeWidthPercentage = 1,
+    strokeWidth = 1,
     pathStyle = 'stroke',
     padding = 0,
     size,
@@ -36,7 +36,7 @@ const QRCode: React.FC<QRCodeProps> = React.memo(
       return Skia.Path.MakeFromSVGString(computedPath.path)!;
     }, [computedPath]);
 
-    const maxStrokeWidth = computedPath.cellSize * strokeWidthPercentage;
+    const maxStrokeWidth = computedPath.cellSize * strokeWidth;
 
     const canvasStyle = useMemo(() => {
       return [

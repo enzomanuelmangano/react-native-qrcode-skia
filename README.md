@@ -53,7 +53,7 @@ const App = () => {
     <QRCode
       value="https://patreon.com/reactiive"
       size={200}
-      strokeWidthPercentage={0.7}
+      strokeWidth={0.7}
     >
         <SweepGradient
             c={center}
@@ -78,7 +78,7 @@ export default App;
 
 - `pathColor` (string, optional) - The color of the QRCode path. Default value is '#000000'.
 
-- `strokeWidthPercentage` (number, optional) - The percentage of the strokeWidth (0 to 1). Default value is 1.
+- `strokeWidth` (number, optional) - The percentage of the strokeWidth (0 to 1). Default value is 1.
 
 - `children` (React.ReactNode, optional) - The children components rendered within the QRCode container.
 

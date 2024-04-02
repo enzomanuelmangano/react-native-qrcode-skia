@@ -31,7 +31,7 @@ export type QRCodeProps = {
    * The percentage of the strokeWidth (0 to 1)
    * Default value is 1.
    */
-  strokeWidthPercentage?: number;
+  strokeWidth?: number;
   /** The children components rendered within the QRCode container. */
   children?: React.ReactNode;
   /**

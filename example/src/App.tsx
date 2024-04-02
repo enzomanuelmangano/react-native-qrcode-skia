@@ -30,11 +30,7 @@ export default function App() {
           <QRCode value={SPONSOR_URL} size={QRCodeSize} pathColor="#FFFFFF" />
         </View>
         <View style={styles.codeContainer}>
-          <QRCode
-            value={SPONSOR_URL}
-            size={QRCodeSize}
-            strokeWidthPercentage={0.7}
-          >
+          <QRCode value={SPONSOR_URL} size={QRCodeSize} strokeWidth={0.7}>
             <SweepGradient
               c={center}
               colors={['cyan', 'magenta', 'yellow', 'cyan']}
