@@ -29,10 +29,9 @@ export type QRCodeProps = {
   pathColor?: string;
   /**
    * The percentage of the strokeWidth (0 to 1)
-   * Can be a number or a BaseSharedValue<number>.
    * Default value is 1.
    */
-  strokeWidthPercentage?: number | BaseSharedValue<number>;
+  strokeWidthPercentage?: number;
   /** The children components rendered within the QRCode container. */
   children?: React.ReactNode;
   /**

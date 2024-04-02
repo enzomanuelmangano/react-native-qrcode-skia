@@ -10,7 +10,6 @@ import {
 import { generateMatrix } from './qrcode/generate-matrix';
 import { transformMatrixIntoPath } from './qrcode/transform-matrix-into-path';
 import type { QRCodeProps } from './types';
-import { unwrapValue } from './utils/unwrap-value';
 
 const QRCode: React.FC<QRCodeProps> = React.memo(
   ({
@@ -37,12 +36,7 @@ const QRCode: React.FC<QRCodeProps> = React.memo(
       return Skia.Path.MakeFromSVGString(computedPath.path)!;
     }, [computedPath]);
 
-    const maxStrokeWidth = useMemo(() => {
-      const normalizedStrokeWidthPercentage = unwrapValue(
-        strokeWidthPercentage
-      );
-      return computedPath.cellSize * normalizedStrokeWidthPercentage;
-    }, [computedPath, strokeWidthPercentage]);
+    const maxStrokeWidth = computedPath.cellSize * strokeWidthPercentage;
 
     const canvasStyle = useMemo(() => {
       return [
