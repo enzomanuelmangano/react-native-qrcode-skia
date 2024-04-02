@@ -88,6 +88,12 @@ export default App;
 
 - `size` (number) - The size of the QRCode.
 
+## Sponsor 
+
+If you like this package, consider sponsoring me on [Patreon](https://patreon.com/reactiive). 
+
+You will get access to [80+ exclusive React Native Animations](https://reactiive.io/patreon) and you will support me in my journey as an independent developer 🤓
+
 ## Contributing
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
