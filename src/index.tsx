@@ -19,7 +19,7 @@ const QRCode: React.FC<QRCodeProps> = React.memo(
     children,
     errorCorrectionLevel = 'H',
     strokeWidth = 1,
-    pathStyle = 'stroke',
+    pathStyle = 'fill',
     padding = 0,
     size,
   }) => {
@@ -28,9 +28,9 @@ const QRCode: React.FC<QRCodeProps> = React.memo(
     const computedPath = useMemo(() => {
       return transformMatrixIntoPath(
         generateMatrix(value, errorCorrectionLevel),
-        size - padding * 2
+        size
       );
-    }, [value, errorCorrectionLevel, size, padding]);
+    }, [value, errorCorrectionLevel, size]);
 
     const path = useMemo(() => {
       return Skia.Path.MakeFromSVGString(computedPath.path)!;
@@ -60,12 +60,7 @@ const QRCode: React.FC<QRCodeProps> = React.memo(
     return (
       <Canvas style={canvasStyle}>
         <Group transform={pathContainerStyle}>
-          <SkiaPath
-            path={path}
-            color={pathColor}
-            strokeWidth={maxStrokeWidth}
-            style={pathStyle}
-          >
+          <SkiaPath path={path} color={pathColor} style={pathStyle}>
             {children}
           </SkiaPath>
         </Group>

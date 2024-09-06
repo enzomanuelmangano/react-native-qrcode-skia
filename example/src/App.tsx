@@ -35,8 +35,6 @@ export default function App() {
               c={center}
               colors={['cyan', 'magenta', 'yellow', 'cyan']}
             />
-            <BlurMask blur={1} style={'solid'} />
-            <DashPathEffect intervals={[3.5, 0.5]} />
           </QRCode>
         </View>
         <View style={styles.codeContainer}>
