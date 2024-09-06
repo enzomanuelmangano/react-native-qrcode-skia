@@ -1,41 +1,28 @@
-// The purpose of this function is to generate a path from a matrix of 1s and 0s.
-// The path is used later to generate a QR code.
-// Since we have a Path, we can easily use Skia in order to draw the QR code after that.
-
-// Deeply Inspired by https://github.com/awesomejerry/react-native-qrcode-svg/blob/master/src/transformMatrixIntoPath.js
-type Point = { x: number; y: number };
-type Corners = {
-  q1: Point;
-  q2: Point;
-  q3: Point;
-  q4: Point;
-  d1: Point;
-  d2: Point;
-  d3: Point;
-  d4: Point;
-  center: Point;
-};
-type Neighbors = {
-  top: boolean;
-  right: boolean;
-  bottom: boolean;
-  left: boolean;
-};
-
 type ShapeOptions = {
-  shape?: 'square' | 'circle' | 'rounded';
+  shape?: 'square' | 'circle' | 'rounded' | 'diamond' | 'triangle';
   cornerRadius?: number;
+  detectionPatternShape?:
+    | 'square'
+    | 'circle'
+    | 'rounded'
+    | 'diamond'
+    | 'triangle';
 };
 
 const transformMatrixIntoPath = (
   matrix: (1 | 0)[][],
   size: number,
   options: ShapeOptions = {
-    shape: 'circle',
+    shape: 'diamond',
     cornerRadius: 30,
+    detectionPatternShape: 'rounded',
   }
 ) => {
-  const { shape = 'square', cornerRadius = 0 } = options;
+  const {
+    shape = 'square',
+    cornerRadius = 0,
+    detectionPatternShape = 'square',
+  } = options;
   const cellSize = size / matrix.length;
   let path = '';
 
@@ -64,15 +51,28 @@ const transformMatrixIntoPath = (
     left: j > 0 && matrix[i][j - 1] === 1,
   });
 
-  const renderElement = (corners: Corners, neighbors: Neighbors): string => {
-    const { q1, q2, q3, q4, d1, d2, d3, d4, center } = corners;
+  const renderElement = (
+    corners: Corners,
+    neighbors: Neighbors,
+    i: number,
+    j: number
+  ): string => {
+    const { q1, q2, q3, q4, center } = corners;
+    const isDetectionPattern =
+      (i < 7 && j < 7) ||
+      (i < 7 && j >= matrix.length - 7) ||
+      (i >= matrix.length - 7 && j < 7);
+    const currentShape = isDetectionPattern ? detectionPatternShape : shape;
 
-    switch (shape) {
+    switch (currentShape) {
       case 'circle':
         return `M${center.x} ${center.y} m-${cellSize / 2}, 0 a${cellSize / 2},${cellSize / 2} 0 1,0 ${cellSize},0 a${cellSize / 2},${cellSize / 2} 0 1,0 -${cellSize},0`;
       case 'rounded':
-        // Use existing rounded corner logic
         return renderRoundedSquare(corners, neighbors, cornerRadius > 0);
+      case 'diamond':
+        return renderDiamond(corners);
+      case 'triangle':
+        return renderTriangle(corners);
       case 'square':
       default:
         return `M${q4.x} ${q4.y} H${q1.x} V${q2.y} H${q3.x} Z`;
@@ -109,12 +109,22 @@ const transformMatrixIntoPath = (
     return `M${d1.x} ${d1.y} ${d1d2} ${d2d3} ${d3d4} ${d4d1}`;
   };
 
+  const renderDiamond = (corners: Corners): string => {
+    const { center, q1, q2, q3, q4 } = corners;
+    return `M${center.x} ${q4.y} L${q1.x} ${center.y} L${center.x} ${q2.y} L${q3.x} ${center.y} Z`;
+  };
+
+  const renderTriangle = (corners: Corners): string => {
+    const { center, q1, q2, q3, q4 } = corners;
+    return `M${center.x} ${q4.y} L${q1.x} ${q2.y} L${q3.x} ${q3.y} Z`;
+  };
+
   matrix.forEach((row, i) => {
     row.forEach((cell, j) => {
       if (cell === 1) {
         const corners = getCorners(i, j);
         const neighbors = getNeighbors(i, j);
-        path += renderElement(corners, neighbors);
+        path += renderElement(corners, neighbors, i, j);
       }
     });
   });
