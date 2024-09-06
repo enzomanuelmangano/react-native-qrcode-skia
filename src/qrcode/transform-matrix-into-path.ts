@@ -1,45 +1,65 @@
 type ShapeOptions = {
-  shape?: 'square' | 'circle' | 'rounded' | 'diamond' | 'triangle';
+  shape?: 'square' | 'circle' | 'rounded' | 'diamond' | 'triangle' | 'star';
   cornerRadius?: number;
   detectionPatternShape?:
     | 'square'
     | 'circle'
     | 'rounded'
     | 'diamond'
-    | 'triangle';
+    | 'triangle'
+    | 'star';
+  logoSize?: number;
+  internalPadding?: number;
+  detectionPatternPadding?: number; // New option for detection pattern padding
 };
 
 const transformMatrixIntoPath = (
   matrix: (1 | 0)[][],
   size: number,
   options: ShapeOptions = {
-    shape: 'diamond',
+    shape: 'circle',
     cornerRadius: 30,
-    detectionPatternShape: 'rounded',
+    detectionPatternShape: 'square',
+    logoSize: 0,
+    internalPadding: 2,
+    detectionPatternPadding: 0, // Default to no padding for detection patterns
   }
 ) => {
   const {
     shape = 'square',
     cornerRadius = 0,
     detectionPatternShape = 'square',
+    logoSize = 0,
+    internalPadding = 0,
+    detectionPatternPadding = 0,
   } = options;
   const cellSize = size / matrix.length;
   let path = '';
 
-  const getCorners = (i: number, j: number): Corners => {
+  const getCorners = (
+    i: number,
+    j: number,
+    isDetectionPattern: boolean
+  ): Corners => {
     const x = j * cellSize;
     const y = i * cellSize;
+    const padding = isDetectionPattern
+      ? detectionPatternPadding / 2
+      : internalPadding / 2;
     const center = { x: x + cellSize / 2, y: y + cellSize / 2 };
-    const offset = Math.min(cornerRadius, cellSize / 2);
+    const effectiveCellSize =
+      cellSize -
+      (isDetectionPattern ? detectionPatternPadding : internalPadding);
+    const offset = Math.min(cornerRadius, effectiveCellSize / 2);
     return {
-      q1: { x: x + cellSize, y },
-      q2: { x: x + cellSize, y: y + cellSize },
-      q3: { x, y: y + cellSize },
-      q4: { x, y },
-      d1: { x: x + cellSize - offset, y },
-      d2: { x: x + cellSize, y: y + cellSize - offset },
-      d3: { x: x + offset, y: y + cellSize },
-      d4: { x, y: y + offset },
+      q1: { x: x + cellSize - padding, y: y + padding },
+      q2: { x: x + cellSize - padding, y: y + cellSize - padding },
+      q3: { x: x + padding, y: y + cellSize - padding },
+      q4: { x: x + padding, y: y + padding },
+      d1: { x: x + cellSize - padding - offset, y: y + padding },
+      d2: { x: x + cellSize - padding, y: y + cellSize - padding - offset },
+      d3: { x: x + padding + offset, y: y + cellSize - padding },
+      d4: { x: x + padding, y: y + padding + offset },
       center,
     };
   };
@@ -50,6 +70,18 @@ const transformMatrixIntoPath = (
     bottom: i < matrix.length - 1 && matrix[i + 1][j] === 1,
     left: j > 0 && matrix[i][j - 1] === 1,
   });
+
+  const isLogoArea = (i: number, j: number): boolean => {
+    if (logoSize === 0) return false;
+    const center = Math.floor(matrix.length / 2);
+    const logoRadius = Math.floor(logoSize / 2);
+    return (
+      i >= center - logoRadius &&
+      i <= center + logoRadius &&
+      j >= center - logoRadius &&
+      j <= center + logoRadius
+    );
+  };
 
   const renderElement = (
     corners: Corners,
@@ -63,16 +95,21 @@ const transformMatrixIntoPath = (
       (i < 7 && j >= matrix.length - 7) ||
       (i >= matrix.length - 7 && j < 7);
     const currentShape = isDetectionPattern ? detectionPatternShape : shape;
+    const effectiveCellSize =
+      cellSize -
+      (isDetectionPattern ? detectionPatternPadding : internalPadding);
 
     switch (currentShape) {
       case 'circle':
-        return `M${center.x} ${center.y} m-${cellSize / 2}, 0 a${cellSize / 2},${cellSize / 2} 0 1,0 ${cellSize},0 a${cellSize / 2},${cellSize / 2} 0 1,0 -${cellSize},0`;
+        return `M${center.x} ${center.y} m-${effectiveCellSize / 2}, 0 a${effectiveCellSize / 2},${effectiveCellSize / 2} 0 1,0 ${effectiveCellSize},0 a${effectiveCellSize / 2},${effectiveCellSize / 2} 0 1,0 -${effectiveCellSize},0`;
       case 'rounded':
         return renderRoundedSquare(corners, neighbors, cornerRadius > 0);
       case 'diamond':
         return renderDiamond(corners);
       case 'triangle':
         return renderTriangle(corners);
+      case 'star':
+        return renderStar(corners, isDetectionPattern);
       case 'square':
       default:
         return `M${q4.x} ${q4.y} H${q1.x} V${q2.y} H${q3.x} Z`;
@@ -119,10 +156,35 @@ const transformMatrixIntoPath = (
     return `M${center.x} ${q4.y} L${q1.x} ${q2.y} L${q3.x} ${q3.y} Z`;
   };
 
+  const renderStar = (
+    corners: Corners,
+    isDetectionPattern: boolean
+  ): string => {
+    const { center, q1, q2, q3, q4 } = corners;
+    const outerRadius =
+      (cellSize -
+        (isDetectionPattern ? detectionPatternPadding : internalPadding)) /
+      2;
+    const innerRadius = outerRadius * 0.4;
+    let path = `M${center.x} ${q4.y}`;
+    for (let i = 0; i < 10; i++) {
+      const angle = (Math.PI / 5) * i - Math.PI / 2;
+      const radius = i % 2 === 0 ? outerRadius : innerRadius;
+      const x = center.x + radius * Math.cos(angle);
+      const y = center.y + radius * Math.sin(angle);
+      path += ` L${x} ${y}`;
+    }
+    return path + ' Z';
+  };
+
   matrix.forEach((row, i) => {
     row.forEach((cell, j) => {
-      if (cell === 1) {
-        const corners = getCorners(i, j);
+      if (cell === 1 && !isLogoArea(i, j)) {
+        const isDetectionPattern =
+          (i < 7 && j < 7) ||
+          (i < 7 && j >= matrix.length - 7) ||
+          (i >= matrix.length - 7 && j < 7);
+        const corners = getCorners(i, j, isDetectionPattern);
         const neighbors = getNeighbors(i, j);
         path += renderElement(corners, neighbors, i, j);
       }
