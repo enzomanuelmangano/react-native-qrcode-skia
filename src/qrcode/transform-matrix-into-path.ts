@@ -1,4 +1,4 @@
-type ShapeOptions = {
+export type ShapeOptions = {
   shape?: 'square' | 'circle' | 'rounded' | 'diamond' | 'triangle' | 'star';
   cornerRadius?: number;
   detectionPatternShape?:
@@ -10,25 +10,51 @@ type ShapeOptions = {
     | 'star';
   logoSize?: number;
   internalPadding?: number;
-  detectionPatternPadding?: number; // New option for detection pattern padding
+  detectionPatternPadding?: number;
+};
+
+const defaultShapeOptions: ShapeOptions = {
+  shape: 'rounded',
+  cornerRadius: 20,
+  detectionPatternShape: 'rounded',
+  logoSize: 0,
+  internalPadding: 0,
+  detectionPatternPadding: 0,
+};
+
+type Point = {
+  x: number;
+  y: number;
+};
+
+type Corners = {
+  q1: Point;
+  q2: Point;
+  q3: Point;
+  q4: Point;
+  d1: Point;
+  d2: Point;
+  d3: Point;
+  d4: Point;
+  center: Point;
+};
+
+type Neighbors = {
+  top: boolean;
+  right: boolean;
+  bottom: boolean;
+  left: boolean;
 };
 
 const transformMatrixIntoPath = (
   matrix: (1 | 0)[][],
   size: number,
-  options: ShapeOptions = {
-    shape: 'circle',
-    cornerRadius: 30,
-    detectionPatternShape: 'square',
-    logoSize: 0,
-    internalPadding: 2,
-    detectionPatternPadding: 0, // Default to no padding for detection patterns
-  }
+  options: ShapeOptions = defaultShapeOptions
 ) => {
   const {
-    shape = 'square',
-    cornerRadius = 0,
-    detectionPatternShape = 'square',
+    shape = 'rounded',
+    cornerRadius = 30,
+    detectionPatternShape = 'rounded',
     logoSize = 0,
     internalPadding = 0,
     detectionPatternPadding = 0,
@@ -65,10 +91,10 @@ const transformMatrixIntoPath = (
   };
 
   const getNeighbors = (i: number, j: number): Neighbors => ({
-    top: i > 0 && matrix[i - 1][j] === 1,
-    right: j < matrix.length - 1 && matrix[i][j + 1] === 1,
-    bottom: i < matrix.length - 1 && matrix[i + 1][j] === 1,
-    left: j > 0 && matrix[i][j - 1] === 1,
+    top: i > 0 && matrix[i - 1]?.[j] === 1,
+    right: j < matrix.length - 1 && matrix[i]?.[j + 1] === 1,
+    bottom: i < matrix.length - 1 && matrix[i + 1]?.[j] === 1,
+    left: j > 0 && matrix[i]?.[j - 1] === 1,
   });
 
   const isLogoArea = (i: number, j: number): boolean => {
@@ -160,12 +186,13 @@ const transformMatrixIntoPath = (
     corners: Corners,
     isDetectionPattern: boolean
   ): string => {
-    const { center, q1, q2, q3, q4 } = corners;
+    const { center, q4 } = corners;
     const outerRadius =
       (cellSize -
         (isDetectionPattern ? detectionPatternPadding : internalPadding)) /
       2;
     const innerRadius = outerRadius * 0.4;
+    // eslint-disable-next-line @typescript-eslint/no-shadow
     let path = `M${center.x} ${q4.y}`;
     for (let i = 0; i < 10; i++) {
       const angle = (Math.PI / 5) * i - Math.PI / 2;

@@ -1,7 +1,6 @@
 import {
   Blend,
   BlurMask,
-  DashPathEffect,
   DiscretePathEffect,
   RadialGradient,
   SweepGradient,
@@ -30,15 +29,37 @@ export default function App() {
           <QRCode value={SPONSOR_URL} size={QRCodeSize} pathColor="#FFFFFF" />
         </View>
         <View style={styles.codeContainer}>
-          <QRCode value={SPONSOR_URL} size={QRCodeSize} strokeWidth={0.7}>
+          <QRCode
+            value={SPONSOR_URL}
+            size={QRCodeSize}
+            strokeWidth={0.7}
+            shapeOptions={{
+              shape: 'diamond',
+              detectionPatternPadding: 2,
+              internalPadding: 2,
+              detectionPatternShape: 'diamond',
+              cornerRadius: 10,
+            }}
+          >
             <SweepGradient
               c={center}
               colors={['cyan', 'magenta', 'yellow', 'cyan']}
             />
+            <BlurMask blur={1} style={'solid'} />
           </QRCode>
         </View>
         <View style={styles.codeContainer}>
-          <QRCode value={SPONSOR_URL} size={QRCodeSize}>
+          <QRCode
+            value={SPONSOR_URL}
+            size={QRCodeSize}
+            shapeOptions={{
+              shape: 'circle',
+              detectionPatternPadding: 1,
+              internalPadding: 1,
+              detectionPatternShape: 'circle',
+              cornerRadius: 10,
+            }}
+          >
             <DiscretePathEffect length={10} deviation={2} />
             <Blend mode="difference">
               <RadialGradient
