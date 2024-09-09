@@ -10,6 +10,7 @@ import {
 import { generateMatrix } from './qrcode/generate-matrix';
 import { transformMatrixIntoPath } from './qrcode/transform-matrix-into-path';
 import type { QRCodeProps } from './types';
+import { StyleSheet } from 'react-native';
 
 const QRCode: React.FC<QRCodeProps> = React.memo(
   ({
@@ -39,13 +40,13 @@ const QRCode: React.FC<QRCodeProps> = React.memo(
     }, [computedPath]);
 
     const canvasStyle = useMemo(() => {
-      return [
+      return StyleSheet.flatten([
         style,
         {
           width: canvasSize,
           height: canvasSize,
         },
-      ];
+      ]);
     }, [style, canvasSize]);
 
     const pathContainerStyle = useMemo(() => {

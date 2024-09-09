@@ -40,4 +40,6 @@ const config = {
   },
 };
 
+config.resolver.assetExts.push('wasm');
+
 module.exports = config;
