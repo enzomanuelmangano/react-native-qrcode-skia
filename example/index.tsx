@@ -1,9 +1,8 @@
 import '@expo/metro-runtime';
-import registerRootComponent from 'expo/build/launch/registerRootComponent';
-
+import { App } from 'expo-router/build/qualified-entry';
+import { renderRootComponent } from 'expo-router/build/renderRootComponent';
 import { LoadSkiaWeb } from '@shopify/react-native-skia/lib/module/web';
-import App from './src/app/main';
 
 LoadSkiaWeb().then(async () => {
-  registerRootComponent(App);
+  renderRootComponent(App);
 });

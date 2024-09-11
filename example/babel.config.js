@@ -16,6 +16,7 @@ module.exports = function (api) {
             [pak.name]: path.join(__dirname, '..', pak.source),
           },
         },
+        'expo-router/babel',
       ],
     ],
   };

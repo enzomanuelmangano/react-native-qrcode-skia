@@ -1,15 +1,16 @@
 {
   "name": "react-native-qrcode-skia-example",
   "version": "1.0.0",
-  "main": "index.tsx",
+  "main": "index",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
     "postinstall": "yarn setup-skia-web && node path-fs-canvaskit-postinstall.js",
+    "copy-canvaskit-in-dist": "cp -r public/canvaskit.wasm dist/_expo/static/js/web/canvaskit.wasm",
     "deploy": "gh-pages -t -d dist",
-    "predeploy": "expo export -p web"
+    "predeploy": "expo export -p web && yarn copy-canvaskit-in-dist"
   },
   "dependencies": {
     "@expo/metro-runtime": "~3.2.3",

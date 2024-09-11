@@ -17,7 +17,7 @@ function QRCodeDemo() {
         shape: 'circle',
         detectionPatternPadding: 1,
         internalPadding: 1,
-        detectionPatternShape: 'circle',
+        detectionPatternShape: 'square',
         cornerRadius: 10,
       }}
     >
