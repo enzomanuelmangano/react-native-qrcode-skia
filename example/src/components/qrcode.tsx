@@ -1,18 +1,16 @@
 import QRCode from 'react-native-qrcode-skia';
-import React from 'react';
-import {
-  Blend,
-  RadialGradient,
-  Turbulence,
-  vec,
-} from '@shopify/react-native-skia';
+import React, { useMemo } from 'react';
 import { useAtomValue } from 'jotai';
 import {
   BaseShapeAtom,
   EyePatternShapeAtom,
   BasePaddingAtom,
   EyePatternPaddingAtom,
+  SelectedGradientAtom,
+  useRandomColors,
 } from '../states';
+import { getSkiaGradientByType } from './gradient-selector/utils';
+import { TouchableOpacity } from 'react-native';
 
 const SponsorUrl = 'https://patreon.com/reactiive';
 
@@ -23,27 +21,34 @@ function QRCodeDemo() {
   const eyePatternShape = useAtomValue(EyePatternShapeAtom);
   const basePadding = useAtomValue(BasePaddingAtom);
   const eyePatternPadding = useAtomValue(EyePatternPaddingAtom);
+  const gradientType = useAtomValue(SelectedGradientAtom);
+  const { colors, generateColors } = useRandomColors();
+
+  const gradientComponent = useMemo(
+    () =>
+      getSkiaGradientByType({
+        gradient: gradientType,
+        colors,
+        size: QRCodeSize,
+      }),
+    [gradientType, colors]
+  );
 
   return (
-    <QRCode
-      value={SponsorUrl}
-      size={QRCodeSize}
-      shapeOptions={{
-        shape: baseShape,
-        detectionPatternPadding: eyePatternPadding,
-        internalPadding: basePadding,
-        detectionPatternShape: eyePatternShape,
-      }}
-    >
-      <Blend mode="colorBurn">
-        <RadialGradient
-          r={128}
-          c={vec(QRCodeSize / 2, QRCodeSize / 2)}
-          colors={['magenta', 'yellow']}
-        />
-        <Turbulence freqX={0.01} freqY={0.05} octaves={4} />
-      </Blend>
-    </QRCode>
+    <TouchableOpacity onPress={generateColors}>
+      <QRCode
+        value={SponsorUrl}
+        size={QRCodeSize}
+        shapeOptions={{
+          shape: baseShape,
+          detectionPatternPadding: eyePatternPadding,
+          internalPadding: basePadding,
+          detectionPatternShape: eyePatternShape,
+        }}
+      >
+        {gradientComponent}
+      </QRCode>
+    </TouchableOpacity>
   );
 }
 
