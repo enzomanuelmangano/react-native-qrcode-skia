@@ -1,9 +1,11 @@
 import { useMemo } from 'react';
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 
 import type { BaseShapeOptions } from 'react-native-qrcode-skia';
 import React from 'react';
+
+import { TouchableHighlight } from '../touchable-highlight';
 
 type ShapeSelectorProps = {
   shape: BaseShapeOptions;
@@ -60,25 +62,20 @@ export const ShapeSelector = React.memo(
       return getPathFromShape(shape, ShapeSize);
     }, [shape]);
 
-    const style = useMemo(() => {
-      return StyleSheet.flatten([
-        styles.container,
-        isActive && { borderColor: 'red' },
-      ]);
-    }, [isActive]);
-
     return (
-      <TouchableOpacity onPress={onPress}>
-        <View style={style}>
-          <Svg
-            width={SvgSize}
-            height={SvgSize}
-            viewBox={`0 0 ${ShapeSize} ${ShapeSize}`}
-          >
-            <Path d={shapePath} fill="white" />
-          </Svg>
-        </View>
-      </TouchableOpacity>
+      <TouchableHighlight
+        onPress={onPress}
+        isActive={isActive}
+        style={styles.container}
+      >
+        <Svg
+          width={SvgSize}
+          height={SvgSize}
+          viewBox={`0 0 ${ShapeSize} ${ShapeSize}`}
+        >
+          <Path d={shapePath} fill="white" />
+        </Svg>
+      </TouchableHighlight>
     );
   }
 );

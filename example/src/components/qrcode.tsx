@@ -10,7 +10,7 @@ import {
   useRandomColors,
 } from '../states';
 import { getSkiaGradientByType } from './gradient-selector/utils';
-import { TouchableOpacity } from 'react-native';
+import { PressableScale } from './pressable-scale';
 
 const SponsorUrl = 'https://patreon.com/reactiive';
 
@@ -35,7 +35,7 @@ function QRCodeDemo() {
   );
 
   return (
-    <TouchableOpacity onPress={generateColors}>
+    <PressableScale onPress={generateColors}>
       <QRCode
         value={SponsorUrl}
         size={QRCodeSize}
@@ -48,7 +48,7 @@ function QRCodeDemo() {
       >
         {gradientComponent}
       </QRCode>
-    </TouchableOpacity>
+    </PressableScale>
   );
 }
 

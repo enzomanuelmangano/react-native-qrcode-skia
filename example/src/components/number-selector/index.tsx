@@ -1,7 +1,6 @@
 import {
   StyleSheet,
   Text,
-  TouchableOpacity,
   useWindowDimensions,
   View,
   type StyleProp,
@@ -9,6 +8,7 @@ import {
 } from 'react-native';
 import React from 'react';
 import { Entypo } from '@expo/vector-icons';
+import { PressableScale } from '../pressable-scale';
 
 type NumberSelectorProps = {
   value: number;
@@ -29,18 +29,18 @@ export const NumberSelector = React.memo(
           ...StyleSheet.flatten(style ?? {}),
         }}
       >
-        <TouchableOpacity
+        <PressableScale
           style={{ ...styles.button, marginRight: 8 }}
           onPress={() => onChange(Math.max(min, value - 1))}
         >
           <Entypo name="minus" size={18} color="#fff" />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </PressableScale>
+        <PressableScale
           style={styles.button}
           onPress={() => onChange(Math.min(max, value + 1))}
         >
           <Entypo name="plus" size={18} color="#fff" />
-        </TouchableOpacity>
+        </PressableScale>
 
         <View style={styles.fill} />
         <Text style={styles.text}>{value}</Text>
