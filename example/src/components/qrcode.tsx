@@ -16,6 +16,8 @@ import {
 
 const SponsorUrl = 'https://patreon.com/reactiive';
 
+const QRCodeSize = 200;
+
 function QRCodeDemo() {
   const baseShape = useAtomValue(BaseShapeAtom);
   const eyePatternShape = useAtomValue(EyePatternShapeAtom);
@@ -25,7 +27,7 @@ function QRCodeDemo() {
   return (
     <QRCode
       value={SponsorUrl}
-      size={200}
+      size={QRCodeSize}
       shapeOptions={{
         shape: baseShape,
         detectionPatternPadding: eyePatternPadding,
@@ -36,7 +38,7 @@ function QRCodeDemo() {
       <Blend mode="colorBurn">
         <RadialGradient
           r={128}
-          c={vec(100, 100)}
+          c={vec(QRCodeSize / 2, QRCodeSize / 2)}
           colors={['magenta', 'yellow']}
         />
         <Turbulence freqX={0.01} freqY={0.05} octaves={4} />

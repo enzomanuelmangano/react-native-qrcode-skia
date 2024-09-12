@@ -3,7 +3,7 @@ import 'react-native-reanimated';
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
 
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import 'react-native-reanimated';
 import QRCodeDemo from '../components/qrcode';
@@ -18,9 +18,12 @@ import {
   EyePatternShapeAtom,
   BasePaddingAtom,
   EyePatternPaddingAtom,
+  GradientTypeOptions,
+  SelectedGradientAtom,
 } from '../states';
 import { NumberSelector } from './number-selector';
 import { Separator } from './separator';
+import { GradientSelector } from './gradient-selector';
 
 const Shapes: BaseShapeOptions[] = [
   'square',
@@ -38,14 +41,15 @@ export default function App() {
   const [eyePatternPadding, setEyePatternPadding] = useAtom(
     EyePatternPaddingAtom
   );
+  const [gradientType, setGradientType] = useAtom(SelectedGradientAtom);
 
   return (
     <View style={styles.container}>
       <StatusBar style="light" hidden />
-      <View style={styles.codes}>
+      <View style={styles.container}>
         <QRCodeDemo />
       </View>
-      <View>
+      <ScrollView>
         <Text style={styles.label}>Base Shape</Text>
         <View style={styles.shapeSelector}>
           {Shapes.map((shape) => (
@@ -89,7 +93,21 @@ export default function App() {
           value={eyePatternPadding}
           onChange={setEyePatternPadding}
         />
-      </View>
+        <Separator />
+        <Text style={styles.label}>Gradient</Text>
+        <View style={styles.shapeSelector}>
+          {GradientTypeOptions.map((gradient) => (
+            <GradientSelector
+              key={gradient}
+              type={gradient}
+              onPress={() => {
+                setGradientType(gradient);
+              }}
+              isActive={gradientType === gradient}
+            />
+          ))}
+        </View>
+      </ScrollView>
     </View>
   );
 }
@@ -100,7 +118,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#000',
-    paddingVertical: 100,
   },
   codes: { flex: 1, justifyContent: 'space-around' },
   codeContainer: {
@@ -117,6 +134,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: 'white',
     marginBottom: 14,
+    marginLeft: 2,
   },
   box: {
     width: 60,
