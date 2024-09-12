@@ -1,13 +1,15 @@
+export type BaseShapeOptions =
+  | 'square'
+  | 'circle'
+  | 'rounded'
+  | 'diamond'
+  | 'triangle'
+  | 'star';
+
 export type ShapeOptions = {
-  shape?: 'square' | 'circle' | 'rounded' | 'diamond' | 'triangle' | 'star';
+  shape?: BaseShapeOptions;
   cornerRadius?: number;
-  detectionPatternShape?:
-    | 'square'
-    | 'circle'
-    | 'rounded'
-    | 'diamond'
-    | 'triangle'
-    | 'star';
+  detectionPatternShape?: BaseShapeOptions;
   logoSize?: number;
   internalPadding?: number;
   detectionPatternPadding?: number;

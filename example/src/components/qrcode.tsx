@@ -2,16 +2,17 @@ import QRCode from 'react-native-qrcode-skia';
 import React from 'react';
 import {
   Blend,
-  DiscretePathEffect,
   RadialGradient,
   Turbulence,
   vec,
 } from '@shopify/react-native-skia';
 
+const SponsorUrl = 'https://patreon.com/reactiive';
+
 function QRCodeDemo() {
   return (
     <QRCode
-      value={'blabla.com'}
+      value={SponsorUrl}
       size={200}
       shapeOptions={{
         shape: 'circle',
@@ -21,8 +22,7 @@ function QRCodeDemo() {
         cornerRadius: 10,
       }}
     >
-      <DiscretePathEffect length={10} deviation={2} />
-      <Blend mode="difference">
+      <Blend mode="colorBurn">
         <RadialGradient
           r={128}
           c={vec(100, 100)}

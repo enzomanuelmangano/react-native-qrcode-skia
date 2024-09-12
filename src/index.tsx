@@ -76,3 +76,5 @@ const QRCode: React.FC<QRCodeProps> = React.memo(
 );
 
 export default QRCode;
+
+export * from './types';

@@ -10,12 +10,29 @@ import QRCodeDemo from '../components/qrcode';
 
 const Padding = 25;
 
+import { type BaseShapeOptions } from 'react-native-qrcode-skia';
+import { ShapeSelector } from './shape-selector';
+
+const Shapes: BaseShapeOptions[] = [
+  'square',
+  'circle',
+  'rounded',
+  'diamond',
+  'triangle',
+  'star',
+];
+
 export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="light" hidden />
       <View style={styles.codes}>
         <QRCodeDemo />
+      </View>
+      <View style={styles.shapeSelector}>
+        {Shapes.map((shape) => (
+          <ShapeSelector key={shape} shape={shape} onPress={() => {}} />
+        ))}
       </View>
     </View>
   );
@@ -44,5 +61,10 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     marginVertical: 20,
+  },
+  shapeSelector: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '100%',
   },
 });

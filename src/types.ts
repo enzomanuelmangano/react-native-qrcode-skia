@@ -1,6 +1,11 @@
 import type { StyleProp, ViewStyle } from 'react-native';
 import type { ErrorCorrectionLevelType } from './qrcode/generate-matrix';
-import type { ShapeOptions } from './qrcode/transform-matrix-into-path';
+import type {
+  ShapeOptions,
+  BaseShapeOptions,
+} from './qrcode/transform-matrix-into-path';
+
+export type { ShapeOptions, BaseShapeOptions };
 
 /**
  * Represents a base shared value.
