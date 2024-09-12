@@ -1,4 +1,12 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  useWindowDimensions,
+  View,
+  type StyleProp,
+  type ViewStyle,
+} from 'react-native';
 import React from 'react';
 import { Entypo } from '@expo/vector-icons';
 
@@ -7,12 +15,20 @@ type NumberSelectorProps = {
   onChange: (value: number) => void;
   min?: number;
   max?: number;
+  style?: StyleProp<ViewStyle>;
 };
 
 export const NumberSelector = React.memo(
-  ({ value, onChange, min = 0, max = 100 }: NumberSelectorProps) => {
+  ({ value, onChange, min = 0, max = 100, style }: NumberSelectorProps) => {
+    const { width: windowWidth } = useWindowDimensions();
     return (
-      <View style={styles.container}>
+      <View
+        style={{
+          ...styles.container,
+          maxWidth: windowWidth,
+          ...StyleSheet.flatten(style ?? {}),
+        }}
+      >
         <TouchableOpacity
           style={{ ...styles.button, marginRight: 8 }}
           onPress={() => onChange(Math.max(min, value - 1))}
