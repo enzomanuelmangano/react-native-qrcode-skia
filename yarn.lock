@@ -2767,6 +2767,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@expo/vector-icons@npm:^14.0.2":
+  version: 14.0.2
+  resolution: "@expo/vector-icons@npm:14.0.2"
+  dependencies:
+    prop-types: ^15.8.1
+  checksum: 49e27ff52eb138745313fa2c39863fb762230b0089b910d668d7f2c06b7e71a0249dc3a26bfc8725d07bdfaadab1dbcbce087b34dfc244b00a15fc02fe4866e2
+  languageName: node
+  linkType: hard
+
 "@expo/webpack-config@npm:~19.0.1":
   version: 19.0.1
   resolution: "@expo/webpack-config@npm:19.0.1"
@@ -15978,6 +15987,7 @@ __metadata:
   dependencies:
     "@babel/core": ^7.20.0
     "@expo/metro-runtime": ~3.2.3
+    "@expo/vector-icons": ^14.0.2
     "@expo/webpack-config": ~19.0.1
     "@shopify/react-native-skia": ^1.2.3
     babel-loader: ^8.1.0

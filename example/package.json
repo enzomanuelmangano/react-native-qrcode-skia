@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@expo/metro-runtime": "~3.2.3",
+    "@expo/vector-icons": "^14.0.2",
     "@shopify/react-native-skia": "^1.2.3",
     "expo": "~51.0.31",
     "expo-constants": "~16.0.2",
