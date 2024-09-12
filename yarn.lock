@@ -12512,6 +12512,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jotai@npm:^2.9.3":
+  version: 2.9.3
+  resolution: "jotai@npm:2.9.3"
+  peerDependencies:
+    "@types/react": ">=17.0.0"
+    react: ">=17.0.0"
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    react:
+      optional: true
+  checksum: 1630f8f332c9e459352ec227eca79c4e601823ea958ea793f1c93262b57dc6b28f0c84dba263c705b14898b5b329d241cd4379e64c0de5b8d5b8c3d929f04b88
+  languageName: node
+  linkType: hard
+
 "js-tokens@npm:^3.0.0 || ^4.0.0, js-tokens@npm:^4.0.0":
   version: 4.0.0
   resolution: "js-tokens@npm:4.0.0"
@@ -15973,6 +15988,7 @@ __metadata:
     expo-router: ~3.5.23
     expo-status-bar: ~1.12.1
     gh-pages: ^6.1.1
+    jotai: ^2.9.3
     react: 18.2.0
     react-dom: 18.2.0
     react-native: 0.74.5

@@ -8,20 +8,32 @@ import { getPathFromShape } from './utils';
 type ShapeSelectorProps = {
   shape: BaseShapeOptions;
   onPress: () => void;
+  isActive?: boolean;
 };
 
 const CanvasSize = 64;
 const CanvasStrokeWidth = 2;
 const ShapeSize = 24;
 
-export const ShapeSelector = ({ shape, onPress }: ShapeSelectorProps) => {
+export const ShapeSelector = ({
+  shape,
+  onPress,
+  isActive,
+}: ShapeSelectorProps) => {
   const shapePath = useMemo(() => {
     return getPathFromShape(shape, ShapeSize);
   }, [shape]);
 
+  const style = useMemo(() => {
+    return StyleSheet.flatten([
+      styles.container,
+      isActive && { borderColor: 'red' },
+    ]);
+  }, [isActive]);
+
   return (
     <TouchableOpacity onPress={onPress}>
-      <Canvas style={styles.container}>
+      <Canvas style={style}>
         <Group
           transform={[
             {

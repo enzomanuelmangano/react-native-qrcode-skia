@@ -6,20 +6,31 @@ import {
   Turbulence,
   vec,
 } from '@shopify/react-native-skia';
+import { useAtomValue } from 'jotai';
+import {
+  BaseShapeAtom,
+  EyePatternShapeAtom,
+  BasePaddingAtom,
+  EyePatternPaddingAtom,
+} from '../states';
 
 const SponsorUrl = 'https://patreon.com/reactiive';
 
 function QRCodeDemo() {
+  const baseShape = useAtomValue(BaseShapeAtom);
+  const eyePatternShape = useAtomValue(EyePatternShapeAtom);
+  const basePadding = useAtomValue(BasePaddingAtom);
+  const eyePatternPadding = useAtomValue(EyePatternPaddingAtom);
+
   return (
     <QRCode
       value={SponsorUrl}
       size={200}
       shapeOptions={{
-        shape: 'circle',
-        detectionPatternPadding: 1,
-        internalPadding: 1,
-        detectionPatternShape: 'square',
-        cornerRadius: 10,
+        shape: baseShape,
+        detectionPatternPadding: eyePatternPadding,
+        internalPadding: basePadding,
+        detectionPatternShape: eyePatternShape,
       }}
     >
       <Blend mode="colorBurn">
