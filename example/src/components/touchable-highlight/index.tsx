@@ -1,5 +1,5 @@
-import React from 'react';
-import type { StyleProp, ViewStyle } from 'react-native';
+import React, { useMemo } from 'react';
+import { StyleSheet, type StyleProp, type ViewStyle } from 'react-native';
 import { PressableScale } from '../pressable-scale';
 import {
   interpolate,
@@ -13,10 +13,19 @@ type TouchableHighlightProps = {
   onPress: () => void;
   style?: StyleProp<ViewStyle>;
   isActive?: boolean;
+  size?: number;
+  borderWidth?: number;
 };
 
 export const TouchableHighlight = React.memo(
-  ({ children, onPress, style, isActive }: TouchableHighlightProps) => {
+  ({
+    children,
+    onPress,
+    style,
+    isActive,
+    size,
+    borderWidth,
+  }: TouchableHighlightProps) => {
     const progress = useDerivedValue(() => {
       return isActive ? 1 : 0;
     }, [isActive]);
@@ -32,10 +41,33 @@ export const TouchableHighlight = React.memo(
       };
     }, [isActive]);
 
+    const containerStyle = useMemo(() => {
+      return [
+        styles.container,
+        {
+          borderWidth: borderWidth,
+          height: size,
+        },
+        style,
+      ];
+    }, [style, borderWidth, size]);
+
     return (
-      <PressableScale onPress={onPress} style={[style, rStyle]}>
+      <PressableScale onPress={onPress} style={[containerStyle, rStyle]}>
         {children}
       </PressableScale>
     );
   }
 );
+
+const styles = StyleSheet.create({
+  container: {
+    overflow: 'hidden',
+    aspectRatio: 1,
+    borderRadius: 20,
+    borderColor: 'white',
+    borderCurve: 'continuous',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});

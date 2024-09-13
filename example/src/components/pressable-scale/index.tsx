@@ -40,6 +40,14 @@ const PressableScale: React.FC<PressableScaleProps> = ({
       active.value = false; // Reset press state on finalize
     });
 
+  const gestureHover = Gesture.Hover()
+    .onBegin(() => {
+      active.value = true; // Mark as active on touch down
+    })
+    .onFinalize(() => {
+      active.value = false; // Reset press state on finalize
+    });
+
   // Create an animated style for scaling effect
   const rAnimatedStyle = useAnimatedStyle(() => {
     return {
@@ -51,8 +59,10 @@ const PressableScale: React.FC<PressableScaleProps> = ({
     };
   }, []);
 
+  const gestures = Gesture.Simultaneous(gesture, gestureHover);
+
   return (
-    <GestureDetector gesture={gesture}>
+    <GestureDetector gesture={gestures}>
       <Animated.View style={[style, rAnimatedStyle]}>{children}</Animated.View>
     </GestureDetector>
   );

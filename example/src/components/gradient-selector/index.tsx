@@ -26,7 +26,8 @@ export const GradientSelector = ({
 
   return (
     <TouchableHighlight
-      style={styles.container}
+      size={CanvasSize}
+      borderWidth={CanvasStrokeWidth}
       isActive={isActive}
       onPress={onPress}
     >
@@ -42,14 +43,5 @@ export const GradientSelector = ({
 const styles = StyleSheet.create({
   fill: {
     flex: 1,
-  },
-  container: {
-    height: CanvasSize,
-    overflow: 'hidden',
-    aspectRatio: 1,
-    borderRadius: 20,
-    borderWidth: CanvasStrokeWidth,
-    borderColor: 'white',
-    borderCurve: 'continuous',
   },
 });

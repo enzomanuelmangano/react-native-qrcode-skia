@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-import { StyleSheet } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 
 import type { BaseShapeOptions } from 'react-native-qrcode-skia';
@@ -66,7 +65,8 @@ export const ShapeSelector = React.memo(
       <TouchableHighlight
         onPress={onPress}
         isActive={isActive}
-        style={styles.container}
+        size={CanvasSize}
+        borderWidth={CanvasStrokeWidth}
       >
         <Svg
           width={SvgSize}
@@ -79,15 +79,3 @@ export const ShapeSelector = React.memo(
     );
   }
 );
-
-const styles = StyleSheet.create({
-  container: {
-    height: CanvasSize,
-    aspectRatio: 1,
-    borderRadius: 20,
-    borderWidth: CanvasStrokeWidth,
-    borderColor: 'white',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
