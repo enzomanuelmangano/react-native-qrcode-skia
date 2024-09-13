@@ -14,7 +14,7 @@ export const Shapes: BaseShapeOptions[] = [
 ];
 
 export const BaseShapeAtom = atom<BaseShapeOptions>('circle');
-export const EyePatternShapeAtom = atom<BaseShapeOptions>('square');
+export const EyePatternShapeAtom = atom<BaseShapeOptions>('rounded');
 
 export const BasePaddingAtom = atom(0);
 export const EyePatternPaddingAtom = atom(0);
@@ -30,7 +30,13 @@ type GradientType = (typeof GradientTypeOptions)[number];
 
 export const SelectedGradientAtom = atom<GradientType>('radial');
 
-export const ColorsAtom = atom<string[]>(generateHarmonizedColors());
+export const ColorsAtom = atom<string[]>([
+  '#eeca3b',
+  '#3bee3b',
+  '#3bcaee',
+  '#833bee',
+  '#ee3b83',
+]);
 
 export const FilteredColorsAtom = atom<string[]>((get) => {
   const colors = get(ColorsAtom);
