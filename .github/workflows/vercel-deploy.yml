@@ -3,11 +3,11 @@ name: Deploy to Vercel
 on:
   push:
     branches:
-      - docs/web-support-setup 
+      - main
   pull_request:
     types: [closed]
     branches:
-      - docs/web-support-setup 
+      - main
 
 jobs:
   deploy:
