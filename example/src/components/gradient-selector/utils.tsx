@@ -14,6 +14,27 @@ type GetSkiaGradientByTypeParams = {
   size: number;
 };
 
+export const getSkiaGradientStringByType = ({
+  gradient,
+  colors = ['#a1a1a1', 'transparent'],
+  size,
+}: GetSkiaGradientByTypeParams) => {
+  switch (gradient) {
+    case 'radial':
+      return `<RadialGradient c={{ x: ${size / 2}, y: ${size / 2} }} r={${size / 2}} colors={${JSON.stringify(colors)}} />`;
+    case 'linear':
+      return `<LinearGradient start={{ x: 0, y: 0 }} end={{ x: ${size}, y: ${size} }} colors={${JSON.stringify(colors)}} />`;
+    case 'linear-vertical':
+      return `<LinearGradient start={{ x: 0, y: 0 }} end={{ x: 0, y: ${size} }} colors={${JSON.stringify(colors)}} />`;
+    case 'sweep':
+      return `<SweepGradient c={{ x: ${size / 2}, y: ${size / 2} }} colors={${JSON.stringify(colors)}} />`;
+    case 'conical':
+      return `<TwoPointConicalGradient start={{ x: ${size / 2}, y: ${size / 2} }} startR={${size / 2}} end={{ x: ${size / 2}, y: 16 }} endR={16} colors={${JSON.stringify(colors)}} />`;
+    default:
+      return 'null';
+  }
+};
+
 export const getSkiaGradientByType = ({
   gradient,
   colors = ['#a1a1a1', 'transparent'],
