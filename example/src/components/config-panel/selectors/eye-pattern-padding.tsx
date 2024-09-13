@@ -13,7 +13,6 @@ export const EyePatternPaddingSelector = React.memo(() => {
       label="Eye Pattern Padding"
       customContent={
         <NumberOptionPreview
-          // style={listStyle}
           max={4}
           min={0}
           value={eyePatternPadding}

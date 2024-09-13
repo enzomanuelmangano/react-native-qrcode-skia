@@ -48,9 +48,9 @@ export const useGetActiveQrCodeString = () => {
       size={${QRCodeSize}}
       shapeOptions={{
         shape: "${baseShape}",
-        detectionPatternShape: "${eyePatternShape}",
-        detectionPatternPadding: ${eyePatternPadding},
-        internalPadding: ${basePadding}
+        eyePatternShape: "${eyePatternShape}",
+        eyePatternGap: ${eyePatternPadding},
+        gap: ${basePadding}
       }}${logoProps}
     >
       ${getSkiaGradientStringByType({

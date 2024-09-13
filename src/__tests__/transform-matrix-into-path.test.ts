@@ -46,7 +46,7 @@ describe('transformMatrixIntoPath', () => {
   it('should apply detectionPatternPadding', () => {
     const resultWithoutPadding = transformMatrixIntoPath(mockMatrix, size);
     const resultWithPadding = transformMatrixIntoPath(mockMatrix, size, {
-      detectionPatternPadding: 10,
+      eyePatternGap: 10,
     });
     expect(resultWithoutPadding.path.length).not.toBe(
       resultWithPadding.path.length

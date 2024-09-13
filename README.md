@@ -88,6 +88,8 @@ export default App;
 
 - `size` (number) - The size of the QRCode.
 
+
+
 ## Sponsor 
 
 If you like this package, consider sponsoring me on [Patreon](https://patreon.com/reactiive). 

@@ -15,7 +15,6 @@ export const BasePaddingSelector = React.memo(() => {
           min={0}
           value={basePadding}
           onChange={setBasePadding}
-          // style={listStyle}
         />
       }
     />

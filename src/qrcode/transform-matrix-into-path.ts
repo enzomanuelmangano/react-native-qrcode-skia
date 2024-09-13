@@ -8,18 +8,16 @@ export type BaseShapeOptions =
 
 export type ShapeOptions = {
   shape?: BaseShapeOptions;
-  cornerRadius?: number;
-  detectionPatternShape?: BaseShapeOptions;
-  internalPadding?: number;
-  detectionPatternPadding?: number;
+  eyePatternShape?: BaseShapeOptions;
+  gap?: number;
+  eyePatternGap?: number;
 };
 
 const defaultShapeOptions: ShapeOptions = {
   shape: 'rounded',
-  cornerRadius: 20,
-  detectionPatternShape: 'rounded',
-  internalPadding: 0,
-  detectionPatternPadding: 0,
+  eyePatternShape: 'rounded',
+  gap: 0,
+  eyePatternGap: 0,
 };
 
 type Point = {
@@ -54,10 +52,9 @@ const transformMatrixIntoPath = (
 ) => {
   const {
     shape = 'rounded',
-    cornerRadius = 30,
-    detectionPatternShape = 'rounded',
-    internalPadding = 0,
-    detectionPatternPadding = 0,
+    eyePatternShape = 'rounded',
+    gap = 0,
+    eyePatternGap = 0,
   } = options;
   const cellSize = size / matrix.length;
   let path = '';
@@ -69,14 +66,11 @@ const transformMatrixIntoPath = (
   ): Corners => {
     const x = j * cellSize;
     const y = i * cellSize;
-    const padding = isDetectionPattern
-      ? detectionPatternPadding / 2
-      : internalPadding / 2;
+    const padding = isDetectionPattern ? eyePatternGap / 2 : gap / 2;
     const center = { x: x + cellSize / 2, y: y + cellSize / 2 };
     const effectiveCellSize =
-      cellSize -
-      (isDetectionPattern ? detectionPatternPadding : internalPadding);
-    const offset = Math.min(cornerRadius, effectiveCellSize / 2);
+      cellSize - (isDetectionPattern ? eyePatternGap : gap);
+    const offset = effectiveCellSize / 2;
     return {
       q1: { x: x + cellSize - padding, y: y + padding },
       q2: { x: x + cellSize - padding, y: y + cellSize - padding },
@@ -120,16 +114,15 @@ const transformMatrixIntoPath = (
       (i < 7 && j < 7) ||
       (i < 7 && j >= matrix.length - 7) ||
       (i >= matrix.length - 7 && j < 7);
-    const currentShape = isDetectionPattern ? detectionPatternShape : shape;
+    const currentShape = isDetectionPattern ? eyePatternShape : shape;
     const effectiveCellSize =
-      cellSize -
-      (isDetectionPattern ? detectionPatternPadding : internalPadding);
+      cellSize - (isDetectionPattern ? eyePatternGap : gap);
 
     switch (currentShape) {
       case 'circle':
         return `M${center.x} ${center.y} m-${effectiveCellSize / 2}, 0 a${effectiveCellSize / 2},${effectiveCellSize / 2} 0 1,0 ${effectiveCellSize},0 a${effectiveCellSize / 2},${effectiveCellSize / 2} 0 1,0 -${effectiveCellSize},0`;
       case 'rounded':
-        return renderRoundedSquare(corners, neighbors, cornerRadius > 0);
+        return renderRoundedSquare(corners, neighbors, true);
       case 'diamond':
         return renderDiamond(corners);
       case 'triangle':
@@ -182,15 +175,9 @@ const transformMatrixIntoPath = (
     return `M${center.x} ${q4.y} L${q1.x} ${q2.y} L${q3.x} ${q3.y} Z`;
   };
 
-  const renderStar = (
-    corners: Corners,
-    isDetectionPattern: boolean
-  ): string => {
+  const renderStar = (corners: Corners, isEyePattern: boolean): string => {
     const { center, q4 } = corners;
-    const outerRadius =
-      (cellSize -
-        (isDetectionPattern ? detectionPatternPadding : internalPadding)) /
-      2;
+    const outerRadius = (cellSize - (isEyePattern ? eyePatternGap : gap)) / 2;
     const innerRadius = outerRadius * 0.4;
     // eslint-disable-next-line @typescript-eslint/no-shadow
     let path = `M${center.x} ${q4.y}`;
