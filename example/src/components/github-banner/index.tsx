@@ -15,7 +15,7 @@ export const GitHubBanner = () => {
     );
   }, []);
 
-  if (isLessThan('xl')) return null;
+  if (isLessThan('md')) return null;
 
   return (
     <PressableScale onPress={onPress} style={styles.container}>
