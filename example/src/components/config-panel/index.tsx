@@ -1,4 +1,4 @@
-import { View } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 
 import React from 'react';
 import {
@@ -12,21 +12,41 @@ import {
 
 export const ConfigPanel = () => {
   return (
-    <View>
-      <EyePatternShapeSelector />
-      <BaseShapeSelector />
-      <View style={{ flexDirection: 'row' }}>
-        <View>
-          <EyePatternPaddingSelector />
+    <ScrollView
+      style={{
+        overflow: 'visible',
+        maxHeight: 650,
+      }}
+    >
+      <View>
+        <EyePatternShapeSelector />
+        <BaseShapeSelector />
+        <View style={styles.row}>
+          <View>
+            <EyePatternPaddingSelector />
+          </View>
+          <View style={styles.fill} />
+          <View>
+            <BasePaddingSelector />
+          </View>
+          <View style={styles.fill} />
         </View>
-        <View style={{ flex: 1 }} />
-        <View>
-          <BasePaddingSelector />
-        </View>
-        <View style={{ flex: 1 }} />
+        <GradientSelector />
+        <LogoSelector />
       </View>
-      <GradientSelector />
-      <LogoSelector />
-    </View>
+    </ScrollView>
   );
 };
+
+const styles = StyleSheet.create({
+  list: {
+    maxHeight: 650,
+    overflow: 'visible',
+  },
+  row: {
+    flexDirection: 'row',
+  },
+  fill: {
+    flex: 1,
+  },
+});
