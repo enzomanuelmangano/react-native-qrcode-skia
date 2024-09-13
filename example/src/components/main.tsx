@@ -14,6 +14,7 @@ import 'react-native-reanimated';
 import QRCodeDemo from '../components/qrcode';
 
 import { ConfigPanel } from './config-panel';
+import { QrCodeCopyButton } from './qrcode-copy-button';
 
 export default function App() {
   const { width: windowWidth } = useWindowDimensions();
@@ -27,6 +28,7 @@ export default function App() {
         <StatusBar style="light" hidden />
         <View style={styles.qrCodeContainer}>
           <QRCodeDemo />
+          <QrCodeCopyButton />
         </View>
         <ConfigPanel />
       </ScrollView>
@@ -49,6 +51,7 @@ export default function App() {
       <View style={styles.fillCenter}>
         <View style={styles.qrCodeContainer}>
           <QRCodeDemo />
+          <QrCodeCopyButton />
         </View>
       </View>
     </View>

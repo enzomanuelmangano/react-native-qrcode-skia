@@ -41,6 +41,7 @@ const PressableScale: React.FC<PressableScaleProps> = ({
     });
 
   const gestureHover = Gesture.Hover()
+    .activeCursor('grab')
     .onBegin(() => {
       active.value = true; // Mark as active on touch down
     })
