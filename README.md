@@ -53,14 +53,25 @@ const App = () => {
     <QRCode
       value="https://patreon.com/reactiive"
       size={200}
-      strokeWidth={0.7}
+      shapeOptions={{
+        shape: "circle",
+        eyePatternShape: "rounded",
+        eyePatternGap: 0,
+        gap: 0
+      }}
+      logoAreaSize={70}
+      logo={
+        <View style={{
+          height: 50,
+          aspectRatio: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+          <Text style={{ fontSize: 38 }}>🦊</Text>
+        </View>
+      }
     >
-        <SweepGradient
-            c={center}
-            colors={['cyan', 'magenta', 'yellow', 'cyan']}
-        />
-        <BlurMask blur={1} style={'solid'} />
-        <DashPathEffect intervals={[3.5, 0.5]} />
+      <RadialGradient c={{ x: 100, y: 100 }} r={100} colors={["#eeca3b","#ee3b83"]} />
     </QRCode>
   );
 };
@@ -74,7 +85,7 @@ export default App;
 
 - `style` (StyleProp<ViewStyle>, optional) - The style applied to the QRCode container.
 
-- `errorCorrectionLevel` (ErrorCorrectionLevelType, optional) - The error correction level for the QRCode. Default value is 'H'.
+- `errorCorrectionLevel` (ErrorCorrectionLevelType, optional) - The error correction level for the QRCode. Level L: 7%, level M: 15%, level Q: 25%, level H: 30%. Default value is 'H'.
 
 - `pathColor` (string, optional) - The color of the QRCode path. Default value is '#000000'.
 
@@ -82,19 +93,31 @@ export default App;
 
 - `children` (React.ReactNode, optional) - The children components rendered within the QRCode container.
 
-- `pathStyle` ('fill' | 'stroke', optional) - The style of the QRCode path. Default value is 'stroke'.
+- `pathStyle` ('fill' | 'stroke', optional) - The style of the QRCode path: 'fill' or 'stroke'. Default value is 'stroke'.
 
 - `padding` (number, optional) - The padding applied around the QRCode. Default value is 0.
 
 - `size` (number) - The size of the QRCode.
 
+- `shapeOptions` (ShapeOptions, optional) - The shape options for the QRCode path. Default value is {}. ShapeOptions include:
+  - `shape` (BaseShapeOptions, optional) - The shape of the QR code elements. Can be 'square', 'circle', 'rounded', 'diamond', 'triangle', or 'star'. Default is 'rounded'.
+  - `eyePatternShape` (BaseShapeOptions, optional) - The shape of the eye patterns. Can be 'square', 'circle', 'rounded', 'diamond', 'triangle', or 'star'. Default is 'rounded'.
+  - `gap` (number, optional) - The gap between QR code elements. Default is 0.
+  - `eyePatternGap` (number, optional) - The gap in the eye patterns. Default is 0.
 
+- `logoAreaSize` (number, optional) - The size of the logo area within the QRCode.
 
-## Sponsor 
+- `logo` (React.ReactNode, optional) - The logo component to be rendered within the QRCode.
 
-If you like this package, consider sponsoring me on [Patreon](https://patreon.com/reactiive). 
+## Would you like to support me?
 
-You will get access to [80+ exclusive React Native Animations](https://reactiive.io/patreon) and you will support me in my journey as an independent developer 🤓
+If you like my work and want to support me, the easiest way is to subscribe to my [YouTube channel](https://www.youtube.com/@Reactiive).
+This seems like an easy task, but it means a lot to me.
+
+### Other ways to support me and get exclusive content:
+
+- [My course (Reanimate.dev)](https://www.reanimate.dev): Are you really into animations? Fantastic! This makes two of us. Here you can access my React Native animations course and learn how to improve your animations skills.
+- [Patreon](https://www.patreon.com/reactiive): Every week, since a couple of years, I've been sharing a new special animation with my Patrons. If you want to access all of them, you can become a Patron.
 
 ## Contributing
 
