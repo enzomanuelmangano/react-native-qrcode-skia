@@ -3,7 +3,6 @@ import { StyleSheet, type StyleProp, type ViewStyle } from 'react-native';
 import { PressableScale } from '../pressable-scale';
 import {
   interpolate,
-  interpolateColor,
   useAnimatedStyle,
   useDerivedValue,
 } from 'react-native-reanimated';
@@ -32,12 +31,8 @@ export const TouchableHighlight = React.memo(
 
     const rStyle = useAnimatedStyle(() => {
       return {
-        borderColor: interpolateColor(
-          progress.value,
-          [0, 1],
-          ['white', '#00f7ff']
-        ),
-        opacity: interpolate(progress.value, [0, 1], [0.6, 1]),
+        borderColor: 'white',
+        opacity: interpolate(progress.value, [0, 1], [0.4, 1]),
       };
     }, [isActive]);
 
@@ -64,7 +59,7 @@ const styles = StyleSheet.create({
   container: {
     overflow: 'hidden',
     aspectRatio: 1,
-    borderRadius: 20,
+    borderRadius: 24,
     borderColor: 'white',
     borderCurve: 'continuous',
     justifyContent: 'center',

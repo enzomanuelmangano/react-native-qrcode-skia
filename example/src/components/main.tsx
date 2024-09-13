@@ -3,7 +3,12 @@ import 'react-native-reanimated';
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
 
-import { ScrollView, StyleSheet, View } from 'react-native';
+import {
+  ScrollView,
+  StyleSheet,
+  useWindowDimensions,
+  View,
+} from 'react-native';
 
 import 'react-native-reanimated';
 import QRCodeDemo from '../components/qrcode';
@@ -11,23 +16,52 @@ import QRCodeDemo from '../components/qrcode';
 import { ConfigPanel } from './config-panel';
 
 export default function App() {
+  const { width: windowWidth } = useWindowDimensions();
+
+  if (windowWidth < 768) {
+    return (
+      <ScrollView
+        style={styles.container}
+        contentContainerStyle={styles.contentContainer}
+      >
+        <StatusBar style="light" hidden />
+        <View style={styles.qrCodeContainer}>
+          <QRCodeDemo />
+        </View>
+        <ConfigPanel />
+      </ScrollView>
+    );
+  }
+
   return (
-    <ScrollView
-      style={styles.container}
-      contentContainerStyle={styles.contentContainer}
+    <View
+      style={{
+        ...styles.container,
+        flex: 1,
+        flexDirection: 'row',
+        paddingHorizontal: 40,
+      }}
     >
       <StatusBar style="light" hidden />
-      <View style={styles.qrCodeContainer}>
-        <QRCodeDemo />
+      <View style={styles.fillCenter}>
+        <ConfigPanel />
       </View>
-      <ConfigPanel />
-    </ScrollView>
+      <View style={styles.fillCenter}>
+        <View style={styles.qrCodeContainer}>
+          <QRCodeDemo />
+        </View>
+      </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#000000',
+  },
+  fillCenter: {
+    flex: 1,
+    justifyContent: 'center',
   },
   qrCodeContainer: {
     minHeight: 300,
