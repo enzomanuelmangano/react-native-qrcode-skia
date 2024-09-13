@@ -7,7 +7,9 @@ const pak = require('../package.json');
 const root = path.resolve(__dirname, '..');
 const modules = Object.keys({ ...pak.peerDependencies });
 
-const defaultConfig = getDefaultConfig(__dirname);
+const defaultConfig = getDefaultConfig(__dirname, {
+  isCSSEnabled: true,
+});
 
 /**
  * Metro configuration
@@ -39,5 +41,13 @@ const config = {
     }, {}),
   },
 };
+
+config.resolver.assetExts.push('wasm');
+config.transformer.getTransformOptions = async () => ({
+  transform: {
+    experimentalImportSupport: false,
+    inlineRequires: true,
+  },
+});
 
 module.exports = config;

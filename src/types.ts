@@ -1,5 +1,11 @@
 import type { StyleProp, ViewStyle } from 'react-native';
 import type { ErrorCorrectionLevelType } from './qrcode/generate-matrix';
+import type {
+  ShapeOptions,
+  BaseShapeOptions,
+} from './qrcode/transform-matrix-into-path';
+
+export type { ShapeOptions, BaseShapeOptions };
 
 /**
  * Represents a base shared value.
@@ -46,4 +52,11 @@ export type QRCodeProps = {
   padding?: number;
   /** The size of the QRCode. */
   size: number;
+  /**
+   * The shape options for the QRCode path.
+   * Default value is {}.
+   */
+  shapeOptions?: ShapeOptions;
+  logoAreaSize?: number;
+  logo?: React.ReactNode;
 };

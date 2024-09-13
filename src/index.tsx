@@ -10,6 +10,7 @@ import {
 import { generateMatrix } from './qrcode/generate-matrix';
 import { transformMatrixIntoPath } from './qrcode/transform-matrix-into-path';
 import type { QRCodeProps } from './types';
+import { StyleSheet, View } from 'react-native';
 
 const QRCode: React.FC<QRCodeProps> = React.memo(
   ({
@@ -19,33 +20,43 @@ const QRCode: React.FC<QRCodeProps> = React.memo(
     children,
     errorCorrectionLevel = 'H',
     strokeWidth = 1,
-    pathStyle = 'stroke',
+    pathStyle = 'fill',
     padding = 0,
     size,
+    shapeOptions,
+    logo,
+    logoAreaSize,
   }) => {
     const canvasSize = size;
+    const effectiveLogoAreaSize = logoAreaSize ?? (logo ? 70 : 0);
 
     const computedPath = useMemo(() => {
       return transformMatrixIntoPath(
         generateMatrix(value, errorCorrectionLevel),
-        size - padding * 2
+        size,
+        shapeOptions,
+        effectiveLogoAreaSize
       );
-    }, [value, errorCorrectionLevel, size, padding]);
+    }, [
+      value,
+      errorCorrectionLevel,
+      size,
+      shapeOptions,
+      effectiveLogoAreaSize,
+    ]);
 
     const path = useMemo(() => {
       return Skia.Path.MakeFromSVGString(computedPath.path)!;
     }, [computedPath]);
 
-    const maxStrokeWidth = computedPath.cellSize * strokeWidth;
-
     const canvasStyle = useMemo(() => {
-      return [
+      return StyleSheet.flatten([
         style,
         {
           width: canvasSize,
           height: canvasSize,
         },
-      ];
+      ]);
     }, [style, canvasSize]);
 
     const pathContainerStyle = useMemo(() => {
@@ -58,20 +69,35 @@ const QRCode: React.FC<QRCodeProps> = React.memo(
     }, [padding]);
 
     return (
-      <Canvas style={canvasStyle}>
-        <Group transform={pathContainerStyle}>
-          <SkiaPath
-            path={path}
-            color={pathColor}
-            strokeWidth={maxStrokeWidth}
-            style={pathStyle}
-          >
-            {children}
-          </SkiaPath>
-        </Group>
-      </Canvas>
+      <View style={styles.container}>
+        <Canvas style={canvasStyle}>
+          <Group transform={pathContainerStyle}>
+            <SkiaPath
+              strokeWidth={strokeWidth}
+              path={path}
+              color={pathColor}
+              style={pathStyle}
+            >
+              {children}
+            </SkiaPath>
+          </Group>
+        </Canvas>
+        {Boolean(logo) && <View style={styles.logo}>{logo}</View>}
+      </View>
     );
   }
 );
 
+const styles = StyleSheet.create({
+  logo: {
+    position: 'absolute',
+  },
+  container: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
+
 export default QRCode;
+
+export * from './types';
