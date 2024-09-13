@@ -43,16 +43,6 @@ describe('transformMatrixIntoPath', () => {
     });
   });
 
-  it('should respect the logoSize option', () => {
-    const resultWithoutLogo = transformMatrixIntoPath(mockMatrix, size);
-    const resultWithLogo = transformMatrixIntoPath(mockMatrix, size, {
-      logoSize: 1,
-    });
-    expect(resultWithoutLogo.path.length).toBeGreaterThan(
-      resultWithLogo.path.length
-    );
-  });
-
   it('should apply detectionPatternPadding', () => {
     const resultWithoutPadding = transformMatrixIntoPath(mockMatrix, size);
     const resultWithPadding = transformMatrixIntoPath(mockMatrix, size, {

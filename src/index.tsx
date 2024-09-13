@@ -10,7 +10,7 @@ import {
 import { generateMatrix } from './qrcode/generate-matrix';
 import { transformMatrixIntoPath } from './qrcode/transform-matrix-into-path';
 import type { QRCodeProps } from './types';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 const QRCode: React.FC<QRCodeProps> = React.memo(
   ({
@@ -24,16 +24,26 @@ const QRCode: React.FC<QRCodeProps> = React.memo(
     padding = 0,
     size,
     shapeOptions,
+    logo,
+    logoAreaSize,
   }) => {
     const canvasSize = size;
+    const effectiveLogoAreaSize = logoAreaSize ?? (logo ? 70 : 0);
 
     const computedPath = useMemo(() => {
       return transformMatrixIntoPath(
         generateMatrix(value, errorCorrectionLevel),
         size,
-        shapeOptions
+        shapeOptions,
+        effectiveLogoAreaSize
       );
-    }, [value, errorCorrectionLevel, size, shapeOptions]);
+    }, [
+      value,
+      errorCorrectionLevel,
+      size,
+      shapeOptions,
+      effectiveLogoAreaSize,
+    ]);
 
     const path = useMemo(() => {
       return Skia.Path.MakeFromSVGString(computedPath.path)!;
@@ -59,21 +69,34 @@ const QRCode: React.FC<QRCodeProps> = React.memo(
     }, [padding]);
 
     return (
-      <Canvas style={canvasStyle}>
-        <Group transform={pathContainerStyle}>
-          <SkiaPath
-            strokeWidth={strokeWidth}
-            path={path}
-            color={pathColor}
-            style={pathStyle}
-          >
-            {children}
-          </SkiaPath>
-        </Group>
-      </Canvas>
+      <View style={styles.container}>
+        <Canvas style={canvasStyle}>
+          <Group transform={pathContainerStyle}>
+            <SkiaPath
+              strokeWidth={strokeWidth}
+              path={path}
+              color={pathColor}
+              style={pathStyle}
+            >
+              {children}
+            </SkiaPath>
+          </Group>
+        </Canvas>
+        {Boolean(logo) && <View style={styles.logo}>{logo}</View>}
+      </View>
     );
   }
 );
+
+const styles = StyleSheet.create({
+  logo: {
+    position: 'absolute',
+  },
+  container: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
 
 export default QRCode;
 

@@ -16,6 +16,7 @@ import {
   GradientTypeOptions,
   SelectedGradientAtom,
 } from '../../states';
+import React from 'react';
 import type { BaseShapeOptions } from 'react-native-qrcode-skia';
 import { GradientSelector } from '../gradient-selector';
 import { NumberSelector } from '../number-selector';

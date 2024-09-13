@@ -10,7 +10,6 @@ export type ShapeOptions = {
   shape?: BaseShapeOptions;
   cornerRadius?: number;
   detectionPatternShape?: BaseShapeOptions;
-  logoSize?: number;
   internalPadding?: number;
   detectionPatternPadding?: number;
 };
@@ -19,7 +18,6 @@ const defaultShapeOptions: ShapeOptions = {
   shape: 'rounded',
   cornerRadius: 20,
   detectionPatternShape: 'rounded',
-  logoSize: 0,
   internalPadding: 0,
   detectionPatternPadding: 0,
 };
@@ -51,13 +49,13 @@ type Neighbors = {
 const transformMatrixIntoPath = (
   matrix: (1 | 0)[][],
   size: number,
-  options: ShapeOptions = defaultShapeOptions
+  options: ShapeOptions = defaultShapeOptions,
+  logoSize: number = 0
 ) => {
   const {
     shape = 'rounded',
     cornerRadius = 30,
     detectionPatternShape = 'rounded',
-    logoSize = 0,
     internalPadding = 0,
     detectionPatternPadding = 0,
   } = options;
@@ -102,7 +100,7 @@ const transformMatrixIntoPath = (
   const isLogoArea = (i: number, j: number): boolean => {
     if (logoSize === 0) return false;
     const center = Math.floor(matrix.length / 2);
-    const logoRadius = Math.floor(logoSize / 2);
+    const logoRadius = Math.floor(logoSize / cellSize / 2);
     return (
       i >= center - logoRadius &&
       i <= center + logoRadius &&

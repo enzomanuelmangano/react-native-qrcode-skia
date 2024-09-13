@@ -57,4 +57,6 @@ export type QRCodeProps = {
    * Default value is {}.
    */
   shapeOptions?: ShapeOptions;
+  logoAreaSize?: number;
+  logo?: React.ReactNode;
 };
