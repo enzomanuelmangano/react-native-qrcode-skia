@@ -8,6 +8,7 @@ import {
   EyePatternPaddingAtom,
   SelectedGradientAtom,
   useRandomColors,
+  SelectedLogoAtom,
 } from '../states';
 import { getSkiaGradientByType } from './gradient-selector/utils';
 import { PressableScale } from './pressable-scale';
@@ -35,6 +36,21 @@ function QRCodeDemo() {
     [gradientType, colors]
   );
 
+  const selectedLogo = useAtomValue(SelectedLogoAtom);
+  const logoProps = useMemo(() => {
+    if (!selectedLogo) {
+      return {};
+    }
+    return {
+      logo: (
+        <View style={styles.logo}>
+          <Text style={styles.logoLabel}>{selectedLogo}</Text>
+        </View>
+      ),
+      logoAreaSize: 70,
+    };
+  }, [selectedLogo]);
+
   return (
     <PressableScale onPress={generateColors}>
       <QRCode
@@ -46,12 +62,7 @@ function QRCodeDemo() {
           internalPadding: basePadding,
           detectionPatternShape: eyePatternShape,
         }}
-        logoAreaSize={70}
-        logo={
-          <View style={styles.logo}>
-            <Text style={styles.logoLabel}>🍞</Text>
-          </View>
-        }
+        {...logoProps}
       >
         {gradientComponent}
       </QRCode>

@@ -1,6 +1,5 @@
 import { Canvas, Rect } from '@shopify/react-native-skia';
 import React, { useMemo } from 'react';
-import { StyleSheet } from 'react-native';
 import type { GradientSelectorProps } from './types';
 import { getSkiaGradientByType } from './utils';
 import { TouchableHighlight } from '../touchable-highlight';
@@ -31,7 +30,12 @@ export const GradientSelector = ({
       isActive={isActive}
       onPress={onPress}
     >
-      <Canvas style={styles.fill}>
+      <Canvas
+        style={{
+          height: CanvasSize,
+          width: CanvasSize,
+        }}
+      >
         <Rect x={0} y={0} width={CanvasSize} height={CanvasSize}>
           {gradientComponent}
         </Rect>
@@ -39,9 +43,3 @@ export const GradientSelector = ({
     </TouchableHighlight>
   );
 };
-
-const styles = StyleSheet.create({
-  fill: {
-    flex: 1,
-  },
-});

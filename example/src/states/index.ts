@@ -43,3 +43,7 @@ export const useRandomColors = () => {
 
   return { colors, generateColors };
 };
+
+export const LogoEmojis = ['', '🐶', '🐰', '🦊', '🐼', '🐨'];
+
+export const SelectedLogoAtom = atom<string>('');

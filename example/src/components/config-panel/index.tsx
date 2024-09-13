@@ -14,12 +14,15 @@ import {
   EyePatternPaddingAtom,
   EyePatternShapeAtom,
   GradientTypeOptions,
+  LogoEmojis,
   SelectedGradientAtom,
+  SelectedLogoAtom,
 } from '../../states';
 import React from 'react';
 import type { BaseShapeOptions } from 'react-native-qrcode-skia';
 import { GradientSelector } from '../gradient-selector';
 import { NumberSelector } from '../number-selector';
+import { LogoSelector } from '../logo-selector';
 
 const Shapes: BaseShapeOptions[] = [
   'square',
@@ -40,7 +43,7 @@ export const ConfigPanel = () => {
     EyePatternPaddingAtom
   );
   const [gradientType, setGradientType] = useAtom(SelectedGradientAtom);
-
+  const [selectedLogo, setSelectedLogo] = useAtom(SelectedLogoAtom);
   const { width: windowWidth } = useWindowDimensions();
 
   const listStyle = {
@@ -122,6 +125,25 @@ export const ConfigPanel = () => {
               setGradientType(gradient);
             }}
             isActive={gradientType === gradient}
+          />
+        ))}
+      </ScrollView>
+      <Separator />
+      <Text style={styles.label}>Logo</Text>
+      <ScrollView
+        horizontal
+        style={listStyle}
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={styles.selector}
+      >
+        {LogoEmojis.map((logo) => (
+          <LogoSelector
+            key={logo}
+            isActive={selectedLogo === logo}
+            onPress={() => {
+              setSelectedLogo(logo);
+            }}
+            logoEmoji={logo}
           />
         ))}
       </ScrollView>
