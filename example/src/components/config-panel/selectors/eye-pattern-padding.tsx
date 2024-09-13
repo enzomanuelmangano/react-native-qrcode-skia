@@ -1,16 +1,14 @@
 import { useAtom } from 'jotai';
-import { EyePatternPaddingAtom } from '../../../states';
+import { EyePatternGapAtom } from '../../../states';
 import { NumberOptionPreview } from '../../number-option-preview';
 import { SelectorSection } from '../selector-section';
 import React from 'react';
 
 export const EyePatternPaddingSelector = React.memo(() => {
-  const [eyePatternPadding, setEyePatternPadding] = useAtom(
-    EyePatternPaddingAtom
-  );
+  const [eyePatternPadding, setEyePatternPadding] = useAtom(EyePatternGapAtom);
   return (
     <SelectorSection
-      label="Eye Pattern Padding"
+      label="Eye Pattern Gap"
       customContent={
         <NumberOptionPreview
           max={4}

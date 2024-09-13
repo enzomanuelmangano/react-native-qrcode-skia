@@ -9483,6 +9483,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"expo-image@npm:~1.12.15":
+  version: 1.12.15
+  resolution: "expo-image@npm:1.12.15"
+  peerDependencies:
+    expo: "*"
+  checksum: 574ac9cf0ddcd55f2df51b64fad7a0b6d0f9c03ec7932d94703e8c8a230b1eddb18d1a2d744fae486bb2539a4c2d4b8926b9a464aba245b39b9bcbe9ee41051a
+  languageName: node
+  linkType: hard
+
 "expo-keep-awake@npm:~13.0.2":
   version: 13.0.2
   resolution: "expo-keep-awake@npm:13.0.2"
@@ -16124,6 +16133,7 @@ __metadata:
     expo-clipboard: ~6.0.3
     expo-constants: ~16.0.2
     expo-font: ~12.0.10
+    expo-image: ~1.12.15
     expo-linking: ~6.3.1
     expo-router: ~3.5.23
     expo-status-bar: ~1.12.1

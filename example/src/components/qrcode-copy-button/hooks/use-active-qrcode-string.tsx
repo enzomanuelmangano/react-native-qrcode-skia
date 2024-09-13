@@ -3,8 +3,8 @@ import { useAtomValue } from 'jotai';
 import {
   BaseShapeAtom,
   EyePatternShapeAtom,
-  BasePaddingAtom,
-  EyePatternPaddingAtom,
+  BaseGapAtom,
+  EyePatternGapAtom,
   SelectedGradientAtom,
   SelectedLogoAtom,
   FilteredColorsAtom,
@@ -17,8 +17,8 @@ const QRCodeSize = 200;
 export const useGetActiveQrCodeString = () => {
   const baseShape = useAtomValue(BaseShapeAtom);
   const eyePatternShape = useAtomValue(EyePatternShapeAtom);
-  const basePadding = useAtomValue(BasePaddingAtom);
-  const eyePatternPadding = useAtomValue(EyePatternPaddingAtom);
+  const baseGap = useAtomValue(BaseGapAtom);
+  const eyePatternGap = useAtomValue(EyePatternGapAtom);
   const gradientType = useAtomValue(SelectedGradientAtom);
   const selectedLogo = useAtomValue(SelectedLogoAtom);
   const colors = useAtomValue(FilteredColorsAtom);
@@ -49,8 +49,8 @@ export const useGetActiveQrCodeString = () => {
       shapeOptions={{
         shape: "${baseShape}",
         eyePatternShape: "${eyePatternShape}",
-        eyePatternGap: ${eyePatternPadding},
-        gap: ${basePadding}
+        eyePatternGap: ${eyePatternGap},
+        gap: ${baseGap}
       }}${logoProps}
     >
       ${getSkiaGradientStringByType({
@@ -65,8 +65,8 @@ export const useGetActiveQrCodeString = () => {
   }, [
     baseShape,
     eyePatternShape,
-    eyePatternPadding,
-    basePadding,
+    eyePatternGap,
+    baseGap,
     gradientType,
     colors,
     selectedLogo,

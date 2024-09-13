@@ -2,8 +2,14 @@ import { useCallback } from 'react';
 import * as Burnt from 'burnt';
 import { Platform } from 'react-native';
 import Clipboard from '@react-native-clipboard/clipboard';
-
 import { useGetActiveQrCodeString } from './use-active-qrcode-string';
+import { Image } from 'expo-image';
+// @ts-ignore TODO: fix this
+import React from 'react';
+
+const GitHubMark = require('../../../../assets/images/github-mark.png');
+
+const IconStyle = { width: 18, height: 18 };
 
 export const useCopyQrCode = () => {
   const getActiveQrCodeString = useGetActiveQrCodeString();
@@ -14,9 +20,21 @@ export const useCopyQrCode = () => {
     if (Platform.OS === 'web') {
       // Burnt will fallback to Sonner on Web
       return Burnt.toast({
-        title: 'QR code component copied',
+        title: 'QRCode Copied',
+        message: "Don't forget to leave a star on GitHub!",
+        duration: 2,
         shouldDismissByDrag: true,
-        preset: 'done',
+        preset: 'custom',
+        haptic: 'success',
+        icon: {
+          ios: {
+            name: 'star.fill',
+            color: '#000000',
+          },
+          web: (
+            <Image source={GitHubMark} style={IconStyle} contentFit="contain" />
+          ),
+        },
       });
     }
 

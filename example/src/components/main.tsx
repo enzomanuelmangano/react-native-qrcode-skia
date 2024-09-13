@@ -3,23 +3,19 @@ import 'react-native-reanimated';
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
 
-import {
-  ScrollView,
-  StyleSheet,
-  useWindowDimensions,
-  View,
-} from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 
 import 'react-native-reanimated';
 import QRCodeDemo from '../components/qrcode';
 
 import { ConfigPanel } from './config-panel';
 import { QrCodeCopyButton } from './qrcode-copy-button';
+import useDimensions from '../hooks/useDimensions';
 
 export default function App() {
-  const { width: windowWidth } = useWindowDimensions();
+  const { isLessThan } = useDimensions();
 
-  if (windowWidth < 768) {
+  if (isLessThan('xl')) {
     return (
       <ScrollView
         style={styles.container}
@@ -39,9 +35,7 @@ export default function App() {
     <View
       style={{
         ...styles.container,
-        flex: 1,
-        flexDirection: 'row',
-        paddingHorizontal: 40,
+        ...styles.smallContainer,
       }}
     >
       <StatusBar style="light" hidden />
@@ -62,6 +56,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#000000',
   },
+  smallContainer: { flex: 1, flexDirection: 'row', paddingHorizontal: 40 },
   fillCenter: {
     flex: 1,
     justifyContent: 'center',

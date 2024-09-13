@@ -1,11 +1,11 @@
 import { useAtom } from 'jotai';
 import { NumberOptionPreview } from '../../number-option-preview';
 import { SelectorSection } from '../selector-section';
-import { BasePaddingAtom } from '../../../states';
+import { BaseGapAtom } from '../../../states';
 import React from 'react';
 
 export const BasePaddingSelector = React.memo(() => {
-  const [basePadding, setBasePadding] = useAtom(BasePaddingAtom);
+  const [baseGap, setBaseGap] = useAtom(BaseGapAtom);
   return (
     <SelectorSection
       label="Base Padding"
@@ -13,8 +13,8 @@ export const BasePaddingSelector = React.memo(() => {
         <NumberOptionPreview
           max={4}
           min={0}
-          value={basePadding}
-          onChange={setBasePadding}
+          value={baseGap}
+          onChange={setBaseGap}
         />
       }
     />

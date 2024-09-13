@@ -8,6 +8,7 @@ import { WithSkiaWeb } from '@shopify/react-native-skia/lib/module/web';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Toaster } from 'burnt/web';
 import { FontsProvider } from '../providers/fonts-provider';
+import { GitHubBanner } from '../components/github-banner';
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
           />
         </GestureHandlerRootView>
       </FontsProvider>
+      <GitHubBanner />
       <Toaster position="bottom-right" />
     </React.Suspense>
   );

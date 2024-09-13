@@ -16,8 +16,8 @@ export const Shapes: BaseShapeOptions[] = [
 export const BaseShapeAtom = atom<BaseShapeOptions>('circle');
 export const EyePatternShapeAtom = atom<BaseShapeOptions>('rounded');
 
-export const BasePaddingAtom = atom(0);
-export const EyePatternPaddingAtom = atom(0);
+export const BaseGapAtom = atom(0);
+export const EyePatternGapAtom = atom(0);
 
 export const GradientTypeOptions = [
   'radial',
@@ -61,4 +61,4 @@ export const useRandomColors = () => {
 
 export const LogoEmojis = ['', '🐶', '🐰', '🦊', '🐼', '🐨'];
 
-export const SelectedLogoAtom = atom<string>('');
+export const SelectedLogoAtom = atom<string>('🦊');

@@ -1,5 +1,6 @@
 import { useFonts } from 'expo-font';
 import type { PropsWithChildren } from 'react';
+import React from 'react';
 
 type FontsProviderProps = PropsWithChildren;
 

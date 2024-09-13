@@ -4,8 +4,8 @@ import { useAtomValue } from 'jotai';
 import {
   BaseShapeAtom,
   EyePatternShapeAtom,
-  BasePaddingAtom,
-  EyePatternPaddingAtom,
+  BaseGapAtom,
+  EyePatternGapAtom,
   SelectedGradientAtom,
   useRandomColors,
   SelectedLogoAtom,
@@ -21,8 +21,8 @@ const QRCodeSize = 200;
 function QRCodeDemo() {
   const baseShape = useAtomValue(BaseShapeAtom);
   const eyePatternShape = useAtomValue(EyePatternShapeAtom);
-  const basePadding = useAtomValue(BasePaddingAtom);
-  const eyePatternPadding = useAtomValue(EyePatternPaddingAtom);
+  const baseGap = useAtomValue(BaseGapAtom);
+  const eyePatternGap = useAtomValue(EyePatternGapAtom);
   const gradientType = useAtomValue(SelectedGradientAtom);
   const { colors, generateColors } = useRandomColors();
 
@@ -58,8 +58,8 @@ function QRCodeDemo() {
         size={QRCodeSize}
         shapeOptions={{
           shape: baseShape,
-          gap: basePadding,
-          eyePatternGap: eyePatternPadding,
+          gap: baseGap,
+          eyePatternGap: eyePatternGap,
           eyePatternShape: eyePatternShape,
         }}
         {...logoProps}

@@ -8,9 +8,6 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 
-// I use this component a lot in my projects, and maybe
-// it's worth to create a package for it (one day) :)
-
 // Define the props for the PressableScale component
 export type PressableScaleProps = {
   children: React.ReactNode; // Content to be wrapped by the pressable component
@@ -54,7 +51,7 @@ const PressableScale: React.FC<PressableScaleProps> = ({
     return {
       transform: [
         {
-          scale: withTiming(active.value ? 0.95 : 1), // Scale down when active, return to normal otherwise
+          scale: withTiming(active.value ? 0.97 : 1), // Scale down when active, return to normal otherwise
         },
       ],
     };
