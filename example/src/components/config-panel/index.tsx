@@ -13,10 +13,18 @@ import {
 export const ConfigPanel = () => {
   return (
     <View>
-      <BaseShapeSelector />
       <EyePatternShapeSelector />
-      <BasePaddingSelector />
-      <EyePatternPaddingSelector />
+      <BaseShapeSelector />
+      <View style={{ flexDirection: 'row' }}>
+        <View>
+          <EyePatternPaddingSelector />
+        </View>
+        <View style={{ flex: 1 }} />
+        <View>
+          <BasePaddingSelector />
+        </View>
+        <View style={{ flex: 1 }} />
+      </View>
       <GradientSelector />
       <LogoSelector />
     </View>

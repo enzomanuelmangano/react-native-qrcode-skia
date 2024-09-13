@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
     color: 'white',
     marginBottom: 14,
     marginLeft: 2,
+    fontFamily: 'Regular',
   },
   selector: {
     gap: 14,

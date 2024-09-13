@@ -1,6 +1,5 @@
 import {
   StyleSheet,
-  Text,
   useWindowDimensions,
   View,
   type StyleProp,
@@ -41,9 +40,6 @@ export const NumberOptionPreview = React.memo(
         >
           <Entypo name="minus" size={18} color="#fff" />
         </PressableScale>
-        <View style={styles.fill} />
-        <Text style={styles.text}>{value}</Text>
-        <View style={styles.fill} />
         <PressableScale
           style={styles.button}
           onPress={() => onChange(Math.min(max, value + 1))}

@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
   },
   label: {
     color: 'white',
-    fontSize: 20,
+    fontSize: 18,
+    fontFamily: 'Regular',
   },
 });

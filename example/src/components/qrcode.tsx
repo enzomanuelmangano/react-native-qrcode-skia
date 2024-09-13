@@ -58,8 +58,8 @@ function QRCodeDemo() {
         size={QRCodeSize}
         shapeOptions={{
           shape: baseShape,
-          gap: eyePatternPadding,
-          eyePatternGap: basePadding,
+          gap: basePadding,
+          eyePatternGap: eyePatternPadding,
           eyePatternShape: eyePatternShape,
         }}
         {...logoProps}
