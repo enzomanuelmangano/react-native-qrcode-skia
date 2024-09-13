@@ -15,7 +15,7 @@ import useDimensions from '../hooks/useDimensions';
 export default function App() {
   const { isLessThan } = useDimensions();
 
-  if (isLessThan('xl')) {
+  if (isLessThan('md')) {
     return (
       <ScrollView
         style={styles.container}
