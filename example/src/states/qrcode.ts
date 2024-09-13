@@ -4,6 +4,15 @@ import type { BaseShapeOptions } from 'react-native-qrcode-skia';
 import { useCallback } from 'react';
 import { generateHarmonizedColors } from '../utils';
 
+export const Shapes: BaseShapeOptions[] = [
+  'square',
+  'circle',
+  'rounded',
+  'diamond',
+  'triangle',
+  'star',
+];
+
 export const BaseShapeAtom = atom<BaseShapeOptions>('circle');
 export const EyePatternShapeAtom = atom<BaseShapeOptions>('square');
 
