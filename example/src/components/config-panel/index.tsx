@@ -5,7 +5,7 @@ import {
   useWindowDimensions,
   View,
 } from 'react-native';
-import { ShapeSelector } from '../shape-selector';
+import { ShapeOptionPreview } from '../shape-option-preview';
 import { Separator } from '../separator';
 import { useAtom } from 'jotai';
 import {
@@ -20,9 +20,9 @@ import {
 } from '../../states';
 import React from 'react';
 import type { BaseShapeOptions } from 'react-native-qrcode-skia';
-import { GradientSelector } from '../gradient-selector';
-import { NumberSelector } from '../number-selector';
-import { LogoSelector } from '../logo-selector';
+import { GradientOptionPreview } from '../gradient-option-preview';
+import { NumberOptionPreview } from '../number-option-preview';
+import { LogoOptionPreview } from '../logo-option-preview';
 
 const Shapes: BaseShapeOptions[] = [
   'square',
@@ -61,7 +61,7 @@ export const ConfigPanel = () => {
         contentContainerStyle={styles.selector}
       >
         {Shapes.map((shape) => (
-          <ShapeSelector
+          <ShapeOptionPreview
             key={shape}
             shape={shape}
             isActive={baseShape === shape}
@@ -80,7 +80,7 @@ export const ConfigPanel = () => {
         contentContainerStyle={styles.selector}
       >
         {Shapes.map((shape) => (
-          <ShapeSelector
+          <ShapeOptionPreview
             key={shape}
             shape={shape}
             isActive={eyePatternShape === shape}
@@ -93,7 +93,7 @@ export const ConfigPanel = () => {
       <Separator />
 
       <Text style={styles.label}>Base Padding</Text>
-      <NumberSelector
+      <NumberOptionPreview
         max={4}
         min={0}
         value={basePadding}
@@ -102,7 +102,7 @@ export const ConfigPanel = () => {
       />
       <Separator />
       <Text style={styles.label}>Eye Pattern Padding</Text>
-      <NumberSelector
+      <NumberOptionPreview
         style={listStyle}
         max={4}
         min={0}
@@ -118,7 +118,7 @@ export const ConfigPanel = () => {
         contentContainerStyle={styles.selector}
       >
         {GradientTypeOptions.map((gradient) => (
-          <GradientSelector
+          <GradientOptionPreview
             key={gradient}
             type={gradient}
             onPress={() => {
@@ -137,7 +137,7 @@ export const ConfigPanel = () => {
         contentContainerStyle={styles.selector}
       >
         {LogoEmojis.map((logo) => (
-          <LogoSelector
+          <LogoOptionPreview
             key={logo}
             isActive={selectedLogo === logo}
             onPress={() => {

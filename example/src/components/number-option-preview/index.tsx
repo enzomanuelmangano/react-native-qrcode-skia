@@ -10,7 +10,7 @@ import React from 'react';
 import { Entypo } from '@expo/vector-icons';
 import { PressableScale } from '../pressable-scale';
 
-type NumberSelectorProps = {
+export type NumberOptionPreviewProps = {
   value: number;
   onChange: (value: number) => void;
   min?: number;
@@ -18,8 +18,14 @@ type NumberSelectorProps = {
   style?: StyleProp<ViewStyle>;
 };
 
-export const NumberSelector = React.memo(
-  ({ value, onChange, min = 0, max = 100, style }: NumberSelectorProps) => {
+export const NumberOptionPreview = React.memo(
+  ({
+    value,
+    onChange,
+    min = 0,
+    max = 100,
+    style,
+  }: NumberOptionPreviewProps) => {
     const { width: windowWidth } = useWindowDimensions();
     return (
       <View

@@ -6,10 +6,10 @@ import {
 } from '@shopify/react-native-skia';
 import React from 'react';
 import { RadialGradient } from '@shopify/react-native-skia';
-import type { GradientSelectorProps } from './types';
+import type { GradientOptionPreviewProps } from './types';
 
 type GetSkiaGradientByTypeParams = {
-  gradient: GradientSelectorProps['type'];
+  gradient: GradientOptionPreviewProps['type'];
   colors: string[];
   size: number;
 };

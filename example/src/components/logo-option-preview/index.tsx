@@ -2,17 +2,17 @@ import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 import { TouchableHighlight } from '../touchable-highlight';
 
-type LogoSelectorProps = {
+export type LogoOptionPreviewProps = {
   onPress: () => void;
   isActive?: boolean;
   logoEmoji: string;
 };
 
-export const LogoSelector = ({
+export const LogoOptionPreview = ({
   onPress,
   isActive,
   logoEmoji,
-}: LogoSelectorProps) => {
+}: LogoOptionPreviewProps) => {
   return (
     <TouchableHighlight
       size={64}

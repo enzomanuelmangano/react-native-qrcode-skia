@@ -2,6 +2,7 @@ import { StyleSheet, Text } from 'react-native';
 import { PressableScale } from '../pressable-scale';
 import { Ionicons } from '@expo/vector-icons';
 import { useCopyQrCode } from './hooks/use-copy-qrcode';
+import React from 'react';
 
 export const QrCodeCopyButton = () => {
   const copyQrCode = useCopyQrCode();

@@ -9,7 +9,7 @@ import {
   SelectedLogoAtom,
   FilteredColorsAtom,
 } from '../../../states';
-import { getSkiaGradientStringByType } from '../../gradient-selector/utils';
+import { getSkiaGradientStringByType } from '../../gradient-option-preview/utils';
 
 const SponsorUrl = 'https://patreon.com/reactiive';
 const QRCodeSize = 200;

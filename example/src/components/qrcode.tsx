@@ -10,7 +10,7 @@ import {
   useRandomColors,
   SelectedLogoAtom,
 } from '../states';
-import { getSkiaGradientByType } from './gradient-selector/utils';
+import { getSkiaGradientByType } from './gradient-option-preview';
 import { PressableScale } from './pressable-scale';
 import { StyleSheet, Text, View } from 'react-native';
 
