@@ -1,12 +1,5 @@
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  useWindowDimensions,
-  View,
-} from 'react-native';
+import { useWindowDimensions, View } from 'react-native';
 import { ShapeOptionPreview } from '../shape-option-preview';
-import { Separator } from '../separator';
 import { useAtom } from 'jotai';
 import {
   BasePaddingAtom,
@@ -23,6 +16,7 @@ import type { BaseShapeOptions } from 'react-native-qrcode-skia';
 import { GradientOptionPreview } from '../gradient-option-preview';
 import { NumberOptionPreview } from '../number-option-preview';
 import { LogoOptionPreview } from '../logo-option-preview';
+import { SelectorSection } from './selector-section';
 
 const Shapes: BaseShapeOptions[] = [
   'square',
@@ -53,128 +47,79 @@ export const ConfigPanel = () => {
 
   return (
     <View>
-      <Text style={styles.label}>Base Shape</Text>
-      <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        style={listStyle}
-        contentContainerStyle={styles.selector}
-      >
-        {Shapes.map((shape) => (
+      <SelectorSection
+        label="Base Shape"
+        data={Shapes}
+        renderItem={(shape) => (
           <ShapeOptionPreview
-            key={shape}
             shape={shape}
             isActive={baseShape === shape}
-            onPress={() => {
-              setBaseShape(shape);
-            }}
+            onPress={() => setBaseShape(shape)}
           />
-        ))}
-      </ScrollView>
-      <Separator />
-      <Text style={styles.label}>Eye Pattern Shapes</Text>
-      <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        style={listStyle}
-        contentContainerStyle={styles.selector}
-      >
-        {Shapes.map((shape) => (
+        )}
+      />
+
+      <SelectorSection
+        label="Eye Pattern Shapes"
+        data={Shapes}
+        renderItem={(shape) => (
           <ShapeOptionPreview
-            key={shape}
             shape={shape}
             isActive={eyePatternShape === shape}
-            onPress={() => {
-              setEyePatternShape(shape);
-            }}
+            onPress={() => setEyePatternShape(shape)}
           />
-        ))}
-      </ScrollView>
-      <Separator />
+        )}
+      />
 
-      <Text style={styles.label}>Base Padding</Text>
-      <NumberOptionPreview
-        max={4}
-        min={0}
-        value={basePadding}
-        onChange={setBasePadding}
-        style={listStyle}
+      <SelectorSection
+        label="Base Padding"
+        customContent={
+          <NumberOptionPreview
+            max={4}
+            min={0}
+            value={basePadding}
+            onChange={setBasePadding}
+            style={listStyle}
+          />
+        }
       />
-      <Separator />
-      <Text style={styles.label}>Eye Pattern Padding</Text>
-      <NumberOptionPreview
-        style={listStyle}
-        max={4}
-        min={0}
-        value={eyePatternPadding}
-        onChange={setEyePatternPadding}
+
+      <SelectorSection
+        label="Eye Pattern Padding"
+        customContent={
+          <NumberOptionPreview
+            style={listStyle}
+            max={4}
+            min={0}
+            value={eyePatternPadding}
+            onChange={setEyePatternPadding}
+          />
+        }
       />
-      <Separator />
-      <Text style={styles.label}>Gradient</Text>
-      <ScrollView
-        horizontal
-        style={listStyle}
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={styles.selector}
-      >
-        {GradientTypeOptions.map((gradient) => (
+
+      <SelectorSection
+        label="Gradient"
+        data={GradientTypeOptions}
+        renderItem={(gradient) => (
           <GradientOptionPreview
-            key={gradient}
             type={gradient}
-            onPress={() => {
-              setGradientType(gradient);
-            }}
+            onPress={() => setGradientType(gradient)}
             isActive={gradientType === gradient}
           />
-        ))}
-      </ScrollView>
-      <Separator />
-      <Text style={styles.label}>Logo</Text>
-      <ScrollView
-        horizontal
-        style={listStyle}
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={styles.selector}
-      >
-        {LogoEmojis.map((logo) => (
+        )}
+      />
+
+      <SelectorSection
+        label="Logo"
+        data={LogoEmojis}
+        renderItem={(logo) => (
           <LogoOptionPreview
-            key={logo}
             isActive={selectedLogo === logo}
-            onPress={() => {
-              setSelectedLogo(logo);
-            }}
+            onPress={() => setSelectedLogo(logo)}
             logoEmoji={logo}
           />
-        ))}
-      </ScrollView>
+        )}
+      />
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  codes: { flex: 1, justifyContent: 'space-around' },
-  codeContainer: {
-    backgroundColor: '#080808',
-    padding: Padding,
-    shadowColor: '#FFF',
-    shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.3,
-    shadowRadius: 100,
-    borderRadius: 5,
-    elevation: 5,
-  },
-  label: {
-    fontSize: 18,
-    color: 'white',
-    marginBottom: 14,
-    marginLeft: 2,
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
-  },
-  selector: {
-    gap: 14,
-  },
-});
