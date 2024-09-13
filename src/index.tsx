@@ -16,7 +16,7 @@ const QRCode: React.FC<QRCodeProps> = React.memo(
   ({
     value,
     style,
-    pathColor = '#000000',
+    color = '#000000',
     children,
     errorCorrectionLevel = 'H',
     strokeWidth = 1,
@@ -75,7 +75,7 @@ const QRCode: React.FC<QRCodeProps> = React.memo(
             <SkiaPath
               strokeWidth={strokeWidth}
               path={path}
-              color={pathColor}
+              color={color}
               style={pathStyle}
             >
               {children}

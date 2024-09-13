@@ -87,7 +87,7 @@ export default App;
 
 - `errorCorrectionLevel` (ErrorCorrectionLevelType, optional) - The error correction level for the QRCode. Level L: 7%, level M: 15%, level Q: 25%, level H: 30%. Default value is 'H'.
 
-- `pathColor` (string, optional) - The color of the QRCode path. Default value is '#000000'.
+- `color` (string, optional) - The color of the QRCode base path. Default value is '#000000'.
 
 - `strokeWidth` (number, optional) - The percentage of the strokeWidth (0 to 1). Default value is 1.
 

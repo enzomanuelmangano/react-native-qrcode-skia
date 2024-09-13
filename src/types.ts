@@ -29,10 +29,10 @@ export type QRCodeProps = {
    * Default value is 'H'.
    */
   errorCorrectionLevel?: ErrorCorrectionLevelType;
-  /** The color of the QRCode path.
+  /** The color of the QRCode base path.
    * Default value is '#000000'.
    */
-  pathColor?: string;
+  color?: string;
   /**
    * The percentage of the strokeWidth (0 to 1)
    * Default value is 1.
