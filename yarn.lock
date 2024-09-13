@@ -6540,6 +6540,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"burnt@npm:^0.12.2":
+  version: 0.12.2
+  resolution: "burnt@npm:0.12.2"
+  dependencies:
+    sf-symbols-typescript: ^1.0.0
+    sonner: ^0.3.5
+  peerDependencies:
+    expo: "*"
+    react: "*"
+    react-native: "*"
+  checksum: ed4ee9a058a05720c332e28cb69239ad679f131e038281e8593213ff038fb0e48750fe0bfcd163893b0f704fb27781c06c839bef5e87add83fa666e38d9d70d6
+  languageName: node
+  linkType: hard
+
 "bytes@npm:3.0.0":
   version: 3.0.0
   resolution: "bytes@npm:3.0.0"
@@ -9413,6 +9427,15 @@ __metadata:
   peerDependencies:
     expo: "*"
   checksum: abf6afee29db1df356008b2260ecfd37eafdeeda989deeaf546d6c6857f82f71efe6d2f6e348d5bf0f077325f9ce2c8dad006ad5d8d2df35cdd9bf3dc15e714a
+  languageName: node
+  linkType: hard
+
+"expo-clipboard@npm:~6.0.3":
+  version: 6.0.3
+  resolution: "expo-clipboard@npm:6.0.3"
+  peerDependencies:
+    expo: "*"
+  checksum: 5ef6bd9c98c8c7aa1e4fb9c50ce89f131c8c9b792de4b7403a32715711c46b03a1c0fc7eae04e05979ae395fa24f1448b0f845817d57b9a8aa69f1299c5c6abc
   languageName: node
   linkType: hard
 
@@ -16084,7 +16107,9 @@ __metadata:
     "@shopify/react-native-skia": ^1.2.3
     babel-loader: ^8.1.0
     babel-plugin-module-resolver: ^5.0.0
+    burnt: ^0.12.2
     expo: ~51.0.31
+    expo-clipboard: ~6.0.3
     expo-constants: ~16.0.2
     expo-linking: ~6.3.1
     expo-router: ~3.5.23
@@ -17359,6 +17384,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"sf-symbols-typescript@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "sf-symbols-typescript@npm:1.0.0"
+  checksum: ab7f427b6145ba308e9ab0357e86a8b32c4bd2ed7d5bba983812483b6f8320097121a7dac1855d344cf8b5a6e45ef9b7e8f121ad640fc7821f3fd433a8280567
+  languageName: node
+  linkType: hard
+
 "shallow-clone@npm:^3.0.0":
   version: 3.0.1
   resolution: "shallow-clone@npm:3.0.1"
@@ -17548,6 +17580,16 @@ __metadata:
     ip-address: ^9.0.5
     smart-buffer: ^4.2.0
   checksum: 29586d42e9c36c5016632b2bcb6595e3adfbcb694b3a652c51bc8741b079c5ec37bdd5675a1a89a1620078c8137208294991fabb50786f92d47759a725b2b62e
+  languageName: node
+  linkType: hard
+
+"sonner@npm:^0.3.5":
+  version: 0.3.5
+  resolution: "sonner@npm:0.3.5"
+  peerDependencies:
+    react: ^18.0.0
+    react-dom: ^18.0.0
+  checksum: c0c564eddef03edb61d5a9ba4993d2a2d05a1e24e7ac9bdd4fa461e8b1fceeef69b99d4da0ffa23b3e8cbffdb660eb54327d583a9131aca34eb436a88a063691
   languageName: node
   linkType: hard
 

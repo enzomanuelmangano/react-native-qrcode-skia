@@ -6,6 +6,7 @@ import { ActivityIndicator, StyleSheet, View } from 'react-native';
 
 import { WithSkiaWeb } from '@shopify/react-native-skia/lib/module/web';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { Toaster } from 'burnt/web';
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
           }
         />
       </GestureHandlerRootView>
+      <Toaster position="bottom-right" />
     </React.Suspense>
   );
 }
