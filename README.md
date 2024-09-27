@@ -6,12 +6,7 @@ A lightweight and high-performance QR code generator component for React Native,
 
 Generate your **QR Code** in less than 30 seconds using [qrcode.reactiive.io](https://qrcode.reactiive.io).
 
-<div align="center">
-    <a href="https://qrcode.reactiive.io" target="_blank" rel="noopener noreferrer">
-        <img src="https://github.com/enzomanuelmangano/react-native-qrcode-skia/blob/main/.assets/poster.png" title="react-native-qrcode-skia">
-    </a>
-</div>
-
+https://github.com/user-attachments/assets/ec0acc48-1204-48ed-8106-45669af96593
 
 ## Installation
 
