@@ -55,7 +55,8 @@ const App = () => {
         shape: "circle",
         eyePatternShape: "rounded",
         eyePatternGap: 0,
-        gap: 0
+        gap: 0,
+        logoAreaBorderRadius: 0
       }}
       logoAreaSize={70}
       logo={
@@ -104,6 +105,8 @@ export default App;
   - `eyePatternGap` (number, optional) - The gap in the eye patterns. Default is 0.
 
 - `logoAreaSize` (number, optional) - The size of the logo area within the QRCode.
+
+- `logoAreaBorderRadius` (number, optional) - The border radius of the logo area in the QR code. Default is 0.
 
 - `logo` (React.ReactNode, optional) - The logo component to be rendered within the QRCode.
 

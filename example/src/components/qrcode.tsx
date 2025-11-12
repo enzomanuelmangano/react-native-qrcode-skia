@@ -9,6 +9,7 @@ import {
   SelectedGradientAtom,
   useRandomColors,
   SelectedLogoAtom,
+  LogoAreaBorderRadiusAtom,
 } from '../states';
 import { getSkiaGradientByType } from './gradient-option-preview';
 import { PressableScale } from './pressable-scale';
@@ -24,6 +25,7 @@ function QRCodeDemo() {
   const baseGap = useAtomValue(BaseGapAtom);
   const eyePatternGap = useAtomValue(EyePatternGapAtom);
   const gradientType = useAtomValue(SelectedGradientAtom);
+  const logoAreaBorderRadius = useAtomValue(LogoAreaBorderRadiusAtom);
   const { colors, generateColors } = useRandomColors();
 
   const gradientComponent = useMemo(
@@ -61,6 +63,7 @@ function QRCodeDemo() {
           gap: baseGap,
           eyePatternGap: eyePatternGap,
           eyePatternShape: eyePatternShape,
+          logoAreaBorderRadius: logoAreaBorderRadius,
         }}
         {...logoProps}
       >

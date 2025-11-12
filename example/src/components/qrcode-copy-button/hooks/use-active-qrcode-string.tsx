@@ -8,6 +8,7 @@ import {
   SelectedGradientAtom,
   SelectedLogoAtom,
   FilteredColorsAtom,
+  LogoAreaBorderRadiusAtom,
 } from '../../../states';
 import { getSkiaGradientStringByType } from '../../gradient-option-preview/utils';
 
@@ -22,6 +23,7 @@ export const useGetActiveQrCodeString = () => {
   const gradientType = useAtomValue(SelectedGradientAtom);
   const selectedLogo = useAtomValue(SelectedLogoAtom);
   const colors = useAtomValue(FilteredColorsAtom);
+  const logoAreaBorderRadius = useAtomValue(LogoAreaBorderRadiusAtom);
 
   const getActiveQrCodeString = useCallback(() => {
     const logoProps = (() => {
@@ -51,6 +53,7 @@ export const useGetActiveQrCodeString = () => {
         eyePatternShape: "${eyePatternShape}",
         eyePatternGap: ${eyePatternGap},
         gap: ${baseGap}
+        logoAreaBorderRadius: ${logoAreaBorderRadius},
       }}${logoProps}
     >
       ${getSkiaGradientStringByType({
@@ -70,6 +73,7 @@ export const useGetActiveQrCodeString = () => {
     gradientType,
     colors,
     selectedLogo,
+    logoAreaBorderRadius,
   ]);
 
   return getActiveQrCodeString;

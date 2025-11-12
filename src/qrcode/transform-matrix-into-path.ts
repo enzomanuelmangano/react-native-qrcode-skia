@@ -11,6 +11,7 @@ export type ShapeOptions = {
   eyePatternShape?: BaseShapeOptions;
   gap?: number;
   eyePatternGap?: number;
+  logoAreaBorderRadius?: number;
 };
 
 const defaultShapeOptions: ShapeOptions = {
@@ -18,6 +19,7 @@ const defaultShapeOptions: ShapeOptions = {
   eyePatternShape: 'rounded',
   gap: 0,
   eyePatternGap: 0,
+  logoAreaBorderRadius: 0,
 };
 
 type Point = {
@@ -55,6 +57,7 @@ const transformMatrixIntoPath = (
     eyePatternShape = 'rounded',
     gap = 0,
     eyePatternGap = 0,
+    logoAreaBorderRadius = 0,
   } = options;
   const cellSize = size / matrix.length;
   let path = '';
@@ -93,14 +96,81 @@ const transformMatrixIntoPath = (
 
   const isLogoArea = (i: number, j: number): boolean => {
     if (logoSize === 0) return false;
+
     const center = Math.floor(matrix.length / 2);
     const logoRadius = Math.floor(logoSize / cellSize / 2);
-    return (
-      i >= center - logoRadius &&
-      i <= center + logoRadius &&
-      j >= center - logoRadius &&
-      j <= center + logoRadius
-    );
+
+    if (logoAreaBorderRadius === 0) {
+      return (
+        i >= center - logoRadius &&
+        i <= center + logoRadius &&
+        j >= center - logoRadius &&
+        j <= center + logoRadius
+      );
+    }
+
+    // Rounded rectangle logic
+    const logoAreaX = (center - logoRadius) * cellSize;
+    const logoAreaY = (center - logoRadius) * cellSize;
+    const logoAreaSize = (logoRadius * 2 + 1) * cellSize;
+    const r = Math.min(logoAreaBorderRadius, logoAreaSize / 2);
+
+    const cellCenterX = j * cellSize + cellSize / 2;
+    const cellCenterY = i * cellSize + cellSize / 2;
+
+    // Center rectangle (excluding corners)
+    if (
+      cellCenterX >= logoAreaX + r &&
+      cellCenterX <= logoAreaX + logoAreaSize - r &&
+      cellCenterY >= logoAreaY &&
+      cellCenterY <= logoAreaY + logoAreaSize
+    )
+      return true;
+
+    if (
+      cellCenterY >= logoAreaY + r &&
+      cellCenterY <= logoAreaY + logoAreaSize - r &&
+      cellCenterX >= logoAreaX &&
+      cellCenterX <= logoAreaX + logoAreaSize
+    )
+      return true;
+
+    // Corner circle checks
+    const inCornerCircle = (cx: number, cy: number): boolean => {
+      const dx = cellCenterX - cx;
+      const dy = cellCenterY - cy;
+      return dx * dx + dy * dy <= r * r;
+    };
+
+    // Top-left
+    if (cellCenterX < logoAreaX + r && cellCenterY < logoAreaY + r)
+      return inCornerCircle(logoAreaX + r, logoAreaY + r);
+
+    // Top-right
+    if (
+      cellCenterX > logoAreaX + logoAreaSize - r &&
+      cellCenterY < logoAreaY + r
+    )
+      return inCornerCircle(logoAreaX + logoAreaSize - r, logoAreaY + r);
+
+    // Bottom-right
+    if (
+      cellCenterX > logoAreaX + logoAreaSize - r &&
+      cellCenterY > logoAreaY + logoAreaSize - r
+    )
+      return inCornerCircle(
+        logoAreaX + logoAreaSize - r,
+        logoAreaY + logoAreaSize - r
+      );
+
+    // Bottom-left
+    if (
+      cellCenterX < logoAreaX + r &&
+      cellCenterY > logoAreaY + logoAreaSize - r
+    )
+      return inCornerCircle(logoAreaX + r, logoAreaY + logoAreaSize - r);
+
+    return false;
   };
 
   const renderElement = (

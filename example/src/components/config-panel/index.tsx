@@ -8,16 +8,12 @@ import {
   EyePatternShapeSelector,
   GradientSelector,
   LogoSelector,
+  LogoBorderRadiusSelector,
 } from './selectors';
 
 export const ConfigPanel = () => {
   return (
-    <ScrollView
-      style={{
-        overflow: 'visible',
-        maxHeight: 650,
-      }}
-    >
+    <ScrollView style={styles.container}>
       <View>
         <EyePatternShapeSelector />
         <BaseShapeSelector />
@@ -30,6 +26,9 @@ export const ConfigPanel = () => {
             <BasePaddingSelector />
           </View>
           <View style={styles.fill} />
+          <View>
+            <LogoBorderRadiusSelector />
+          </View>
         </View>
         <GradientSelector />
         <LogoSelector />
@@ -39,6 +38,10 @@ export const ConfigPanel = () => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    overflow: 'visible',
+    maxHeight: 650,
+  },
   list: {
     maxHeight: 650,
     overflow: 'visible',

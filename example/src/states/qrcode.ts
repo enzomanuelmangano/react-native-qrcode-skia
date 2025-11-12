@@ -18,7 +18,7 @@ export const EyePatternShapeAtom = atom<BaseShapeOptions>('rounded');
 
 export const BaseGapAtom = atom(0);
 export const EyePatternGapAtom = atom(0);
-
+export const LogoAreaBorderRadiusAtom = atom(0);
 export const GradientTypeOptions = [
   'radial',
   'linear',

@@ -35,7 +35,7 @@ export const NumberOptionPreview = React.memo(
         }}
       >
         <PressableScale
-          style={{ ...styles.button, marginRight: 8 }}
+          style={{ ...styles.button, ...styles.buttonMargin }}
           onPress={() => onChange(Math.max(min, value - 1))}
         >
           <Entypo name="minus" size={18} color="#fff" />
@@ -67,6 +67,9 @@ const styles = StyleSheet.create({
     borderColor: '#fff',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  buttonMargin: {
+    marginRight: 8,
   },
   text: {
     fontSize: 24,
