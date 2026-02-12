@@ -1,10 +1,8 @@
 import { useCallback } from 'react';
 import { useSelector } from '@legendapp/state/react';
-import {
-  qrcodeState$,
-  filteredColors$,
-} from '../../../states';
-import { getSkiaGradientStringByType } from '../../gradient-option-preview/utils';
+import { qrcodeState$, GapValues } from '../../../states';
+import { Themes } from '../../../constants';
+import { getSkiaGradientStringByType } from '../../../utils/gradient';
 
 const SponsorUrl = 'https://patreon.com/reactiive';
 const QRCodeSize = 200;
@@ -12,11 +10,12 @@ const QRCodeSize = 200;
 export const useGetActiveQrCodeString = () => {
   const baseShape = useSelector(qrcodeState$.baseShape);
   const eyePatternShape = useSelector(qrcodeState$.eyePatternShape);
-  const baseGap = useSelector(qrcodeState$.baseGap);
-  const eyePatternGap = useSelector(qrcodeState$.eyePatternGap);
+  const gapSize = useSelector(qrcodeState$.gap);
+  const gap = GapValues[gapSize];
   const gradientType = useSelector(qrcodeState$.selectedGradient);
   const selectedLogo = useSelector(qrcodeState$.selectedLogo);
-  const colors = useSelector(filteredColors$);
+  const currentThemeName = useSelector(qrcodeState$.currentTheme);
+  const colors = [...Themes[currentThemeName].colors];
 
   const getActiveQrCodeString = useCallback(() => {
     const logoProps = (() => {
@@ -44,8 +43,8 @@ export const useGetActiveQrCodeString = () => {
       shapeOptions={{
         shape: "${baseShape}",
         eyePatternShape: "${eyePatternShape}",
-        eyePatternGap: ${eyePatternGap},
-        gap: ${baseGap}
+        eyePatternGap: ${gap},
+        gap: ${gap}
       }}${logoProps}
     >
       ${getSkiaGradientStringByType({
@@ -60,11 +59,11 @@ export const useGetActiveQrCodeString = () => {
   }, [
     baseShape,
     eyePatternShape,
-    eyePatternGap,
-    baseGap,
+    gap,
     gradientType,
     colors,
     selectedLogo,
+    currentThemeName,
   ]);
 
   return getActiveQrCodeString;

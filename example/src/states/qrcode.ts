@@ -1,9 +1,6 @@
-import { observable, computed } from '@legendapp/state';
-import { useSelector } from '@legendapp/state/react';
+import { observable } from '@legendapp/state';
 import type { BaseShapeOptions } from 'react-native-qrcode-skia';
-
-import { useCallback } from 'react';
-import { generateHarmonizedColors } from '../utils';
+import { Themes, type ThemeName } from '../constants';
 
 export const Shapes: BaseShapeOptions[] = [
   'square',
@@ -14,13 +11,23 @@ export const Shapes: BaseShapeOptions[] = [
   'star',
 ];
 
+export const GapSizes = ['xs', 'sm', 'md', 'lg', 'xl'] as const;
+export type GapSize = (typeof GapSizes)[number];
+
+export const GapValues: Record<GapSize, number> = {
+  xs: 0,
+  sm: 1,
+  md: 2,
+  lg: 3,
+  xl: 4,
+};
+
 export const qrcodeState$ = observable({
   baseShape: 'circle' as BaseShapeOptions,
   eyePatternShape: 'rounded' as BaseShapeOptions,
-  baseGap: 0,
-  eyePatternGap: 0,
+  gap: 'xs' as GapSize,
   selectedGradient: 'radial' as GradientType,
-  colors: ['#eeca3b', '#3bee3b', '#3bcaee', '#833bee', '#ee3b83'],
+  currentTheme: 'raindrop' as ThemeName,
   selectedLogo: '🦊',
 });
 
@@ -31,26 +38,11 @@ export const GradientTypeOptions = [
   'sweep',
   'conical',
 ] as const;
-type GradientType = (typeof GradientTypeOptions)[number];
+export type GradientType = (typeof GradientTypeOptions)[number];
 
-export const filteredColors$ = computed((): string[] => {
-  const colors = qrcodeState$.colors.get();
-  const gradientType = qrcodeState$.selectedGradient.get();
-  if (gradientType !== 'sweep') {
-    const first = colors[0] ?? '#000000';
-    const last = colors[colors.length - 1] ?? '#000000';
-    return [first, last];
-  }
-  return colors;
-});
-
-export const useRandomColors = () => {
-  const colors = useSelector(filteredColors$);
-  const generateColors = useCallback(() => {
-    qrcodeState$.colors.set(generateHarmonizedColors());
-  }, []);
-
-  return { colors, generateColors };
+export const getCurrentTheme = () => {
+  const themeName = qrcodeState$.currentTheme.get();
+  return Themes[themeName];
 };
 
 export const LogoEmojis = ['', '🐶', '🐰', '🦊', '🐼', '🐨'];

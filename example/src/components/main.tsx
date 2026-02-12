@@ -3,71 +3,34 @@ import 'react-native-reanimated';
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
 
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import 'react-native-reanimated';
-import QRCodeDemo from '../components/qrcode';
-
-import { ConfigPanel } from './config-panel';
-import { QrCodeCopyButton } from './qrcode-copy-button';
-import useDimensions from '../hooks/useDimensions';
+import QRCodeDemo from './qrcode';
+import { Panel } from './panel';
+import { theme } from '../theme';
 
 export default function App() {
-  const { isLessThan } = useDimensions();
-
-  if (isLessThan('md')) {
-    return (
-      <ScrollView
-        style={styles.container}
-        contentContainerStyle={styles.contentContainer}
-      >
-        <StatusBar style="light" hidden />
-        <View style={styles.qrCodeContainer}>
-          <QRCodeDemo />
-          <QrCodeCopyButton />
-        </View>
-        <ConfigPanel />
-      </ScrollView>
-    );
-  }
-
   return (
-    <View
-      style={{
-        ...styles.container,
-        ...styles.smallContainer,
-      }}
-    >
+    <View style={styles.container}>
       <StatusBar style="light" hidden />
-      <View style={styles.fillCenter}>
-        <ConfigPanel />
+      <View style={styles.content}>
+        <QRCodeDemo />
       </View>
-      <View style={styles.fillCenter}>
-        <View style={styles.qrCodeContainer}>
-          <QRCodeDemo />
-          <QrCodeCopyButton />
-        </View>
-      </View>
+      <Panel />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#000000',
+    flex: 1,
+    backgroundColor: theme.colors.background,
   },
-  smallContainer: { flex: 1, flexDirection: 'row', paddingHorizontal: 40 },
-  fillCenter: {
+  content: {
     flex: 1,
     justifyContent: 'center',
-  },
-  qrCodeContainer: {
-    minHeight: 300,
-    justifyContent: 'center',
     alignItems: 'center',
-  },
-  contentContainer: {
-    alignItems: 'center',
-    paddingBottom: 200,
+    paddingBottom: 100,
   },
 });

@@ -9,26 +9,29 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Toaster } from 'burnt/web';
 import { FontsProvider } from '../providers/fonts-provider';
 import { GitHubBanner } from '../components/github-banner';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 export default function App() {
   return (
     <React.Suspense>
-      <FontsProvider>
-        <GestureHandlerRootView style={styles.fill}>
-          <WithSkiaWeb
-            getComponent={async () => {
-              return require('../components/main');
-            }}
-            fallback={
-              <View style={styles.container}>
-                <ActivityIndicator size="large" color="white" />
-              </View>
-            }
-          />
-        </GestureHandlerRootView>
-      </FontsProvider>
-      <GitHubBanner />
-      <Toaster position="bottom-right" />
+      <SafeAreaProvider>
+        <FontsProvider>
+          <GestureHandlerRootView style={styles.fill}>
+            <WithSkiaWeb
+              getComponent={async () => {
+                return require('../components/main');
+              }}
+              fallback={
+                <View style={styles.container}>
+                  <ActivityIndicator size="large" color="white" />
+                </View>
+              }
+            />
+          </GestureHandlerRootView>
+        </FontsProvider>
+        <GitHubBanner />
+        <Toaster position="bottom-right" />
+      </SafeAreaProvider>
     </React.Suspense>
   );
 }
@@ -39,7 +42,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: '#0D0D0D',
     justifyContent: 'center',
     alignItems: 'center',
   },

@@ -1,34 +1,32 @@
 import QRCode from 'react-native-qrcode-skia';
 import React, { useMemo } from 'react';
 import { useSelector } from '@legendapp/state/react';
-import {
-  qrcodeState$,
-  useRandomColors,
-} from '../states';
-import { getSkiaGradientByType } from './gradient-option-preview';
-import { PressableScale } from './pressable-scale';
+import { qrcodeState$, GapValues } from '../states';
+import { Themes } from '../constants';
+import { getSkiaGradientByType } from '../utils/gradient';
 import { StyleSheet, Text, View } from 'react-native';
 
 const SponsorUrl = 'https://patreon.com/reactiive';
 
-const QRCodeSize = 200;
+const QRCodeSize = 220;
 
 function QRCodeDemo() {
   const baseShape = useSelector(qrcodeState$.baseShape);
   const eyePatternShape = useSelector(qrcodeState$.eyePatternShape);
-  const baseGap = useSelector(qrcodeState$.baseGap);
-  const eyePatternGap = useSelector(qrcodeState$.eyePatternGap);
+  const gapSize = useSelector(qrcodeState$.gap);
+  const gap = GapValues[gapSize];
   const gradientType = useSelector(qrcodeState$.selectedGradient);
-  const { colors, generateColors } = useRandomColors();
+  const currentThemeName = useSelector(qrcodeState$.currentTheme);
+  const theme = Themes[currentThemeName];
 
   const gradientComponent = useMemo(
     () =>
       getSkiaGradientByType({
         gradient: gradientType,
-        colors,
+        colors: [...theme.colors],
         size: QRCodeSize,
       }),
-    [gradientType, colors]
+    [gradientType, theme.colors]
   );
 
   const selectedLogo = useSelector(qrcodeState$.selectedLogo);
@@ -47,21 +45,19 @@ function QRCodeDemo() {
   }, [selectedLogo]);
 
   return (
-    <PressableScale onPress={generateColors}>
-      <QRCode
-        value={SponsorUrl}
-        size={QRCodeSize}
-        shapeOptions={{
-          shape: baseShape,
-          gap: baseGap,
-          eyePatternGap: eyePatternGap,
-          eyePatternShape: eyePatternShape,
-        }}
-        {...logoProps}
-      >
-        {gradientComponent}
-      </QRCode>
-    </PressableScale>
+    <QRCode
+      value={SponsorUrl}
+      size={QRCodeSize}
+      shapeOptions={{
+        shape: baseShape,
+        gap: gap,
+        eyePatternGap: gap,
+        eyePatternShape: eyePatternShape,
+      }}
+      {...logoProps}
+    >
+      {gradientComponent}
+    </QRCode>
   );
 }
 
