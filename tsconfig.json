@@ -4,6 +4,7 @@
     "paths": {
       "react-native-qrcode-skia": ["./src/index"]
     },
+    "types": ["jest", "qrcode", "react"],
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "esModuleInterop": true,

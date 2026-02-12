@@ -1,14 +1,9 @@
 import QRCode from 'react-native-qrcode-skia';
 import React, { useMemo } from 'react';
-import { useAtomValue } from 'jotai';
+import { useSelector } from '@legendapp/state/react';
 import {
-  BaseShapeAtom,
-  EyePatternShapeAtom,
-  BaseGapAtom,
-  EyePatternGapAtom,
-  SelectedGradientAtom,
+  qrcodeState$,
   useRandomColors,
-  SelectedLogoAtom,
 } from '../states';
 import { getSkiaGradientByType } from './gradient-option-preview';
 import { PressableScale } from './pressable-scale';
@@ -19,11 +14,11 @@ const SponsorUrl = 'https://patreon.com/reactiive';
 const QRCodeSize = 200;
 
 function QRCodeDemo() {
-  const baseShape = useAtomValue(BaseShapeAtom);
-  const eyePatternShape = useAtomValue(EyePatternShapeAtom);
-  const baseGap = useAtomValue(BaseGapAtom);
-  const eyePatternGap = useAtomValue(EyePatternGapAtom);
-  const gradientType = useAtomValue(SelectedGradientAtom);
+  const baseShape = useSelector(qrcodeState$.baseShape);
+  const eyePatternShape = useSelector(qrcodeState$.eyePatternShape);
+  const baseGap = useSelector(qrcodeState$.baseGap);
+  const eyePatternGap = useSelector(qrcodeState$.eyePatternGap);
+  const gradientType = useSelector(qrcodeState$.selectedGradient);
   const { colors, generateColors } = useRandomColors();
 
   const gradientComponent = useMemo(
@@ -36,7 +31,7 @@ function QRCodeDemo() {
     [gradientType, colors]
   );
 
-  const selectedLogo = useAtomValue(SelectedLogoAtom);
+  const selectedLogo = useSelector(qrcodeState$.selectedLogo);
   const logoProps = useMemo(() => {
     if (!selectedLogo) {
       return {};

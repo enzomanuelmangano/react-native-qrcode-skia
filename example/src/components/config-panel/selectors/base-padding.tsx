@@ -1,11 +1,11 @@
-import { useAtom } from 'jotai';
+import { useSelector } from '@legendapp/state/react';
 import { NumberOptionPreview } from '../../number-option-preview';
 import { SelectorSection } from '../selector-section';
-import { BaseGapAtom } from '../../../states';
+import { qrcodeState$ } from '../../../states';
 import React from 'react';
 
 export const BasePaddingSelector = React.memo(() => {
-  const [baseGap, setBaseGap] = useAtom(BaseGapAtom);
+  const baseGap = useSelector(qrcodeState$.baseGap);
   return (
     <SelectorSection
       label="Base Padding"
@@ -14,7 +14,7 @@ export const BasePaddingSelector = React.memo(() => {
           max={4}
           min={0}
           value={baseGap}
-          onChange={setBaseGap}
+          onChange={(value) => qrcodeState$.baseGap.set(value)}
         />
       }
     />

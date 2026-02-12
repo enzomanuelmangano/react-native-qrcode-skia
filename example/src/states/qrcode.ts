@@ -1,4 +1,5 @@
-import { atom, useAtomValue, useSetAtom } from 'jotai';
+import { observable, computed } from '@legendapp/state';
+import { useSelector } from '@legendapp/state/react';
 import type { BaseShapeOptions } from 'react-native-qrcode-skia';
 
 import { useCallback } from 'react';
@@ -13,11 +14,15 @@ export const Shapes: BaseShapeOptions[] = [
   'star',
 ];
 
-export const BaseShapeAtom = atom<BaseShapeOptions>('circle');
-export const EyePatternShapeAtom = atom<BaseShapeOptions>('rounded');
-
-export const BaseGapAtom = atom(0);
-export const EyePatternGapAtom = atom(0);
+export const qrcodeState$ = observable({
+  baseShape: 'circle' as BaseShapeOptions,
+  eyePatternShape: 'rounded' as BaseShapeOptions,
+  baseGap: 0,
+  eyePatternGap: 0,
+  selectedGradient: 'radial' as GradientType,
+  colors: ['#eeca3b', '#3bee3b', '#3bcaee', '#833bee', '#ee3b83'],
+  selectedLogo: '🦊',
+});
 
 export const GradientTypeOptions = [
   'radial',
@@ -28,37 +33,24 @@ export const GradientTypeOptions = [
 ] as const;
 type GradientType = (typeof GradientTypeOptions)[number];
 
-export const SelectedGradientAtom = atom<GradientType>('radial');
-
-export const ColorsAtom = atom<string[]>([
-  '#eeca3b',
-  '#3bee3b',
-  '#3bcaee',
-  '#833bee',
-  '#ee3b83',
-]);
-
-export const FilteredColorsAtom = atom<string[]>((get) => {
-  const colors = get(ColorsAtom);
-
-  const gradientType = get(SelectedGradientAtom);
+export const filteredColors$ = computed((): string[] => {
+  const colors = qrcodeState$.colors.get();
+  const gradientType = qrcodeState$.selectedGradient.get();
   if (gradientType !== 'sweep') {
-    const filteredColors = [colors[0], colors[colors.length - 1]];
-    return filteredColors as string[];
+    const first = colors[0] ?? '#000000';
+    const last = colors[colors.length - 1] ?? '#000000';
+    return [first, last];
   }
   return colors;
 });
 
 export const useRandomColors = () => {
-  const setColors = useSetAtom(ColorsAtom);
-  const colors = useAtomValue(FilteredColorsAtom);
+  const colors = useSelector(filteredColors$);
   const generateColors = useCallback(() => {
-    setColors(generateHarmonizedColors());
-  }, [setColors]);
+    qrcodeState$.colors.set(generateHarmonizedColors());
+  }, []);
 
   return { colors, generateColors };
 };
 
 export const LogoEmojis = ['', '🐶', '🐰', '🦊', '🐼', '🐨'];
-
-export const SelectedLogoAtom = atom<string>('🦊');
