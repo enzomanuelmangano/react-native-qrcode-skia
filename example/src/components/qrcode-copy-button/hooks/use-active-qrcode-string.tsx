@@ -4,10 +4,10 @@ import { qrcodeState$, GapValues } from '../../../states';
 import { Themes } from '../../../constants';
 import { getSkiaGradientStringByType } from '../../../utils/gradient';
 
-const SponsorUrl = 'https://patreon.com/reactiive';
 const QRCodeSize = 200;
 
 export const useGetActiveQrCodeString = () => {
+  const qrUrl = useSelector(qrcodeState$.qrUrl);
   const baseShape = useSelector(qrcodeState$.baseShape);
   const eyePatternShape = useSelector(qrcodeState$.eyePatternShape);
   const gapSize = useSelector(qrcodeState$.gap);
@@ -38,7 +38,7 @@ export const useGetActiveQrCodeString = () => {
 
     const qrCodeComponent = `
     <QRCode
-      value="${SponsorUrl}"
+      value="${qrUrl || ':)'}"
       size={${QRCodeSize}}
       shapeOptions={{
         shape: "${baseShape}",
@@ -57,6 +57,7 @@ export const useGetActiveQrCodeString = () => {
 
     return qrCodeComponent;
   }, [
+    qrUrl,
     baseShape,
     eyePatternShape,
     gap,

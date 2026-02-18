@@ -6,11 +6,10 @@ import { Themes } from '../constants';
 import { getSkiaGradientByType } from '../utils/gradient';
 import { StyleSheet, Text, View } from 'react-native';
 
-const SponsorUrl = 'https://patreon.com/reactiive';
-
 const QRCodeSize = 220;
 
 function QRCodeDemo() {
+  const qrUrl = useSelector(qrcodeState$.qrUrl);
   const baseShape = useSelector(qrcodeState$.baseShape);
   const eyePatternShape = useSelector(qrcodeState$.eyePatternShape);
   const gapSize = useSelector(qrcodeState$.gap);
@@ -46,7 +45,7 @@ function QRCodeDemo() {
 
   return (
     <QRCode
-      value={SponsorUrl}
+      value={qrUrl || ':)'}
       size={QRCodeSize}
       shapeOptions={{
         shape: baseShape,

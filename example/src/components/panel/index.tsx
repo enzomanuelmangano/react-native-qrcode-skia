@@ -9,6 +9,7 @@ import { ThemeDropdown } from './theme-dropdown';
 import { GradientSelector } from './gradient-selector';
 import { LogoDropdown } from './logo-dropdown';
 import { ExportButton } from './export-button';
+import { URLButton } from './url-button';
 import { qrcodeState$ } from '../../states';
 
 const Separator = () => <View style={styles.separator} />;
@@ -40,13 +41,19 @@ const GitHubButton = () => {
   );
 };
 
-export const Panel = () => {
+interface PanelProps {
+  onURLButtonPress: () => void;
+}
+
+export const Panel = ({ onURLButtonPress }: PanelProps) => {
   const insets = useSafeAreaInsets();
 
   return (
     <View style={[styles.container, { bottom: Math.max(insets.bottom, 24) }]}>
       <View style={styles.panel}>
         <View style={styles.controls}>
+          <URLButton onPress={onURLButtonPress} />
+          <Separator />
           <ThemeDropdown />
           <Separator />
           <GradientSelector />

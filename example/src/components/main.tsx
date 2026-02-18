@@ -2,13 +2,44 @@ import 'react-native-reanimated';
 
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
+import { useState, useCallback, useEffect } from 'react';
 
 import { StyleSheet, View, ActivityIndicator } from 'react-native';
 
 import { Panel } from './panel';
 import { QRCodeDisplay } from './qrcode-display';
+import { URLInputModal } from './url-input-modal';
 
 export default function App() {
+  const [isURLModalVisible, setIsURLModalVisible] = useState(false);
+
+  const handleURLButtonPress = useCallback(() => {
+    setIsURLModalVisible(true);
+  }, []);
+
+  const handleURLModalClose = useCallback(() => {
+    setIsURLModalVisible(false);
+  }, []);
+
+  // Cmd+K to toggle URL modal
+  useEffect(() => {
+    // @ts-ignore - document is available on web
+    if (typeof document !== 'undefined') {
+      const handleKeyDown = (e: { key: string; metaKey: boolean; ctrlKey: boolean; preventDefault: () => void }) => {
+        if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+          e.preventDefault();
+          setIsURLModalVisible((prev) => !prev);
+        }
+      };
+      // Use capture phase to catch event before input does
+      // @ts-ignore - document is available on web
+      document.addEventListener('keydown', handleKeyDown, true);
+      // @ts-ignore - document is available on web
+      return () => document.removeEventListener('keydown', handleKeyDown, true);
+    }
+    return undefined;
+  }, []);
+
   return (
     <View style={styles.container}>
       <StatusBar style="light" hidden />
@@ -23,7 +54,8 @@ export default function App() {
           <QRCodeDisplay />
         </React.Suspense>
       </View>
-      <Panel />
+      <Panel onURLButtonPress={handleURLButtonPress} />
+      <URLInputModal visible={isURLModalVisible} onClose={handleURLModalClose} />
     </View>
   );
 }
