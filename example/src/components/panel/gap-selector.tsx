@@ -99,11 +99,11 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 11,
     fontWeight: '600',
-    color: 'rgba(255,255,255,0.4)',
+    color: 'rgba(255,255,255,0.6)',
     textTransform: 'uppercase',
   },
   buttonTextHovered: {
-    color: 'rgba(255,255,255,0.7)',
+    color: 'rgba(255,255,255,0.9)',
   },
   buttonTextActive: {
     color: '#FFFFFF',
