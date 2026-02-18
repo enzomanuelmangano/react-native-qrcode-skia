@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, Pressable } from 'react-native';
+import { StyleSheet, Pressable } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { Ionicons } from '@expo/vector-icons';
 import { useSelector } from '@legendapp/state/react';
 import { useCopyQrCode } from '../qrcode-copy-button/hooks/use-copy-qrcode';
 import { qrcodeState$ } from '../../states';
@@ -32,14 +33,14 @@ export const ExportButton = () => {
         end={{ x: 1, y: 1 }}
         style={StyleSheet.absoluteFill}
       />
-      <Text style={styles.buttonText}>Copy</Text>
+      <Ionicons name="copy-outline" size={16} color="white" />
     </Pressable>
   );
 };
 
 const styles = StyleSheet.create({
   button: {
-    paddingHorizontal: 20,
+    width: 44,
     height: 44,
     borderRadius: 10,
     overflow: 'hidden',
@@ -52,10 +53,5 @@ const styles = StyleSheet.create({
   buttonPressed: {
     opacity: 0.85,
     transform: [{ scale: 0.98 }],
-  },
-  buttonText: {
-    color: '#FFFFFF',
-    fontSize: 13,
-    fontWeight: '600',
   },
 });

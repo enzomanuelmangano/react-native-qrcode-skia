@@ -23,12 +23,12 @@ export const GapValues: Record<GapSize, number> = {
 };
 
 export const qrcodeState$ = observable({
-  baseShape: 'rounded' as BaseShapeOptions,
+  baseShape: 'circle' as BaseShapeOptions,
   eyePatternShape: 'rounded' as BaseShapeOptions,
   gap: 'sm' as GapSize,
   selectedGradient: 'linear' as GradientType,
-  currentTheme: 'breeze' as ThemeName,
-  selectedLogo: '',
+  currentTheme: 'raindrop' as ThemeName,
+  selectedLogo: '🐨',
 });
 
 export const GradientTypeOptions = [
