@@ -146,6 +146,7 @@ const styles = StyleSheet.create({
   optionText: {
     color: 'rgba(255,255,255,0.6)',
     fontSize: 13,
+    fontWeight: '500',
   },
   optionTextHovered: {
     color: '#fff',

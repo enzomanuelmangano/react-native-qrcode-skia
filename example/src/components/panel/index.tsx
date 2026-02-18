@@ -46,8 +46,8 @@ const styles = StyleSheet.create({
   },
   panel: {
     height: 56,
-    backgroundColor: 'rgba(18,18,18,0.95)',
-    borderColor: 'rgba(255,255,255,0.1)',
+    backgroundColor: 'rgba(10,10,10,0.98)',
+    borderColor: 'rgba(255,255,255,0.08)',
     borderWidth: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',

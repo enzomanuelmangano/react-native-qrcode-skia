@@ -70,6 +70,8 @@ const LogoOption = ({ emoji, isSelected, onSelect }: LogoOptionProps) => {
 const styles = StyleSheet.create({
   triggerEmoji: {
     fontSize: 16,
+    width: 20,
+    textAlign: 'center',
   },
   option: {
     flexDirection: 'row',

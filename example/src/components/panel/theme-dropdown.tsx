@@ -219,6 +219,7 @@ const styles = StyleSheet.create({
     color: 'rgba(255,255,255,0.5)',
     fontSize: 13,
     fontWeight: '500',
+    width: 60,
   },
   buttonTextHovered: {
     color: 'rgba(255,255,255,0.95)',
