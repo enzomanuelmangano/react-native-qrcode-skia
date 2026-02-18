@@ -25,7 +25,7 @@ const GitHubButton = () => {
 
   const onPress = useCallback(() => {
     Linking.openURL(
-      'https://github.com/nicepkg/react-native-qrcode-skia'
+      'https://github.com/enzomanuelmangano/react-native-qrcode-skia'
     );
   }, []);
 
