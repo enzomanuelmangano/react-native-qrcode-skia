@@ -3,8 +3,8 @@ import { View, Text, Pressable, StyleSheet } from 'react-native';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
-  withSpring,
-  interpolate,
+  withTiming,
+  Easing,
 } from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
 import Svg, { Path } from 'react-native-svg';
@@ -13,15 +13,10 @@ import { useSelector } from '@legendapp/state/react';
 import { Themes, type ThemeName } from '../../constants';
 import { qrcodeState$ } from '../../states';
 
-const OPEN_CONFIG = {
-  dampingRatio: 0.9,
-  duration: 200,
-};
-
-const CLOSE_CONFIG = {
-  dampingRatio: 1,
-  duration: 250,
-};
+// Fast ease-out curve for snappy feel
+const EASING = Easing.out(Easing.cubic);
+const OPEN_DURATION = 150;
+const CLOSE_DURATION = 100;
 
 const Chevron = ({ color = 'rgba(255,255,255,0.4)' }: { color?: string }) => (
   <Svg width={10} height={10} viewBox="0 0 24 24" fill="none">
@@ -53,13 +48,13 @@ export const ThemeDropdown = () => {
       clearTimeout(closeTimeout.current);
       closeTimeout.current = null;
     }
-    animation.value = withSpring(1, OPEN_CONFIG);
+    animation.value = withTiming(1, { duration: OPEN_DURATION, easing: EASING });
   };
 
   const closeDropdown = () => {
     closeTimeout.current = setTimeout(() => {
-      animation.value = withSpring(0, CLOSE_CONFIG);
-    }, 50);
+      animation.value = withTiming(0, { duration: CLOSE_DURATION, easing: EASING });
+    }, 30);
   };
 
   const handleButtonHoverIn = () => {
@@ -89,15 +84,16 @@ export const ThemeDropdown = () => {
   const dropdownStyle = useAnimatedStyle(() => {
     return {
       opacity: animation.value,
-      transform: [{ translateY: interpolate(animation.value, [0, 1], [8, 0]) }],
+      transform: [
+        { translateY: (1 - animation.value) * 4 },
+        { scale: 0.97 + animation.value * 0.03 },
+      ],
       pointerEvents: animation.value > 0.5 ? 'auto' : 'none',
     };
   });
 
   const chevronStyle = useAnimatedStyle(() => ({
-    transform: [
-      { rotate: `${interpolate(animation.value, [0, 1], [0, 180])}deg` },
-    ],
+    transform: [{ rotate: `${animation.value * 180}deg` }],
   }));
 
   return (
@@ -121,7 +117,7 @@ export const ThemeDropdown = () => {
                   qrcodeState$.currentTheme.set(themeName);
                   setIsDropdownHovered(false);
                   setIsHovered(false);
-                  animation.value = withSpring(0, CLOSE_CONFIG);
+                  animation.value = withTiming(0, { duration: CLOSE_DURATION, easing: EASING });
                 }}
               />
             );

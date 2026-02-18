@@ -8,15 +8,10 @@ export const GapSelector = () => {
   const currentValue = useSelector(qrcodeState$.gap);
   const currentThemeName = useSelector(qrcodeState$.currentTheme);
   const theme = Themes[currentThemeName];
-  const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <Pressable
-      style={[styles.container, isHovered && styles.containerHovered]}
-      onHoverIn={() => setIsHovered(true)}
-      onHoverOut={() => setIsHovered(false)}
-    >
-      <Text style={[styles.label, isHovered && styles.labelHovered]}>Gap</Text>
+    <View style={styles.container}>
+      <Text style={styles.label}>Gap</Text>
       <View style={styles.selector}>
         {GapSizes.map((size) => (
           <GapButton
@@ -28,7 +23,7 @@ export const GapSelector = () => {
           />
         ))}
       </View>
-    </Pressable>
+    </View>
   );
 };
 
@@ -80,16 +75,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     gap: 10,
   },
-  containerHovered: {
-    backgroundColor: 'rgba(255,255,255,0.08)',
-  },
   label: {
     color: 'rgba(255,255,255,0.5)',
     fontSize: 13,
     fontWeight: '500',
-  },
-  labelHovered: {
-    color: 'rgba(255,255,255,0.95)',
   },
   selector: {
     flexDirection: 'row',
