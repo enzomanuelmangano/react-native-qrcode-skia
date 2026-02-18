@@ -22,11 +22,13 @@ const SPRING_CONFIG = {
 const AnimatedLogo = ({ emoji }: { emoji: string }) => {
   const copyTrigger = useSelector(qrcodeState$.copyTrigger);
   const rotation = useSharedValue(0);
+  const initialTrigger = React.useRef(copyTrigger);
 
   useEffect(() => {
-    if (copyTrigger > 0) {
-      // Animate to next 360 degree rotation
-      rotation.value = withSpring(copyTrigger * 360, SPRING_CONFIG);
+    const diff = copyTrigger - initialTrigger.current;
+    if (diff > 0) {
+      // Only animate for triggers since mount
+      rotation.value = withSpring(diff * 360, SPRING_CONFIG);
     }
   }, [copyTrigger, rotation]);
 
