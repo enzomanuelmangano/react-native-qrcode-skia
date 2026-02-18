@@ -39,3 +39,8 @@ export const Themes = {
 
 export type ThemeName = keyof typeof Themes;
 export type Theme = (typeof Themes)[ThemeName];
+
+// Feature Flags
+export const FeatureFlags = {
+  ENABLE_IMAGE_EXPORT: false,
+} as const;

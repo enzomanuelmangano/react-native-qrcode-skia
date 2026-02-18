@@ -9,8 +9,10 @@ import { ThemeDropdown } from './theme-dropdown';
 import { GradientSelector } from './gradient-selector';
 import { LogoDropdown } from './logo-dropdown';
 import { ExportButton } from './export-button';
+import { ImageExportButton } from './image-export-button';
 import { URLButton } from './url-button';
 import { qrcodeState$ } from '../../states';
+import { FeatureFlags } from '../../constants';
 
 const Separator = () => <View style={styles.separator} />;
 
@@ -66,6 +68,7 @@ export const Panel = ({ onURLButtonPress }: PanelProps) => {
           <LogoDropdown />
         </View>
         <View style={styles.actions}>
+          {FeatureFlags.ENABLE_IMAGE_EXPORT && <ImageExportButton />}
           <ExportButton />
           <GitHubButton />
         </View>
