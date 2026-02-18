@@ -30,6 +30,7 @@ export const qrcodeState$ = observable({
   selectedGradient: 'linear' as GradientType,
   currentTheme: 'raindrop' as ThemeName,
   selectedLogo: '🐨',
+  copyTrigger: 0,
 });
 
 export const GradientTypeOptions = [

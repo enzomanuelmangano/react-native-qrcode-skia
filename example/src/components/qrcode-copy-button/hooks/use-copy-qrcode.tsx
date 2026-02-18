@@ -4,6 +4,7 @@ import { Platform } from 'react-native';
 import Clipboard from '@react-native-clipboard/clipboard';
 import { useGetActiveQrCodeString } from './use-active-qrcode-string';
 import { Image } from 'expo-image';
+import { qrcodeState$ } from '../../../states';
 // @ts-ignore TODO: fix this
 import React from 'react';
 
@@ -16,6 +17,9 @@ export const useCopyQrCode = () => {
 
   const copyQrCode = useCallback(() => {
     Clipboard.setString(getActiveQrCodeString());
+
+    // Trigger logo spin animation
+    qrcodeState$.copyTrigger.set((prev) => prev + 1);
 
     if (Platform.OS === 'web') {
       // Burnt will fallback to Sonner on Web

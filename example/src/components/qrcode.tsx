@@ -1,12 +1,45 @@
 import QRCode from 'react-native-qrcode-skia';
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect } from 'react';
 import { useSelector } from '@legendapp/state/react';
 import { qrcodeState$, GapValues } from '../states';
 import { Themes } from '../constants';
 import { getSkiaGradientByType } from '../utils/gradient';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
+import Animated, {
+  useSharedValue,
+  useAnimatedStyle,
+  withSpring,
+} from 'react-native-reanimated';
 
 const QRCodeSize = 220;
+
+const SPRING_CONFIG = {
+  mass: 1,
+  stiffness: 80,
+  damping: 12,
+} as const;
+
+const AnimatedLogo = ({ emoji }: { emoji: string }) => {
+  const copyTrigger = useSelector(qrcodeState$.copyTrigger);
+  const rotation = useSharedValue(0);
+
+  useEffect(() => {
+    if (copyTrigger > 0) {
+      // Animate to next 360 degree rotation
+      rotation.value = withSpring(copyTrigger * 360, SPRING_CONFIG);
+    }
+  }, [copyTrigger, rotation]);
+
+  const animatedStyle = useAnimatedStyle(() => ({
+    transform: [{ rotate: `${rotation.value}deg` }],
+  }));
+
+  return (
+    <Animated.View style={[styles.logo, animatedStyle]}>
+      <Text style={styles.logoLabel}>{emoji}</Text>
+    </Animated.View>
+  );
+};
 
 function QRCodeDemo() {
   const qrUrl = useSelector(qrcodeState$.qrUrl);
@@ -34,11 +67,7 @@ function QRCodeDemo() {
       return {};
     }
     return {
-      logo: (
-        <View style={styles.logo}>
-          <Text style={styles.logoLabel}>{selectedLogo}</Text>
-        </View>
-      ),
+      logo: <AnimatedLogo emoji={selectedLogo} />,
       logoAreaSize: 70,
     };
   }, [selectedLogo]);
