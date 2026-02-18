@@ -19,7 +19,7 @@ export const EyeDropdown = ({ value$ }: EyeDropdownProps) => {
 
   return (
     <HoverDropdown
-      label={value}
+      label="Eye"
       trigger={<EyePattern shape={value} size={TriggerEyeSize} />}
     >
       {Shapes.map((shape) => (
@@ -240,7 +240,6 @@ const styles = StyleSheet.create({
     color: 'rgba(255,255,255,0.6)',
     fontSize: 13,
     fontWeight: '500',
-    width: 60,
   },
   optionTextHovered: {
     color: '#fff',

@@ -49,7 +49,7 @@ export const GradientSelector = () => {
 
   return (
     <HoverDropdown
-      label={getGradientLabel(selectedGradient)}
+      label="Gradient"
       trigger={
         <View style={styles.triggerPreview}>
           <LinearGradient

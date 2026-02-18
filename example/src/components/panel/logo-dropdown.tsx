@@ -18,7 +18,7 @@ export const LogoDropdown = () => {
 
   return (
     <HoverDropdown
-      label={LogoLabels[selectedLogo] || 'logo'}
+      label="Logo"
       trigger={
         <Text style={styles.triggerEmoji}>{selectedLogo || '\u2205'}</Text>
       }
@@ -70,8 +70,6 @@ const LogoOption = ({ emoji, isSelected, onSelect }: LogoOptionProps) => {
 const styles = StyleSheet.create({
   triggerEmoji: {
     fontSize: 16,
-    width: 20,
-    textAlign: 'center',
   },
   option: {
     flexDirection: 'row',

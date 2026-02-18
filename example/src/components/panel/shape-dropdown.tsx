@@ -60,7 +60,7 @@ export const ShapeDropdown = ({ value$ }: ShapeDropdownProps) => {
 
   return (
     <HoverDropdown
-      label={value}
+      label="Shape"
       trigger={
         <View style={styles.triggerPreview}>
           <Svg
@@ -152,7 +152,6 @@ const styles = StyleSheet.create({
     color: 'rgba(255,255,255,0.6)',
     fontSize: 13,
     fontWeight: '500',
-    width: 60,
   },
   optionTextHovered: {
     color: '#fff',

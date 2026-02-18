@@ -141,7 +141,7 @@ export const ThemeDropdown = () => {
           style={styles.selectedCircle}
         />
         <Text style={[styles.buttonText, isOpen && styles.buttonTextHovered]}>
-          {currentThemeName}
+          Colors
         </Text>
         <Animated.View style={chevronStyle}>
           <Chevron
@@ -219,7 +219,6 @@ const styles = StyleSheet.create({
     color: 'rgba(255,255,255,0.5)',
     fontSize: 13,
     fontWeight: '500',
-    width: 60,
   },
   buttonTextHovered: {
     color: 'rgba(255,255,255,0.95)',
