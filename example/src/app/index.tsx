@@ -17,7 +17,7 @@ export default function Root() {
           <App />
         </View>
       </GestureHandlerRootView>
-      <Toaster position="bottom-right" />
+      <Toaster position="bottom-right" theme='dark' />
     </SafeAreaProvider>
   );
 }

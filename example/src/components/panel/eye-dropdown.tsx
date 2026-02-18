@@ -1,14 +1,51 @@
 import React, { useState, useMemo } from 'react';
-import { StyleSheet, Pressable, Text } from 'react-native';
-import Svg, { Path, Rect, Circle } from 'react-native-svg';
+import { StyleSheet, View, Pressable, Text } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
 import { useSelector } from '@legendapp/state/react';
 import type { Observable } from '@legendapp/state';
 import type { BaseShapeOptions } from 'react-native-qrcode-skia';
 import { Shapes } from '../../states';
 import { HoverDropdown } from './hover-dropdown';
 
-const TriggerEyeSize = 14;
-const DropdownEyeSize = 14;
+const TriggerShapeSize = 14;
+const DropdownShapeSize = 14;
+
+const getPathFromShape = (shape: BaseShapeOptions, shapeSize: number = 14) => {
+  switch (shape) {
+    case 'square':
+      return `M0,0 H${shapeSize} V${shapeSize} H0 Z`;
+    case 'circle':
+      return `M${shapeSize / 2},0 A${shapeSize / 2},${shapeSize / 2} 0 1,1 ${shapeSize / 2},${shapeSize} A${shapeSize / 2},${shapeSize / 2} 0 1,1 ${shapeSize / 2},0 Z`;
+    case 'rounded': {
+      const r = shapeSize * 0.2;
+      return `M${r},0 H${shapeSize - r} A${r},${r} 0 0,1 ${shapeSize},${r} V${shapeSize - r} A${r},${r} 0 0,1 ${shapeSize - r},${shapeSize} H${r} A${r},${r} 0 0,1 0,${shapeSize - r} V${r} A${r},${r} 0 0,1 ${r},0 Z`;
+    }
+    case 'diamond': {
+      const halfSize = shapeSize / 2;
+      return `M${halfSize},0 L${shapeSize},${halfSize} L${halfSize},${shapeSize} L0,${halfSize} Z`;
+    }
+    case 'star': {
+      const centerX = shapeSize / 2;
+      const centerY = shapeSize / 2;
+      const outerRadius = shapeSize / 2;
+      const innerRadius = outerRadius * 0.4;
+      const numPoints = 5;
+      let path = '';
+      for (let i = 0; i < numPoints * 2; i++) {
+        const radius = i % 2 === 0 ? outerRadius : innerRadius;
+        const angle = (i * Math.PI) / numPoints - Math.PI / 2;
+        const x = centerX + radius * Math.cos(angle);
+        const y = centerY + radius * Math.sin(angle);
+        path += i === 0 ? `M${x},${y}` : `L${x},${y}`;
+      }
+      return `${path} Z`;
+    }
+    case 'triangle':
+      return `M${shapeSize / 2},0 L${shapeSize},${shapeSize} L0,${shapeSize} Z`;
+    default:
+      return '';
+  }
+};
 
 type EyeDropdownProps = {
   value$: Observable<BaseShapeOptions>;
@@ -16,11 +53,25 @@ type EyeDropdownProps = {
 
 export const EyeDropdown = ({ value$ }: EyeDropdownProps) => {
   const value = useSelector(value$);
+  const shapePath = useMemo(
+    () => getPathFromShape(value, TriggerShapeSize),
+    [value]
+  );
 
   return (
     <HoverDropdown
       label="Eye"
-      trigger={<EyePattern shape={value} size={TriggerEyeSize} />}
+      trigger={
+        <View style={styles.triggerPreview}>
+          <Svg
+            width={TriggerShapeSize}
+            height={TriggerShapeSize}
+            viewBox={`0 0 ${TriggerShapeSize} ${TriggerShapeSize}`}
+          >
+            <Path d={shapePath} fill="white" />
+          </Svg>
+        </View>
+      }
     >
       {Shapes.map((shape) => (
         <EyeOption
@@ -42,6 +93,10 @@ type EyeOptionProps = {
 
 const EyeOption = ({ shape, isSelected, onSelect }: EyeOptionProps) => {
   const [isHovered, setIsHovered] = useState(false);
+  const shapePath = useMemo(
+    () => getPathFromShape(shape, DropdownShapeSize),
+    [shape]
+  );
 
   return (
     <Pressable
@@ -53,7 +108,15 @@ const EyeOption = ({ shape, isSelected, onSelect }: EyeOptionProps) => {
         (isHovered || isSelected) && styles.optionHovered,
       ]}
     >
-      <EyePattern shape={shape} size={DropdownEyeSize} />
+      <View style={styles.shapePreview}>
+        <Svg
+          width={DropdownShapeSize}
+          height={DropdownShapeSize}
+          viewBox={`0 0 ${DropdownShapeSize} ${DropdownShapeSize}`}
+        >
+          <Path d={shapePath} fill="white" />
+        </Svg>
+      </View>
       <Text
         style={[
           styles.optionText,
@@ -66,166 +129,11 @@ const EyeOption = ({ shape, isSelected, onSelect }: EyeOptionProps) => {
   );
 };
 
-const EyePattern = ({
-  shape,
-  size,
-}: {
-  shape: BaseShapeOptions;
-  size: number;
-}) => {
-  const innerSize = size * 0.35;
-  const offset = (size - innerSize) / 2;
-  const strokeW = size * 0.15;
-
-  const pattern = useMemo(() => {
-    switch (shape) {
-      case 'square':
-        return (
-          <>
-            <Rect
-              x={strokeW / 2}
-              y={strokeW / 2}
-              width={size - strokeW}
-              height={size - strokeW}
-              fill="none"
-              stroke="white"
-              strokeWidth={strokeW}
-            />
-            <Rect
-              x={offset}
-              y={offset}
-              width={innerSize}
-              height={innerSize}
-              fill="white"
-            />
-          </>
-        );
-      case 'circle':
-        return (
-          <>
-            <Circle
-              cx={size / 2}
-              cy={size / 2}
-              r={(size - strokeW) / 2}
-              fill="none"
-              stroke="white"
-              strokeWidth={strokeW}
-            />
-            <Circle cx={size / 2} cy={size / 2} r={innerSize / 2} fill="white" />
-          </>
-        );
-      case 'rounded': {
-        const rx = size * 0.25;
-        return (
-          <>
-            <Rect
-              x={strokeW / 2}
-              y={strokeW / 2}
-              width={size - strokeW}
-              height={size - strokeW}
-              rx={rx}
-              fill="none"
-              stroke="white"
-              strokeWidth={strokeW}
-            />
-            <Rect
-              x={offset}
-              y={offset}
-              width={innerSize}
-              height={innerSize}
-              rx={rx * 0.4}
-              fill="white"
-            />
-          </>
-        );
-      }
-      case 'diamond': {
-        const half = size / 2;
-        const innerHalf = innerSize / 2;
-        const inset = strokeW * 0.7;
-        return (
-          <>
-            <Path
-              d={`M${half},${inset} L${size - inset},${half} L${half},${size - inset} L${inset},${half} Z`}
-              fill="none"
-              stroke="white"
-              strokeWidth={strokeW}
-            />
-            <Path
-              d={`M${half},${offset} L${half + innerHalf},${half} L${half},${half + innerHalf} L${offset},${half} Z`}
-              fill="white"
-            />
-          </>
-        );
-      }
-      case 'star':
-        return (
-          <>
-            <Path
-              d={getStarPath(
-                size / 2,
-                size / 2,
-                (size - strokeW) / 2,
-                ((size - strokeW) / 2) * 0.4,
-                5
-              )}
-              fill="none"
-              stroke="white"
-              strokeWidth={strokeW}
-            />
-            <Circle cx={size / 2} cy={size / 2} r={innerSize / 2} fill="white" />
-          </>
-        );
-      case 'triangle': {
-        const inset = strokeW * 0.7;
-        return (
-          <>
-            <Path
-              d={`M${size / 2},${inset} L${size - inset},${size - inset} L${inset},${size - inset} Z`}
-              fill="none"
-              stroke="white"
-              strokeWidth={strokeW}
-            />
-            <Circle
-              cx={size / 2}
-              cy={size * 0.6}
-              r={innerSize / 2.5}
-              fill="white"
-            />
-          </>
-        );
-      }
-      default:
-        return null;
-    }
-  }, [shape, size, innerSize, offset, strokeW]);
-
-  return (
-    <Svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
-      {pattern}
-    </Svg>
-  );
-};
-
-const getStarPath = (
-  cx: number,
-  cy: number,
-  outerR: number,
-  innerR: number,
-  points: number
-) => {
-  let path = '';
-  for (let i = 0; i < points * 2; i++) {
-    const radius = i % 2 === 0 ? outerR : innerR;
-    const angle = (i * Math.PI) / points - Math.PI / 2;
-    const x = cx + radius * Math.cos(angle);
-    const y = cy + radius * Math.sin(angle);
-    path += i === 0 ? `M${x},${y}` : `L${x},${y}`;
-  }
-  return `${path} Z`;
-};
-
 const styles = StyleSheet.create({
+  triggerPreview: {
+    width: 14,
+    height: 14,
+  },
   option: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -235,6 +143,10 @@ const styles = StyleSheet.create({
   },
   optionHovered: {
     backgroundColor: 'rgba(255,255,255,0.08)',
+  },
+  shapePreview: {
+    width: 14,
+    height: 14,
   },
   optionText: {
     color: 'rgba(255,255,255,0.6)',

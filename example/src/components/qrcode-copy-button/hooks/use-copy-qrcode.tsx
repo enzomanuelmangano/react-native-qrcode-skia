@@ -36,7 +36,7 @@ export const useCopyQrCode = () => {
             color: '#000000',
           },
           web: (
-            <Image source={GitHubMark} style={IconStyle} contentFit="contain" />
+            <Image source={GitHubMark} tintColor="#FFFFFF" style={IconStyle} contentFit="contain" />
           ),
         },
       });
