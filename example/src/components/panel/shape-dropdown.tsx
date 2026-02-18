@@ -7,10 +7,10 @@ import type { BaseShapeOptions } from 'react-native-qrcode-skia';
 import { Shapes } from '../../states';
 import { HoverDropdown } from './hover-dropdown';
 
-const TriggerShapeSize = 12;
-const DropdownShapeSize = 12;
+const TriggerShapeSize = 14;
+const DropdownShapeSize = 14;
 
-const getPathFromShape = (shape: BaseShapeOptions, shapeSize: number = 12) => {
+const getPathFromShape = (shape: BaseShapeOptions, shapeSize: number = 14) => {
   switch (shape) {
     case 'square':
       return `M0,0 H${shapeSize} V${shapeSize} H0 Z`;
@@ -53,14 +53,21 @@ type ShapeDropdownProps = {
 
 export const ShapeDropdown = ({ value$ }: ShapeDropdownProps) => {
   const value = useSelector(value$);
-  const shapePath = useMemo(() => getPathFromShape(value, TriggerShapeSize), [value]);
+  const shapePath = useMemo(
+    () => getPathFromShape(value, TriggerShapeSize),
+    [value]
+  );
 
   return (
     <HoverDropdown
       label={value}
       trigger={
         <View style={styles.triggerPreview}>
-          <Svg width={TriggerShapeSize} height={TriggerShapeSize} viewBox={`0 0 ${TriggerShapeSize} ${TriggerShapeSize}`}>
+          <Svg
+            width={TriggerShapeSize}
+            height={TriggerShapeSize}
+            viewBox={`0 0 ${TriggerShapeSize} ${TriggerShapeSize}`}
+          >
             <Path d={shapePath} fill="white" />
           </Svg>
         </View>
@@ -86,7 +93,10 @@ type ShapeOptionProps = {
 
 const ShapeOption = ({ shape, isSelected, onSelect }: ShapeOptionProps) => {
   const [isHovered, setIsHovered] = useState(false);
-  const shapePath = useMemo(() => getPathFromShape(shape, DropdownShapeSize), [shape]);
+  const shapePath = useMemo(
+    () => getPathFromShape(shape, DropdownShapeSize),
+    [shape]
+  );
 
   return (
     <Pressable
@@ -99,11 +109,20 @@ const ShapeOption = ({ shape, isSelected, onSelect }: ShapeOptionProps) => {
       ]}
     >
       <View style={styles.shapePreview}>
-        <Svg width={DropdownShapeSize} height={DropdownShapeSize} viewBox={`0 0 ${DropdownShapeSize} ${DropdownShapeSize}`}>
+        <Svg
+          width={DropdownShapeSize}
+          height={DropdownShapeSize}
+          viewBox={`0 0 ${DropdownShapeSize} ${DropdownShapeSize}`}
+        >
           <Path d={shapePath} fill="white" />
         </Svg>
       </View>
-      <Text style={[styles.optionText, (isHovered || isSelected) && styles.optionTextHovered]}>
+      <Text
+        style={[
+          styles.optionText,
+          (isHovered || isSelected) && styles.optionTextHovered,
+        ]}
+      >
         {shape}
       </Text>
     </Pressable>
@@ -112,26 +131,27 @@ const ShapeOption = ({ shape, isSelected, onSelect }: ShapeOptionProps) => {
 
 const styles = StyleSheet.create({
   triggerPreview: {
-    width: 12,
-    height: 12,
+    width: 14,
+    height: 14,
   },
   option: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingVertical: 10,
-    paddingHorizontal: 12,
+    paddingHorizontal: 14,
     gap: 10,
   },
   optionHovered: {
     backgroundColor: 'rgba(255,255,255,0.08)',
   },
   shapePreview: {
-    width: 12,
-    height: 12,
+    width: 14,
+    height: 14,
   },
   optionText: {
     color: 'rgba(255,255,255,0.6)',
     fontSize: 13,
+    fontWeight: '500',
   },
   optionTextHovered: {
     color: '#fff',

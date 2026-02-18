@@ -7,8 +7,8 @@ import type { BaseShapeOptions } from 'react-native-qrcode-skia';
 import { Shapes } from '../../states';
 import { HoverDropdown } from './hover-dropdown';
 
-const TriggerEyeSize = 12;
-const DropdownEyeSize = 12;
+const TriggerEyeSize = 14;
+const DropdownEyeSize = 14;
 
 type EyeDropdownProps = {
   value$: Observable<BaseShapeOptions>;
@@ -20,9 +20,7 @@ export const EyeDropdown = ({ value$ }: EyeDropdownProps) => {
   return (
     <HoverDropdown
       label={value}
-      trigger={
-        <EyePattern shape={value} size={TriggerEyeSize} />
-      }
+      trigger={<EyePattern shape={value} size={TriggerEyeSize} />}
     >
       {Shapes.map((shape) => (
         <EyeOption
@@ -56,14 +54,25 @@ const EyeOption = ({ shape, isSelected, onSelect }: EyeOptionProps) => {
       ]}
     >
       <EyePattern shape={shape} size={DropdownEyeSize} />
-      <Text style={[styles.optionText, (isHovered || isSelected) && styles.optionTextHovered]}>
+      <Text
+        style={[
+          styles.optionText,
+          (isHovered || isSelected) && styles.optionTextHovered,
+        ]}
+      >
         {shape}
       </Text>
     </Pressable>
   );
 };
 
-const EyePattern = ({ shape, size }: { shape: BaseShapeOptions; size: number }) => {
+const EyePattern = ({
+  shape,
+  size,
+}: {
+  shape: BaseShapeOptions;
+  size: number;
+}) => {
   const innerSize = size * 0.35;
   const offset = (size - innerSize) / 2;
   const strokeW = size * 0.15;
@@ -73,23 +82,60 @@ const EyePattern = ({ shape, size }: { shape: BaseShapeOptions; size: number }) 
       case 'square':
         return (
           <>
-            <Rect x={strokeW/2} y={strokeW/2} width={size - strokeW} height={size - strokeW} fill="none" stroke="white" strokeWidth={strokeW} />
-            <Rect x={offset} y={offset} width={innerSize} height={innerSize} fill="white" />
+            <Rect
+              x={strokeW / 2}
+              y={strokeW / 2}
+              width={size - strokeW}
+              height={size - strokeW}
+              fill="none"
+              stroke="white"
+              strokeWidth={strokeW}
+            />
+            <Rect
+              x={offset}
+              y={offset}
+              width={innerSize}
+              height={innerSize}
+              fill="white"
+            />
           </>
         );
       case 'circle':
         return (
           <>
-            <Circle cx={size/2} cy={size/2} r={(size - strokeW)/2} fill="none" stroke="white" strokeWidth={strokeW} />
-            <Circle cx={size/2} cy={size/2} r={innerSize/2} fill="white" />
+            <Circle
+              cx={size / 2}
+              cy={size / 2}
+              r={(size - strokeW) / 2}
+              fill="none"
+              stroke="white"
+              strokeWidth={strokeW}
+            />
+            <Circle cx={size / 2} cy={size / 2} r={innerSize / 2} fill="white" />
           </>
         );
       case 'rounded': {
         const rx = size * 0.25;
         return (
           <>
-            <Rect x={strokeW/2} y={strokeW/2} width={size - strokeW} height={size - strokeW} rx={rx} fill="none" stroke="white" strokeWidth={strokeW} />
-            <Rect x={offset} y={offset} width={innerSize} height={innerSize} rx={rx * 0.4} fill="white" />
+            <Rect
+              x={strokeW / 2}
+              y={strokeW / 2}
+              width={size - strokeW}
+              height={size - strokeW}
+              rx={rx}
+              fill="none"
+              stroke="white"
+              strokeWidth={strokeW}
+            />
+            <Rect
+              x={offset}
+              y={offset}
+              width={innerSize}
+              height={innerSize}
+              rx={rx * 0.4}
+              fill="white"
+            />
           </>
         );
       }
@@ -99,24 +145,53 @@ const EyePattern = ({ shape, size }: { shape: BaseShapeOptions; size: number }) 
         const inset = strokeW * 0.7;
         return (
           <>
-            <Path d={`M${half},${inset} L${size - inset},${half} L${half},${size - inset} L${inset},${half} Z`} fill="none" stroke="white" strokeWidth={strokeW} />
-            <Path d={`M${half},${offset} L${half + innerHalf},${half} L${half},${half + innerHalf} L${offset},${half} Z`} fill="white" />
+            <Path
+              d={`M${half},${inset} L${size - inset},${half} L${half},${size - inset} L${inset},${half} Z`}
+              fill="none"
+              stroke="white"
+              strokeWidth={strokeW}
+            />
+            <Path
+              d={`M${half},${offset} L${half + innerHalf},${half} L${half},${half + innerHalf} L${offset},${half} Z`}
+              fill="white"
+            />
           </>
         );
       }
       case 'star':
         return (
           <>
-            <Path d={getStarPath(size/2, size/2, (size - strokeW)/2, ((size - strokeW)/2) * 0.4, 5)} fill="none" stroke="white" strokeWidth={strokeW} />
-            <Circle cx={size/2} cy={size/2} r={innerSize/2} fill="white" />
+            <Path
+              d={getStarPath(
+                size / 2,
+                size / 2,
+                (size - strokeW) / 2,
+                ((size - strokeW) / 2) * 0.4,
+                5
+              )}
+              fill="none"
+              stroke="white"
+              strokeWidth={strokeW}
+            />
+            <Circle cx={size / 2} cy={size / 2} r={innerSize / 2} fill="white" />
           </>
         );
       case 'triangle': {
         const inset = strokeW * 0.7;
         return (
           <>
-            <Path d={`M${size/2},${inset} L${size - inset},${size - inset} L${inset},${size - inset} Z`} fill="none" stroke="white" strokeWidth={strokeW} />
-            <Circle cx={size/2} cy={size * 0.6} r={innerSize/2.5} fill="white" />
+            <Path
+              d={`M${size / 2},${inset} L${size - inset},${size - inset} L${inset},${size - inset} Z`}
+              fill="none"
+              stroke="white"
+              strokeWidth={strokeW}
+            />
+            <Circle
+              cx={size / 2}
+              cy={size * 0.6}
+              r={innerSize / 2.5}
+              fill="white"
+            />
           </>
         );
       }
@@ -132,7 +207,13 @@ const EyePattern = ({ shape, size }: { shape: BaseShapeOptions; size: number }) 
   );
 };
 
-const getStarPath = (cx: number, cy: number, outerR: number, innerR: number, points: number) => {
+const getStarPath = (
+  cx: number,
+  cy: number,
+  outerR: number,
+  innerR: number,
+  points: number
+) => {
   let path = '';
   for (let i = 0; i < points * 2; i++) {
     const radius = i % 2 === 0 ? outerR : innerR;
@@ -149,7 +230,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingVertical: 10,
-    paddingHorizontal: 12,
+    paddingHorizontal: 14,
     gap: 10,
   },
   optionHovered: {
@@ -158,6 +239,7 @@ const styles = StyleSheet.create({
   optionText: {
     color: 'rgba(255,255,255,0.6)',
     fontSize: 13,
+    fontWeight: '500',
   },
   optionTextHovered: {
     color: '#fff',

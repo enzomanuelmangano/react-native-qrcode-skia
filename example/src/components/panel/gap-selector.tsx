@@ -18,7 +18,7 @@ export const GapSelector = () => {
     >
       <Text style={[styles.label, isHovered && styles.labelHovered]}>Gap</Text>
       <View style={styles.selector}>
-        {GapSizes.map(size => (
+        {GapSizes.map((size) => (
           <GapButton
             key={size}
             size={size}
@@ -39,7 +39,12 @@ type GapButtonProps = {
   onPress: () => void;
 };
 
-const GapButton = ({ size, isActive, activeColor, onPress }: GapButtonProps) => {
+const GapButton = ({
+  size,
+  isActive,
+  activeColor,
+  onPress,
+}: GapButtonProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -71,9 +76,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 12,
-    height: 36,
-    borderRadius: 8,
-    gap: 8,
+    height: 44,
+    borderRadius: 10,
+    gap: 10,
   },
   containerHovered: {
     backgroundColor: 'rgba(255,255,255,0.08)',
@@ -81,28 +86,30 @@ const styles = StyleSheet.create({
   label: {
     color: 'rgba(255,255,255,0.5)',
     fontSize: 13,
+    fontWeight: '500',
   },
   labelHovered: {
-    color: 'rgba(255,255,255,0.9)',
+    color: 'rgba(255,255,255,0.95)',
   },
   selector: {
     flexDirection: 'row',
-    backgroundColor: 'rgba(255,255,255,0.04)',
-    borderRadius: 6,
-    padding: 2,
+    backgroundColor: 'rgba(255,255,255,0.06)',
+    borderRadius: 8,
+    padding: 3,
   },
   button: {
     paddingHorizontal: 8,
-    height: 24,
-    borderRadius: 4,
+    height: 26,
+    borderRadius: 6,
     justifyContent: 'center',
     alignItems: 'center',
   },
   buttonHovered: {
-    backgroundColor: 'rgba(255,255,255,0.06)',
+    backgroundColor: 'rgba(255,255,255,0.08)',
   },
   buttonText: {
     fontSize: 11,
+    fontWeight: '600',
     color: 'rgba(255,255,255,0.4)',
     textTransform: 'uppercase',
   },

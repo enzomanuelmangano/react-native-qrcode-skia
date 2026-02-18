@@ -1,9 +1,8 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, View, Pressable, Text } from 'react-native';
-import { Canvas, Rect } from '@shopify/react-native-skia';
+import { LinearGradient } from 'expo-linear-gradient';
 import { useSelector } from '@legendapp/state/react';
 import { qrcodeState$, GradientTypeOptions } from '../../states';
-import { getSkiaGradientByType } from '../../utils/gradient';
 import { HoverDropdown } from './hover-dropdown';
 
 type GradientType = (typeof GradientTypeOptions)[number];
@@ -13,38 +12,52 @@ const DropdownPreviewSize = 12;
 
 const getGradientLabel = (gradient: GradientType): string => {
   switch (gradient) {
-    case 'radial': return 'radial';
-    case 'linear': return 'linear';
-    case 'linear-vertical': return 'vertical';
-    case 'sweep': return 'sweep';
-    case 'conical': return 'conical';
-    default: return gradient;
+    case 'radial':
+      return 'radial';
+    case 'linear':
+      return 'linear';
+    case 'linear-vertical':
+      return 'vertical';
+    case 'sweep':
+      return 'sweep';
+    case 'conical':
+      return 'conical';
+    default:
+      return gradient;
+  }
+};
+
+const getGradientDirection = (
+  gradient: GradientType
+): { start: { x: number; y: number }; end: { x: number; y: number } } => {
+  switch (gradient) {
+    case 'linear':
+      return { start: { x: 0, y: 0 }, end: { x: 1, y: 1 } };
+    case 'linear-vertical':
+      return { start: { x: 0, y: 0 }, end: { x: 0, y: 1 } };
+    case 'radial':
+    case 'sweep':
+    case 'conical':
+    default:
+      return { start: { x: 0.5, y: 0 }, end: { x: 0.5, y: 1 } };
   }
 };
 
 export const GradientSelector = () => {
   const selectedGradient = useSelector(qrcodeState$.selectedGradient);
-
-  const triggerGradient = useMemo(
-    () =>
-      getSkiaGradientByType({
-        gradient: selectedGradient,
-        colors: ['#ffffff', 'transparent'],
-        size: TriggerSize,
-      }),
-    [selectedGradient]
-  );
+  const direction = getGradientDirection(selectedGradient);
 
   return (
     <HoverDropdown
       label={getGradientLabel(selectedGradient)}
       trigger={
         <View style={styles.triggerPreview}>
-          <Canvas style={styles.triggerCanvas}>
-            <Rect x={0} y={0} width={TriggerSize} height={TriggerSize}>
-              {triggerGradient}
-            </Rect>
-          </Canvas>
+          <LinearGradient
+            colors={['#ffffff', 'rgba(255,255,255,0.2)']}
+            start={direction.start}
+            end={direction.end}
+            style={styles.gradientFill}
+          />
         </View>
       }
     >
@@ -66,18 +79,13 @@ type GradientOptionProps = {
   onSelect: () => void;
 };
 
-const GradientOption = ({ gradient, isSelected, onSelect }: GradientOptionProps) => {
+const GradientOption = ({
+  gradient,
+  isSelected,
+  onSelect,
+}: GradientOptionProps) => {
   const [isHovered, setIsHovered] = useState(false);
-
-  const gradientComponent = useMemo(
-    () =>
-      getSkiaGradientByType({
-        gradient,
-        colors: ['#ffffff', 'transparent'],
-        size: DropdownPreviewSize,
-      }),
-    [gradient]
-  );
+  const direction = getGradientDirection(gradient);
 
   return (
     <Pressable
@@ -90,13 +98,19 @@ const GradientOption = ({ gradient, isSelected, onSelect }: GradientOptionProps)
       ]}
     >
       <View style={styles.preview}>
-        <Canvas style={styles.canvas}>
-          <Rect x={0} y={0} width={DropdownPreviewSize} height={DropdownPreviewSize}>
-            {gradientComponent}
-          </Rect>
-        </Canvas>
+        <LinearGradient
+          colors={['#ffffff', 'rgba(255,255,255,0.2)']}
+          start={direction.start}
+          end={direction.end}
+          style={styles.gradientFill}
+        />
       </View>
-      <Text style={[styles.optionText, (isHovered || isSelected) && styles.optionTextHovered]}>
+      <Text
+        style={[
+          styles.optionText,
+          (isHovered || isSelected) && styles.optionTextHovered,
+        ]}
+      >
         {getGradientLabel(gradient)}
       </Text>
     </Pressable>
@@ -107,12 +121,11 @@ const styles = StyleSheet.create({
   triggerPreview: {
     width: TriggerSize,
     height: TriggerSize,
-    borderRadius: 6,
+    borderRadius: 3,
     overflow: 'hidden',
   },
-  triggerCanvas: {
-    width: TriggerSize,
-    height: TriggerSize,
+  gradientFill: {
+    flex: 1,
   },
   option: {
     flexDirection: 'row',
@@ -127,12 +140,8 @@ const styles = StyleSheet.create({
   preview: {
     width: DropdownPreviewSize,
     height: DropdownPreviewSize,
-    borderRadius: 6,
+    borderRadius: 3,
     overflow: 'hidden',
-  },
-  canvas: {
-    width: DropdownPreviewSize,
-    height: DropdownPreviewSize,
   },
   optionText: {
     color: 'rgba(255,255,255,0.6)',

@@ -3,19 +3,25 @@ import 'react-native-reanimated';
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
 
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, ActivityIndicator } from 'react-native';
 
-import 'react-native-reanimated';
-import QRCodeDemo from './qrcode';
 import { Panel } from './panel';
-import { theme } from '../theme';
+import { QRCodeDisplay } from './qrcode-display';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="light" hidden />
       <View style={styles.content}>
-        <QRCodeDemo />
+        <React.Suspense
+          fallback={
+            <View style={styles.loader}>
+              <ActivityIndicator size="large" color="rgba(255,255,255,0.3)" />
+            </View>
+          }
+        >
+          <QRCodeDisplay />
+        </React.Suspense>
       </View>
       <Panel />
     </View>
@@ -25,12 +31,17 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: theme.colors.background,
+    backgroundColor: '#0a0a0a',
   },
   content: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingBottom: 100,
+  },
+  loader: {
+    width: 320,
+    height: 320,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

@@ -55,7 +55,12 @@ const LogoOption = ({ emoji, isSelected, onSelect }: LogoOptionProps) => {
       ]}
     >
       <Text style={styles.optionEmoji}>{emoji || '\u2205'}</Text>
-      <Text style={[styles.optionText, (isHovered || isSelected) && styles.optionTextHovered]}>
+      <Text
+        style={[
+          styles.optionText,
+          (isHovered || isSelected) && styles.optionTextHovered,
+        ]}
+      >
         {LogoLabels[emoji] || 'logo'}
       </Text>
     </Pressable>
@@ -64,26 +69,27 @@ const LogoOption = ({ emoji, isSelected, onSelect }: LogoOptionProps) => {
 
 const styles = StyleSheet.create({
   triggerEmoji: {
-    fontSize: 14,
+    fontSize: 16,
   },
   option: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingVertical: 10,
-    paddingHorizontal: 12,
+    paddingHorizontal: 14,
     gap: 10,
   },
   optionHovered: {
     backgroundColor: 'rgba(255,255,255,0.08)',
   },
   optionEmoji: {
-    fontSize: 14,
-    width: 18,
+    fontSize: 16,
+    width: 20,
     textAlign: 'center',
   },
   optionText: {
     color: 'rgba(255,255,255,0.6)',
     fontSize: 13,
+    fontWeight: '500',
   },
   optionTextHovered: {
     color: '#fff',

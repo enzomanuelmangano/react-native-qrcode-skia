@@ -5,22 +5,18 @@ import Animated, {
   useSharedValue,
   useAnimatedStyle,
   withSpring,
-  useAnimatedProps,
   interpolate,
 } from 'react-native-reanimated';
-import { BlurView } from 'expo-blur';
 import Svg, { Path } from 'react-native-svg';
 
-const AnimatedBlurView = Animated.createAnimatedComponent(BlurView);
-
 const OPEN_CONFIG = {
-  dampingRatio: 1,
-  duration: 150,
+  dampingRatio: 0.9,
+  duration: 200,
 };
 
 const CLOSE_CONFIG = {
   dampingRatio: 1,
-  duration: 300,
+  duration: 250,
 };
 
 const Chevron = ({ color = 'rgba(255,255,255,0.4)' }: { color?: string }) => (
@@ -41,7 +37,11 @@ type HoverDropdownProps = {
   label?: string;
 };
 
-export const HoverDropdown = ({ trigger, children, label }: HoverDropdownProps) => {
+export const HoverDropdown = ({
+  trigger,
+  children,
+  label,
+}: HoverDropdownProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isDropdownHovered, setIsDropdownHovered] = useState(false);
   const animation = useSharedValue(0);
@@ -90,16 +90,10 @@ export const HoverDropdown = ({ trigger, children, label }: HoverDropdownProps) 
   const dropdownStyle = useAnimatedStyle(() => {
     return {
       opacity: animation.value,
-      transform: [
-        { translateY: interpolate(animation.value, [0, 1], [4, 0]) },
-      ],
+      transform: [{ translateY: interpolate(animation.value, [0, 1], [8, 0]) }],
       pointerEvents: animation.value > 0.5 ? 'auto' : 'none',
     };
   });
-
-  const blurProps = useAnimatedProps(() => ({
-    intensity: interpolate(animation.value, [0, 1], [0, 50]),
-  }));
 
   const chevronStyle = useAnimatedStyle(() => ({
     transform: [
@@ -114,15 +108,7 @@ export const HoverDropdown = ({ trigger, children, label }: HoverDropdownProps) 
         onPointerEnter={handleDropdownHoverIn}
         onPointerLeave={handleDropdownHoverOut}
       >
-        <AnimatedBlurView
-          tint="dark"
-          animatedProps={blurProps}
-          style={styles.blurContainer}
-        >
-          <View style={styles.dropdownContent}>
-            {children}
-          </View>
-        </AnimatedBlurView>
+        <View style={styles.dropdownContent}>{children}</View>
       </Animated.View>
 
       <Pressable
@@ -137,7 +123,9 @@ export const HoverDropdown = ({ trigger, children, label }: HoverDropdownProps) 
           </Text>
         )}
         <Animated.View style={chevronStyle}>
-          <Chevron color={isOpen ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.4)'} />
+          <Chevron
+            color={isOpen ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.4)'}
+          />
         </Animated.View>
       </Pressable>
     </View>
@@ -147,13 +135,14 @@ export const HoverDropdown = ({ trigger, children, label }: HoverDropdownProps) 
 const styles = StyleSheet.create({
   container: {
     position: 'relative',
+    zIndex: 1,
   },
   button: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 12,
-    height: 36,
-    borderRadius: 8,
+    height: 44,
+    borderRadius: 10,
     gap: 8,
   },
   buttonHovered: {
@@ -162,27 +151,29 @@ const styles = StyleSheet.create({
   buttonText: {
     color: 'rgba(255,255,255,0.5)',
     fontSize: 13,
+    fontWeight: '500',
   },
   buttonTextHovered: {
-    color: 'rgba(255,255,255,0.9)',
+    color: 'rgba(255,255,255,0.95)',
   },
   dropdown: {
     position: 'absolute',
     bottom: '100%',
     left: 0,
-    marginBottom: 4,
-    zIndex: 1000,
-  },
-  blurContainer: {
-    borderRadius: 12,
-    overflow: 'hidden',
+    marginBottom: 8,
+    zIndex: 9999,
   },
   dropdownContent: {
-    backgroundColor: 'rgba(20,20,20,0.6)',
+    backgroundColor: '#1c1c1e',
     borderRadius: 12,
     borderWidth: 1,
-    borderColor: 'rgba(255,255,255,0.1)',
+    borderColor: 'rgba(255,255,255,0.15)',
     overflow: 'hidden',
-    minWidth: 140,
+    minWidth: 150,
+    // Shadow for depth
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.4,
+    shadowRadius: 24,
   },
 });

@@ -10,18 +10,24 @@ import { LogoDropdown } from './logo-dropdown';
 import { ExportButton } from './export-button';
 import { qrcodeState$ } from '../../states';
 
+const Separator = () => <View style={styles.separator} />;
+
 export const Panel = () => {
   const insets = useSafeAreaInsets();
 
   return (
-    <View style={[styles.container, { bottom: Math.max(insets.bottom, 16) }]}>
+    <View style={[styles.container, { bottom: Math.max(insets.bottom, 24) }]}>
       <View style={styles.panel}>
         <View style={styles.controls}>
           <ThemeDropdown />
+          <Separator />
           <GradientSelector />
+          <Separator />
           <ShapeDropdown value$={qrcodeState$.baseShape} />
           <EyeDropdown value$={qrcodeState$.eyePatternShape} />
+          <Separator />
           <GapSelector />
+          <Separator />
           <LogoDropdown />
         </View>
         <ExportButton />
@@ -33,23 +39,32 @@ export const Panel = () => {
 const styles = StyleSheet.create({
   container: {
     position: 'absolute',
-    left: 16,
-    right: 16,
+    left: 0,
+    right: 0,
+    alignItems: 'center',
+    zIndex: 100,
   },
   panel: {
-    height: 64,
-    backgroundColor: 'rgba(10,10,10,0.8)',
-    borderColor: 'rgba(255,255,255,0.06)',
+    height: 56,
+    backgroundColor: 'rgba(18,18,18,0.95)',
+    borderColor: 'rgba(255,255,255,0.1)',
     borderWidth: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    borderRadius: 12,
-    paddingHorizontal: 8,
+    borderRadius: 14,
+    paddingHorizontal: 6,
+    paddingVertical: 6,
+    gap: 4,
   },
   controls: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 2,
+  },
+  separator: {
+    width: 1,
+    height: 24,
+    backgroundColor: 'rgba(255,255,255,0.08)',
+    marginHorizontal: 4,
   },
 });
