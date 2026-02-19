@@ -9,15 +9,13 @@ import Animated, {
   useSharedValue,
   useAnimatedStyle,
   withTiming,
-  Easing,
 } from 'react-native-reanimated';
 
 import { Panel } from './panel';
 import { QRCodeDisplay } from './qrcode-display';
 import { URLInputModal } from './url-input-modal';
-import { Colors, Animation } from '../design-tokens';
-
-const EASING = Easing.out(Easing.cubic);
+import { Colors } from '../design-tokens';
+import { TimingPresets } from '../animations';
 
 export default function App() {
   const [isURLModalVisible, setIsURLModalVisible] = useState(false);
@@ -32,10 +30,7 @@ export default function App() {
   }, []);
 
   const handleMenuVisibilityChange = useCallback((visible: boolean) => {
-    contentBlur.value = withTiming(visible ? 1 : 0, {
-      duration: Animation.normal,
-      easing: EASING,
-    });
+    contentBlur.value = withTiming(visible ? 1 : 0, TimingPresets.blur);
   }, [contentBlur]);
 
   const contentAnimatedStyle = useAnimatedStyle(() => {

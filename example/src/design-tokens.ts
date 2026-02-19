@@ -45,8 +45,3 @@ export const BorderRadius = {
   xl: 12,
   xxl: 14,
 } as const;
-
-export const Animation = {
-  fast: 100,
-  normal: 150,
-} as const;

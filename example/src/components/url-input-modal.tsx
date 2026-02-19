@@ -9,7 +9,6 @@ import Animated, {
   useSharedValue,
   useAnimatedStyle,
   withTiming,
-  Easing,
 } from 'react-native-reanimated';
 import { useSelector } from '@legendapp/state/react';
 import { qrcodeState$ } from '../states';
@@ -18,10 +17,8 @@ import {
   Colors,
   Sizes,
   BorderRadius,
-  Animation,
 } from '../design-tokens';
-
-const EASING = Easing.out(Easing.cubic);
+import { TimingPresets } from '../animations';
 
 interface URLInputModalProps {
   visible: boolean;
@@ -37,7 +34,7 @@ export const URLInputModal = ({ visible, onClose }: URLInputModalProps) => {
   useEffect(() => {
     if (visible) {
       setOriginalUrl(currentUrl);
-      animation.value = withTiming(1, { duration: Animation.fast + 20, easing: EASING });
+      animation.value = withTiming(1, TimingPresets.modalIn);
       setTimeout(() => {
         if (inputRef.current) {
           inputRef.current.focus();
@@ -50,7 +47,7 @@ export const URLInputModal = ({ visible, onClose }: URLInputModalProps) => {
         }
       }, 50);
     } else {
-      animation.value = withTiming(0, { duration: Animation.fast + 20, easing: EASING });
+      animation.value = withTiming(0, TimingPresets.modalOut);
     }
   }, [visible, animation]);
 

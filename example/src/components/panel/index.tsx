@@ -4,10 +4,9 @@ import Animated, {
   useSharedValue,
   useAnimatedStyle,
   withTiming,
-  Easing,
 } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Animation } from '../../design-tokens';
+import { TimingPresets } from '../../animations';
 import { ShapeDropdown } from './shape-dropdown';
 import { EyeDropdown } from './eye-dropdown';
 import { GapSelector } from './gap-selector';
@@ -53,8 +52,6 @@ interface PanelProps {
   onMenuVisibilityChange?: (visible: boolean) => void;
 }
 
-const EASING = Easing.out(Easing.cubic);
-
 export const Panel = ({ onURLButtonPress, onMenuVisibilityChange }: PanelProps) => {
   const insets = useSafeAreaInsets();
   const { isMobile } = useResponsive();
@@ -62,10 +59,7 @@ export const Panel = ({ onURLButtonPress, onMenuVisibilityChange }: PanelProps) 
   const panelAnimation = useSharedValue(1);
 
   useEffect(() => {
-    panelAnimation.value = withTiming(menuVisible ? 0 : 1, {
-      duration: Animation.normal,
-      easing: EASING,
-    });
+    panelAnimation.value = withTiming(menuVisible ? 0 : 1, TimingPresets.panelFade);
   }, [menuVisible, panelAnimation]);
 
   const panelStyle = useAnimatedStyle(() => ({
