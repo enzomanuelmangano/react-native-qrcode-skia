@@ -32,7 +32,7 @@ import QRCode from 'react-native-qrcode-skia';
 const App = () => {
   return (
     <QRCode
-      value="https://patreon.com/reactiive"
+      value="https://qrcode.reactiive.io"
       size={200}
     />
   );
@@ -49,7 +49,7 @@ import QRCode from 'react-native-qrcode-skia';
 const App = () => {
   return (
     <QRCode
-      value="https://patreon.com/reactiive"
+      value="https://qrcode.reactiive.io"
       size={200}
       shapeOptions={{
         shape: "circle",
@@ -87,25 +87,26 @@ export default App;
 
 - `color` (string, optional) - The color of the QRCode base path. Default value is '#000000'.
 
-- `strokeWidth` (number, optional) - The percentage of the strokeWidth (0 to 1). Default value is 1.
+- `strokeWidth` (number, optional) - The stroke width in pixels when pathStyle is 'stroke'. Default value is 1.
 
 - `children` (React.ReactNode, optional) - The children components rendered within the QRCode container.
 
-- `pathStyle` ('fill' | 'stroke', optional) - The style of the QRCode path: 'fill' or 'stroke'. Default value is 'stroke'.
+- `pathStyle` ('fill' | 'stroke', optional) - The style of the QRCode path: 'fill' or 'stroke'. Default value is 'fill'.
 
 - `padding` (number, optional) - The padding applied around the QRCode. Default value is 0.
 
 - `size` (number) - The size of the QRCode.
 
-- `shapeOptions` (ShapeOptions, optional) - The shape options for the QRCode path. Default value is {}. ShapeOptions include:
+- `shapeOptions` (ShapeOptions, optional) - The shape options for the QRCode path. ShapeOptions include:
   - `shape` (BaseShapeOptions, optional) - The shape of the QR code elements. Can be 'square', 'circle', 'rounded', 'diamond', 'triangle', or 'star'. Default is 'rounded'.
   - `eyePatternShape` (BaseShapeOptions, optional) - The shape of the eye patterns. Can be 'square', 'circle', 'rounded', 'diamond', 'triangle', or 'star'. Default is 'rounded'.
   - `gap` (number, optional) - The gap between QR code elements. Default is 0.
   - `eyePatternGap` (number, optional) - The gap in the eye patterns. Default is 0.
+  - `logoAreaBorderRadius` (number, optional) - The border radius of the logo area. Default is 0.
 
-- `logoAreaSize` (number, optional) - The size of the logo area within the QRCode.
+- `logoAreaSize` (number, optional) - The size of the area cleared for the logo in the center of the QR code. Default is 70 when logo is provided, 0 otherwise.
 
-- `logo` (React.ReactNode, optional) - The logo component to be rendered within the QRCode.
+- `logo` (React.ReactNode, optional) - A React node to render as the logo in the center of the QR code. When provided, a square area is cleared in the center to make room for the logo.
 
 ## Would you like to support me?
 
