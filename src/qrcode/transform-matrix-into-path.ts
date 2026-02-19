@@ -11,7 +11,6 @@ export type ShapeOptions = {
   eyePatternShape?: BaseShapeOptions;
   gap?: number;
   eyePatternGap?: number;
-  logoAreaBorderRadius?: number;
 };
 
 const defaultShapeOptions: ShapeOptions = {
@@ -19,7 +18,6 @@ const defaultShapeOptions: ShapeOptions = {
   eyePatternShape: 'rounded',
   gap: 0,
   eyePatternGap: 0,
-  logoAreaBorderRadius: 0,
 };
 
 type Point = {
@@ -93,14 +91,14 @@ const transformMatrixIntoPath = (
   matrix: (1 | 0)[][],
   size: number,
   options: ShapeOptions = defaultShapeOptions,
-  logoSize: number = 0
+  logoSize: number = 0,
+  logoAreaBorderRadius: number = 0
 ) => {
   const {
     shape = 'rounded',
     eyePatternShape = 'rounded',
     gap = 0,
     eyePatternGap = 0,
-    logoAreaBorderRadius = 0,
   } = options;
   const cellSize = size / matrix.length;
   const matrixLength = matrix.length;

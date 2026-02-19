@@ -46,7 +46,7 @@ export type QRCodeProps = {
   size: number;
   /**
    * The shape options for the QRCode path.
-   * Defaults: shape='rounded', eyePatternShape='rounded', gap=0, eyePatternGap=0, logoAreaBorderRadius=0.
+   * Defaults: shape='rounded', eyePatternShape='rounded', gap=0, eyePatternGap=0.
    */
   shapeOptions?: ShapeOptions;
   /**
@@ -54,6 +54,11 @@ export type QRCodeProps = {
    * Default value is 70 when logo is provided, 0 otherwise.
    */
   logoAreaSize?: number;
+  /**
+   * The border radius of the logo area.
+   * Default value is 0.
+   */
+  logoAreaBorderRadius?: number;
   /**
    * A React node to render as the logo in the center of the QR code.
    * When provided, a square area is cleared in the center to make room for the logo.
