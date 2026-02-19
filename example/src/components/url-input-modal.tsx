@@ -35,9 +35,9 @@ export const URLInputModal = ({ visible, onClose }: URLInputModalProps) => {
     if (visible) {
       setOriginalUrl(currentUrl);
       animation.value = withTiming(1, TimingPresets.modalIn);
+      // Set cursor to end after a brief delay (autoFocus handles the focus)
       setTimeout(() => {
         if (inputRef.current) {
-          inputRef.current.focus();
           // @ts-ignore - setSelectionRange available on web
           if (inputRef.current.setSelectionRange) {
             const len = currentUrl.length;
@@ -45,7 +45,7 @@ export const URLInputModal = ({ visible, onClose }: URLInputModalProps) => {
             inputRef.current.setSelectionRange(len, len);
           }
         }
-      }, 50);
+      }, 100);
     } else {
       animation.value = withTiming(0, TimingPresets.modalOut);
     }
@@ -115,6 +115,7 @@ export const URLInputModal = ({ visible, onClose }: URLInputModalProps) => {
           placeholderTextColor="rgba(255,255,255,0.3)"
           autoCapitalize="none"
           autoCorrect={false}
+          autoFocus={visible}
           keyboardType="url"
           returnKeyType="done"
         />
