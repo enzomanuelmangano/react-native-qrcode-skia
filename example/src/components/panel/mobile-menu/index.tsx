@@ -11,6 +11,7 @@ import Animated, {
   useAnimatedStyle,
   withSpring,
   runOnJS,
+  type SharedValue,
 } from 'react-native-reanimated';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -27,12 +28,14 @@ const CLOSE_THRESHOLD = 100;
 interface MobileMenuProps {
   visible: boolean;
   onClose: () => void;
+  progress?: SharedValue<number>;
 }
 
-export const MobileMenu = ({ visible, onClose }: MobileMenuProps) => {
+export const MobileMenu = ({ visible, onClose, progress }: MobileMenuProps) => {
   const insets = useSafeAreaInsets();
   const { height: windowHeight } = useWindowDimensions();
-  const animation = useSharedValue(visible ? 1 : 0);
+  const localProgress = useSharedValue(visible ? 1 : 0);
+  const animation = progress ?? localProgress;
   const translateY = useSharedValue(0);
 
   React.useEffect(() => {
@@ -56,12 +59,18 @@ export const MobileMenu = ({ visible, onClose }: MobileMenuProps) => {
     });
 
   const backdropStyle = useAnimatedStyle(() => ({
-    opacity: animation.value * 0.6 * (1 - translateY.value / (windowHeight * 0.4)),
+    opacity:
+      animation.value * 0.6 * (1 - translateY.value / (windowHeight * 0.4)),
     pointerEvents: animation.value > 0.5 ? 'auto' : 'none',
   }));
 
   const wrapperStyle = useAnimatedStyle(() => ({
-    transform: [{ translateY: (1 - animation.value) * windowHeight * 0.8 + translateY.value }],
+    transform: [
+      {
+        translateY:
+          (1 - animation.value) * windowHeight * 0.8 + translateY.value,
+      },
+    ],
     opacity: animation.value,
   }));
 
@@ -70,13 +79,21 @@ export const MobileMenu = ({ visible, onClose }: MobileMenuProps) => {
   }
 
   return (
-    <View style={[StyleSheet.absoluteFill, styles.container]} pointerEvents={visible ? 'auto' : 'none'}>
+    <View
+      style={[StyleSheet.absoluteFill, styles.container]}
+      pointerEvents={visible ? 'auto' : 'none'}
+    >
       <Animated.View style={[styles.backdrop, backdropStyle]}>
         <Pressable style={StyleSheet.absoluteFill} onPress={onClose} />
       </Animated.View>
       <Animated.View style={[styles.gestureWrapper, wrapperStyle]}>
         <GestureDetector gesture={panGesture}>
-          <View style={[styles.menu, { paddingBottom: Math.max(insets.bottom, 20) }]}>
+          <View
+            style={[
+              styles.menu,
+              { paddingBottom: Math.max(insets.bottom, 20) },
+            ]}
+          >
             <View style={styles.handleContainer}>
               <View style={styles.handle} />
             </View>

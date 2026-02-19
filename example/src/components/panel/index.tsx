@@ -4,6 +4,7 @@ import Animated, {
   useSharedValue,
   useAnimatedStyle,
   withTiming,
+  type SharedValue,
 } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { TimingPresets } from '../../animations';
@@ -49,10 +50,10 @@ const GitHubButton = () => {
 
 interface PanelProps {
   onURLButtonPress: () => void;
-  onMenuVisibilityChange?: (visible: boolean) => void;
+  drawerProgress?: SharedValue<number>;
 }
 
-export const Panel = ({ onURLButtonPress, onMenuVisibilityChange }: PanelProps) => {
+export const Panel = ({ onURLButtonPress, drawerProgress }: PanelProps) => {
   const insets = useSafeAreaInsets();
   const { isMobile } = useResponsive();
   const [menuVisible, setMenuVisible] = useState(false);
@@ -69,13 +70,11 @@ export const Panel = ({ onURLButtonPress, onMenuVisibilityChange }: PanelProps) 
 
   const openMenu = useCallback(() => {
     setMenuVisible(true);
-    onMenuVisibilityChange?.(true);
-  }, [onMenuVisibilityChange]);
+  }, []);
 
   const closeMenu = useCallback(() => {
     setMenuVisible(false);
-    onMenuVisibilityChange?.(false);
-  }, [onMenuVisibilityChange]);
+  }, []);
 
   if (isMobile) {
     return (
@@ -97,7 +96,7 @@ export const Panel = ({ onURLButtonPress, onMenuVisibilityChange }: PanelProps) 
             </View>
           </View>
         </Animated.View>
-        <MobileMenu visible={menuVisible} onClose={closeMenu} />
+        <MobileMenu visible={menuVisible} onClose={closeMenu} progress={drawerProgress} />
       </>
     );
   }

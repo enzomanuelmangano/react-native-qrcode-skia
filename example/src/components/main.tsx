@@ -4,22 +4,29 @@ import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
 import { useState, useCallback, useEffect } from 'react';
 
-import { StyleSheet, View, ActivityIndicator, Platform } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  ActivityIndicator,
+  Platform,
+  useWindowDimensions,
+} from 'react-native';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
-  withTiming,
 } from 'react-native-reanimated';
 
 import { Panel } from './panel';
 import { QRCodeDisplay } from './qrcode-display';
 import { URLInputModal } from './url-input-modal';
 import { Colors } from '../design-tokens';
-import { TimingPresets } from '../animations';
+
+const DRAWER_MAX_HEIGHT_PERCENT = 0.7;
 
 export default function App() {
+  const { height: windowHeight } = useWindowDimensions();
   const [isURLModalVisible, setIsURLModalVisible] = useState(false);
-  const contentBlur = useSharedValue(0);
+  const drawerProgress = useSharedValue(0);
 
   const handleURLButtonPress = useCallback(() => {
     setIsURLModalVisible(true);
@@ -29,28 +36,36 @@ export default function App() {
     setIsURLModalVisible(false);
   }, []);
 
-  const handleMenuVisibilityChange = useCallback((visible: boolean) => {
-    contentBlur.value = withTiming(visible ? 1 : 0, TimingPresets.blur);
-  }, [contentBlur]);
-
   const contentAnimatedStyle = useAnimatedStyle(() => {
+    // Calculate translation to center QR code in visible area above drawer
+    // Drawer takes up to 70% of screen, so visible area is 30%
+    // Move content up by half the drawer height to center it in remaining space
+    const translateY =
+      (-drawerProgress.value * (windowHeight * DRAWER_MAX_HEIGHT_PERCENT)) / 2.8;
+    const scale = 1 - drawerProgress.value * 0.02;
+
     // Use CSS filter for web blur effect
     if (Platform.OS === 'web') {
       return {
-        filter: `blur(${contentBlur.value * 8}px)`,
-        transform: [{ scale: 1 - contentBlur.value * 0.02 }],
+        filter: `blur(${drawerProgress.value * 8}px)`,
+        transform: [{ translateY }, { scale }],
       } as any;
     }
-    // For native, just scale down slightly
+    // For native, translate up and scale down slightly
     return {
-      transform: [{ scale: 1 - contentBlur.value * 0.02 }],
+      transform: [{ translateY }, { scale }],
     };
   });
 
   useEffect(() => {
     // @ts-ignore - document is available on web
     if (typeof document !== 'undefined') {
-      const handleKeyDown = (e: { key: string; metaKey: boolean; ctrlKey: boolean; preventDefault: () => void }) => {
+      const handleKeyDown = (e: {
+        key: string;
+        metaKey: boolean;
+        ctrlKey: boolean;
+        preventDefault: () => void;
+      }) => {
         if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
           e.preventDefault();
           setIsURLModalVisible((prev) => !prev);
@@ -78,8 +93,14 @@ export default function App() {
           <QRCodeDisplay />
         </React.Suspense>
       </Animated.View>
-      <Panel onURLButtonPress={handleURLButtonPress} onMenuVisibilityChange={handleMenuVisibilityChange} />
-      <URLInputModal visible={isURLModalVisible} onClose={handleURLModalClose} />
+      <Panel
+        onURLButtonPress={handleURLButtonPress}
+        drawerProgress={drawerProgress}
+      />
+      <URLInputModal
+        visible={isURLModalVisible}
+        onClose={handleURLModalClose}
+      />
     </View>
   );
 }
