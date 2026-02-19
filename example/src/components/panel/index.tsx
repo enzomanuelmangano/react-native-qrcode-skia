@@ -1,5 +1,5 @@
-import React, { useCallback, useState } from 'react';
-import { StyleSheet, View, Pressable, Linking } from 'react-native';
+import React, { useCallback } from 'react';
+import { StyleSheet, View, Linking } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ShapeDropdown } from './shape-dropdown';
 import { EyeDropdown } from './eye-dropdown';
@@ -11,6 +11,7 @@ import { ExportButton } from './export-button';
 import { ImageExportButton } from './image-export-button';
 import { URLButton } from './url-button';
 import { GitHubIcon } from '../icons';
+import { HoverPressable } from '../hover-pressable';
 import { qrcodeState$ } from '../../states';
 import { FeatureFlags } from '../../constants';
 import {
@@ -23,21 +24,18 @@ import {
 const Separator = () => <View style={styles.separator} />;
 
 const GitHubButton = () => {
-  const [isHovered, setIsHovered] = useState(false);
-
   const onPress = useCallback(() => {
     Linking.openURL('https://qrcode.reactiive.io');
   }, []);
 
   return (
-    <Pressable
+    <HoverPressable
+      style={styles.githubButton}
+      hoverStyle={styles.githubButtonHovered}
       onPress={onPress}
-      onHoverIn={() => setIsHovered(true)}
-      onHoverOut={() => setIsHovered(false)}
-      style={[styles.githubButton, isHovered && styles.githubButtonHovered]}
     >
       <GitHubIcon />
-    </Pressable>
+    </HoverPressable>
   );
 };
 

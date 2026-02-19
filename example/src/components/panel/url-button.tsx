@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import { StyleSheet, Pressable, Text } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text } from 'react-native';
 import { useSelector } from '@legendapp/state/react';
 import { qrcodeState$ } from '../../states';
 import { LinkIcon } from '../icons';
+import { HoverPressable } from '../hover-pressable';
 import {
   Colors,
   Spacing,
@@ -26,22 +27,23 @@ const truncateUrl = (url: string, maxLength: number = 20): string => {
 
 export const URLButton = ({ onPress }: URLButtonProps) => {
   const currentUrl = useSelector(qrcodeState$.qrUrl);
-  const [isHovered, setIsHovered] = useState(false);
-
   const displayUrl = truncateUrl(currentUrl);
 
   return (
-    <Pressable
+    <HoverPressable
+      style={styles.button}
+      hoverStyle={styles.buttonHovered}
       onPress={onPress}
-      onHoverIn={() => setIsHovered(true)}
-      onHoverOut={() => setIsHovered(false)}
-      style={[styles.button, isHovered && styles.buttonHovered]}
     >
-      <LinkIcon color={isHovered ? Colors.iconHovered : Colors.iconDefault} />
-      <Text style={[styles.buttonText, isHovered && styles.buttonTextHovered]}>
-        {displayUrl}
-      </Text>
-    </Pressable>
+      {({ isHovered }) => (
+        <>
+          <LinkIcon color={isHovered ? Colors.iconHovered : Colors.iconDefault} />
+          <Text style={[styles.buttonText, isHovered && styles.buttonTextHovered]}>
+            {displayUrl}
+          </Text>
+        </>
+      )}
+    </HoverPressable>
   );
 };
 

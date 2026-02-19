@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import { StyleSheet, Pressable } from 'react-native';
+import React from 'react';
+import { StyleSheet } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { useSelector } from '@legendapp/state/react';
 import { useCopyQrCode } from '../qrcode-copy-button/hooks/use-copy-qrcode';
+import { HoverPressable } from '../hover-pressable';
 import { qrcodeState$ } from '../../states';
 import { Themes } from '../../constants';
 import { Colors, Sizes, BorderRadius } from '../../design-tokens';
@@ -12,21 +13,13 @@ export const ExportButton = () => {
   const copyQrCode = useCopyQrCode();
   const currentThemeName = useSelector(qrcodeState$.currentTheme);
   const theme = Themes[currentThemeName];
-  const [isHovered, setIsHovered] = useState(false);
-  const [isPressed, setIsPressed] = useState(false);
 
   return (
-    <Pressable
-      style={[
-        styles.button,
-        isHovered && styles.buttonHovered,
-        isPressed && styles.buttonPressed,
-      ]}
+    <HoverPressable
+      style={styles.button}
+      hoverStyle={styles.buttonHovered}
+      pressedStyle={styles.buttonPressed}
       onPress={copyQrCode}
-      onHoverIn={() => setIsHovered(true)}
-      onHoverOut={() => setIsHovered(false)}
-      onPressIn={() => setIsPressed(true)}
-      onPressOut={() => setIsPressed(false)}
     >
       <LinearGradient
         colors={[theme.colors[0], theme.colors[1]]}
@@ -35,7 +28,7 @@ export const ExportButton = () => {
         style={StyleSheet.absoluteFill}
       />
       <Ionicons name="copy-outline" size={Sizes.icon} color={Colors.textPrimary} />
-    </Pressable>
+    </HoverPressable>
   );
 };
 

@@ -1,29 +1,22 @@
-import React, { useState } from 'react';
-import { StyleSheet, Pressable } from 'react-native';
+import React from 'react';
+import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useExportQrCodeImage } from '../qrcode-copy-button/hooks/use-export-qrcode-image';
+import { HoverPressable } from '../hover-pressable';
 import { Colors, Sizes, BorderRadius } from '../../design-tokens';
 
 export const ImageExportButton = () => {
   const exportImage = useExportQrCodeImage();
-  const [isHovered, setIsHovered] = useState(false);
-  const [isPressed, setIsPressed] = useState(false);
 
   return (
-    <Pressable
-      style={[
-        styles.button,
-        isHovered && styles.buttonHovered,
-        isPressed && styles.buttonPressed,
-      ]}
+    <HoverPressable
+      style={styles.button}
+      hoverStyle={styles.buttonHovered}
+      pressedStyle={styles.buttonPressed}
       onPress={exportImage}
-      onHoverIn={() => setIsHovered(true)}
-      onHoverOut={() => setIsHovered(false)}
-      onPressIn={() => setIsPressed(true)}
-      onPressOut={() => setIsPressed(false)}
     >
       <Ionicons name="download-outline" size={18} color="rgba(255,255,255,0.7)" />
-    </Pressable>
+    </HoverPressable>
   );
 };
 
