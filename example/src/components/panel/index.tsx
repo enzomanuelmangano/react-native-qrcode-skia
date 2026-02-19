@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import React, { useCallback, useState, useEffect, useRef } from 'react';
 import { StyleSheet, View, Linking } from 'react-native';
 import Animated, {
   useSharedValue,
@@ -58,8 +58,13 @@ export const Panel = ({ onURLButtonPress, drawerProgress }: PanelProps) => {
   const { isMobile } = useResponsive();
   const [menuVisible, setMenuVisible] = useState(false);
   const panelAnimation = useSharedValue(1);
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
     panelAnimation.value = withTiming(menuVisible ? 0 : 1, TimingPresets.panelFade);
   }, [menuVisible, panelAnimation]);
 
