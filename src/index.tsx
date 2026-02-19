@@ -26,6 +26,7 @@ const QRCode: React.FC<QRCodeProps> = React.memo(
     shapeOptions,
     logo,
     logoAreaSize,
+    logoAreaBorderRadius = 0,
   }) => {
     const canvasSize = size;
     const effectiveLogoAreaSize = logoAreaSize ?? (logo ? 70 : 0);
@@ -35,7 +36,8 @@ const QRCode: React.FC<QRCodeProps> = React.memo(
         generateMatrix(value, errorCorrectionLevel),
         size,
         shapeOptions,
-        effectiveLogoAreaSize
+        effectiveLogoAreaSize,
+        logoAreaBorderRadius
       );
     }, [
       value,
@@ -43,6 +45,7 @@ const QRCode: React.FC<QRCodeProps> = React.memo(
       size,
       shapeOptions,
       effectiveLogoAreaSize,
+      logoAreaBorderRadius,
     ]);
 
     const path = useMemo(() => {

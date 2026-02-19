@@ -102,9 +102,10 @@ export default App;
   - `eyePatternShape` (BaseShapeOptions, optional) - The shape of the eye patterns. Can be 'square', 'circle', 'rounded', 'diamond', 'triangle', or 'star'. Default is 'rounded'.
   - `gap` (number, optional) - The gap between QR code elements. Default is 0.
   - `eyePatternGap` (number, optional) - The gap in the eye patterns. Default is 0.
-  - `logoAreaBorderRadius` (number, optional) - The border radius of the logo area. Default is 0.
 
 - `logoAreaSize` (number, optional) - The size of the area cleared for the logo in the center of the QR code. Default is 70 when logo is provided, 0 otherwise.
+
+- `logoAreaBorderRadius` (number, optional) - The border radius of the logo area. Default is 0.
 
 - `logo` (React.ReactNode, optional) - A React node to render as the logo in the center of the QR code. When provided, a square area is cleared in the center to make room for the logo.
 
