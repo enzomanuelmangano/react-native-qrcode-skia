@@ -1,0 +1,18 @@
+:root {
+  color-scheme: dark;
+  background-color: #000000;
+}
+
+html {
+  background-color: #000000;
+}
+
+body {
+  background-color: #000000;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  background-color: #000000;
+}
