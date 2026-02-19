@@ -1,5 +1,6 @@
 {
-    "buildCommand": "cd example && bun install && bun run predeploy",
+    "installCommand": "bun install && cd example && bun install",
+    "buildCommand": "cd example && bun run predeploy",
     "outputDirectory": "example/dist",
     "devCommand": "expo",
     "cleanUrls": true,
