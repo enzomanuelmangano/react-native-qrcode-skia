@@ -66,7 +66,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <StatusBar style="light" hidden />
+      <StatusBar style="auto" />
       <Animated.View style={[styles.content, contentAnimatedStyle]}>
         <React.Suspense
           fallback={

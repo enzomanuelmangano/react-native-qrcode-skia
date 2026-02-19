@@ -12,7 +12,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import { useSelector } from '@legendapp/state/react';
 import { qrcodeState$ } from '../states';
-import { SearchIcon } from './icons';
+import { LinkIcon } from './icons';
 import {
   Colors,
   Sizes,
@@ -103,7 +103,7 @@ export const URLInputModal = ({ visible, onClose }: URLInputModalProps) => {
       <Pressable style={StyleSheet.absoluteFill} onPress={handleConfirm} />
       <Animated.View style={[styles.commandBar, cardStyle]}>
         <View style={styles.iconContainer}>
-          <SearchIcon />
+          <LinkIcon />
         </View>
         <TextInput
           ref={inputRef}

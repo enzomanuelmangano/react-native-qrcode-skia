@@ -76,7 +76,7 @@ export const SpringPresets = {
   /** Drawer/bottom sheet - critically damped, smooth */
   drawer: {
     dampingRatio: 1,
-    duration: 1000,
+    duration: 500,
   } satisfies WithSpringConfig,
 
   /** Bouncy feel for playful interactions */
