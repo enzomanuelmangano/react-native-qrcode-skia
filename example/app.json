@@ -33,7 +33,7 @@
     "web": {
       "favicon": "./assets/favicon.png",
       "bundler": "metro",
-      "output": "single",
+      "output": "static",
       "backgroundColor": "#000000"
     },
     "plugins": [

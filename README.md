@@ -13,13 +13,13 @@ https://github.com/user-attachments/assets/ec0acc48-1204-48ed-8106-45669af96593
 Before installing the package, make sure you have installed [RN Skia](https://shopify.github.io/react-native-skia/). 
 
 ```sh
-yarn add @shopify/react-native-skia
+bun add @shopify/react-native-skia
 ```
 
 Then, you can install the package:
 
 ```sh
-yarn add react-native-qrcode-skia
+bun add react-native-qrcode-skia
 ```
 
 ## Usage
