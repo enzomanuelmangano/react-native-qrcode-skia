@@ -37,7 +37,7 @@ export const styles = StyleSheet.create({
     backgroundColor: Colors.borderSubtle,
     borderRadius: 2,
   },
-  scrollContent: {
+  content: {
     paddingHorizontal: Spacing.xl,
   },
   section: {

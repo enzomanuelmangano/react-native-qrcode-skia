@@ -5,16 +5,14 @@ import Animated, {
   useSharedValue,
   useAnimatedStyle,
   withTiming,
-  Easing,
 } from 'react-native-reanimated';
 import { ChevronIcon } from '../../icons';
-import { Colors, Animation } from '../../../design-tokens';
+import { Colors } from '../../../design-tokens';
+import { TimingPresets } from '../../../animations';
 import { DropdownCloseContext, DropdownDirectionContext } from './context';
 import { styles } from './styles';
 
 export { useDropdownClose, DropdownDirectionProvider } from './context';
-
-const EASING = Easing.out(Easing.cubic);
 
 type HoverDropdownProps = {
   trigger: ReactNode;
@@ -41,12 +39,12 @@ export const HoverDropdown = ({
       clearTimeout(closeTimeout.current);
       closeTimeout.current = null;
     }
-    animation.value = withTiming(1, { duration: Animation.normal, easing: EASING });
+    animation.value = withTiming(1, TimingPresets.dropdown);
   }, [animation]);
 
   const closeDropdown = useCallback(() => {
     closeTimeout.current = setTimeout(() => {
-      animation.value = withTiming(0, { duration: Animation.fast, easing: EASING });
+      animation.value = withTiming(0, TimingPresets.dropdownClose);
     }, 30);
   }, [animation]);
 
@@ -88,14 +86,14 @@ export const HoverDropdown = ({
     setIsTapOpen(false);
     setIsHovered(false);
     setIsDropdownHovered(false);
-    animation.value = withTiming(0, { duration: Animation.fast, easing: EASING });
+    animation.value = withTiming(0, TimingPresets.dropdownClose);
   };
 
   const closeFromChild = useCallback(() => {
     setIsTapOpen(false);
     setIsHovered(false);
     setIsDropdownHovered(false);
-    animation.value = withTiming(0, { duration: Animation.fast, easing: EASING });
+    animation.value = withTiming(0, TimingPresets.dropdownClose);
   }, [animation]);
 
   const dropdownStyle = useAnimatedStyle(() => {

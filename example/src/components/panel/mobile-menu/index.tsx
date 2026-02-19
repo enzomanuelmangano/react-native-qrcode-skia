@@ -4,7 +4,6 @@ import {
   View,
   Text,
   Pressable,
-  ScrollView,
   useWindowDimensions,
 } from 'react-native';
 import Animated, {
@@ -12,11 +11,10 @@ import Animated, {
   useAnimatedStyle,
   withTiming,
   runOnJS,
-  Easing,
 } from 'react-native-reanimated';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Animation } from '../../../design-tokens';
+import { TimingPresets } from '../../../animations';
 import { styles } from './styles';
 import { ThemeSelector } from './theme-selector';
 import { ShapeSelector } from './shape-selector';
@@ -24,7 +22,6 @@ import { EyeSelector } from './eye-selector';
 import { GapSelector } from './gap-selector';
 import { LogoSelector } from './logo-selector';
 
-const EASING = Easing.out(Easing.cubic);
 const CLOSE_THRESHOLD = 100;
 
 interface MobileMenuProps {
@@ -42,10 +39,10 @@ export const MobileMenu = ({ visible, onClose }: MobileMenuProps) => {
     if (visible) {
       translateY.value = 0;
     }
-    animation.value = withTiming(visible ? 1 : 0, {
-      duration: Animation.normal,
-      easing: EASING,
-    });
+    animation.value = withTiming(
+      visible ? 1 : 0,
+      visible ? TimingPresets.drawerIn : TimingPresets.drawerOut
+    );
   }, [visible, animation, translateY]);
 
   const panGesture = Gesture.Pan()
@@ -54,10 +51,10 @@ export const MobileMenu = ({ visible, onClose }: MobileMenuProps) => {
     })
     .onEnd((event) => {
       if (event.translationY > CLOSE_THRESHOLD || event.velocityY > 500) {
-        translateY.value = withTiming(windowHeight * 0.8, { duration: Animation.fast, easing: EASING });
+        translateY.value = withTiming(windowHeight * 0.8, TimingPresets.drawerOut);
         runOnJS(onClose)();
       } else {
-        translateY.value = withTiming(0, { duration: Animation.normal, easing: EASING });
+        translateY.value = withTiming(0, TimingPresets.snapBack);
       }
     });
 
@@ -92,7 +89,7 @@ export const MobileMenu = ({ visible, onClose }: MobileMenuProps) => {
             <View style={styles.handle} />
           </Animated.View>
         </GestureDetector>
-        <ScrollView style={styles.scrollContent} showsVerticalScrollIndicator={false}>
+        <View style={styles.content}>
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Colors</Text>
             <ThemeSelector />
@@ -117,7 +114,7 @@ export const MobileMenu = ({ visible, onClose }: MobileMenuProps) => {
             <Text style={styles.sectionTitle}>Logo</Text>
             <LogoSelector />
           </View>
-        </ScrollView>
+        </View>
       </Animated.View>
     </View>
   );

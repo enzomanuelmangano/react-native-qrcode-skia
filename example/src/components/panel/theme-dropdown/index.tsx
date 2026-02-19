@@ -4,18 +4,16 @@ import Animated, {
   useSharedValue,
   useAnimatedStyle,
   withTiming,
-  Easing,
 } from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useSelector } from '@legendapp/state/react';
 import { ChevronIcon } from '../../icons';
 import { Themes, type ThemeName } from '../../../constants';
 import { qrcodeState$ } from '../../../states';
-import { Colors, Animation } from '../../../design-tokens';
+import { Colors } from '../../../design-tokens';
+import { TimingPresets } from '../../../animations';
 import { ThemeOption } from './theme-option';
 import { styles } from './styles';
-
-const EASING = Easing.out(Easing.cubic);
 
 export const ThemeDropdown = () => {
   const currentThemeName = useSelector(qrcodeState$.currentTheme);
@@ -36,12 +34,12 @@ export const ThemeDropdown = () => {
       clearTimeout(closeTimeout.current);
       closeTimeout.current = null;
     }
-    animation.value = withTiming(1, { duration: Animation.normal, easing: EASING });
+    animation.value = withTiming(1, TimingPresets.dropdown);
   };
 
   const closeDropdown = () => {
     closeTimeout.current = setTimeout(() => {
-      animation.value = withTiming(0, { duration: Animation.fast, easing: EASING });
+      animation.value = withTiming(0, TimingPresets.dropdownClose);
     }, 30);
   };
 
@@ -83,7 +81,7 @@ export const ThemeDropdown = () => {
     setIsTapOpen(false);
     setIsHovered(false);
     setIsDropdownHovered(false);
-    animation.value = withTiming(0, { duration: Animation.fast, easing: EASING });
+    animation.value = withTiming(0, TimingPresets.dropdownClose);
   };
 
   const dropdownStyle = useAnimatedStyle(() => ({
@@ -125,7 +123,7 @@ export const ThemeDropdown = () => {
                   setIsTapOpen(false);
                   setIsDropdownHovered(false);
                   setIsHovered(false);
-                  animation.value = withTiming(0, { duration: Animation.fast, easing: EASING });
+                  animation.value = withTiming(0, TimingPresets.dropdownClose);
                 }}
               />
             );
