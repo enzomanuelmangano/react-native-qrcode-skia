@@ -1,5 +1,5 @@
 {
-    "buildCommand": "cd example && yarn install && yarn predeploy",
+    "buildCommand": "cd example && bun install && bun run predeploy",
     "outputDirectory": "example/dist",
     "devCommand": "expo",
     "cleanUrls": true,
