@@ -101,7 +101,7 @@ export const URLInputModal = ({ visible, onClose }: URLInputModalProps) => {
     ],
   }));
 
-  if (!visible && animation.value === 0) {
+  if (!visible && animation.get() === 0) {
     return null;
   }
 
