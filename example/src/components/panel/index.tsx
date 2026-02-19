@@ -25,7 +25,7 @@ const Separator = () => <View style={styles.separator} />;
 
 const GitHubButton = () => {
   const onPress = useCallback(() => {
-    Linking.openURL('https://qrcode.reactiive.io');
+    Linking.openURL('https://github.com/enzomanuelmangano/react-native-qrcode-skia');
   }, []);
 
   return (

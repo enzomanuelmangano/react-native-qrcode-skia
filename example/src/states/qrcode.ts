@@ -23,7 +23,7 @@ export const GapValues: Record<GapSize, number> = {
 };
 
 export const qrcodeState$ = observable({
-  qrUrl: 'https://enzo.fyi',
+  qrUrl: 'https://qrcode.reactiive.io',
   baseShape: 'circle' as BaseShapeOptions,
   eyePatternShape: 'rounded' as BaseShapeOptions,
   gap: 'sm' as GapSize,
