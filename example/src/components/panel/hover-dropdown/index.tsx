@@ -1,30 +1,18 @@
-import React, { useState, useRef, useCallback, createContext, useContext } from 'react';
+import React, { useState, useRef, useCallback, useContext } from 'react';
 import type { ReactNode } from 'react';
-import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { View, Text, Pressable } from 'react-native';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
   withTiming,
   Easing,
 } from 'react-native-reanimated';
-import { ChevronIcon } from '../icons';
-import {
-  Colors,
-  Spacing,
-  Sizes,
-  BorderRadius,
-  Animation,
-} from '../../design-tokens';
+import { ChevronIcon } from '../../icons';
+import { Colors, Animation } from '../../../design-tokens';
+import { DropdownCloseContext, DropdownDirectionContext } from './context';
+import { styles } from './styles';
 
-// Context to allow children to close the dropdown
-const DropdownCloseContext = createContext<(() => void) | null>(null);
-
-export const useDropdownClose = () => useContext(DropdownCloseContext);
-
-// Context to control dropdown direction (for mobile menu)
-const DropdownDirectionContext = createContext<'up' | 'down'>('up');
-
-export const DropdownDirectionProvider = DropdownDirectionContext.Provider;
+export { useDropdownClose, DropdownDirectionProvider } from './context';
 
 const EASING = Easing.out(Easing.cubic);
 
@@ -86,7 +74,6 @@ export const HoverDropdown = ({
     }
   };
 
-  // Toggle on tap for mobile
   const handlePress = () => {
     if (isTapOpen) {
       setIsTapOpen(false);
@@ -97,7 +84,6 @@ export const HoverDropdown = ({
     }
   };
 
-  // Close when tapping outside (on the backdrop)
   const handleBackdropPress = () => {
     setIsTapOpen(false);
     setIsHovered(false);
@@ -105,7 +91,6 @@ export const HoverDropdown = ({
     animation.value = withTiming(0, { duration: Animation.fast, easing: EASING });
   };
 
-  // Close function for children to call
   const closeFromChild = useCallback(() => {
     setIsTapOpen(false);
     setIsHovered(false);
@@ -131,12 +116,8 @@ export const HoverDropdown = ({
 
   return (
     <View style={styles.container}>
-      {/* Backdrop for closing on tap outside */}
       {isTapOpen && (
-        <Pressable
-          style={styles.backdrop}
-          onPress={handleBackdropPress}
-        />
+        <Pressable style={styles.backdrop} onPress={handleBackdropPress} />
       )}
 
       <Animated.View
@@ -168,70 +149,9 @@ export const HoverDropdown = ({
           </Text>
         )}
         <Animated.View style={chevronStyle}>
-          <ChevronIcon
-            color={isOpen ? Colors.iconHovered : Colors.iconMuted}
-          />
+          <ChevronIcon color={isOpen ? Colors.iconHovered : Colors.iconMuted} />
         </Animated.View>
       </Pressable>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    position: 'relative',
-    zIndex: 1,
-  },
-  backdrop: {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    zIndex: 9998,
-  } as any,
-  button: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: Spacing.xl,
-    height: Sizes.button,
-    borderRadius: BorderRadius.lg,
-    gap: Spacing.md,
-  },
-  buttonHovered: {
-    backgroundColor: Colors.hoverBackground,
-  },
-  buttonText: {
-    color: Colors.textMuted,
-    fontSize: 13,
-    fontWeight: '500',
-  },
-  buttonTextHovered: {
-    color: Colors.textHovered,
-  },
-  dropdown: {
-    position: 'absolute',
-    left: 0,
-    zIndex: 9999,
-  },
-  dropdownUp: {
-    bottom: '100%',
-    marginBottom: Spacing.md,
-  },
-  dropdownDown: {
-    top: '100%',
-    marginTop: Spacing.md,
-  },
-  dropdownContent: {
-    backgroundColor: Colors.dropdownBackground,
-    borderRadius: BorderRadius.xl,
-    borderWidth: 1,
-    borderColor: Colors.borderDropdown,
-    overflow: 'hidden',
-    minWidth: 150,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.4,
-    shadowRadius: 24,
-  },
-});
