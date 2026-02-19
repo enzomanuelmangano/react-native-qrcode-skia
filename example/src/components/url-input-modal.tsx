@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     height: 54,
-    fontSize: 15,
+    fontSize: 16,
     color: Colors.textPrimary,
     paddingRight: Sizes.icon,
     outlineStyle: 'none',
