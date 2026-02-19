@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
-import { View, Text, Pressable } from 'react-native';
+import { View, Text } from 'react-native';
+import { PressableScale } from 'pressto';
 import * as Burnt from '../../../utils/toast';
 import { useSelector } from '@legendapp/state/react';
 import { qrcodeState$, LogoEmojis } from '../../../states';
@@ -27,13 +28,13 @@ export const LogoSelector = () => {
       {LogoEmojis.map((emoji, index) => {
         const isSelected = emoji === selectedLogo;
         return (
-          <Pressable
+          <PressableScale
             key={index}
             onPress={() => handleSelect(emoji)}
             style={[styles.logoOption, isSelected && { backgroundColor: themeColor }]}
           >
             <Text style={styles.logoEmoji}>{emoji || '—'}</Text>
-          </Pressable>
+          </PressableScale>
         );
       })}
     </View>

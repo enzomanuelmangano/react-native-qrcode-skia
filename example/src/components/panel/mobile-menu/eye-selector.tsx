@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
-import { View, Pressable } from 'react-native';
+import { View } from 'react-native';
+import { PressableScale } from 'pressto';
 import Svg, { Path } from 'react-native-svg';
 import * as Burnt from '../../../utils/toast';
 import { useSelector } from '@legendapp/state/react';
@@ -35,7 +36,7 @@ export const EyeSelector = () => {
         const isSelected = shape === currentShape;
         const shapePath = getPathFromShape(shape, 16);
         return (
-          <Pressable
+          <PressableScale
             key={shape}
             onPress={() => handleSelect(shape)}
             style={[styles.shapeOption, isSelected && { backgroundColor: themeColor }]}
@@ -43,7 +44,7 @@ export const EyeSelector = () => {
             <Svg width={16} height={16} viewBox="0 0 16 16">
               <Path d={shapePath} fill={Colors.textPrimary} />
             </Svg>
-          </Pressable>
+          </PressableScale>
         );
       })}
     </View>

@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
-import { View, Text, Pressable } from 'react-native';
+import { View, Text } from 'react-native';
+import { PressableScale } from 'pressto';
 import * as Burnt from '../../../utils/toast';
 import { useSelector } from '@legendapp/state/react';
 import { qrcodeState$, GapSizes, type GapSize } from '../../../states';
@@ -27,7 +28,7 @@ export const GapSelector = () => {
       {GapSizes.map((size) => {
         const isSelected = size === currentGap;
         return (
-          <Pressable
+          <PressableScale
             key={size}
             onPress={() => handleSelect(size)}
             style={[
@@ -38,7 +39,7 @@ export const GapSelector = () => {
             <Text style={[styles.gapText, isSelected && styles.gapTextSelected]}>
               {size}
             </Text>
-          </Pressable>
+          </PressableScale>
         );
       })}
     </View>
