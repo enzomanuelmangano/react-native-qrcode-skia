@@ -1,13 +1,28 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { View, Pressable } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import * as Burnt from 'burnt';
 import { useSelector } from '@legendapp/state/react';
 import { qrcodeState$ } from '../../../states';
 import { Themes, type ThemeName } from '../../../constants';
 import { styles } from './styles';
 
+const formatThemeName = (name: string) =>
+  name.charAt(0).toUpperCase() + name.slice(1);
+
 export const ThemeSelector = () => {
   const currentTheme = useSelector(qrcodeState$.currentTheme);
+
+  const handleSelect = useCallback((themeName: ThemeName) => {
+    if (themeName === qrcodeState$.currentTheme.peek()) return;
+    qrcodeState$.currentTheme.set(themeName);
+    Burnt.toast({
+      title: `Theme: ${formatThemeName(themeName)}`,
+      preset: 'done',
+      haptic: 'success',
+      duration: 1,
+    });
+  }, []);
 
   return (
     <View style={styles.optionsRow}>
@@ -17,7 +32,7 @@ export const ThemeSelector = () => {
         return (
           <Pressable
             key={themeName}
-            onPress={() => qrcodeState$.currentTheme.set(themeName)}
+            onPress={() => handleSelect(themeName)}
             style={[
               styles.colorOption,
               isSelected && { borderColor: theme.colors[0] },

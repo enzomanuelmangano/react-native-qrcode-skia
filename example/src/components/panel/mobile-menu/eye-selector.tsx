@@ -1,17 +1,33 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { View, Pressable } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
+import * as Burnt from 'burnt';
 import { useSelector } from '@legendapp/state/react';
 import { qrcodeState$, Shapes } from '../../../states';
 import { Themes } from '../../../constants';
 import { getPathFromShape } from '../../../utils/shape-path';
 import { Colors } from '../../../design-tokens';
 import { styles } from './styles';
+import type { BaseShapeOptions } from 'react-native-qrcode-skia';
+
+const formatShapeName = (name: string) =>
+  name.charAt(0).toUpperCase() + name.slice(1);
 
 export const EyeSelector = () => {
   const currentShape = useSelector(qrcodeState$.eyePatternShape);
   const currentTheme = useSelector(qrcodeState$.currentTheme);
   const themeColor = Themes[currentTheme].colors[0];
+
+  const handleSelect = useCallback((shape: BaseShapeOptions) => {
+    if (shape === qrcodeState$.eyePatternShape.peek()) return;
+    qrcodeState$.eyePatternShape.set(shape);
+    Burnt.toast({
+      title: `Eye Pattern: ${formatShapeName(shape)}`,
+      preset: 'done',
+      haptic: 'success',
+      duration: 1,
+    });
+  }, []);
 
   return (
     <View style={styles.optionsRow}>
@@ -21,7 +37,7 @@ export const EyeSelector = () => {
         return (
           <Pressable
             key={shape}
-            onPress={() => qrcodeState$.eyePatternShape.set(shape)}
+            onPress={() => handleSelect(shape)}
             style={[styles.shapeOption, isSelected && { backgroundColor: themeColor }]}
           >
             <Svg width={16} height={16} viewBox="0 0 16 16">
