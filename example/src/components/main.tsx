@@ -9,6 +9,7 @@ import { StyleSheet, View, ActivityIndicator } from 'react-native';
 import { Panel } from './panel';
 import { QRCodeDisplay } from './qrcode-display';
 import { URLInputModal } from './url-input-modal';
+import { Colors } from '../design-tokens';
 
 export default function App() {
   const [isURLModalVisible, setIsURLModalVisible] = useState(false);
@@ -21,7 +22,6 @@ export default function App() {
     setIsURLModalVisible(false);
   }, []);
 
-  // Cmd+K to toggle URL modal
   useEffect(() => {
     // @ts-ignore - document is available on web
     if (typeof document !== 'undefined') {
@@ -31,7 +31,6 @@ export default function App() {
           setIsURLModalVisible((prev) => !prev);
         }
       };
-      // Use capture phase to catch event before input does
       // @ts-ignore - document is available on web
       document.addEventListener('keydown', handleKeyDown, true);
       // @ts-ignore - document is available on web
@@ -47,7 +46,7 @@ export default function App() {
         <React.Suspense
           fallback={
             <View style={styles.loader}>
-              <ActivityIndicator size="large" color="rgba(255,255,255,0.3)" />
+              <ActivityIndicator size="large" color={Colors.loaderColor} />
             </View>
           }
         >
@@ -63,7 +62,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000000',
+    backgroundColor: Colors.background,
   },
   content: {
     flex: 1,

@@ -3,6 +3,12 @@ import { View, Pressable, StyleSheet, Text } from 'react-native';
 import { useSelector } from '@legendapp/state/react';
 import { qrcodeState$, GapSizes, type GapSize } from '../../states';
 import { Themes } from '../../constants';
+import {
+  Colors,
+  Spacing,
+  Sizes,
+  BorderRadius,
+} from '../../design-tokens';
 
 export const GapSelector = () => {
   const currentValue = useSelector(qrcodeState$.gap);
@@ -70,42 +76,42 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 12,
-    height: 44,
-    borderRadius: 10,
-    gap: 10,
+    paddingHorizontal: Spacing.xl,
+    height: Sizes.button,
+    borderRadius: BorderRadius.lg,
+    gap: Spacing.lg,
   },
   label: {
-    color: 'rgba(255,255,255,0.5)',
+    color: Colors.textMuted,
     fontSize: 13,
     fontWeight: '500',
   },
   selector: {
     flexDirection: 'row',
-    backgroundColor: 'rgba(255,255,255,0.06)',
-    borderRadius: 8,
+    backgroundColor: Colors.buttonBackground,
+    borderRadius: BorderRadius.md,
     padding: 3,
   },
   button: {
-    paddingHorizontal: 8,
+    paddingHorizontal: Spacing.md,
     height: 26,
-    borderRadius: 6,
+    borderRadius: BorderRadius.sm,
     justifyContent: 'center',
     alignItems: 'center',
   },
   buttonHovered: {
-    backgroundColor: 'rgba(255,255,255,0.08)',
+    backgroundColor: Colors.hoverBackground,
   },
   buttonText: {
     fontSize: 11,
     fontWeight: '600',
-    color: 'rgba(255,255,255,0.6)',
+    color: Colors.textSubtle,
     textTransform: 'uppercase',
   },
   buttonTextHovered: {
-    color: 'rgba(255,255,255,0.9)',
+    color: Colors.iconHovered,
   },
   buttonTextActive: {
-    color: '#FFFFFF',
+    color: Colors.textPrimary,
   },
 });

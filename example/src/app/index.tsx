@@ -8,6 +8,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Toaster } from 'burnt/web';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import App from '../components/main';
+import { Colors } from '../design-tokens';
 
 export default function Root() {
   return (
@@ -28,6 +29,6 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: '#000000',
+    backgroundColor: Colors.background,
   },
 });

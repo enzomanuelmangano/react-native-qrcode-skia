@@ -11,24 +11,17 @@ import Animated, {
   withTiming,
   Easing,
 } from 'react-native-reanimated';
-import Svg, { Path } from 'react-native-svg';
 import { useSelector } from '@legendapp/state/react';
 import { qrcodeState$ } from '../states';
+import { SearchIcon } from './icons';
+import {
+  Colors,
+  Sizes,
+  BorderRadius,
+  Animation,
+} from '../design-tokens';
 
-const ANIMATION_DURATION = 120;
 const EASING = Easing.out(Easing.cubic);
-
-const SearchIcon = () => (
-  <Svg width={16} height={16} viewBox="0 0 24 24" fill="none">
-    <Path
-      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-      stroke="rgba(255,255,255,0.4)"
-      strokeWidth={2}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </Svg>
-);
 
 interface URLInputModalProps {
   visible: boolean;
@@ -43,10 +36,8 @@ export const URLInputModal = ({ visible, onClose }: URLInputModalProps) => {
 
   useEffect(() => {
     if (visible) {
-      // Store original value for cancel
       setOriginalUrl(currentUrl);
-      animation.value = withTiming(1, { duration: ANIMATION_DURATION, easing: EASING });
-      // Focus and move cursor to end
+      animation.value = withTiming(1, { duration: Animation.fast + 20, easing: EASING });
       setTimeout(() => {
         if (inputRef.current) {
           inputRef.current.focus();
@@ -59,18 +50,16 @@ export const URLInputModal = ({ visible, onClose }: URLInputModalProps) => {
         }
       }, 50);
     } else {
-      animation.value = withTiming(0, { duration: ANIMATION_DURATION, easing: EASING });
+      animation.value = withTiming(0, { duration: Animation.fast + 20, easing: EASING });
     }
   }, [visible, animation]);
 
   const handleCancel = () => {
-    // Restore original value
     qrcodeState$.qrUrl.set(originalUrl);
     onClose();
   };
 
   const handleConfirm = () => {
-    // Keep current value (already in state)
     onClose();
   };
 
@@ -80,7 +69,6 @@ export const URLInputModal = ({ visible, onClose }: URLInputModalProps) => {
       const handleKeyDown = (e: { key: string }) => {
         if (!visible) return;
 
-        // Escape to cancel
         if (e.key === 'Escape') {
           handleCancel();
         }
@@ -141,7 +129,7 @@ export const URLInputModal = ({ visible, onClose }: URLInputModalProps) => {
 const styles = StyleSheet.create({
   backdrop: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(0,0,0,0.6)',
+    backgroundColor: Colors.backdropBackground,
     justifyContent: 'flex-start',
     alignItems: 'center',
     paddingTop: 140,
@@ -151,10 +139,10 @@ const styles = StyleSheet.create({
     width: 640,
     maxWidth: '90%',
     height: 54,
-    backgroundColor: 'rgba(30,30,30,0.98)',
-    borderRadius: 10,
+    backgroundColor: Colors.modalBackground,
+    borderRadius: BorderRadius.lg,
     borderWidth: 1,
-    borderColor: 'rgba(255,255,255,0.1)',
+    borderColor: Colors.borderModal,
     flexDirection: 'row',
     alignItems: 'center',
     shadowColor: '#000',
@@ -172,8 +160,8 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 54,
     fontSize: 15,
-    color: '#fff',
-    paddingRight: 16,
+    color: Colors.textPrimary,
+    paddingRight: Sizes.icon,
     outlineStyle: 'none',
   } as any,
 });

@@ -4,11 +4,9 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useSelector } from '@legendapp/state/react';
 import { qrcodeState$, GradientTypeOptions } from '../../states';
 import { HoverDropdown } from './hover-dropdown';
+import { Colors, Spacing, Sizes, BorderRadius } from '../../design-tokens';
 
 type GradientType = (typeof GradientTypeOptions)[number];
-
-const TriggerSize = 12;
-const DropdownPreviewSize = 12;
 
 const getGradientLabel = (gradient: GradientType): string => {
   switch (gradient) {
@@ -119,9 +117,9 @@ const GradientOption = ({
 
 const styles = StyleSheet.create({
   triggerPreview: {
-    width: TriggerSize,
-    height: TriggerSize,
-    borderRadius: 3,
+    width: Sizes.gradientPreview,
+    height: Sizes.gradientPreview,
+    borderRadius: BorderRadius.sm / 2,
     overflow: 'hidden',
   },
   gradientFill: {
@@ -130,25 +128,25 @@ const styles = StyleSheet.create({
   option: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 10,
-    paddingHorizontal: 12,
-    gap: 10,
+    paddingVertical: Spacing.lg,
+    paddingHorizontal: Spacing.xl,
+    gap: Spacing.lg,
   },
   optionHovered: {
-    backgroundColor: 'rgba(255,255,255,0.08)',
+    backgroundColor: Colors.hoverBackground,
   },
   preview: {
-    width: DropdownPreviewSize,
-    height: DropdownPreviewSize,
-    borderRadius: 3,
+    width: Sizes.gradientPreview,
+    height: Sizes.gradientPreview,
+    borderRadius: BorderRadius.sm / 2,
     overflow: 'hidden',
   },
   optionText: {
-    color: 'rgba(255,255,255,0.6)',
+    color: Colors.textSubtle,
     fontSize: 13,
     fontWeight: '500',
   },
   optionTextHovered: {
-    color: '#fff',
+    color: Colors.textPrimary,
   },
 });

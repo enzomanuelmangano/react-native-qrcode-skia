@@ -1,12 +1,10 @@
-import { useCallback } from 'react';
+import React, { useCallback } from 'react';
 import * as Burnt from 'burnt';
 import { Platform } from 'react-native';
 import Clipboard from '@react-native-clipboard/clipboard';
 import { useGetActiveQrCodeString } from './use-active-qrcode-string';
 import { Image } from 'expo-image';
 import { qrcodeState$ } from '../../../states';
-// @ts-ignore TODO: fix this
-import React from 'react';
 
 const GitHubMark = require('../../../../assets/images/github-mark.png');
 
@@ -41,12 +39,6 @@ export const useCopyQrCode = () => {
         },
       });
     }
-
-    // TODO: handle native platforms if != Expo Go
-    // Burnt.toast({
-    //   title: 'QR code component copied',
-    //   preset: 'done',
-    // });
   }, [getActiveQrCodeString]);
 
   return copyQrCode;

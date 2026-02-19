@@ -7,28 +7,19 @@ import Animated, {
   Easing,
 } from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
-import Svg, { Path } from 'react-native-svg';
 import { useSelector } from '@legendapp/state/react';
-
+import { ChevronIcon } from '../icons';
 import { Themes, type ThemeName } from '../../constants';
 import { qrcodeState$ } from '../../states';
+import {
+  Colors,
+  Spacing,
+  Sizes,
+  BorderRadius,
+  Animation,
+} from '../../design-tokens';
 
-// Fast ease-out curve for snappy feel
 const EASING = Easing.out(Easing.cubic);
-const OPEN_DURATION = 150;
-const CLOSE_DURATION = 100;
-
-const Chevron = ({ color = 'rgba(255,255,255,0.4)' }: { color?: string }) => (
-  <Svg width={10} height={10} viewBox="0 0 24 24" fill="none">
-    <Path
-      d="M6 9l6 6 6-6"
-      stroke={color}
-      strokeWidth={2.5}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </Svg>
-);
 
 export const ThemeDropdown = () => {
   const currentThemeName = useSelector(qrcodeState$.currentTheme);
@@ -48,12 +39,12 @@ export const ThemeDropdown = () => {
       clearTimeout(closeTimeout.current);
       closeTimeout.current = null;
     }
-    animation.value = withTiming(1, { duration: OPEN_DURATION, easing: EASING });
+    animation.value = withTiming(1, { duration: Animation.normal, easing: EASING });
   };
 
   const closeDropdown = () => {
     closeTimeout.current = setTimeout(() => {
-      animation.value = withTiming(0, { duration: CLOSE_DURATION, easing: EASING });
+      animation.value = withTiming(0, { duration: Animation.fast, easing: EASING });
     }, 30);
   };
 
@@ -117,7 +108,7 @@ export const ThemeDropdown = () => {
                   qrcodeState$.currentTheme.set(themeName);
                   setIsDropdownHovered(false);
                   setIsHovered(false);
-                  animation.value = withTiming(0, { duration: CLOSE_DURATION, easing: EASING });
+                  animation.value = withTiming(0, { duration: Animation.fast, easing: EASING });
                 }}
               />
             );
@@ -140,8 +131,8 @@ export const ThemeDropdown = () => {
           Colors
         </Text>
         <Animated.View style={chevronStyle}>
-          <Chevron
-            color={isOpen ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.4)'}
+          <ChevronIcon
+            color={isOpen ? Colors.iconHovered : Colors.iconMuted}
           />
         </Animated.View>
       </Pressable>
@@ -198,39 +189,39 @@ const styles = StyleSheet.create({
   button: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 12,
-    height: 44,
-    borderRadius: 10,
-    gap: 8,
+    paddingHorizontal: Spacing.xl,
+    height: Sizes.button,
+    borderRadius: BorderRadius.lg,
+    gap: Spacing.md,
   },
   buttonHovered: {
-    backgroundColor: 'rgba(255,255,255,0.08)',
+    backgroundColor: Colors.hoverBackground,
   },
   selectedCircle: {
-    width: 14,
-    height: 14,
-    borderRadius: 7,
+    width: Sizes.iconSmall,
+    height: Sizes.iconSmall,
+    borderRadius: Sizes.iconSmall / 2,
   },
   buttonText: {
-    color: 'rgba(255,255,255,0.5)',
+    color: Colors.textMuted,
     fontSize: 13,
     fontWeight: '500',
   },
   buttonTextHovered: {
-    color: 'rgba(255,255,255,0.95)',
+    color: Colors.textHovered,
   },
   dropdown: {
     position: 'absolute',
     bottom: '100%',
     left: 0,
-    marginBottom: 8,
+    marginBottom: Spacing.md,
     zIndex: 9999,
   },
   dropdownContent: {
-    backgroundColor: '#1c1c1e',
-    borderRadius: 12,
+    backgroundColor: Colors.dropdownBackground,
+    borderRadius: BorderRadius.xl,
     borderWidth: 1,
-    borderColor: 'rgba(255,255,255,0.15)',
+    borderColor: Colors.borderDropdown,
     overflow: 'hidden',
     minWidth: 150,
     shadowColor: '#000',
@@ -241,24 +232,24 @@ const styles = StyleSheet.create({
   option: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 10,
-    paddingHorizontal: 14,
-    gap: 10,
+    paddingVertical: Spacing.lg,
+    paddingHorizontal: Spacing.xxl,
+    gap: Spacing.lg,
   },
   optionHovered: {
-    backgroundColor: 'rgba(255,255,255,0.08)',
+    backgroundColor: Colors.hoverBackground,
   },
   optionCircle: {
-    width: 14,
-    height: 14,
-    borderRadius: 7,
+    width: Sizes.iconSmall,
+    height: Sizes.iconSmall,
+    borderRadius: Sizes.iconSmall / 2,
   },
   optionText: {
-    color: 'rgba(255,255,255,0.6)',
+    color: Colors.textSubtle,
     fontSize: 13,
     fontWeight: '500',
   },
   optionTextHovered: {
-    color: '#fff',
+    color: Colors.textPrimary,
   },
 });

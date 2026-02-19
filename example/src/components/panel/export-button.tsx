@@ -6,6 +6,7 @@ import { useSelector } from '@legendapp/state/react';
 import { useCopyQrCode } from '../qrcode-copy-button/hooks/use-copy-qrcode';
 import { qrcodeState$ } from '../../states';
 import { Themes } from '../../constants';
+import { Colors, Sizes, BorderRadius } from '../../design-tokens';
 
 export const ExportButton = () => {
   const copyQrCode = useCopyQrCode();
@@ -33,16 +34,16 @@ export const ExportButton = () => {
         end={{ x: 1, y: 1 }}
         style={StyleSheet.absoluteFill}
       />
-      <Ionicons name="copy-outline" size={16} color="white" />
+      <Ionicons name="copy-outline" size={Sizes.icon} color={Colors.textPrimary} />
     </Pressable>
   );
 };
 
 const styles = StyleSheet.create({
   button: {
-    width: 44,
-    height: 44,
-    borderRadius: 10,
+    width: Sizes.button,
+    height: Sizes.button,
+    borderRadius: BorderRadius.lg,
     overflow: 'hidden',
     justifyContent: 'center',
     alignItems: 'center',

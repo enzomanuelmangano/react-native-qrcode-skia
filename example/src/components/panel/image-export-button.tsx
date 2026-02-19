@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Pressable } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useExportQrCodeImage } from '../qrcode-copy-button/hooks/use-export-qrcode-image';
+import { Colors, Sizes, BorderRadius } from '../../design-tokens';
 
 export const ImageExportButton = () => {
   const exportImage = useExportQrCodeImage();
@@ -28,15 +29,15 @@ export const ImageExportButton = () => {
 
 const styles = StyleSheet.create({
   button: {
-    width: 44,
-    height: 44,
-    borderRadius: 10,
+    width: Sizes.button,
+    height: Sizes.button,
+    borderRadius: BorderRadius.lg,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(255,255,255,0.06)',
+    backgroundColor: Colors.buttonBackground,
   },
   buttonHovered: {
-    backgroundColor: 'rgba(255,255,255,0.12)',
+    backgroundColor: Colors.activeBackground,
   },
   buttonPressed: {
     opacity: 0.85,

@@ -3,6 +3,7 @@ import { StyleSheet, Text, Pressable } from 'react-native';
 import { useSelector } from '@legendapp/state/react';
 import { qrcodeState$, LogoEmojis } from '../../states';
 import { HoverDropdown } from './hover-dropdown';
+import { Colors, Spacing } from '../../design-tokens';
 
 const LogoLabels: Record<string, string> = {
   '': 'none',
@@ -74,12 +75,12 @@ const styles = StyleSheet.create({
   option: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 10,
-    paddingHorizontal: 14,
-    gap: 10,
+    paddingVertical: Spacing.lg,
+    paddingHorizontal: Spacing.xxl,
+    gap: Spacing.lg,
   },
   optionHovered: {
-    backgroundColor: 'rgba(255,255,255,0.08)',
+    backgroundColor: Colors.hoverBackground,
   },
   optionEmoji: {
     fontSize: 16,
@@ -87,11 +88,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   optionText: {
-    color: 'rgba(255,255,255,0.6)',
+    color: Colors.textSubtle,
     fontSize: 13,
     fontWeight: '500',
   },
   optionTextHovered: {
-    color: '#fff',
+    color: Colors.textPrimary,
   },
 });
