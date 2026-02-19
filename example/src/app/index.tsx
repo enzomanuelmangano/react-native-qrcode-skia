@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { Toaster } from 'burnt/web';
+import { Toaster } from '../utils/toast';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import App from '../components/main';
 import { Colors } from '../design-tokens';

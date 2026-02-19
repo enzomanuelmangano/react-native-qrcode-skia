@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { View, Text, Pressable } from 'react-native';
-import * as Burnt from 'burnt';
+import * as Burnt from '../../../utils/toast';
 import { useSelector } from '@legendapp/state/react';
 import { qrcodeState$, GapSizes, type GapSize } from '../../../states';
 import { Themes } from '../../../constants';

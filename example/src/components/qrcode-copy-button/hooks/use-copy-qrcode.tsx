@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
-import * as Burnt from 'burnt';
+import * as Burnt from '../../../utils/toast';
 import { Platform } from 'react-native';
-import Clipboard from '@react-native-clipboard/clipboard';
+import * as Clipboard from 'expo-clipboard';
 import { useGetActiveQrCodeString } from './use-active-qrcode-string';
 import { Image } from 'expo-image';
 import { qrcodeState$ } from '../../../states';
@@ -14,7 +14,7 @@ export const useCopyQrCode = () => {
   const getActiveQrCodeString = useGetActiveQrCodeString();
 
   const copyQrCode = useCallback(() => {
-    Clipboard.setString(getActiveQrCodeString());
+    Clipboard.setStringAsync(getActiveQrCodeString());
 
     // Trigger logo spin animation
     qrcodeState$.copyTrigger.set((prev) => prev + 1);
