@@ -5,15 +5,7 @@ import type {
   BaseShapeOptions,
 } from './qrcode/transform-matrix-into-path';
 
-export type { ShapeOptions, BaseShapeOptions };
-
-/**
- * Represents a base shared value.
- * @template T - The type of the shared value.
- */
-export type BaseSharedValue<T> = {
-  value: T;
-};
+export type { ShapeOptions, BaseShapeOptions, ErrorCorrectionLevelType };
 
 /**
  * Represents the props for a QRCode component.
@@ -34,7 +26,7 @@ export type QRCodeProps = {
    */
   color?: string;
   /**
-   * The percentage of the strokeWidth (0 to 1)
+   * The stroke width in pixels when pathStyle is 'stroke'.
    * Default value is 1.
    */
   strokeWidth?: number;
@@ -42,7 +34,7 @@ export type QRCodeProps = {
   children?: React.ReactNode;
   /**
    * The style of the QRCode path: 'fill' or 'stroke'.
-   * Default value is 'stroke'.
+   * Default value is 'fill'.
    */
   pathStyle?: 'fill' | 'stroke';
   /**
@@ -54,9 +46,17 @@ export type QRCodeProps = {
   size: number;
   /**
    * The shape options for the QRCode path.
-   * Default value is {}.
+   * Defaults: shape='rounded', eyePatternShape='rounded', gap=0, eyePatternGap=0, logoAreaBorderRadius=0.
    */
   shapeOptions?: ShapeOptions;
+  /**
+   * The size of the area cleared for the logo in the center of the QR code.
+   * Default value is 70 when logo is provided, 0 otherwise.
+   */
   logoAreaSize?: number;
+  /**
+   * A React node to render as the logo in the center of the QR code.
+   * When provided, a square area is cleared in the center to make room for the logo.
+   */
   logo?: React.ReactNode;
 };

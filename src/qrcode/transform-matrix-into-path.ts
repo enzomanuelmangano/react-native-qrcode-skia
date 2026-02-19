@@ -46,6 +46,49 @@ type Neighbors = {
   left: boolean;
 };
 
+type LogoAreaBounds = {
+  logoAreaX: number;
+  logoAreaY: number;
+  logoAreaSize: number;
+  radius: number;
+  logoRadius: number;
+  center: number;
+} | null;
+
+const isDetectionPattern = (
+  i: number,
+  j: number,
+  matrixLength: number
+): boolean =>
+  (i < 7 && j < 7) ||
+  (i < 7 && j >= matrixLength - 7) ||
+  (i >= matrixLength - 7 && j < 7);
+
+const computeLogoAreaBounds = (
+  logoSize: number,
+  matrixLength: number,
+  cellSize: number,
+  logoAreaBorderRadius: number
+): LogoAreaBounds => {
+  if (logoSize === 0) return null;
+
+  const center = Math.floor(matrixLength / 2);
+  const logoRadius = Math.floor(logoSize / cellSize / 2);
+  const logoAreaX = (center - logoRadius) * cellSize;
+  const logoAreaY = (center - logoRadius) * cellSize;
+  const logoAreaSize = (logoRadius * 2 + 1) * cellSize;
+  const radius = Math.min(logoAreaBorderRadius, logoAreaSize / 2);
+
+  return {
+    logoAreaX,
+    logoAreaY,
+    logoAreaSize,
+    radius,
+    logoRadius,
+    center,
+  };
+};
+
 const transformMatrixIntoPath = (
   matrix: (1 | 0)[][],
   size: number,
@@ -60,19 +103,23 @@ const transformMatrixIntoPath = (
     logoAreaBorderRadius = 0,
   } = options;
   const cellSize = size / matrix.length;
+  const matrixLength = matrix.length;
   let path = '';
 
-  const getCorners = (
-    i: number,
-    j: number,
-    isDetectionPattern: boolean
-  ): Corners => {
+  // Pre-compute logo area bounds once
+  const logoBounds = computeLogoAreaBounds(
+    logoSize,
+    matrixLength,
+    cellSize,
+    logoAreaBorderRadius
+  );
+
+  const getCorners = (i: number, j: number, isEyePattern: boolean): Corners => {
     const x = j * cellSize;
     const y = i * cellSize;
-    const padding = isDetectionPattern ? eyePatternGap / 2 : gap / 2;
+    const padding = isEyePattern ? eyePatternGap / 2 : gap / 2;
     const center = { x: x + cellSize / 2, y: y + cellSize / 2 };
-    const effectiveCellSize =
-      cellSize - (isDetectionPattern ? eyePatternGap : gap);
+    const effectiveCellSize = cellSize - (isEyePattern ? eyePatternGap : gap);
     const offset = effectiveCellSize / 2;
     return {
       q1: { x: x + cellSize - padding, y: y + padding },
@@ -89,17 +136,18 @@ const transformMatrixIntoPath = (
 
   const getNeighbors = (i: number, j: number): Neighbors => ({
     top: i > 0 && matrix[i - 1]?.[j] === 1,
-    right: j < matrix.length - 1 && matrix[i]?.[j + 1] === 1,
-    bottom: i < matrix.length - 1 && matrix[i + 1]?.[j] === 1,
+    right: j < matrixLength - 1 && matrix[i]?.[j + 1] === 1,
+    bottom: i < matrixLength - 1 && matrix[i + 1]?.[j] === 1,
     left: j > 0 && matrix[i]?.[j - 1] === 1,
   });
 
   const isLogoArea = (i: number, j: number): boolean => {
-    if (logoSize === 0) return false;
+    if (!logoBounds) return false;
 
-    const center = Math.floor(matrix.length / 2);
-    const logoRadius = Math.floor(logoSize / cellSize / 2);
+    const { logoAreaX, logoAreaY, logoAreaSize, radius, logoRadius, center } =
+      logoBounds;
 
+    // Simple square check when no border radius
     if (logoAreaBorderRadius === 0) {
       return (
         i >= center - logoRadius &&
@@ -109,27 +157,21 @@ const transformMatrixIntoPath = (
       );
     }
 
-    // Rounded rectangle logic
-    const logoAreaX = (center - logoRadius) * cellSize;
-    const logoAreaY = (center - logoRadius) * cellSize;
-    const logoAreaSize = (logoRadius * 2 + 1) * cellSize;
-    const r = Math.min(logoAreaBorderRadius, logoAreaSize / 2);
-
     const cellCenterX = j * cellSize + cellSize / 2;
     const cellCenterY = i * cellSize + cellSize / 2;
 
     // Center rectangle (excluding corners)
     if (
-      cellCenterX >= logoAreaX + r &&
-      cellCenterX <= logoAreaX + logoAreaSize - r &&
+      cellCenterX >= logoAreaX + radius &&
+      cellCenterX <= logoAreaX + logoAreaSize - radius &&
       cellCenterY >= logoAreaY &&
       cellCenterY <= logoAreaY + logoAreaSize
     )
       return true;
 
     if (
-      cellCenterY >= logoAreaY + r &&
-      cellCenterY <= logoAreaY + logoAreaSize - r &&
+      cellCenterY >= logoAreaY + radius &&
+      cellCenterY <= logoAreaY + logoAreaSize - radius &&
       cellCenterX >= logoAreaX &&
       cellCenterX <= logoAreaX + logoAreaSize
     )
@@ -139,36 +181,42 @@ const transformMatrixIntoPath = (
     const inCornerCircle = (cx: number, cy: number): boolean => {
       const dx = cellCenterX - cx;
       const dy = cellCenterY - cy;
-      return dx * dx + dy * dy <= r * r;
+      return dx * dx + dy * dy <= radius * radius;
     };
 
     // Top-left
-    if (cellCenterX < logoAreaX + r && cellCenterY < logoAreaY + r)
-      return inCornerCircle(logoAreaX + r, logoAreaY + r);
+    if (cellCenterX < logoAreaX + radius && cellCenterY < logoAreaY + radius)
+      return inCornerCircle(logoAreaX + radius, logoAreaY + radius);
 
     // Top-right
     if (
-      cellCenterX > logoAreaX + logoAreaSize - r &&
-      cellCenterY < logoAreaY + r
+      cellCenterX > logoAreaX + logoAreaSize - radius &&
+      cellCenterY < logoAreaY + radius
     )
-      return inCornerCircle(logoAreaX + logoAreaSize - r, logoAreaY + r);
+      return inCornerCircle(
+        logoAreaX + logoAreaSize - radius,
+        logoAreaY + radius
+      );
 
     // Bottom-right
     if (
-      cellCenterX > logoAreaX + logoAreaSize - r &&
-      cellCenterY > logoAreaY + logoAreaSize - r
+      cellCenterX > logoAreaX + logoAreaSize - radius &&
+      cellCenterY > logoAreaY + logoAreaSize - radius
     )
       return inCornerCircle(
-        logoAreaX + logoAreaSize - r,
-        logoAreaY + logoAreaSize - r
+        logoAreaX + logoAreaSize - radius,
+        logoAreaY + logoAreaSize - radius
       );
 
     // Bottom-left
     if (
-      cellCenterX < logoAreaX + r &&
-      cellCenterY > logoAreaY + logoAreaSize - r
+      cellCenterX < logoAreaX + radius &&
+      cellCenterY > logoAreaY + logoAreaSize - radius
     )
-      return inCornerCircle(logoAreaX + r, logoAreaY + logoAreaSize - r);
+      return inCornerCircle(
+        logoAreaX + radius,
+        logoAreaY + logoAreaSize - radius
+      );
 
     return false;
   };
@@ -176,17 +224,11 @@ const transformMatrixIntoPath = (
   const renderElement = (
     corners: Corners,
     neighbors: Neighbors,
-    i: number,
-    j: number
+    isEyePattern: boolean
   ): string => {
     const { q1, q2, q3, q4, center } = corners;
-    const isDetectionPattern =
-      (i < 7 && j < 7) ||
-      (i < 7 && j >= matrix.length - 7) ||
-      (i >= matrix.length - 7 && j < 7);
-    const currentShape = isDetectionPattern ? eyePatternShape : shape;
-    const effectiveCellSize =
-      cellSize - (isDetectionPattern ? eyePatternGap : gap);
+    const currentShape = isEyePattern ? eyePatternShape : shape;
+    const effectiveCellSize = cellSize - (isEyePattern ? eyePatternGap : gap);
 
     switch (currentShape) {
       case 'circle':
@@ -198,7 +240,7 @@ const transformMatrixIntoPath = (
       case 'triangle':
         return renderTriangle(corners);
       case 'star':
-        return renderStar(corners, isDetectionPattern);
+        return renderStar(corners, isEyePattern);
       case 'square':
       default:
         return `M${q4.x} ${q4.y} H${q1.x} V${q2.y} H${q3.x} Z`;
@@ -264,13 +306,10 @@ const transformMatrixIntoPath = (
   matrix.forEach((row, i) => {
     row.forEach((cell, j) => {
       if (cell === 1 && !isLogoArea(i, j)) {
-        const isDetectionPattern =
-          (i < 7 && j < 7) ||
-          (i < 7 && j >= matrix.length - 7) ||
-          (i >= matrix.length - 7 && j < 7);
-        const corners = getCorners(i, j, isDetectionPattern);
+        const isEyePattern = isDetectionPattern(i, j, matrixLength);
+        const corners = getCorners(i, j, isEyePattern);
         const neighbors = getNeighbors(i, j);
-        path += renderElement(corners, neighbors, i, j);
+        path += renderElement(corners, neighbors, isEyePattern);
       }
     });
   });
