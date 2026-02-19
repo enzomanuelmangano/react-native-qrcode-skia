@@ -1,7 +1,4 @@
 export const Themes = {
-  bitmap: {
-    colors: ['#000000', '#000000'],
-  },
   mono: {
     colors: ['#333333', '#181818'],
   },

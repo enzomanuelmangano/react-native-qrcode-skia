@@ -4,15 +4,24 @@ import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
 import { useState, useCallback, useEffect } from 'react';
 
-import { StyleSheet, View, ActivityIndicator } from 'react-native';
+import { StyleSheet, View, ActivityIndicator, Platform } from 'react-native';
+import Animated, {
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+  Easing,
+} from 'react-native-reanimated';
 
 import { Panel } from './panel';
 import { QRCodeDisplay } from './qrcode-display';
 import { URLInputModal } from './url-input-modal';
-import { Colors } from '../design-tokens';
+import { Colors, Animation } from '../design-tokens';
+
+const EASING = Easing.out(Easing.cubic);
 
 export default function App() {
   const [isURLModalVisible, setIsURLModalVisible] = useState(false);
+  const contentBlur = useSharedValue(0);
 
   const handleURLButtonPress = useCallback(() => {
     setIsURLModalVisible(true);
@@ -21,6 +30,27 @@ export default function App() {
   const handleURLModalClose = useCallback(() => {
     setIsURLModalVisible(false);
   }, []);
+
+  const handleMenuVisibilityChange = useCallback((visible: boolean) => {
+    contentBlur.value = withTiming(visible ? 1 : 0, {
+      duration: Animation.normal,
+      easing: EASING,
+    });
+  }, [contentBlur]);
+
+  const contentAnimatedStyle = useAnimatedStyle(() => {
+    // Use CSS filter for web blur effect
+    if (Platform.OS === 'web') {
+      return {
+        filter: `blur(${contentBlur.value * 8}px)`,
+        transform: [{ scale: 1 - contentBlur.value * 0.02 }],
+      } as any;
+    }
+    // For native, just scale down slightly
+    return {
+      transform: [{ scale: 1 - contentBlur.value * 0.02 }],
+    };
+  });
 
   useEffect(() => {
     // @ts-ignore - document is available on web
@@ -42,7 +72,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="light" hidden />
-      <View style={styles.content}>
+      <Animated.View style={[styles.content, contentAnimatedStyle]}>
         <React.Suspense
           fallback={
             <View style={styles.loader}>
@@ -52,8 +82,8 @@ export default function App() {
         >
           <QRCodeDisplay />
         </React.Suspense>
-      </View>
-      <Panel onURLButtonPress={handleURLButtonPress} />
+      </Animated.View>
+      <Panel onURLButtonPress={handleURLButtonPress} onMenuVisibilityChange={handleMenuVisibilityChange} />
       <URLInputModal visible={isURLModalVisible} onClose={handleURLModalClose} />
     </View>
   );
