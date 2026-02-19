@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { View, Pressable } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
-import * as Burnt from 'burnt';
+import * as Burnt from '../../../utils/toast';
 import { useSelector } from '@legendapp/state/react';
 import { qrcodeState$, Shapes } from '../../../states';
 import type { BaseShapeOptions } from 'react-native-qrcode-skia';

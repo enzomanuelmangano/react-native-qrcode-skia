@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { View, Pressable } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import * as Burnt from 'burnt';
+import * as Burnt from '../../../utils/toast';
 import { useSelector } from '@legendapp/state/react';
 import { qrcodeState$ } from '../../../states';
 import { Themes, type ThemeName } from '../../../constants';

@@ -4,14 +4,18 @@ import { useSelector } from '@legendapp/state/react';
 import { qrcodeState$, GapValues } from '../states';
 import { Themes } from '../constants';
 import { getSkiaGradientByType } from '../utils/gradient';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, Platform } from 'react-native';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
   withSpring,
 } from 'react-native-reanimated';
 
-const QRCodeSize = 220;
+const isWeb = Platform.OS === 'web';
+const QRCodeSize = isWeb ? 260 : 220;
+const LogoAreaSize = isWeb ? 80 : 70;
+const LogoHeight = isWeb ? 58 : 50;
+const LogoFontSize = isWeb ? 42 : 38;
 
 const SPRING_CONFIG = {
   mass: 1,
@@ -70,7 +74,7 @@ function QRCodeDemo() {
     }
     return {
       logo: <AnimatedLogo emoji={selectedLogo} />,
-      logoAreaSize: 70,
+      logoAreaSize: LogoAreaSize,
     };
   }, [selectedLogo]);
 
@@ -93,13 +97,13 @@ function QRCodeDemo() {
 
 const styles = StyleSheet.create({
   logo: {
-    height: 50,
+    height: LogoHeight,
     aspectRatio: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
   logoLabel: {
-    fontSize: 38,
+    fontSize: LogoFontSize,
   },
 });
 

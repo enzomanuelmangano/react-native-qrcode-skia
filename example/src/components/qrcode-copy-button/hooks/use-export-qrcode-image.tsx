@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { Platform } from 'react-native';
 import { useSelector } from '@legendapp/state/react';
 import { Skia } from '@shopify/react-native-skia';
-import * as Burnt from 'burnt';
+import * as Burnt from '../../../utils/toast';
 import { qrcodeState$, GapValues } from '../../../states';
 import { Themes } from '../../../constants';
 // Using relative path to library source
