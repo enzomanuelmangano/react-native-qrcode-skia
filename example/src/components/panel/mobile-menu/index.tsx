@@ -9,12 +9,12 @@ import {
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
-  withTiming,
+  withSpring,
   runOnJS,
 } from 'react-native-reanimated';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { TimingPresets } from '../../../animations';
+import { SpringPresets } from '../../../animations';
 import { styles } from './styles';
 import { ThemeSelector } from './theme-selector';
 import { ShapeSelector } from './shape-selector';
@@ -39,10 +39,7 @@ export const MobileMenu = ({ visible, onClose }: MobileMenuProps) => {
     if (visible) {
       translateY.value = 0;
     }
-    animation.value = withTiming(
-      visible ? 1 : 0,
-      visible ? TimingPresets.drawerIn : TimingPresets.drawerOut
-    );
+    animation.value = withSpring(visible ? 1 : 0, SpringPresets.drawer);
   }, [visible, animation, translateY]);
 
   const panGesture = Gesture.Pan()
@@ -51,10 +48,10 @@ export const MobileMenu = ({ visible, onClose }: MobileMenuProps) => {
     })
     .onEnd((event) => {
       if (event.translationY > CLOSE_THRESHOLD || event.velocityY > 500) {
-        translateY.value = withTiming(windowHeight * 0.8, TimingPresets.drawerOut);
+        translateY.value = withSpring(windowHeight * 0.8, SpringPresets.drawer);
         runOnJS(onClose)();
       } else {
-        translateY.value = withTiming(0, TimingPresets.snapBack);
+        translateY.value = withSpring(0, SpringPresets.drawer);
       }
     });
 
