@@ -1,9 +1,10 @@
-import React, { useCallback, useState, useEffect, useRef } from 'react';
+import React, { useCallback, useState } from 'react';
 import { StyleSheet, View, Linking } from 'react-native';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
   withTiming,
+  FadeIn,
   type SharedValue,
 } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -23,18 +24,15 @@ import { HoverPressable } from '../hover-pressable';
 import { useResponsive } from '../../hooks/use-responsive';
 import { qrcodeState$ } from '../../states';
 import { FeatureFlags } from '../../constants';
-import {
-  Colors,
-  Spacing,
-  Sizes,
-  BorderRadius,
-} from '../../design-tokens';
+import { Colors, Spacing, Sizes, BorderRadius } from '../../design-tokens';
 
 const Separator = () => <View style={styles.separator} />;
 
 const GitHubButton = () => {
   const onPress = useCallback(() => {
-    Linking.openURL('https://github.com/enzomanuelmangano/react-native-qrcode-skia');
+    Linking.openURL(
+      'https://github.com/enzomanuelmangano/react-native-qrcode-skia'
+    );
   }, []);
 
   return (
@@ -55,18 +53,9 @@ interface PanelProps {
 
 export const Panel = ({ onURLButtonPress, drawerProgress }: PanelProps) => {
   const insets = useSafeAreaInsets();
-  const { isMobile } = useResponsive();
+  const { isMobile, isReady } = useResponsive();
   const [menuVisible, setMenuVisible] = useState(false);
   const panelAnimation = useSharedValue(1);
-  const isFirstRender = useRef(true);
-
-  useEffect(() => {
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
-      return;
-    }
-    panelAnimation.value = withTiming(menuVisible ? 0 : 1, TimingPresets.panelFade);
-  }, [menuVisible, panelAnimation]);
 
   const panelStyle = useAnimatedStyle(() => ({
     opacity: panelAnimation.value,
@@ -74,17 +63,30 @@ export const Panel = ({ onURLButtonPress, drawerProgress }: PanelProps) => {
   }));
 
   const openMenu = useCallback(() => {
+    panelAnimation.value = withTiming(0, TimingPresets.panelFade);
     setMenuVisible(true);
-  }, []);
+  }, [panelAnimation]);
 
   const closeMenu = useCallback(() => {
+    panelAnimation.value = withTiming(1, TimingPresets.panelFade);
     setMenuVisible(false);
-  }, []);
+  }, [panelAnimation]);
+
+  if (!isReady) {
+    return null;
+  }
 
   if (isMobile) {
     return (
       <>
-        <Animated.View style={[styles.container, { bottom: Math.max(insets.bottom, 16) }, panelStyle]}>
+        <Animated.View
+          entering={FadeIn}
+          style={[
+            styles.container,
+            { bottom: Math.max(insets.bottom, 16) },
+            panelStyle,
+          ]}
+        >
           <View style={styles.mobilePanel}>
             <HoverPressable
               style={styles.iconButton}
@@ -101,13 +103,20 @@ export const Panel = ({ onURLButtonPress, drawerProgress }: PanelProps) => {
             </View>
           </View>
         </Animated.View>
-        <MobileMenu visible={menuVisible} onClose={closeMenu} progress={drawerProgress} />
+        <MobileMenu
+          visible={menuVisible}
+          onClose={closeMenu}
+          progress={drawerProgress}
+        />
       </>
     );
   }
 
   return (
-    <View style={[styles.container, { bottom: Math.max(insets.bottom, 24) }]}>
+    <Animated.View
+      entering={FadeIn}
+      style={[styles.container, { bottom: Math.max(insets.bottom, 24) }]}
+    >
       <View style={styles.panel}>
         <View style={styles.controls}>
           <URLButton onPress={onURLButtonPress} />
@@ -129,7 +138,7 @@ export const Panel = ({ onURLButtonPress, drawerProgress }: PanelProps) => {
           <GitHubButton />
         </View>
       </View>
-    </View>
+    </Animated.View>
   );
 };
 

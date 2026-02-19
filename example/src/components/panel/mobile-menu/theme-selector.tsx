@@ -1,6 +1,13 @@
 import React, { useCallback } from 'react';
-import { View, Pressable } from 'react-native';
+import { View } from 'react-native';
+import { PressableScale } from 'pressto';
 import { LinearGradient } from 'expo-linear-gradient';
+import Animated, {
+  useDerivedValue,
+  useAnimatedStyle,
+  withTiming,
+  interpolateColor,
+} from 'react-native-reanimated';
 import * as Burnt from '../../../utils/toast';
 import { useSelector } from '@legendapp/state/react';
 import { qrcodeState$ } from '../../../states';
@@ -9,6 +16,43 @@ import { styles } from './styles';
 
 const formatThemeName = (name: string) =>
   name.charAt(0).toUpperCase() + name.slice(1);
+
+const AnimatedPressableScale = Animated.createAnimatedComponent(PressableScale);
+
+interface ColorOptionProps {
+  themeName: ThemeName;
+  isSelected: boolean;
+  onPress: () => void;
+}
+
+const ColorOption = ({ themeName, isSelected, onPress }: ColorOptionProps) => {
+  const theme = Themes[themeName];
+  const progress = useDerivedValue(() => {
+    return withTiming(isSelected ? 1 : 0, { duration: 200 });
+  }, [isSelected]);
+
+  const animatedStyle = useAnimatedStyle(() => ({
+    borderColor: interpolateColor(
+      progress.value,
+      [0, 1],
+      ['transparent', theme.colors[0]]
+    ),
+  }));
+
+  return (
+    <AnimatedPressableScale
+      onPress={onPress}
+      style={[styles.colorOption, animatedStyle]}
+    >
+      <LinearGradient
+        colors={[theme.colors[0], theme.colors[1]]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={styles.colorCircle}
+      />
+    </AnimatedPressableScale>
+  );
+};
 
 export const ThemeSelector = () => {
   const currentTheme = useSelector(qrcodeState$.currentTheme);
@@ -26,27 +70,14 @@ export const ThemeSelector = () => {
 
   return (
     <View style={styles.optionsRow}>
-      {(Object.keys(Themes) as ThemeName[]).map((themeName) => {
-        const theme = Themes[themeName];
-        const isSelected = themeName === currentTheme;
-        return (
-          <Pressable
-            key={themeName}
-            onPress={() => handleSelect(themeName)}
-            style={[
-              styles.colorOption,
-              isSelected && { borderColor: theme.colors[0] },
-            ]}
-          >
-            <LinearGradient
-              colors={[theme.colors[0], theme.colors[1]]}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-              style={styles.colorCircle}
-            />
-          </Pressable>
-        );
-      })}
+      {(Object.keys(Themes) as ThemeName[]).map((themeName) => (
+        <ColorOption
+          key={themeName}
+          themeName={themeName}
+          isSelected={themeName === currentTheme}
+          onPress={() => handleSelect(themeName)}
+        />
+      ))}
     </View>
   );
 };
