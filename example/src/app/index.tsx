@@ -3,7 +3,7 @@ import 'react-native-reanimated';
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 
-import { StyleSheet, View } from 'react-native';
+import { Platform, StyleSheet, View } from 'react-native';
 
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Toaster } from '../utils/toast';
@@ -11,12 +11,12 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import App from '../components/main';
 import { Colors } from '../design-tokens';
 
-// Lazy load Agentation only in development (optional dependency)
+// Lazy load Agentation only on web in development (optional dependency)
 const useAgentation = () => {
   const [AgentationComponent, setAgentationComponent] = useState<React.ComponentType | null>(null);
 
   useEffect(() => {
-    if (process.env.NODE_ENV === 'development') {
+    if (Platform.OS === 'web' && process.env.NODE_ENV === 'development') {
       // @ts-ignore - agentation is an optional dev dependency
       import('agentation')
         .then((mod: { Agentation: React.ComponentType }) => setAgentationComponent(() => mod.Agentation))
@@ -40,7 +40,7 @@ export default function Root() {
           <App />
         </View>
       </GestureHandlerRootView>
-      <Toaster position="top-center" theme="dark" />
+      {Platform.OS === 'web' && <Toaster position="top-center" theme="dark" />}
     </SafeAreaProvider>
   );
 }
