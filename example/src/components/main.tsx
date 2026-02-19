@@ -8,7 +8,6 @@ import {
   StyleSheet,
   View,
   ActivityIndicator,
-  Platform,
   useWindowDimensions,
 } from 'react-native';
 import Animated, {
@@ -44,14 +43,6 @@ export default function App() {
       (-drawerProgress.value * (windowHeight * DRAWER_MAX_HEIGHT_PERCENT)) / 2.8;
     const scale = 1 - drawerProgress.value * 0.02;
 
-    // Use CSS filter for web blur effect
-    if (Platform.OS === 'web') {
-      return {
-        filter: `blur(${drawerProgress.value * 8}px)`,
-        transform: [{ translateY }, { scale }],
-      } as any;
-    }
-    // For native, translate up and scale down slightly
     return {
       transform: [{ translateY }, { scale }],
     };
