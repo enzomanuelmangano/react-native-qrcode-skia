@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     left: 0,
     right: 0,
     maxHeight: '70%',
-  },
+  } as const,
   backdrop: {
     ...StyleSheet.absoluteFillObject,
     backgroundColor: Colors.background,
