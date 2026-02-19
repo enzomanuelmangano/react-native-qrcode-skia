@@ -74,7 +74,7 @@ export const MobileMenu = ({ visible, onClose, progress }: MobileMenuProps) => {
     opacity: animation.value,
   }));
 
-  if (!visible && animation.value === 0) {
+  if (!visible && animation.get() === 0) {
     return null;
   }
 

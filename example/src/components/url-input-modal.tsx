@@ -4,6 +4,7 @@ import {
   View,
   TextInput,
   Pressable,
+  useWindowDimensions,
 } from 'react-native';
 import Animated, {
   useSharedValue,
@@ -11,6 +12,7 @@ import Animated, {
   withTiming,
 } from 'react-native-reanimated';
 import { useSelector } from '@legendapp/state/react';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { qrcodeState$ } from '../states';
 import { LinkIcon } from './icons';
 import {
@@ -25,11 +27,16 @@ interface URLInputModalProps {
   onClose: () => void;
 }
 
+const MOBILE_BREAKPOINT = 768;
+
 export const URLInputModal = ({ visible, onClose }: URLInputModalProps) => {
   const currentUrl = useSelector(qrcodeState$.qrUrl);
   const [originalUrl, setOriginalUrl] = useState(currentUrl);
   const animation = useSharedValue(0);
   const inputRef = useRef<TextInput>(null);
+  const { top: safeTop } = useSafeAreaInsets();
+  const { width } = useWindowDimensions();
+  const isMobileSize = width < MOBILE_BREAKPOINT;
 
   useEffect(() => {
     if (visible) {
@@ -94,12 +101,14 @@ export const URLInputModal = ({ visible, onClose }: URLInputModalProps) => {
     ],
   }));
 
-  if (!visible && animation.value === 0) {
+  if (!visible && animation.get() === 0) {
     return null;
   }
 
+  const backdropPaddingTop = isMobileSize ? safeTop + 12 : 140;
+
   return (
-    <Animated.View style={[styles.backdrop, backdropStyle]}>
+    <Animated.View style={[styles.backdrop, backdropStyle, { paddingTop: backdropPaddingTop }]}>
       <Pressable style={StyleSheet.absoluteFill} onPress={handleConfirm} />
       <Animated.View style={[styles.commandBar, cardStyle]}>
         <View style={styles.iconContainer}>
@@ -130,7 +139,6 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.backdropBackground,
     justifyContent: 'flex-start',
     alignItems: 'center',
-    paddingTop: 140,
     zIndex: 1000,
   },
   commandBar: {

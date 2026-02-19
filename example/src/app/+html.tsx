@@ -56,13 +56,33 @@ export default function Root({ children }: { children: React.ReactNode }) {
 }
 
 const responsiveBackground = `
-html, body, #root {
+:root {
+  color-scheme: dark;
+}
+html, body {
   background-color: #000000;
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
-  min-height: 100vh;
-  min-width: 100vw;
+  overflow: hidden;
+}
+#root {
+  background-color: #000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+}
+/* Fallback background that covers entire canvas */
+html::before {
+  content: '';
+  position: fixed;
+  top: -9999px;
+  left: -9999px;
+  right: -9999px;
+  bottom: -9999px;
+  background-color: #000000;
+  z-index: -1;
 }
 `;
