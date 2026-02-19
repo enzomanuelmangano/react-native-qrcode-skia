@@ -1,9 +1,9 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback } from 'react';
 import { View } from 'react-native';
 import { PressableScale } from 'pressto';
 import { LinearGradient } from 'expo-linear-gradient';
 import Animated, {
-  useSharedValue,
+  useDerivedValue,
   useAnimatedStyle,
   withTiming,
   interpolateColor,
@@ -27,11 +27,9 @@ interface ColorOptionProps {
 
 const ColorOption = ({ themeName, isSelected, onPress }: ColorOptionProps) => {
   const theme = Themes[themeName];
-  const progress = useSharedValue(isSelected ? 1 : 0);
-
-  useEffect(() => {
-    progress.value = withTiming(isSelected ? 1 : 0, { duration: 200 });
-  }, [isSelected, progress]);
+  const progress = useDerivedValue(() => {
+    return withTiming(isSelected ? 1 : 0, { duration: 200 });
+  }, [isSelected]);
 
   const animatedStyle = useAnimatedStyle(() => ({
     borderColor: interpolateColor(
