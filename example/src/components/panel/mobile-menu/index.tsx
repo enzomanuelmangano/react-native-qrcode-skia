@@ -63,7 +63,7 @@ export const MobileMenu = ({ visible, onClose }: MobileMenuProps) => {
     pointerEvents: animation.value > 0.5 ? 'auto' : 'none',
   }));
 
-  const menuStyle = useAnimatedStyle(() => ({
+  const wrapperStyle = useAnimatedStyle(() => ({
     transform: [{ translateY: (1 - animation.value) * windowHeight * 0.8 + translateY.value }],
     opacity: animation.value,
   }));
@@ -77,44 +77,40 @@ export const MobileMenu = ({ visible, onClose }: MobileMenuProps) => {
       <Animated.View style={[styles.backdrop, backdropStyle]}>
         <Pressable style={StyleSheet.absoluteFill} onPress={onClose} />
       </Animated.View>
-      <Animated.View
-        style={[
-          styles.menu,
-          menuStyle,
-          { paddingBottom: Math.max(insets.bottom, 20) },
-        ]}
-      >
+      <Animated.View style={[styles.gestureWrapper, wrapperStyle]}>
         <GestureDetector gesture={panGesture}>
-          <Animated.View style={styles.handleContainer}>
-            <View style={styles.handle} />
-          </Animated.View>
+          <View style={[styles.menu, { paddingBottom: Math.max(insets.bottom, 20) }]}>
+            <View style={styles.handleContainer}>
+              <View style={styles.handle} />
+            </View>
+            <View style={styles.content}>
+              <View style={styles.section}>
+                <Text style={styles.sectionTitle}>Colors</Text>
+                <ThemeSelector />
+              </View>
+
+              <View style={styles.section}>
+                <Text style={styles.sectionTitle}>Shape</Text>
+                <ShapeSelector />
+              </View>
+
+              <View style={styles.section}>
+                <Text style={styles.sectionTitle}>Eye Pattern</Text>
+                <EyeSelector />
+              </View>
+
+              <View style={styles.section}>
+                <Text style={styles.sectionTitle}>Gap</Text>
+                <GapSelector />
+              </View>
+
+              <View style={styles.section}>
+                <Text style={styles.sectionTitle}>Logo</Text>
+                <LogoSelector />
+              </View>
+            </View>
+          </View>
         </GestureDetector>
-        <View style={styles.content}>
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Colors</Text>
-            <ThemeSelector />
-          </View>
-
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Shape</Text>
-            <ShapeSelector />
-          </View>
-
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Eye Pattern</Text>
-            <EyeSelector />
-          </View>
-
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Gap</Text>
-            <GapSelector />
-          </View>
-
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Logo</Text>
-            <LogoSelector />
-          </View>
-        </View>
       </Animated.View>
     </View>
   );

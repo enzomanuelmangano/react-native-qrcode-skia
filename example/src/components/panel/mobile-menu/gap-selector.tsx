@@ -16,7 +16,7 @@ export const GapSelector = () => {
     qrcodeState$.gap.set(size);
     Burnt.toast({
       title: `Gap: ${size.toUpperCase()}`,
-      preset: 'done',
+      preset: 'none',
       haptic: 'success',
       duration: 1,
     });

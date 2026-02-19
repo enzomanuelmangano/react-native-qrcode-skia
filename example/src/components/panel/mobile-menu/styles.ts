@@ -9,22 +9,24 @@ export const styles = StyleSheet.create({
   container: {
     zIndex: 200,
   },
+  gestureWrapper: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    maxHeight: '70%',
+  },
   backdrop: {
     ...StyleSheet.absoluteFillObject,
     backgroundColor: Colors.background,
   },
   menu: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
     backgroundColor: Colors.panelBackground,
     borderTopLeftRadius: BorderRadius.xl + 4,
     borderTopRightRadius: BorderRadius.xl + 4,
     borderWidth: 1,
     borderBottomWidth: 0,
     borderColor: Colors.borderSubtle,
-    maxHeight: '70%',
   },
   handleContainer: {
     alignItems: 'center',

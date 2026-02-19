@@ -23,7 +23,7 @@ export const EyeSelector = () => {
     qrcodeState$.eyePatternShape.set(shape);
     Burnt.toast({
       title: `Eye Pattern: ${formatShapeName(shape)}`,
-      preset: 'done',
+      preset: 'none',
       haptic: 'success',
       duration: 1,
     });

@@ -18,7 +18,7 @@ export const ThemeSelector = () => {
     qrcodeState$.currentTheme.set(themeName);
     Burnt.toast({
       title: `Theme: ${formatThemeName(themeName)}`,
-      preset: 'done',
+      preset: 'none',
       haptic: 'success',
       duration: 1,
     });

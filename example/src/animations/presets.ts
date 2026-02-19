@@ -40,10 +40,10 @@ export const TimingPresets = {
     easing: Ease.in,
   } satisfies WithTimingConfig,
 
-  /** Bottom sheet/drawer entrance - swift with subtle overshoot */
+  /** Bottom sheet/drawer entrance */
   drawerIn: {
     duration: Duration.moderate,
-    easing: Ease.swiftOut,
+    easing: Ease.snappyOut,
   } satisfies WithTimingConfig,
 
   /** Bottom sheet/drawer exit */

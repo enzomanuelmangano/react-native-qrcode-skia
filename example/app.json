@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "example",
-    "slug": "example",
+    "name": "Skia QRCode",
+    "slug": "skia-qrcode",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -12,7 +12,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#000000"
     },
-    "scheme": "example",
+    "scheme": "skia-qrcode",
     "assetBundlePatterns": [
       "**/*"
     ],

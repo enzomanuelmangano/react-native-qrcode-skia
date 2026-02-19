@@ -16,7 +16,7 @@ export const LogoSelector = () => {
     qrcodeState$.selectedLogo.set(emoji);
     Burnt.toast({
       title: emoji ? `Logo: ${emoji}` : 'Logo: None',
-      preset: 'done',
+      preset: 'none',
       haptic: 'success',
       duration: 1,
     });

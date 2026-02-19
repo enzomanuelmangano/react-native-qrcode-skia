@@ -40,7 +40,7 @@ export default function Root() {
           <App />
         </View>
       </GestureHandlerRootView>
-      <Toaster position="top-center" theme='dark' />
+      <Toaster position="top-center" theme="dark" />
     </SafeAreaProvider>
   );
 }

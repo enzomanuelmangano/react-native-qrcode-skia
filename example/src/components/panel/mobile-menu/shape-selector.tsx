@@ -23,7 +23,7 @@ export const ShapeSelector = () => {
     qrcodeState$.baseShape.set(shape);
     Burnt.toast({
       title: `Shape: ${formatShapeName(shape)}`,
-      preset: 'done',
+      preset: 'none',
       haptic: 'success',
       duration: 1,
     });
