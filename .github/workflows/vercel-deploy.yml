@@ -23,6 +23,9 @@ jobs:
         with:
           node-version: '18'
 
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+
       - name: Install Vercel CLI
         run: npm install -g vercel
 
