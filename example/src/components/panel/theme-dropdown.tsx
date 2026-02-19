@@ -25,6 +25,7 @@ export const ThemeDropdown = () => {
   const currentThemeName = useSelector(qrcodeState$.currentTheme);
   const [isHovered, setIsHovered] = useState(false);
   const [isDropdownHovered, setIsDropdownHovered] = useState(false);
+  const [isTapOpen, setIsTapOpen] = useState(false);
   const animation = useSharedValue(0);
   const closeTimeout = useRef<NodeJS.Timeout | null>(null);
 
@@ -32,7 +33,7 @@ export const ThemeDropdown = () => {
     return Themes[currentThemeName];
   }, [currentThemeName]);
 
-  const isOpen = isHovered || isDropdownHovered;
+  const isOpen = isHovered || isDropdownHovered || isTapOpen;
 
   const openDropdown = () => {
     if (closeTimeout.current) {
@@ -55,7 +56,7 @@ export const ThemeDropdown = () => {
 
   const handleButtonHoverOut = () => {
     setIsHovered(false);
-    if (!isDropdownHovered) {
+    if (!isDropdownHovered && !isTapOpen) {
       closeDropdown();
     }
   };
@@ -67,9 +68,28 @@ export const ThemeDropdown = () => {
 
   const handleDropdownHoverOut = () => {
     setIsDropdownHovered(false);
-    if (!isHovered) {
+    if (!isHovered && !isTapOpen) {
       closeDropdown();
     }
+  };
+
+  // Toggle on tap for mobile
+  const handlePress = () => {
+    if (isTapOpen) {
+      setIsTapOpen(false);
+      closeDropdown();
+    } else {
+      setIsTapOpen(true);
+      openDropdown();
+    }
+  };
+
+  // Close when tapping outside (on the backdrop)
+  const handleBackdropPress = () => {
+    setIsTapOpen(false);
+    setIsHovered(false);
+    setIsDropdownHovered(false);
+    animation.value = withTiming(0, { duration: Animation.fast, easing: EASING });
   };
 
   const dropdownStyle = useAnimatedStyle(() => {
@@ -89,6 +109,14 @@ export const ThemeDropdown = () => {
 
   return (
     <View style={styles.container}>
+      {/* Backdrop for closing on tap outside */}
+      {isTapOpen && (
+        <Pressable
+          style={styles.backdrop}
+          onPress={handleBackdropPress}
+        />
+      )}
+
       <Animated.View
         style={[styles.dropdown, dropdownStyle]}
         onPointerEnter={handleDropdownHoverIn}
@@ -106,6 +134,7 @@ export const ThemeDropdown = () => {
                 isSelected={isSelected}
                 onPress={() => {
                   qrcodeState$.currentTheme.set(themeName);
+                  setIsTapOpen(false);
                   setIsDropdownHovered(false);
                   setIsHovered(false);
                   animation.value = withTiming(0, { duration: Animation.fast, easing: EASING });
@@ -117,6 +146,7 @@ export const ThemeDropdown = () => {
       </Animated.View>
 
       <Pressable
+        onPress={handlePress}
         onHoverIn={handleButtonHoverIn}
         onHoverOut={handleButtonHoverOut}
         style={[styles.button, isOpen && styles.buttonHovered]}
@@ -186,6 +216,14 @@ const styles = StyleSheet.create({
     position: 'relative',
     zIndex: 1,
   },
+  backdrop: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    zIndex: 9998,
+  } as any,
   button: {
     flexDirection: 'row',
     alignItems: 'center',

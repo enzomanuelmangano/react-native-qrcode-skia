@@ -1,6 +1,13 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { StyleSheet, View, Linking } from 'react-native';
+import Animated, {
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+  Easing,
+} from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Animation } from '../../design-tokens';
 import { ShapeDropdown } from './shape-dropdown';
 import { EyeDropdown } from './eye-dropdown';
 import { GapSelector } from './gap-selector';
@@ -10,8 +17,10 @@ import { LogoDropdown } from './logo-dropdown';
 import { ExportButton } from './export-button';
 import { ImageExportButton } from './image-export-button';
 import { URLButton } from './url-button';
-import { GitHubIcon } from '../icons';
+import { MobileMenu } from './mobile-menu';
+import { GitHubIcon, MenuIcon } from '../icons';
 import { HoverPressable } from '../hover-pressable';
+import { useResponsive } from '../../hooks/use-responsive';
 import { qrcodeState$ } from '../../states';
 import { FeatureFlags } from '../../constants';
 import {
@@ -30,8 +39,8 @@ const GitHubButton = () => {
 
   return (
     <HoverPressable
-      style={styles.githubButton}
-      hoverStyle={styles.githubButtonHovered}
+      style={styles.iconButton}
+      hoverStyle={styles.iconButtonHovered}
       onPress={onPress}
     >
       <GitHubIcon />
@@ -41,10 +50,63 @@ const GitHubButton = () => {
 
 interface PanelProps {
   onURLButtonPress: () => void;
+  onMenuVisibilityChange?: (visible: boolean) => void;
 }
 
-export const Panel = ({ onURLButtonPress }: PanelProps) => {
+const EASING = Easing.out(Easing.cubic);
+
+export const Panel = ({ onURLButtonPress, onMenuVisibilityChange }: PanelProps) => {
   const insets = useSafeAreaInsets();
+  const { isMobile } = useResponsive();
+  const [menuVisible, setMenuVisible] = useState(false);
+  const panelAnimation = useSharedValue(1);
+
+  useEffect(() => {
+    panelAnimation.value = withTiming(menuVisible ? 0 : 1, {
+      duration: Animation.normal,
+      easing: EASING,
+    });
+  }, [menuVisible, panelAnimation]);
+
+  const panelStyle = useAnimatedStyle(() => ({
+    opacity: panelAnimation.value,
+    transform: [{ scale: 0.95 + panelAnimation.value * 0.05 }],
+  }));
+
+  const openMenu = useCallback(() => {
+    setMenuVisible(true);
+    onMenuVisibilityChange?.(true);
+  }, [onMenuVisibilityChange]);
+
+  const closeMenu = useCallback(() => {
+    setMenuVisible(false);
+    onMenuVisibilityChange?.(false);
+  }, [onMenuVisibilityChange]);
+
+  if (isMobile) {
+    return (
+      <>
+        <Animated.View style={[styles.container, { bottom: Math.max(insets.bottom, 16) }, panelStyle]}>
+          <View style={styles.mobilePanel}>
+            <HoverPressable
+              style={styles.iconButton}
+              hoverStyle={styles.iconButtonHovered}
+              onPress={openMenu}
+            >
+              <MenuIcon color={Colors.iconDefault} />
+            </HoverPressable>
+            <URLButton onPress={onURLButtonPress} />
+            <View style={styles.mobileActions}>
+              {FeatureFlags.ENABLE_IMAGE_EXPORT && <ImageExportButton />}
+              <ExportButton />
+              <GitHubButton />
+            </View>
+          </View>
+        </Animated.View>
+        <MobileMenu visible={menuVisible} onClose={closeMenu} />
+      </>
+    );
+  }
 
   return (
     <View style={[styles.container, { bottom: Math.max(insets.bottom, 24) }]}>
@@ -94,6 +156,19 @@ const styles = StyleSheet.create({
     paddingVertical: Spacing.sm,
     gap: Spacing.xs,
   },
+  mobilePanel: {
+    height: 56,
+    backgroundColor: Colors.panelBackground,
+    borderColor: Colors.borderSubtle,
+    borderWidth: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderRadius: BorderRadius.xxl,
+    paddingHorizontal: Spacing.sm,
+    paddingVertical: Spacing.sm,
+    gap: Spacing.xs,
+    marginHorizontal: Spacing.xl,
+  },
   controls: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -104,13 +179,19 @@ const styles = StyleSheet.create({
     gap: Spacing.sm,
     marginLeft: Spacing.md,
   },
+  mobileActions: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: Spacing.sm,
+    marginLeft: 'auto',
+  },
   separator: {
     width: 1,
     height: 24,
     backgroundColor: Colors.borderSubtle,
     marginHorizontal: Spacing.xs,
   },
-  githubButton: {
+  iconButton: {
     width: Sizes.button,
     height: Sizes.button,
     borderRadius: BorderRadius.lg,
@@ -118,7 +199,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: Colors.buttonBackground,
   },
-  githubButtonHovered: {
+  iconButtonHovered: {
     backgroundColor: Colors.activeBackground,
   },
 });

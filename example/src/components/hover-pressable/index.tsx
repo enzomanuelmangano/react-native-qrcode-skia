@@ -22,12 +22,15 @@ export const HoverPressable = ({
   const [isHovered, setIsHovered] = useState(false);
   const [isPressed, setIsPressed] = useState(false);
 
+  // Use hoverStyle as fallback for pressedStyle (for mobile touch feedback)
+  const activePressedStyle = pressedStyle ?? hoverStyle;
+
   return (
     <Pressable
       style={[
         style,
         isHovered && hoverStyle,
-        isPressed && pressedStyle,
+        isPressed && activePressedStyle,
       ]}
       onPress={onPress}
       onHoverIn={() => setIsHovered(true)}

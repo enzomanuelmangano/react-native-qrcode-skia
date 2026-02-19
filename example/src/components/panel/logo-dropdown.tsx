@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, Pressable } from 'react-native';
 import { useSelector } from '@legendapp/state/react';
 import { qrcodeState$, LogoEmojis } from '../../states';
-import { HoverDropdown } from './hover-dropdown';
+import { HoverDropdown, useDropdownClose } from './hover-dropdown';
 import { Colors, Spacing } from '../../design-tokens';
 
 const LogoLabels: Record<string, string> = {
@@ -21,7 +21,7 @@ export const LogoDropdown = () => {
     <HoverDropdown
       label="Logo"
       trigger={
-        <Text style={styles.triggerEmoji}>{selectedLogo || '\u2205'}</Text>
+        <Text style={styles.triggerEmoji}>{selectedLogo || '—'}</Text>
       }
     >
       {LogoEmojis.map((emoji, index) => (
@@ -44,10 +44,16 @@ type LogoOptionProps = {
 
 const LogoOption = ({ emoji, isSelected, onSelect }: LogoOptionProps) => {
   const [isHovered, setIsHovered] = useState(false);
+  const closeDropdown = useDropdownClose();
+
+  const handlePress = () => {
+    onSelect();
+    closeDropdown?.();
+  };
 
   return (
     <Pressable
-      onPress={onSelect}
+      onPress={handlePress}
       onHoverIn={() => setIsHovered(true)}
       onHoverOut={() => setIsHovered(false)}
       style={[
@@ -55,7 +61,7 @@ const LogoOption = ({ emoji, isSelected, onSelect }: LogoOptionProps) => {
         (isHovered || isSelected) && styles.optionHovered,
       ]}
     >
-      <Text style={styles.optionEmoji}>{emoji || '\u2205'}</Text>
+      <Text style={styles.optionEmoji}>{emoji || '—'}</Text>
       <Text
         style={[
           styles.optionText,
@@ -71,6 +77,7 @@ const LogoOption = ({ emoji, isSelected, onSelect }: LogoOptionProps) => {
 const styles = StyleSheet.create({
   triggerEmoji: {
     fontSize: 16,
+    color: Colors.textPrimary,
   },
   option: {
     flexDirection: 'row',
@@ -86,6 +93,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     width: 20,
     textAlign: 'center',
+    color: Colors.textPrimary,
   },
   optionText: {
     color: Colors.textSubtle,

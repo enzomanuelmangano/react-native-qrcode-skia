@@ -67,3 +67,33 @@ export const SearchIcon = ({
     />
   </Svg>
 );
+
+export const MenuIcon = ({
+  color = Colors.iconDefault,
+  size = 20,
+}: IconProps) => (
+  <Svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+    <Path
+      d="M4 6h16M4 12h16M4 18h16"
+      stroke={color}
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </Svg>
+);
+
+export const CloseIcon = ({
+  color = Colors.iconDefault,
+  size = 20,
+}: IconProps) => (
+  <Svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+    <Path
+      d="M18 6L6 18M6 6l12 12"
+      stroke={color}
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </Svg>
+);

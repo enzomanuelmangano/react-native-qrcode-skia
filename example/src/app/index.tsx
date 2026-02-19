@@ -9,10 +9,12 @@ import { Toaster } from 'burnt/web';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import App from '../components/main';
 import { Colors } from '../design-tokens';
+import { Agentation } from 'agentation';
 
 export default function Root() {
   return (
     <SafeAreaProvider>
+      {process.env.NODE_ENV === 'development' && <Agentation />}
       <GestureHandlerRootView style={styles.fill}>
         <View style={styles.container}>
           <App />

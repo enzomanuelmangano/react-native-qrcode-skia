@@ -3,7 +3,7 @@ import { StyleSheet, View, Pressable, Text } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useSelector } from '@legendapp/state/react';
 import { qrcodeState$, GradientTypeOptions } from '../../states';
-import { HoverDropdown } from './hover-dropdown';
+import { HoverDropdown, useDropdownClose } from './hover-dropdown';
 import { Colors, Spacing, Sizes, BorderRadius } from '../../design-tokens';
 
 type GradientType = (typeof GradientTypeOptions)[number];
@@ -83,11 +83,17 @@ const GradientOption = ({
   onSelect,
 }: GradientOptionProps) => {
   const [isHovered, setIsHovered] = useState(false);
+  const closeDropdown = useDropdownClose();
   const direction = getGradientDirection(gradient);
+
+  const handlePress = () => {
+    onSelect();
+    closeDropdown?.();
+  };
 
   return (
     <Pressable
-      onPress={onSelect}
+      onPress={handlePress}
       onHoverIn={() => setIsHovered(true)}
       onHoverOut={() => setIsHovered(false)}
       style={[

@@ -5,7 +5,7 @@ import { useSelector } from '@legendapp/state/react';
 import type { Observable } from '@legendapp/state';
 import type { BaseShapeOptions } from 'react-native-qrcode-skia';
 import { Shapes } from '../../states';
-import { HoverDropdown } from './hover-dropdown';
+import { HoverDropdown, useDropdownClose } from './hover-dropdown';
 import { getPathFromShape } from '../../utils/shape-path';
 import { Colors, Spacing, Sizes } from '../../design-tokens';
 
@@ -55,14 +55,20 @@ type EyeOptionProps = {
 
 const EyeOption = ({ shape, isSelected, onSelect }: EyeOptionProps) => {
   const [isHovered, setIsHovered] = useState(false);
+  const closeDropdown = useDropdownClose();
   const shapePath = useMemo(
     () => getPathFromShape(shape, Sizes.shapePreview),
     [shape]
   );
 
+  const handlePress = () => {
+    onSelect();
+    closeDropdown?.();
+  };
+
   return (
     <Pressable
-      onPress={onSelect}
+      onPress={handlePress}
       onHoverIn={() => setIsHovered(true)}
       onHoverOut={() => setIsHovered(false)}
       style={[

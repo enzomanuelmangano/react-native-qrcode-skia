@@ -10,14 +10,18 @@ import {
   BorderRadius,
 } from '../../design-tokens';
 
-export const GapSelector = () => {
+type GapSelectorProps = {
+  showLabel?: boolean;
+};
+
+export const GapSelector = ({ showLabel = true }: GapSelectorProps) => {
   const currentValue = useSelector(qrcodeState$.gap);
   const currentThemeName = useSelector(qrcodeState$.currentTheme);
   const theme = Themes[currentThemeName];
 
   return (
     <View style={styles.container}>
-      <Text style={styles.label}>Gap</Text>
+      {showLabel && <Text style={styles.label}>Gap</Text>}
       <View style={styles.selector}>
         {GapSizes.map((size) => (
           <GapButton
