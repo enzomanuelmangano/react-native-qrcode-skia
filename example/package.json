@@ -7,7 +7,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "postinstall": "bun setup-skia-web && node path-fs-canvaskit-postinstall.js",
+    "postinstall": "cd .. && npx patch-package --patch-dir example/patches && cd example && bun setup-skia-web && node path-fs-canvaskit-postinstall.js",
     "copy-canvaskit-in-dist": "cp -r public/canvaskit.wasm dist/_expo/static/js/web/canvaskit.wasm",
     "deploy": "gh-pages -t -d dist",
     "predeploy": "expo export -p web && bun copy-canvaskit-in-dist"
@@ -42,7 +42,8 @@
   },
   "devDependencies": {
     "babel-plugin-module-resolver": "^5.0.2",
-    "gh-pages": "^6.3.0"
+    "gh-pages": "^6.3.0",
+    "patch-package": "^8.0.0"
   },
   "private": true
 }

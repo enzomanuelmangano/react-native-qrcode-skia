@@ -1,0 +1,41 @@
+diff --git a/node_modules/react-native-worklets/lib/module/PlatformChecker/index.js b/node_modules/react-native-worklets/lib/module/PlatformChecker/index.js
+index 1234567..abcdefg 100644
+--- a/node_modules/react-native-worklets/lib/module/PlatformChecker/index.js
++++ b/node_modules/react-native-worklets/lib/module/PlatformChecker/index.js
+@@ -1,12 +1,12 @@
+ 'use strict';
+
+-import { RuntimeKind } from "../runtimeKind.js";
++import { getRuntimeKind, RuntimeKind } from "../runtimeKind.js";
+ import { IS_JEST as RN_IS_JEST, IS_WEB as RN_IS_WEB, IS_WINDOWS as RN_IS_WINDOWS, SHOULD_BE_USE_WEB as RN_SHOULD_BE_USE_WEB } from "./PlatformChecker.js";
+ let IS_JEST = false;
+ let IS_WEB = false;
+ let IS_WINDOWS = false;
+ let SHOULD_BE_USE_WEB = false;
+-if (globalThis.__RUNTIME_KIND === RuntimeKind.ReactNative) {
++if (getRuntimeKind() === RuntimeKind.ReactNative) {
+   IS_JEST = RN_IS_JEST;
+   IS_WEB = RN_IS_WEB;
+   IS_WINDOWS = RN_IS_WINDOWS;
+diff --git a/node_modules/react-native-worklets/lib/module/threads.js b/node_modules/react-native-worklets/lib/module/threads.js
+index 1234567..abcdefg 100644
+--- a/node_modules/react-native-worklets/lib/module/threads.js
++++ b/node_modules/react-native-worklets/lib/module/threads.js
+@@ -122,7 +122,7 @@ export function runOnUI(worklet) {
+     enqueueUI(worklet, args);
+   };
+ }
+-if (__DEV__) {
++if (__DEV__ && !SHOULD_BE_USE_WEB) {
+   function runOnUIWorklet() {
+     'worklet';
+
+@@ -297,7 +297,7 @@ export function runOnUIAsync(worklet) {
+     });
+   };
+ }
+-if (__DEV__) {
++if (__DEV__ && !SHOULD_BE_USE_WEB) {
+   function runOnUIAsyncWorklet() {
+     'worklet';
+
