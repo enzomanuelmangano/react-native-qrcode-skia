@@ -1,72 +1,93 @@
 import QRCode from 'react-native-qrcode-skia';
-import React, { useMemo } from 'react';
-import { useAtomValue } from 'jotai';
-import {
-  BaseShapeAtom,
-  EyePatternShapeAtom,
-  BaseGapAtom,
-  EyePatternGapAtom,
-  SelectedGradientAtom,
-  useRandomColors,
-  SelectedLogoAtom,
-} from '../states';
-import { getSkiaGradientByType } from './gradient-option-preview';
-import { PressableScale } from './pressable-scale';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useMemo, useEffect } from 'react';
+import { useSelector } from '@legendapp/state/react';
+import { qrcodeState$, GapValues } from '../states';
+import { Themes } from '../constants';
+import { getSkiaGradientByType } from '../utils/gradient';
+import { StyleSheet, Text } from 'react-native';
+import Animated, {
+  useSharedValue,
+  useAnimatedStyle,
+  withSpring,
+} from 'react-native-reanimated';
 
-const SponsorUrl = 'https://patreon.com/reactiive';
+const QRCodeSize = 220;
 
-const QRCodeSize = 200;
+const SPRING_CONFIG = {
+  mass: 1,
+  stiffness: 80,
+  damping: 12,
+} as const;
+
+const AnimatedLogo = ({ emoji }: { emoji: string }) => {
+  const copyTrigger = useSelector(qrcodeState$.copyTrigger);
+  const rotation = useSharedValue(0);
+  const initialTrigger = React.useRef(copyTrigger);
+
+  useEffect(() => {
+    const diff = copyTrigger - initialTrigger.current;
+    if (diff > 0) {
+      // Only animate for triggers since mount
+      rotation.value = withSpring(diff * 360, SPRING_CONFIG);
+    }
+  }, [copyTrigger, rotation]);
+
+  const animatedStyle = useAnimatedStyle(() => ({
+    transform: [{ rotate: `${rotation.value}deg` }],
+  }));
+
+  return (
+    <Animated.View style={[styles.logo, animatedStyle]}>
+      <Text style={styles.logoLabel}>{emoji}</Text>
+    </Animated.View>
+  );
+};
 
 function QRCodeDemo() {
-  const baseShape = useAtomValue(BaseShapeAtom);
-  const eyePatternShape = useAtomValue(EyePatternShapeAtom);
-  const baseGap = useAtomValue(BaseGapAtom);
-  const eyePatternGap = useAtomValue(EyePatternGapAtom);
-  const gradientType = useAtomValue(SelectedGradientAtom);
-  const { colors, generateColors } = useRandomColors();
+  const qrUrl = useSelector(qrcodeState$.qrUrl);
+  const baseShape = useSelector(qrcodeState$.baseShape);
+  const eyePatternShape = useSelector(qrcodeState$.eyePatternShape);
+  const gapSize = useSelector(qrcodeState$.gap);
+  const gap = GapValues[gapSize];
+  const gradientType = useSelector(qrcodeState$.selectedGradient);
+  const currentThemeName = useSelector(qrcodeState$.currentTheme);
+  const theme = Themes[currentThemeName];
 
   const gradientComponent = useMemo(
     () =>
       getSkiaGradientByType({
         gradient: gradientType,
-        colors,
+        colors: [...theme.colors],
         size: QRCodeSize,
       }),
-    [gradientType, colors]
+    [gradientType, theme.colors]
   );
 
-  const selectedLogo = useAtomValue(SelectedLogoAtom);
+  const selectedLogo = useSelector(qrcodeState$.selectedLogo);
   const logoProps = useMemo(() => {
     if (!selectedLogo) {
       return {};
     }
     return {
-      logo: (
-        <View style={styles.logo}>
-          <Text style={styles.logoLabel}>{selectedLogo}</Text>
-        </View>
-      ),
+      logo: <AnimatedLogo emoji={selectedLogo} />,
       logoAreaSize: 70,
     };
   }, [selectedLogo]);
 
   return (
-    <PressableScale onPress={generateColors}>
-      <QRCode
-        value={SponsorUrl}
-        size={QRCodeSize}
-        shapeOptions={{
-          shape: baseShape,
-          gap: baseGap,
-          eyePatternGap: eyePatternGap,
-          eyePatternShape: eyePatternShape,
-        }}
-        {...logoProps}
-      >
-        {gradientComponent}
-      </QRCode>
-    </PressableScale>
+    <QRCode
+      value={qrUrl || ':)'}
+      size={QRCodeSize}
+      shapeOptions={{
+        shape: baseShape,
+        gap: gap,
+        eyePatternGap: gap,
+        eyePatternShape: eyePatternShape,
+      }}
+      {...logoProps}
+    >
+      {gradientComponent}
+    </QRCode>
   );
 }
 
