@@ -22,6 +22,7 @@ import { MobileMenu } from './mobile-menu';
 import { GitHubIcon, MenuIcon } from '../icons';
 import { HoverPressable } from '../hover-pressable';
 import { useResponsive } from '../../hooks/use-responsive';
+import { isEmbedded } from '../../hooks/use-embedded';
 import { qrcodeState$ } from '../../states';
 import { FeatureFlags } from '../../constants';
 import { Colors, Spacing, Sizes, BorderRadius } from '../../design-tokens';
@@ -51,9 +52,12 @@ interface PanelProps {
   drawerProgress?: SharedValue<number>;
 }
 
+const EMBEDDED_BOTTOM_OFFSET = 120;
+
 export const Panel = ({ onURLButtonPress, drawerProgress }: PanelProps) => {
   const insets = useSafeAreaInsets();
   const { isMobile, isReady } = useResponsive();
+  const embeddedOffset = isEmbedded ? EMBEDDED_BOTTOM_OFFSET : 0;
   const [menuVisible, setMenuVisible] = useState(false);
   const panelAnimation = useSharedValue(1);
 
@@ -83,7 +87,7 @@ export const Panel = ({ onURLButtonPress, drawerProgress }: PanelProps) => {
           entering={FadeIn}
           style={[
             styles.container,
-            { bottom: Math.max(insets.bottom, 16) },
+            { bottom: Math.max(insets.bottom, 16) + embeddedOffset },
             panelStyle,
           ]}
         >
@@ -115,7 +119,7 @@ export const Panel = ({ onURLButtonPress, drawerProgress }: PanelProps) => {
   return (
     <Animated.View
       entering={FadeIn}
-      style={[styles.container, { bottom: Math.max(insets.bottom, 24) }]}
+      style={[styles.container, { bottom: Math.max(insets.bottom, 24) + embeddedOffset }]}
     >
       <View style={styles.panel}>
         <View style={styles.controls}>

@@ -10,12 +10,14 @@ import Animated, {
   useAnimatedStyle,
   withSpring,
 } from 'react-native-reanimated';
+import { isEmbedded } from '../hooks/use-embedded';
 
 const isWeb = Platform.OS === 'web';
-const QRCodeSize = isWeb ? 260 : 220;
-const LogoAreaSize = isWeb ? 80 : 70;
-const LogoHeight = isWeb ? 58 : 50;
-const LogoFontSize = isWeb ? 42 : 38;
+const isDesktopWeb = isWeb && !isEmbedded;
+const QRCodeSize = isDesktopWeb ? 260 : 220;
+const LogoAreaSize = isDesktopWeb ? 80 : 70;
+const LogoHeight = isDesktopWeb ? 58 : 50;
+const LogoFontSize = isDesktopWeb ? 42 : 38;
 
 const SPRING_CONFIG = {
   mass: 1,
