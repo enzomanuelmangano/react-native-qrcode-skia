@@ -60,10 +60,12 @@ const buildPath = (
   value: string,
   errorCorrectionLevel: ErrorCorrectionLevelType,
   size: number,
-  shape: BaseShapeOptions | undefined,
-  eyePatternShape: BaseShapeOptions | undefined,
-  gap: number | undefined,
-  eyePatternGap: number | undefined,
+  // Same defaults as `modulesToPath`, applied here so that the cache key of an
+  // omitted option is the key of its default value.
+  shape: BaseShapeOptions = 'rounded',
+  eyePatternShape: BaseShapeOptions = 'rounded',
+  gap: number = 0,
+  eyePatternGap: number = 0,
   logoAreaSize: number,
   logoAreaBorderRadius: number
 ) => {

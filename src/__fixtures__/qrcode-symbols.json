@@ -1,4647 +1,531 @@
 [
-  {
-    "value": "a",
-    "level": "L",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 3,
-    "penalties": [388, 485, 467, 382, 479, 466, 557, 399],
-    "hash": "becbf8de70b53eef"
-  },
-  {
-    "value": "a",
-    "level": "M",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 5,
-    "penalties": [526, 534, 358, 412, 350, 318, 423, 487],
-    "hash": "20c5121183b26a4b"
-  },
-  {
-    "value": "a",
-    "level": "Q",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 0,
-    "penalties": [256, 455, 393, 491, 419, 540, 447, 472],
-    "hash": "41f6b53f4ca482b5"
-  },
-  {
-    "value": "a",
-    "level": "H",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 0,
-    "penalties": [340, 470, 382, 466, 606, 485, 359, 418],
-    "hash": "065a337d89595ef5"
-  },
-  {
-    "value": "0",
-    "level": "L",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 3,
-    "penalties": [392, 742, 417, 350, 447, 597, 529, 414],
-    "hash": "5741b5bac3eeb90d"
-  },
-  {
-    "value": "0",
-    "level": "M",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 4,
-    "penalties": [406, 348, 359, 355, 330, 387, 385, 568],
-    "hash": "39fd928bee9648c1"
-  },
-  {
-    "value": "0",
-    "level": "Q",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 0,
-    "penalties": [334, 445, 395, 469, 445, 447, 418, 465],
-    "hash": "4a7275cecabfb044"
-  },
-  {
-    "value": "0",
-    "level": "H",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 4,
-    "penalties": [415, 616, 449, 402, 388, 629, 563, 451],
-    "hash": "1e45550c9b9a1f84"
-  },
-  {
-    "value": "A",
-    "level": "L",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 0,
-    "penalties": [335, 550, 457, 400, 518, 469, 483, 382],
-    "hash": "8e629321a12bf985"
-  },
-  {
-    "value": "A",
-    "level": "M",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 3,
-    "penalties": [371, 471, 375, 352, 428, 462, 428, 547],
-    "hash": "496d01fb163efa09"
-  },
-  {
-    "value": "A",
-    "level": "Q",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 2,
-    "penalties": [390, 428, 377, 451, 377, 511, 397, 420],
-    "hash": "7afa985a291db430"
-  },
-  {
-    "value": "A",
-    "level": "H",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 4,
-    "penalties": [341, 505, 545, 435, 301, 454, 545, 397],
-    "hash": "c91392998c8a2d04"
-  },
-  {
-    "value": " ",
-    "level": "L",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 0,
-    "penalties": [369, 661, 459, 414, 498, 545, 440, 375],
-    "hash": "a23ee73a490cea66"
-  },
-  {
-    "value": " ",
-    "level": "M",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 2,
-    "penalties": [496, 453, 339, 459, 397, 391, 433, 486],
-    "hash": "d25df3ef5cf825a2"
-  },
-  {
-    "value": " ",
-    "level": "Q",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 6,
-    "penalties": [433, 416, 503, 459, 417, 595, 342, 494],
-    "hash": "ba39b7a0af987c53"
-  },
-  {
-    "value": " ",
-    "level": "H",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 1,
-    "penalties": [358, 335, 461, 559, 403, 364, 487, 355],
-    "hash": "528f1918e709c90a"
-  },
-  {
-    "value": "01234567890123456789",
-    "level": "L",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 3,
-    "penalties": [341, 552, 359, 295, 499, 471, 386, 365],
-    "hash": "08bcec2839087011"
-  },
-  {
-    "value": "01234567890123456789",
-    "level": "M",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 4,
-    "penalties": [354, 407, 421, 517, 327, 407, 348, 469],
-    "hash": "7bd8b9c90e1475e7"
-  },
-  {
-    "value": "01234567890123456789",
-    "level": "Q",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 3,
-    "penalties": [385, 522, 356, 302, 366, 449, 304, 330],
-    "hash": "cbf0b601284842b0"
-  },
-  {
-    "value": "01234567890123456789",
-    "level": "H",
-    "size": 25,
-    "version": 2,
-    "maskPattern": 1,
-    "penalties": [494, 491, 610, 527, 762, 535, 600, 499],
-    "hash": "473f82f6ba253d78"
-  },
-  {
-    "value": "https://qrcode.reactiive.io",
-    "level": "L",
-    "size": 25,
-    "version": 2,
-    "maskPattern": 3,
-    "penalties": [602, 540, 653, 503, 557, 647, 513, 610],
-    "hash": "c51857a7bcf4c0c6"
-  },
-  {
-    "value": "https://qrcode.reactiive.io",
-    "level": "M",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 2,
-    "penalties": [609, 730, 507, 642, 687, 594, 735, 638],
-    "hash": "ce5475a42b2e4eb2"
-  },
-  {
-    "value": "https://qrcode.reactiive.io",
-    "level": "Q",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 7,
-    "penalties": [706, 788, 769, 690, 571, 682, 592, 552],
-    "hash": "0f2c4821996182a2"
-  },
-  {
-    "value": "https://qrcode.reactiive.io",
-    "level": "H",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 2,
-    "penalties": [910, 859, 680, 957, 810, 901, 733, 922],
-    "hash": "a1a6aea39286a13b"
-  },
-  {
-    "value": "HTTPS://QRCODE.REACTIIVE.IO/ABC",
-    "level": "L",
-    "size": 25,
-    "version": 2,
-    "maskPattern": 0,
-    "penalties": [453, 621, 685, 474, 538, 499, 535, 471],
-    "hash": "01457800faa458f0"
-  },
-  {
-    "value": "HTTPS://QRCODE.REACTIIVE.IO/ABC",
-    "level": "M",
-    "size": 25,
-    "version": 2,
-    "maskPattern": 2,
-    "penalties": [591, 522, 503, 620, 660, 525, 535, 742],
-    "hash": "cca093414be8e1da"
-  },
-  {
-    "value": "HTTPS://QRCODE.REACTIIVE.IO/ABC",
-    "level": "Q",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 3,
-    "penalties": [712, 734, 726, 508, 791, 783, 783, 717],
-    "hash": "2240ad421bcdbc5d"
-  },
-  {
-    "value": "HTTPS://QRCODE.REACTIIVE.IO/ABC",
-    "level": "H",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 6,
-    "penalties": [814, 733, 775, 869, 750, 798, 656, 861],
-    "hash": "248dd88c5573a778"
-  },
-  {
-    "value": "WIFI:S:My Network;T:WPA;P:p@ss;;",
-    "level": "L",
-    "size": 25,
-    "version": 2,
-    "maskPattern": 0,
-    "penalties": [477, 699, 637, 512, 742, 564, 570, 590],
-    "hash": "08e399b0e8cfd1bf"
-  },
-  {
-    "value": "WIFI:S:My Network;T:WPA;P:p@ss;;",
-    "level": "M",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 3,
-    "penalties": [794, 699, 684, 623, 763, 875, 638, 762],
-    "hash": "35a8ce55fa21c214"
-  },
-  {
-    "value": "WIFI:S:My Network;T:WPA;P:p@ss;;",
-    "level": "Q",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 1,
-    "penalties": [589, 530, 606, 768, 655, 674, 646, 655],
-    "hash": "4565e169be73bf16"
-  },
-  {
-    "value": "WIFI:S:My Network;T:WPA;P:p@ss;;",
-    "level": "H",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 7,
-    "penalties": [894, 771, 892, 780, 923, 814, 855, 727],
-    "hash": "03e06e942e56f875"
-  },
-  {
-    "value": "mailto:a@b.co?subject=Hi 123",
-    "level": "L",
-    "size": 25,
-    "version": 2,
-    "maskPattern": 3,
-    "penalties": [538, 733, 516, 417, 525, 629, 568, 474],
-    "hash": "f078734dae7c35ab"
-  },
-  {
-    "value": "mailto:a@b.co?subject=Hi 123",
-    "level": "M",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 2,
-    "penalties": [643, 787, 583, 746, 843, 702, 704, 863],
-    "hash": "9f9ad3a78547dfca"
-  },
-  {
-    "value": "mailto:a@b.co?subject=Hi 123",
-    "level": "Q",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 7,
-    "penalties": [708, 798, 686, 599, 686, 670, 725, 561],
-    "hash": "1a951cf65365b15e"
-  },
-  {
-    "value": "mailto:a@b.co?subject=Hi 123",
-    "level": "H",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 1,
-    "penalties": [864, 736, 888, 833, 774, 784, 765, 1031],
-    "hash": "512879069bd136f7"
-  },
-  { "value": "", "level": "L", "error": "No input text" },
-  { "value": "", "level": "M", "error": "No input text" },
-  { "value": "", "level": "Q", "error": "No input text" },
-  { "value": "", "level": "H", "error": "No input text" },
-  { "value": "\ud800", "level": "L", "error": "URI malformed" },
-  { "value": "\ud800", "level": "M", "error": "URI malformed" },
-  { "value": "\ud800", "level": "Q", "error": "URI malformed" },
-  { "value": "\ud800", "level": "H", "error": "URI malformed" },
-  {
-    "value": { "repeat": "🐨", "count": 200 },
-    "level": "L",
-    "size": 97,
-    "version": 20,
-    "maskPattern": 0,
-    "penalties": [4689, 6252, 6568, 6487, 6270, 6033, 6332, 6819],
-    "hash": "3cbdf128f18f7a7f"
-  },
-  {
-    "value": { "repeat": "🐨", "count": 200 },
-    "level": "M",
-    "size": 109,
-    "version": 23,
-    "maskPattern": 0,
-    "penalties": [6283, 8640, 7322, 7826, 9636, 7847, 7728, 8241],
-    "hash": "2ae4f9098ed138c3"
-  },
-  {
-    "value": { "repeat": "🐨", "count": 200 },
-    "level": "Q",
-    "size": 125,
-    "version": 27,
-    "maskPattern": 0,
-    "penalties": [9086, 10752, 10414, 10268, 11149, 10552, 11029, 9997],
-    "hash": "c858712f7081fc54"
-  },
-  {
-    "value": { "repeat": "🐨", "count": 200 },
-    "level": "H",
-    "size": 145,
-    "version": 32,
-    "maskPattern": 0,
-    "penalties": [12056, 13022, 15758, 13916, 14412, 14214, 13577, 14085],
-    "hash": "d8adf6cebcf7a5b4"
-  },
-  {
-    "value": { "repeat": "1", "count": 7089 },
-    "level": "L",
-    "size": 177,
-    "version": 40,
-    "maskPattern": 2,
-    "penalties": [24553, 29989, 16237, 22068, 20234, 23311, 21891, 22093],
-    "hash": "47fce7acd47e69d3"
-  },
-  {
-    "value": { "repeat": "1", "count": 7089 },
-    "level": "M",
-    "error": "The amount of data is too big to be stored in a QR Code"
-  },
-  {
-    "value": { "repeat": "1", "count": 7089 },
-    "level": "Q",
-    "error": "The amount of data is too big to be stored in a QR Code"
-  },
-  {
-    "value": { "repeat": "1", "count": 7089 },
-    "level": "H",
-    "error": "The amount of data is too big to be stored in a QR Code"
-  },
-  {
-    "value": { "repeat": "A", "count": 4296 },
-    "level": "L",
-    "size": 177,
-    "version": 40,
-    "maskPattern": 2,
-    "penalties": [30602, 39916, 12608, 23022, 24003, 22332, 22093, 21578],
-    "hash": "cb13b77a7a71f572"
-  },
-  {
-    "value": { "repeat": "A", "count": 4296 },
-    "level": "M",
-    "error": "The amount of data is too big to be stored in a QR Code"
-  },
-  {
-    "value": { "repeat": "A", "count": 4296 },
-    "level": "Q",
-    "error": "The amount of data is too big to be stored in a QR Code"
-  },
-  {
-    "value": { "repeat": "A", "count": 4296 },
-    "level": "H",
-    "error": "The amount of data is too big to be stored in a QR Code"
-  },
-  {
-    "value": { "repeat": "a", "count": 2953 },
-    "level": "L",
-    "size": 177,
-    "version": 40,
-    "maskPattern": 1,
-    "penalties": [27160, 10341, 19732, 22084, 22671, 19235, 20081, 22775],
-    "hash": "5ba0700979176094"
-  },
-  {
-    "value": { "repeat": "a", "count": 2953 },
-    "level": "M",
-    "error": "The amount of data is too big to be stored in a QR Code"
-  },
-  {
-    "value": { "repeat": "a", "count": 2953 },
-    "level": "Q",
-    "error": "The amount of data is too big to be stored in a QR Code"
-  },
-  {
-    "value": { "repeat": "a", "count": 2953 },
-    "level": "H",
-    "error": "The amount of data is too big to be stored in a QR Code"
-  },
-  {
-    "value": { "repeat": "1", "count": 7090 },
-    "level": "L",
-    "error": "The amount of data is too big to be stored in a QR Code"
-  },
-  {
-    "value": { "repeat": "1", "count": 7090 },
-    "level": "M",
-    "error": "The amount of data is too big to be stored in a QR Code"
-  },
-  {
-    "value": { "repeat": "1", "count": 7090 },
-    "level": "Q",
-    "error": "The amount of data is too big to be stored in a QR Code"
-  },
-  {
-    "value": { "repeat": "1", "count": 7090 },
-    "level": "H",
-    "error": "The amount of data is too big to be stored in a QR Code"
-  },
-  {
-    "value": "hello",
-    "level": "h",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 0,
-    "penalties": [400, 634, 469, 478, 483, 406, 409, 461],
-    "hash": "b00451d6d19abe14"
-  },
-  {
-    "value": "hello",
-    "level": "high",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 0,
-    "penalties": [400, 634, 469, 478, 483, 406, 409, 461],
-    "hash": "b00451d6d19abe14"
-  },
-  {
-    "value": "hello",
-    "level": "Quartile",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 0,
-    "penalties": [333, 372, 411, 435, 432, 510, 509, 345],
-    "hash": "e1fdee54f7bbe4ca"
-  },
-  {
-    "value": "hello",
-    "level": "low",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 7,
-    "penalties": [365, 485, 385, 328, 510, 625, 464, 293],
-    "hash": "16fcb7e586dec1c5"
-  },
-  {
-    "value": "hello",
-    "level": "invalid",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 0,
-    "penalties": [288, 400, 300, 450, 540, 380, 407, 359],
-    "hash": "19cb2fb2c3452552"
-  },
-  {
-    "value": { "mixed": 1 },
-    "level": "M",
-    "size": 45,
-    "version": 7,
-    "maskPattern": 7,
-    "penalties": [1500, 1599, 1323, 1395, 1390, 1475, 1656, 1275],
-    "hash": "b4445e35f593b54b"
-  },
-  {
-    "value": { "mixed": 2 },
-    "level": "Q",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 2,
-    "penalties": [466, 463, 361, 544, 412, 518, 494, 501],
-    "hash": "8a2c3c5ed4711010"
-  },
-  {
-    "value": { "mixed": 3 },
-    "level": "H",
-    "size": 53,
-    "version": 9,
-    "maskPattern": 2,
-    "penalties": [2002, 2028, 1831, 2072, 2179, 2019, 1838, 1957],
-    "hash": "35246f44948f12d5"
-  },
-  {
-    "value": { "mixed": 4 },
-    "level": "L",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 2,
-    "penalties": [493, 556, 322, 376, 531, 553, 560, 348],
-    "hash": "c8fb1c49ae076da4"
-  },
-  {
-    "value": { "mixed": 5 },
-    "level": "M",
-    "size": 61,
-    "version": 11,
-    "maskPattern": 0,
-    "penalties": [2359, 3121, 2364, 2413, 2698, 2880, 2882, 2860],
-    "hash": "f7a884ca185f1cb9"
-  },
-  {
-    "value": { "mixed": 6 },
-    "level": "Q",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 7,
-    "penalties": [619, 819, 637, 791, 768, 685, 659, 527],
-    "hash": "37a3087652898842"
-  },
-  {
-    "value": { "mixed": 7 },
-    "level": "H",
-    "size": 57,
-    "version": 10,
-    "maskPattern": 4,
-    "penalties": [2319, 2246, 2252, 2401, 2041, 2070, 2180, 2203],
-    "hash": "753b9c90b272bfce"
-  },
-  {
-    "value": { "mixed": 8 },
-    "level": "L",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 3,
-    "penalties": [370, 381, 374, 353, 402, 381, 364, 425],
-    "hash": "e99c38aaed61f0fc"
-  },
-  {
-    "value": { "mixed": 9 },
-    "level": "M",
-    "size": 57,
-    "version": 10,
-    "maskPattern": 0,
-    "penalties": [2156, 2204, 2406, 2278, 2240, 2531, 2264, 2364],
-    "hash": "42bdaf02806e193e"
-  },
-  {
-    "value": { "mixed": 10 },
-    "level": "Q",
-    "size": 25,
-    "version": 2,
-    "maskPattern": 2,
-    "penalties": [561, 610, 466, 530, 677, 695, 558, 505],
-    "hash": "1dd8a519ab6c1b05"
-  },
-  {
-    "value": { "mixed": 11 },
-    "level": "H",
-    "size": 65,
-    "version": 12,
-    "maskPattern": 1,
-    "penalties": [2758, 2513, 2802, 2789, 2828, 2654, 2791, 2621],
-    "hash": "e6faebd4443bc493"
-  },
-  {
-    "value": { "mixed": 12 },
-    "level": "L",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 0,
-    "penalties": [680, 833, 802, 821, 1009, 881, 861, 915],
-    "hash": "9db69adc95f82c4d"
-  },
-  {
-    "value": { "mixed": 13 },
-    "level": "M",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 3,
-    "penalties": [1149, 1155, 1210, 990, 1293, 1531, 1049, 1318],
-    "hash": "0ea64de97f9711bc"
-  },
-  {
-    "value": { "mixed": 14 },
-    "level": "Q",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 7,
-    "penalties": [879, 855, 929, 906, 706, 898, 734, 581],
-    "hash": "d97f3fa450a00e86"
-  },
-  {
-    "value": { "mixed": 15 },
-    "level": "H",
-    "size": 57,
-    "version": 10,
-    "maskPattern": 7,
-    "penalties": [2408, 2251, 2465, 2230, 2377, 2243, 2371, 2089],
-    "hash": "c0da3782303ad309"
-  },
-  {
-    "value": { "mixed": 16 },
-    "level": "L",
-    "size": 25,
-    "version": 2,
-    "maskPattern": 1,
-    "penalties": [561, 504, 563, 543, 663, 603, 570, 507],
-    "hash": "bda225c216f545c7"
-  },
-  {
-    "value": { "mixed": 17 },
-    "level": "M",
-    "size": 53,
-    "version": 9,
-    "maskPattern": 5,
-    "penalties": [2048, 1872, 1930, 2135, 2008, 1720, 1995, 2313],
-    "hash": "745e27e55e77e3a5"
-  },
-  {
-    "value": { "mixed": 18 },
-    "level": "Q",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 0,
-    "penalties": [555, 743, 635, 844, 780, 741, 657, 712],
-    "hash": "4f6db7e1dcad06c1"
-  },
-  {
-    "value": { "mixed": 19 },
-    "level": "H",
-    "size": 73,
-    "version": 14,
-    "maskPattern": 7,
-    "penalties": [3862, 3845, 3860, 3871, 4089, 4009, 4040, 3718],
-    "hash": "16cfa372b2805af8"
-  },
-  {
-    "value": { "mixed": 20 },
-    "level": "L",
-    "size": 25,
-    "version": 2,
-    "maskPattern": 0,
-    "penalties": [478, 619, 514, 484, 545, 500, 677, 530],
-    "hash": "e87f06d8f2a63988"
-  },
-  {
-    "value": { "mixed": 21 },
-    "level": "M",
-    "size": 53,
-    "version": 9,
-    "maskPattern": 2,
-    "penalties": [2244, 1940, 1829, 2059, 1989, 1858, 1868, 1904],
-    "hash": "7594a2dd2a318cc1"
-  },
-  {
-    "value": { "mixed": 22 },
-    "level": "Q",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 3,
-    "penalties": [665, 720, 812, 548, 659, 811, 675, 776],
-    "hash": "3e2c5abb5c2ff151"
-  },
-  {
-    "value": { "mixed": 23 },
-    "level": "H",
-    "size": 81,
-    "version": 16,
-    "maskPattern": 3,
-    "penalties": [4760, 4943, 4686, 4591, 4672, 5178, 4756, 4766],
-    "hash": "55fed5f6dcf04308"
-  },
-  {
-    "value": { "mixed": 24 },
-    "level": "L",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 6,
-    "penalties": [693, 697, 696, 662, 832, 644, 579, 909],
-    "hash": "ca2f701921ef05b7"
-  },
-  {
-    "value": { "mixed": 25 },
-    "level": "M",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 2,
-    "penalties": [1053, 1149, 936, 1061, 1072, 1086, 1033, 962],
-    "hash": "882a71340dd764ca"
-  },
-  {
-    "value": { "mixed": 26 },
-    "level": "Q",
-    "size": 45,
-    "version": 7,
-    "maskPattern": 3,
-    "penalties": [1242, 1548, 1347, 1214, 1690, 1364, 1358, 1365],
-    "hash": "a4d4ebc6ae4b64d8"
-  },
-  {
-    "value": { "mixed": 27 },
-    "level": "H",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 3,
-    "penalties": [1900, 1879, 1738, 1734, 2005, 1768, 1799, 1853],
-    "hash": "fced817695088b18"
-  },
-  {
-    "value": { "mixed": 28 },
-    "level": "L",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 0,
-    "penalties": [608, 692, 634, 730, 876, 745, 689, 729],
-    "hash": "9bff6cfa42a2a941"
-  },
-  {
-    "value": { "mixed": 29 },
-    "level": "M",
-    "size": 57,
-    "version": 10,
-    "maskPattern": 4,
-    "penalties": [2604, 2421, 2315, 2290, 2201, 2464, 2343, 2401],
-    "hash": "68f5274a645e74d5"
-  },
-  {
-    "value": { "mixed": 30 },
-    "level": "Q",
-    "size": 57,
-    "version": 10,
-    "maskPattern": 0,
-    "penalties": [1887, 2389, 2022, 2287, 2496, 2425, 2109, 2140],
-    "hash": "d06b219c2ba46428"
-  },
-  {
-    "value": { "mixed": 31 },
-    "level": "H",
-    "size": 57,
-    "version": 10,
-    "maskPattern": 2,
-    "penalties": [2375, 2314, 2103, 2274, 2368, 2474, 2235, 2273],
-    "hash": "5e54ed57674d45ee"
-  },
-  {
-    "value": { "mixed": 32 },
-    "level": "L",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 0,
-    "penalties": [639, 701, 665, 662, 697, 771, 645, 661],
-    "hash": "22c18a0d022fac7a"
-  },
-  {
-    "value": { "mixed": 33 },
-    "level": "M",
-    "size": 73,
-    "version": 14,
-    "maskPattern": 0,
-    "penalties": [3315, 3870, 3842, 4051, 4264, 3836, 3765, 3670],
-    "hash": "2887aaa626352ee5"
-  },
-  {
-    "value": { "mixed": 34 },
-    "level": "Q",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 7,
-    "penalties": [1801, 1963, 1770, 1866, 1909, 1894, 1905, 1625],
-    "hash": "5fc0fe429221e0d1"
-  },
-  {
-    "value": { "mixed": 35 },
-    "level": "H",
-    "size": 93,
-    "version": 19,
-    "maskPattern": 3,
-    "penalties": [6216, 6117, 5945, 5774, 5874, 5937, 5939, 5861],
-    "hash": "c4f912ce4aee6a2c"
-  },
-  {
-    "value": { "mixed": 36 },
-    "level": "L",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 2,
-    "penalties": [1715, 1945, 1587, 1728, 1848, 1695, 1642, 1835],
-    "hash": "2e7f258671c5a482"
-  },
-  {
-    "value": { "mixed": 37 },
-    "level": "M",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 5,
-    "penalties": [1345, 1392, 1440, 1487, 1278, 1242, 1332, 1277],
-    "hash": "155b6f45409eae12"
-  },
-  {
-    "value": { "mixed": 38 },
-    "level": "Q",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 4,
-    "penalties": [735, 904, 1045, 938, 722, 938, 780, 809],
-    "hash": "e1b1214b90063960"
-  },
-  {
-    "value": { "mixed": 39 },
-    "level": "H",
-    "size": 57,
-    "version": 10,
-    "maskPattern": 2,
-    "penalties": [2260, 2379, 2074, 2342, 2594, 2389, 2183, 2231],
-    "hash": "fce9775b4dd30318"
-  },
-  {
-    "value": { "mixed": 40 },
-    "level": "L",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 2,
-    "penalties": [1753, 2049, 1680, 1725, 1739, 2110, 1981, 1919],
-    "hash": "622d404b007c120a"
-  },
-  {
-    "value": { "mixed": 41 },
-    "level": "M",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 0,
-    "penalties": [292, 468, 381, 375, 545, 526, 348, 504],
-    "hash": "3bfb90ec843996c3"
-  },
-  {
-    "value": { "mixed": 42 },
-    "level": "Q",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 3,
-    "penalties": [1311, 1347, 1365, 1078, 1439, 1588, 1307, 1290],
-    "hash": "7198ff4c73362ce8"
-  },
-  {
-    "value": { "mixed": 43 },
-    "level": "H",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 5,
-    "penalties": [583, 730, 585, 782, 666, 551, 694, 686],
-    "hash": "a19df851ab4ecd0e"
-  },
-  {
-    "value": { "mixed": 44 },
-    "level": "L",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 4,
-    "penalties": [835, 877, 763, 826, 689, 731, 741, 994],
-    "hash": "ac042de2e45e0e38"
-  },
-  {
-    "value": { "mixed": 45 },
-    "level": "M",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 4,
-    "penalties": [367, 358, 291, 484, 287, 382, 454, 415],
-    "hash": "eb33a42935977d96"
-  },
-  {
-    "value": { "mixed": 46 },
-    "level": "Q",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 2,
-    "penalties": [1327, 1272, 1154, 1406, 1444, 1294, 1350, 1281],
-    "hash": "c2f708aa2619f443"
-  },
-  {
-    "value": { "mixed": 47 },
-    "level": "H",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 3,
-    "penalties": [1228, 1005, 962, 957, 1087, 1108, 1120, 997],
-    "hash": "4f4431c115fc4fb3"
-  },
-  {
-    "value": { "mixed": 48 },
-    "level": "L",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 2,
-    "penalties": [1345, 1211, 1016, 1269, 1339, 1243, 1192, 1181],
-    "hash": "de4bc6e228bc09e0"
-  },
-  {
-    "value": { "mixed": 49 },
-    "level": "M",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 0,
-    "penalties": [659, 782, 788, 683, 851, 810, 779, 967],
-    "hash": "76a65e78eee52b2d"
-  },
-  {
-    "value": { "mixed": 50 },
-    "level": "Q",
-    "size": 53,
-    "version": 9,
-    "maskPattern": 0,
-    "penalties": [1782, 2075, 1999, 2050, 1810, 2161, 1868, 1950],
-    "hash": "2d81c3ed2ef99389"
-  },
-  {
-    "value": { "mixed": 51 },
-    "level": "H",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 4,
-    "penalties": [1096, 979, 1036, 946, 868, 1038, 1081, 966],
-    "hash": "2eb7ab5b85ef1ccc"
-  },
-  {
-    "value": { "mixed": 52 },
-    "level": "L",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 7,
-    "penalties": [868, 876, 813, 752, 832, 750, 821, 719],
-    "hash": "ca38c4067ab222ad"
-  },
-  {
-    "value": { "mixed": 53 },
-    "level": "M",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 0,
-    "penalties": [368, 531, 464, 460, 403, 469, 383, 507],
-    "hash": "c11d8adbfecd4b74"
-  },
-  {
-    "value": { "mixed": 54 },
-    "level": "Q",
-    "size": 57,
-    "version": 10,
-    "maskPattern": 6,
-    "penalties": [2399, 2508, 2061, 2414, 2497, 2340, 2052, 2392],
-    "hash": "38d723a020f09b9a"
-  },
-  {
-    "value": { "mixed": 55 },
-    "level": "H",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 2,
-    "penalties": [1242, 1422, 1003, 1187, 1290, 1147, 1165, 1230],
-    "hash": "a06356d4f4873802"
-  },
-  {
-    "value": { "mixed": 56 },
-    "level": "L",
-    "size": 53,
-    "version": 9,
-    "maskPattern": 2,
-    "penalties": [1804, 2348, 1745, 1996, 2088, 2229, 2151, 2025],
-    "hash": "9651ec407043fe34"
-  },
-  {
-    "value": { "mixed": 57 },
-    "level": "M",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 4,
-    "penalties": [1718, 1778, 1684, 1785, 1666, 1950, 1880, 1735],
-    "hash": "cbf79e7492ef6756"
-  },
-  {
-    "value": { "mixed": 58 },
-    "level": "Q",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 2,
-    "penalties": [1757, 1766, 1611, 2034, 1853, 1741, 1849, 1858],
-    "hash": "eba8cd2d68a62e11"
-  },
-  {
-    "value": { "mixed": 59 },
-    "level": "H",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 6,
-    "penalties": [1779, 1952, 1923, 1825, 1954, 1904, 1716, 1835],
-    "hash": "da185b70c0712a5d"
-  },
-  {
-    "value": { "mixed": 60 },
-    "level": "L",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 2,
-    "penalties": [967, 1047, 901, 996, 1244, 1248, 1176, 1097],
-    "hash": "ddb7667f0604490d"
-  },
-  {
-    "value": { "mixed": 61 },
-    "level": "M",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 3,
-    "penalties": [1199, 1457, 1211, 1124, 1231, 1261, 1187, 1436],
-    "hash": "df80cea77382a9a4"
-  },
-  {
-    "value": { "mixed": 62 },
-    "level": "Q",
-    "size": 77,
-    "version": 15,
-    "maskPattern": 6,
-    "penalties": [3955, 3895, 4243, 4330, 4174, 4260, 3891, 4097],
-    "hash": "7d4a78653765bae1"
-  },
-  {
-    "value": { "mixed": 63 },
-    "level": "H",
-    "size": 65,
-    "version": 12,
-    "maskPattern": 2,
-    "penalties": [3029, 2764, 2692, 3020, 2752, 2934, 2817, 2910],
-    "hash": "e51985bebc6d55f9"
-  },
-  {
-    "value": { "mixed": 64 },
-    "level": "L",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 2,
-    "penalties": [1885, 2229, 1527, 1836, 1879, 1847, 1908, 1625],
-    "hash": "cde5a7478278c917"
-  },
-  {
-    "value": { "mixed": 65 },
-    "level": "M",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 2,
-    "penalties": [1098, 1059, 835, 1080, 1030, 1026, 1056, 1058],
-    "hash": "da369db43671568b"
-  },
-  {
-    "value": { "mixed": 66 },
-    "level": "Q",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 7,
-    "penalties": [1259, 1366, 1301, 1281, 1194, 1604, 1321, 1123],
-    "hash": "8c05c2721ee5ca53"
-  },
-  {
-    "value": { "mixed": 67 },
-    "level": "H",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 7,
-    "penalties": [960, 1048, 1026, 1170, 1031, 1149, 954, 915],
-    "hash": "e3f6cd7b468d3c95"
-  },
-  {
-    "value": { "mixed": 68 },
-    "level": "L",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 2,
-    "penalties": [715, 987, 699, 750, 900, 1009, 880, 927],
-    "hash": "a33f9c31a20dfef8"
-  },
-  {
-    "value": { "mixed": 69 },
-    "level": "M",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 2,
-    "penalties": [789, 814, 569, 665, 605, 805, 781, 661],
-    "hash": "3b55f93ce35b25af"
-  },
-  {
-    "value": { "mixed": 70 },
-    "level": "Q",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 6,
-    "penalties": [1042, 1176, 1359, 1238, 1191, 1078, 1039, 1209],
-    "hash": "872c37c1428ca1f7"
-  },
-  {
-    "value": { "mixed": 71 },
-    "level": "H",
-    "size": 73,
-    "version": 14,
-    "maskPattern": 2,
-    "penalties": [3771, 3798, 3691, 3827, 3768, 4334, 3736, 3876],
-    "hash": "2ae1b8682e105168"
-  },
-  {
-    "value": { "mixed": 72 },
-    "level": "L",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 7,
-    "penalties": [1023, 1118, 916, 973, 1038, 1178, 1102, 914],
-    "hash": "fc07189979dcd3c3"
-  },
-  {
-    "value": { "mixed": 73 },
-    "level": "M",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 3,
-    "penalties": [1118, 1068, 1251, 900, 1006, 1101, 1116, 986],
-    "hash": "9a2d5494349bad94"
-  },
-  {
-    "value": { "mixed": 74 },
-    "level": "Q",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 4,
-    "penalties": [358, 534, 480, 401, 348, 522, 428, 491],
-    "hash": "a13828f5c8e6807e"
-  },
-  {
-    "value": { "mixed": 75 },
-    "level": "H",
-    "size": 53,
-    "version": 9,
-    "maskPattern": 6,
-    "penalties": [1964, 1986, 2282, 2103, 1980, 2417, 1921, 2143],
-    "hash": "e391f7aea0a2c94f"
-  },
-  {
-    "value": { "mixed": 76 },
-    "level": "L",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 0,
-    "penalties": [287, 525, 447, 321, 426, 396, 373, 401],
-    "hash": "070d8877e28a864d"
-  },
-  {
-    "value": { "mixed": 77 },
-    "level": "M",
-    "size": 45,
-    "version": 7,
-    "maskPattern": 4,
-    "penalties": [1458, 1782, 1371, 1395, 1362, 1464, 1436, 1578],
-    "hash": "82cfca43cb487fba"
-  },
-  {
-    "value": { "mixed": 78 },
-    "level": "Q",
-    "size": 25,
-    "version": 2,
-    "maskPattern": 0,
-    "penalties": [431, 590, 521, 588, 667, 691, 650, 566],
-    "hash": "3d53dd4bbe12e6d3"
-  },
-  {
-    "value": { "mixed": 79 },
-    "level": "H",
-    "size": 61,
-    "version": 11,
-    "maskPattern": 0,
-    "penalties": [2343, 2690, 2405, 2553, 3151, 2645, 2416, 2455],
-    "hash": "755037a7a6cfd4a0"
-  },
-  {
-    "value": { "mixed": 80 },
-    "level": "L",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 6,
-    "penalties": [1237, 1317, 1250, 1095, 1171, 1305, 1059, 1194],
-    "hash": "3454e2e0189c160b"
-  },
-  {
-    "value": { "mixed": 81 },
-    "level": "M",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 2,
-    "penalties": [1407, 1374, 992, 1275, 1346, 1200, 1019, 1348],
-    "hash": "11bdd96b54853b5d"
-  },
-  {
-    "value": { "mixed": 82 },
-    "level": "Q",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 2,
-    "penalties": [1388, 1357, 1103, 1252, 1223, 1393, 1247, 1339],
-    "hash": "82717b027d7a596a"
-  },
-  {
-    "value": { "mixed": 83 },
-    "level": "H",
-    "size": 57,
-    "version": 10,
-    "maskPattern": 3,
-    "penalties": [2180, 2330, 2379, 2177, 2339, 2378, 2302, 2457],
-    "hash": "a65b28a76b866eb3"
-  },
-  {
-    "value": { "mixed": 84 },
-    "level": "L",
-    "size": 25,
-    "version": 2,
-    "maskPattern": 6,
-    "penalties": [534, 641, 681, 648, 509, 580, 470, 695],
-    "hash": "a3d752cfc36d9e4f"
-  },
-  {
-    "value": { "mixed": 85 },
-    "level": "M",
-    "size": 53,
-    "version": 9,
-    "maskPattern": 2,
-    "penalties": [2024, 2178, 1665, 2223, 2248, 2088, 1859, 2328],
-    "hash": "ef6e73a171ac1d7f"
-  },
-  {
-    "value": { "mixed": 86 },
-    "level": "Q",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 3,
-    "penalties": [624, 751, 692, 575, 669, 787, 589, 638],
-    "hash": "b09a6aaf31df846f"
-  },
-  {
-    "value": { "mixed": 87 },
-    "level": "H",
-    "size": 57,
-    "version": 10,
-    "maskPattern": 5,
-    "penalties": [2285, 2510, 2346, 2432, 2268, 2215, 2373, 2536],
-    "hash": "0f4c000c599a8cf9"
-  },
-  {
-    "value": { "mixed": 88 },
-    "level": "L",
-    "size": 25,
-    "version": 2,
-    "maskPattern": 7,
-    "penalties": [516, 570, 589, 471, 521, 921, 628, 470],
-    "hash": "0f7a54d667e1c5f2"
-  },
-  {
-    "value": { "mixed": 89 },
-    "level": "M",
-    "size": 57,
-    "version": 10,
-    "maskPattern": 2,
-    "penalties": [2465, 2364, 2110, 2230, 2436, 2159, 2336, 2271],
-    "hash": "cb31a52d5a727dfe"
-  },
-  {
-    "value": { "mixed": 90 },
-    "level": "Q",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 2,
-    "penalties": [690, 827, 649, 661, 714, 866, 716, 759],
-    "hash": "06e866523b3a47cf"
-  },
-  {
-    "value": { "mixed": 91 },
-    "level": "H",
-    "size": 45,
-    "version": 7,
-    "maskPattern": 3,
-    "penalties": [1462, 1540, 1431, 1349, 1598, 1614, 1491, 1482],
-    "hash": "d68ad15ea0ee27a8"
-  },
-  {
-    "value": { "mixed": 92 },
-    "level": "L",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 3,
-    "penalties": [801, 956, 932, 786, 786, 903, 806, 808],
-    "hash": "e5f1e7a8dc384bd5"
-  },
-  {
-    "value": { "mixed": 93 },
-    "level": "M",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 0,
-    "penalties": [1819, 2126, 1873, 2047, 1830, 1865, 2057, 1977],
-    "hash": "8a6aadd5fd30f317"
-  },
-  {
-    "value": { "mixed": 94 },
-    "level": "Q",
-    "size": 45,
-    "version": 7,
-    "maskPattern": 0,
-    "penalties": [1287, 1624, 1379, 1651, 1532, 1354, 1571, 1367],
-    "hash": "303d4327211be9f5"
-  },
-  {
-    "value": { "mixed": 95 },
-    "level": "H",
-    "size": 81,
-    "version": 16,
-    "maskPattern": 3,
-    "penalties": [4789, 4740, 4726, 4403, 4720, 4657, 4728, 4805],
-    "hash": "d61f1040b4f51d9d"
-  },
-  {
-    "value": { "mixed": 96 },
-    "level": "L",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 5,
-    "penalties": [822, 627, 653, 777, 652, 607, 754, 653],
-    "hash": "f03b9416f216f454"
-  },
-  {
-    "value": { "mixed": 97 },
-    "level": "M",
-    "size": 53,
-    "version": 9,
-    "maskPattern": 2,
-    "penalties": [2172, 2238, 1763, 2097, 2132, 2218, 2291, 2032],
-    "hash": "da341d62ca8cb327"
-  },
-  {
-    "value": { "mixed": 98 },
-    "level": "Q",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 4,
-    "penalties": [1122, 1104, 933, 923, 866, 974, 1004, 880],
-    "hash": "66cd67ce51d22abd"
-  },
-  {
-    "value": { "mixed": 99 },
-    "level": "H",
-    "size": 65,
-    "version": 12,
-    "maskPattern": 2,
-    "penalties": [2725, 2733, 2623, 2687, 3230, 2821, 2951, 2769],
-    "hash": "919d481c62f36e54"
-  },
-  {
-    "value": { "mixed": 100 },
-    "level": "L",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 2,
-    "penalties": [638, 745, 585, 727, 727, 680, 658, 621],
-    "hash": "257516cb52c39593"
-  },
-  {
-    "value": { "mixed": 101 },
-    "level": "M",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 2,
-    "penalties": [1801, 1889, 1679, 1818, 1998, 1783, 1916, 2084],
-    "hash": "e1479c9bee040020"
-  },
-  {
-    "value": { "mixed": 102 },
-    "level": "Q",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 0,
-    "penalties": [1169, 1222, 1340, 1331, 1276, 1502, 1194, 1259],
-    "hash": "3c8c006c80506f9c"
-  },
-  {
-    "value": { "mixed": 103 },
-    "level": "H",
-    "size": 73,
-    "version": 14,
-    "maskPattern": 0,
-    "penalties": [3426, 3542, 3859, 3901, 3830, 3816, 3866, 3772],
-    "hash": "b69a4b72916fa9f9"
-  },
-  {
-    "value": { "mixed": 104 },
-    "level": "L",
-    "size": 45,
-    "version": 7,
-    "maskPattern": 3,
-    "penalties": [1526, 1355, 1376, 1333, 1445, 1464, 1446, 1411],
-    "hash": "865e3fdd34b23b26"
-  },
-  {
-    "value": { "mixed": 105 },
-    "level": "M",
-    "size": 45,
-    "version": 7,
-    "maskPattern": 2,
-    "penalties": [1274, 1454, 1153, 1457, 1415, 1442, 1332, 1423],
-    "hash": "3f67a42a3971d7df"
-  },
-  {
-    "value": { "mixed": 106 },
-    "level": "Q",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 2,
-    "penalties": [885, 920, 849, 919, 896, 944, 1108, 969],
-    "hash": "74b4ad0b09362d5f"
-  },
-  {
-    "value": { "mixed": 107 },
-    "level": "H",
-    "size": 69,
-    "version": 13,
-    "maskPattern": 1,
-    "penalties": [3338, 3241, 3345, 3475, 3467, 3366, 3292, 3424],
-    "hash": "6cc865a49dacebbd"
-  },
-  {
-    "value": { "mixed": 108 },
-    "level": "L",
-    "size": 53,
-    "version": 9,
-    "maskPattern": 3,
-    "penalties": [2140, 2545, 1944, 1702, 2007, 2191, 1932, 1846],
-    "hash": "2037e7d42c5748b1"
-  },
-  {
-    "value": { "mixed": 109 },
-    "level": "M",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 0,
-    "penalties": [320, 450, 327, 356, 335, 436, 351, 476],
-    "hash": "a1e3af50d461b7c9"
-  },
-  {
-    "value": { "mixed": 110 },
-    "level": "Q",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 0,
-    "penalties": [1636, 1939, 1724, 1849, 1821, 1981, 1641, 1974],
-    "hash": "29befac2a9969576"
-  },
-  {
-    "value": { "mixed": 111 },
-    "level": "H",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 1,
-    "penalties": [422, 368, 435, 515, 446, 434, 377, 423],
-    "hash": "5ad2a40205c89b54"
-  },
-  {
-    "value": { "mixed": 112 },
-    "level": "L",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 4,
-    "penalties": [658, 707, 668, 592, 590, 672, 755, 643],
-    "hash": "040403d3399f0f03"
-  },
-  {
-    "value": { "mixed": 113 },
-    "level": "M",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 2,
-    "penalties": [460, 610, 315, 401, 523, 482, 513, 497],
-    "hash": "e9e4396e74d720d7"
-  },
-  {
-    "value": { "mixed": 114 },
-    "level": "Q",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 0,
-    "penalties": [1043, 1246, 1469, 1083, 1210, 1503, 1204, 1121],
-    "hash": "0cfb13fef407fb38"
-  },
-  {
-    "value": { "mixed": 115 },
-    "level": "H",
-    "size": 25,
-    "version": 2,
-    "maskPattern": 2,
-    "penalties": [612, 615, 499, 779, 651, 537, 510, 574],
-    "hash": "f1616a97b8d06311"
-  },
-  {
-    "value": { "mixed": 116 },
-    "level": "L",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 0,
-    "penalties": [578, 688, 775, 861, 883, 812, 791, 794],
-    "hash": "420ea5f643e9f981"
-  },
-  {
-    "value": { "mixed": 117 },
-    "level": "M",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 0,
-    "penalties": [303, 462, 433, 517, 402, 399, 418, 450],
-    "hash": "11e6b67422347d94"
-  },
-  {
-    "value": { "mixed": 118 },
-    "level": "Q",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 3,
-    "penalties": [880, 837, 758, 718, 851, 890, 876, 880],
-    "hash": "fb4384e3f24c1308"
-  },
-  {
-    "value": { "mixed": 119 },
-    "level": "H",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 2,
-    "penalties": [1090, 981, 860, 1043, 1297, 1043, 1131, 1066],
-    "hash": "4148fc615650125f"
-  },
-  {
-    "value": { "mixed": 120 },
-    "level": "L",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 5,
-    "penalties": [845, 944, 785, 723, 801, 694, 717, 723],
-    "hash": "186a75340e56731f"
-  },
-  {
-    "value": { "mixed": 121 },
-    "level": "M",
-    "size": 25,
-    "version": 2,
-    "maskPattern": 0,
-    "penalties": [453, 674, 517, 591, 535, 565, 508, 528],
-    "hash": "4abfd078926871a9"
-  },
-  {
-    "value": { "mixed": 122 },
-    "level": "Q",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 7,
-    "penalties": [1067, 1259, 1134, 1110, 1382, 1284, 1206, 1032],
-    "hash": "e2dfdc70e1410ea6"
-  },
-  {
-    "value": { "mixed": 123 },
-    "level": "H",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 0,
-    "penalties": [1056, 1319, 1120, 1230, 1353, 1156, 1180, 1147],
-    "hash": "b104ef6a03b9ebf2"
-  },
-  {
-    "value": { "mixed": 124 },
-    "level": "L",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 0,
-    "penalties": [943, 1142, 983, 1112, 1046, 1084, 1009, 1161],
-    "hash": "a7e5bb2a58eb4c7f"
-  },
-  {
-    "value": { "mixed": 125 },
-    "level": "M",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 2,
-    "penalties": [866, 1024, 749, 862, 765, 1022, 858, 844],
-    "hash": "13865458977b9f3c"
-  },
-  {
-    "value": { "mixed": 126 },
-    "level": "Q",
-    "size": 65,
-    "version": 12,
-    "maskPattern": 2,
-    "penalties": [3099, 3428, 2557, 2981, 3278, 2911, 2825, 3007],
-    "hash": "bb08b592ca02cb67"
-  },
-  {
-    "value": { "mixed": 127 },
-    "level": "H",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 1,
-    "penalties": [999, 713, 903, 842, 927, 875, 1025, 1152],
-    "hash": "3725bb0577b58ad0"
-  },
-  {
-    "value": { "mixed": 128 },
-    "level": "L",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 5,
-    "penalties": [980, 1091, 908, 973, 993, 874, 1014, 1146],
-    "hash": "37612c419b6a8536"
-  },
-  {
-    "value": { "mixed": 129 },
-    "level": "M",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 2,
-    "penalties": [1926, 2124, 1513, 1682, 1906, 1989, 1812, 1920],
-    "hash": "348b7e1573f27cf2"
-  },
-  {
-    "value": { "mixed": 130 },
-    "level": "Q",
-    "size": 69,
-    "version": 13,
-    "maskPattern": 7,
-    "penalties": [3291, 3713, 3243, 3224, 3528, 3353, 3214, 3054],
-    "hash": "654766fd652f0fa0"
-  },
-  {
-    "value": { "mixed": 131 },
-    "level": "H",
-    "size": 57,
-    "version": 10,
-    "maskPattern": 2,
-    "penalties": [2488, 2581, 2044, 2288, 2500, 2240, 2249, 2174],
-    "hash": "2532e84c716bb3af"
-  },
-  {
-    "value": { "mixed": 132 },
-    "level": "L",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 2,
-    "penalties": [841, 986, 807, 1039, 1010, 971, 903, 1095],
-    "hash": "21225f80af5e7117"
-  },
-  {
-    "value": { "mixed": 133 },
-    "level": "M",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 6,
-    "penalties": [1095, 983, 1025, 1299, 1024, 1089, 850, 1174],
-    "hash": "bffddce1dac7ae9a"
-  },
-  {
-    "value": { "mixed": 134 },
-    "level": "Q",
-    "size": 61,
-    "version": 11,
-    "maskPattern": 0,
-    "penalties": [2372, 2637, 2758, 2597, 2909, 2779, 2651, 2548],
-    "hash": "cad973b6301f1336"
-  },
-  {
-    "value": { "mixed": 135 },
-    "level": "H",
-    "size": 53,
-    "version": 9,
-    "maskPattern": 5,
-    "penalties": [1993, 2274, 1999, 2026, 1964, 1883, 2018, 1995],
-    "hash": "2f4c50cb7af6b200"
-  },
-  {
-    "value": { "mixed": 136 },
-    "level": "L",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 0,
-    "penalties": [724, 935, 825, 880, 909, 918, 873, 737],
-    "hash": "d5d2aba80026686a"
-  },
-  {
-    "value": { "mixed": 137 },
-    "level": "M",
-    "size": 45,
-    "version": 7,
-    "maskPattern": 2,
-    "penalties": [1545, 1625, 1341, 1582, 1488, 1796, 1343, 1601],
-    "hash": "27d17fc91afbfe43"
-  },
-  {
-    "value": { "mixed": 138 },
-    "level": "Q",
-    "size": 65,
-    "version": 12,
-    "maskPattern": 0,
-    "penalties": [2759, 3173, 3065, 3287, 2934, 3068, 2887, 2965],
-    "hash": "aa458f049bb909b0"
-  },
-  {
-    "value": { "mixed": 139 },
-    "level": "H",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 6,
-    "penalties": [1891, 2056, 1795, 1846, 2173, 2153, 1703, 1841],
-    "hash": "23716abdd0f5f8fb"
-  },
-  {
-    "value": { "mixed": 140 },
-    "level": "L",
-    "size": 61,
-    "version": 11,
-    "maskPattern": 2,
-    "penalties": [2552, 2766, 2307, 2592, 2867, 2394, 2356, 2535],
-    "hash": "6e43a2d892fe6cfe"
-  },
-  {
-    "value": { "mixed": 141 },
-    "level": "M",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 0,
-    "penalties": [781, 913, 852, 834, 925, 1039, 849, 912],
-    "hash": "42aa2271bd2619b5"
-  },
-  {
-    "value": { "mixed": 142 },
-    "level": "Q",
-    "size": 53,
-    "version": 9,
-    "maskPattern": 4,
-    "penalties": [1988, 2024, 1905, 1942, 1778, 1981, 1965, 2040],
-    "hash": "c1ee71db61bf7ccd"
-  },
-  {
-    "value": { "mixed": 143 },
-    "level": "H",
-    "size": 57,
-    "version": 10,
-    "maskPattern": 2,
-    "penalties": [2316, 2596, 1974, 2386, 2623, 2241, 2217, 2480],
-    "hash": "005b8cc3eeeb36cb"
-  },
-  {
-    "value": { "mixed": 144 },
-    "level": "L",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 7,
-    "penalties": [963, 1048, 1215, 1059, 1100, 1168, 963, 935],
-    "hash": "749e7f2610d65122"
-  },
-  {
-    "value": { "mixed": 145 },
-    "level": "M",
-    "size": 53,
-    "version": 9,
-    "maskPattern": 2,
-    "penalties": [2157, 2541, 1568, 2084, 1738, 1925, 1887, 1863],
-    "hash": "4d54e13cc3d6cdab"
-  },
-  {
-    "value": { "mixed": 146 },
-    "level": "Q",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 6,
-    "penalties": [919, 756, 765, 717, 762, 761, 683, 835],
-    "hash": "7ff2a237d1d0146c"
-  },
-  {
-    "value": { "mixed": 147 },
-    "level": "H",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 6,
-    "penalties": [957, 928, 893, 888, 796, 879, 730, 1015],
-    "hash": "e556d39909fff665"
-  },
-  {
-    "value": { "mixed": 148 },
-    "level": "L",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 3,
-    "penalties": [388, 485, 467, 382, 479, 466, 557, 399],
-    "hash": "becbf8de70b53eef"
-  },
-  {
-    "value": { "mixed": 149 },
-    "level": "M",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 3,
-    "penalties": [990, 806, 814, 753, 889, 861, 763, 881],
-    "hash": "1347ba74df6cf0fd"
-  },
-  {
-    "value": { "mixed": 150 },
-    "level": "Q",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 6,
-    "penalties": [697, 675, 653, 798, 645, 695, 599, 683],
-    "hash": "56f8b2c4780944db"
-  },
-  {
-    "value": { "mixed": 151 },
-    "level": "H",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 1,
-    "penalties": [1843, 1649, 1813, 1999, 1717, 1969, 1739, 1772],
-    "hash": "24ab2f43aa0d6902"
-  },
-  {
-    "value": { "mixed": 152 },
-    "level": "L",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 0,
-    "penalties": [845, 997, 1040, 1180, 1144, 1127, 1097, 1035],
-    "hash": "368eb52d4436eab1"
-  },
-  {
-    "value": { "mixed": 153 },
-    "level": "M",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 6,
-    "penalties": [1870, 1972, 1710, 1692, 1839, 1896, 1540, 1724],
-    "hash": "86f67823aa7e7912"
-  },
-  {
-    "value": { "mixed": 154 },
-    "level": "Q",
-    "size": 25,
-    "version": 2,
-    "maskPattern": 6,
-    "penalties": [436, 572, 607, 560, 433, 587, 414, 570],
-    "hash": "6f16c6cc81a70295"
-  },
-  {
-    "value": { "mixed": 155 },
-    "level": "H",
-    "size": 61,
-    "version": 11,
-    "maskPattern": 6,
-    "penalties": [2787, 2743, 2670, 2946, 2761, 2689, 2487, 2797],
-    "hash": "ce0afac0c3fb6d14"
-  },
-  {
-    "value": { "mixed": 156 },
-    "level": "L",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 0,
-    "penalties": [974, 1373, 1135, 1178, 1400, 1179, 1447, 1057],
-    "hash": "6a2ab9de738359d4"
-  },
-  {
-    "value": { "mixed": 157 },
-    "level": "M",
-    "size": 45,
-    "version": 7,
-    "maskPattern": 4,
-    "penalties": [1433, 1337, 1451, 1503, 1307, 1587, 1470, 1576],
-    "hash": "0bb3f35994ac490b"
-  },
-  {
-    "value": { "mixed": 158 },
-    "level": "Q",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 0,
-    "penalties": [1118, 1247, 1161, 1310, 1122, 1325, 1179, 1195],
-    "hash": "d873e6ba5f315b1d"
-  },
-  {
-    "value": { "mixed": 159 },
-    "level": "H",
-    "size": 73,
-    "version": 14,
-    "maskPattern": 5,
-    "penalties": [3762, 3608, 3632, 3948, 3984, 3555, 3811, 3863],
-    "hash": "79c545e8cf97d88d"
-  },
-  {
-    "value": { "mixed": 160 },
-    "level": "L",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 7,
-    "penalties": [633, 658, 652, 731, 667, 685, 763, 595],
-    "hash": "0d246e475eb79f09"
-  },
-  {
-    "value": { "mixed": 161 },
-    "level": "M",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 7,
-    "penalties": [1070, 1206, 1117, 948, 1026, 1005, 1112, 855],
-    "hash": "772d56fb7dbc5fd0"
-  },
-  {
-    "value": { "mixed": 162 },
-    "level": "Q",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 3,
-    "penalties": [898, 760, 740, 645, 1021, 885, 818, 888],
-    "hash": "5820b75674ba24a0"
-  },
-  {
-    "value": { "mixed": 163 },
-    "level": "H",
-    "size": 77,
-    "version": 15,
-    "maskPattern": 2,
-    "penalties": [4460, 4119, 3882, 4443, 4245, 4192, 3964, 4025],
-    "hash": "59b643f9a829b3b2"
-  },
-  {
-    "value": { "mixed": 164 },
-    "level": "L",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 3,
-    "penalties": [858, 1145, 1077, 837, 1389, 1113, 1158, 990],
-    "hash": "16f9c6b6e5d41ac0"
-  },
-  {
-    "value": { "mixed": 165 },
-    "level": "M",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 2,
-    "penalties": [2003, 1843, 1527, 1855, 1978, 1869, 1955, 1928],
-    "hash": "361a0cd160b4fbca"
-  },
-  {
-    "value": { "mixed": 166 },
-    "level": "Q",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 3,
-    "penalties": [806, 872, 947, 762, 834, 1087, 850, 856],
-    "hash": "228299a3ac757467"
-  },
-  {
-    "value": { "mixed": 167 },
-    "level": "H",
-    "size": 53,
-    "version": 9,
-    "maskPattern": 7,
-    "penalties": [1955, 1941, 2225, 1915, 1962, 2110, 2146, 1711],
-    "hash": "3902dbeca968b08b"
-  },
-  {
-    "value": { "mixed": 168 },
-    "level": "L",
-    "size": 25,
-    "version": 2,
-    "maskPattern": 7,
-    "penalties": [420, 676, 521, 412, 621, 734, 735, 411],
-    "hash": "3657fc00c45e5569"
-  },
-  {
-    "value": { "mixed": 169 },
-    "level": "M",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 3,
-    "penalties": [1025, 970, 1109, 946, 989, 997, 957, 1071],
-    "hash": "bb1b74b54c533831"
-  },
-  {
-    "value": { "mixed": 170 },
-    "level": "Q",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 2,
-    "penalties": [897, 791, 724, 761, 826, 885, 882, 876],
-    "hash": "92a2a8ce6e5542af"
-  },
-  {
-    "value": { "mixed": 171 },
-    "level": "H",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 1,
-    "penalties": [1748, 1642, 2031, 1724, 1787, 1901, 1813, 1694],
-    "hash": "8ae7e8b76b4250a8"
-  },
-  {
-    "value": { "mixed": 172 },
-    "level": "L",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 3,
-    "penalties": [611, 723, 596, 490, 801, 546, 738, 706],
-    "hash": "ee988bf4e427069a"
-  },
-  {
-    "value": { "mixed": 173 },
-    "level": "M",
-    "size": 57,
-    "version": 10,
-    "maskPattern": 2,
-    "penalties": [2695, 2507, 1954, 2619, 2315, 2442, 2197, 2560],
-    "hash": "8cb6c6ffb5e79cc5"
-  },
-  {
-    "value": { "mixed": 174 },
-    "level": "Q",
-    "size": 45,
-    "version": 7,
-    "maskPattern": 0,
-    "penalties": [1330, 1441, 1724, 1425, 1499, 1485, 1478, 1429],
-    "hash": "b1a038ecd17af716"
-  },
-  {
-    "value": { "mixed": 175 },
-    "level": "H",
-    "size": 77,
-    "version": 15,
-    "maskPattern": 0,
-    "penalties": [3760, 3968, 4269, 4168, 4684, 4114, 4094, 4291],
-    "hash": "cc075d627a55328e"
-  },
-  {
-    "value": { "mixed": 176 },
-    "level": "L",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 1,
-    "penalties": [1705, 1661, 1881, 1815, 1865, 1763, 1728, 2065],
-    "hash": "55829df2dc1d8e8d"
-  },
-  {
-    "value": { "mixed": 177 },
-    "level": "M",
-    "size": 53,
-    "version": 9,
-    "maskPattern": 2,
-    "penalties": [1796, 1884, 1609, 1998, 2061, 1847, 1932, 2226],
-    "hash": "f1d786d4dba6605e"
-  },
-  {
-    "value": { "mixed": 178 },
-    "level": "Q",
-    "size": 65,
-    "version": 12,
-    "maskPattern": 0,
-    "penalties": [2475, 3099, 2873, 2900, 2934, 2890, 2766, 2909],
-    "hash": "9a807bcd347c611b"
-  },
-  {
-    "value": { "mixed": 179 },
-    "level": "H",
-    "size": 77,
-    "version": 15,
-    "maskPattern": 2,
-    "penalties": [3997, 4144, 3964, 4322, 4234, 4122, 3977, 4081],
-    "hash": "8aaada0a1c47f11b"
-  },
-  {
-    "value": { "mixed": 180 },
-    "level": "L",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 3,
-    "penalties": [1227, 1289, 1266, 1023, 1177, 1257, 1275, 1198],
-    "hash": "9116f12ab5f4c3c0"
-  },
-  {
-    "value": { "mixed": 181 },
-    "level": "M",
-    "size": 25,
-    "version": 2,
-    "maskPattern": 2,
-    "penalties": [477, 749, 475, 481, 674, 739, 513, 595],
-    "hash": "31781544900746a5"
-  },
-  {
-    "value": { "mixed": 182 },
-    "level": "Q",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 7,
-    "penalties": [960, 959, 1069, 949, 1070, 1344, 940, 922],
-    "hash": "29428606a4937d14"
-  },
-  {
-    "value": { "mixed": 183 },
-    "level": "H",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 7,
-    "penalties": [1036, 1147, 953, 977, 1054, 1306, 1147, 947],
-    "hash": "8200d1231250b51b"
-  },
-  {
-    "value": { "mixed": 184 },
-    "level": "L",
-    "size": 53,
-    "version": 9,
-    "maskPattern": 7,
-    "penalties": [1880, 2347, 2045, 1884, 2121, 2111, 2156, 1853],
-    "hash": "79fcb5e9375eb2c1"
-  },
-  {
-    "value": { "mixed": 185 },
-    "level": "M",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 2,
-    "penalties": [651, 649, 598, 836, 694, 663, 710, 778],
-    "hash": "24262c5f45227e3d"
-  },
-  {
-    "value": { "mixed": 186 },
-    "level": "Q",
-    "size": 45,
-    "version": 7,
-    "maskPattern": 0,
-    "penalties": [1320, 1641, 1393, 1599, 1589, 1628, 1328, 1368],
-    "hash": "3e3bb3c6c8a71cf2"
-  },
-  {
-    "value": { "mixed": 187 },
-    "level": "H",
-    "size": 25,
-    "version": 2,
-    "maskPattern": 7,
-    "penalties": [529, 485, 514, 538, 622, 688, 552, 439],
-    "hash": "5aa6ca0711c6f276"
-  },
-  {
-    "value": { "mixed": 188 },
-    "level": "L",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 2,
-    "penalties": [886, 970, 735, 896, 851, 964, 963, 824],
-    "hash": "a61fcdc685924faf"
-  },
-  {
-    "value": { "mixed": 189 },
-    "level": "M",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 0,
-    "penalties": [390, 425, 402, 404, 419, 595, 460, 463],
-    "hash": "566baa3c2564bb5d"
-  },
-  {
-    "value": { "mixed": 190 },
-    "level": "Q",
-    "size": 53,
-    "version": 9,
-    "maskPattern": 0,
-    "penalties": [1963, 2027, 2098, 1980, 2144, 2169, 1986, 2059],
-    "hash": "b4cb88cbc078a5e8"
-  },
-  {
-    "value": { "mixed": 191 },
-    "level": "H",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 3,
-    "penalties": [701, 783, 664, 625, 806, 668, 737, 796],
-    "hash": "79f947eb439aaa83"
-  },
-  {
-    "value": { "mixed": 192 },
-    "level": "L",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 1,
-    "penalties": [1262, 1050, 1145, 1178, 1158, 1164, 1271, 1350],
-    "hash": "560cc73fa3e7bc77"
-  },
-  {
-    "value": { "mixed": 193 },
-    "level": "M",
-    "size": 25,
-    "version": 2,
-    "maskPattern": 2,
-    "penalties": [564, 599, 499, 593, 566, 675, 554, 608],
-    "hash": "d13b26d1b724264c"
-  },
-  {
-    "value": { "mixed": 194 },
-    "level": "Q",
-    "size": 61,
-    "version": 11,
-    "maskPattern": 6,
-    "penalties": [2687, 2900, 2641, 2912, 2791, 2740, 2444, 2630],
-    "hash": "1caf5a87d9da3225"
-  },
-  {
-    "value": { "mixed": 195 },
-    "level": "H",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 0,
-    "penalties": [590, 603, 858, 788, 645, 739, 749, 622],
-    "hash": "631ddfeccad29bd1"
-  },
-  {
-    "value": { "mixed": 196 },
-    "level": "L",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 5,
-    "penalties": [1439, 1146, 1163, 1069, 1253, 1059, 1082, 1312],
-    "hash": "d802a66d4ca46080"
-  },
-  {
-    "value": { "mixed": 197 },
-    "level": "M",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 0,
-    "penalties": [350, 432, 358, 420, 431, 431, 376, 418],
-    "hash": "f274b5cf0468c718"
-  },
-  {
-    "value": { "mixed": 198 },
-    "level": "Q",
-    "size": 57,
-    "version": 10,
-    "maskPattern": 4,
-    "penalties": [2315, 2480, 2202, 2335, 2140, 2443, 2280, 2478],
-    "hash": "6230b22b4fecc1b7"
-  },
-  {
-    "value": { "mixed": 199 },
-    "level": "H",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 2,
-    "penalties": [459, 577, 308, 528, 517, 354, 362, 589],
-    "hash": "168fa771c1fef109"
-  },
-  {
-    "value": { "mixed": 200 },
-    "level": "L",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 2,
-    "penalties": [990, 1093, 823, 1070, 1080, 1001, 914, 1039],
-    "hash": "09f594cf42f8f1bc"
-  },
-  {
-    "value": { "mixed": 201 },
-    "level": "M",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 2,
-    "penalties": [768, 829, 534, 686, 693, 748, 574, 834],
-    "hash": "1fdd4a7e56a22705"
-  },
-  {
-    "value": { "mixed": 202 },
-    "level": "Q",
-    "size": 69,
-    "version": 13,
-    "maskPattern": 5,
-    "penalties": [3311, 3599, 2944, 3442, 3572, 2865, 3077, 3261],
-    "hash": "9985f4e5f9745378"
-  },
-  {
-    "value": { "mixed": 203 },
-    "level": "H",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 7,
-    "penalties": [1097, 1091, 991, 1130, 1058, 1099, 1296, 906],
-    "hash": "173dffeae2896802"
-  },
-  {
-    "value": { "mixed": 204 },
-    "level": "L",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 2,
-    "penalties": [1839, 2050, 1430, 1572, 1904, 1776, 1879, 1676],
-    "hash": "8d7cca6234ed81ea"
-  },
-  {
-    "value": { "mixed": 205 },
-    "level": "M",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 2,
-    "penalties": [905, 850, 665, 895, 761, 864, 764, 964],
-    "hash": "e3399b6543a73776"
-  },
-  {
-    "value": { "mixed": 206 },
-    "level": "Q",
-    "size": 53,
-    "version": 9,
-    "maskPattern": 4,
-    "penalties": [2034, 2171, 2010, 2097, 1884, 2510, 2064, 1945],
-    "hash": "0457c8f881321569"
-  },
-  {
-    "value": { "mixed": 207 },
-    "level": "H",
-    "size": 25,
-    "version": 2,
-    "maskPattern": 2,
-    "penalties": [486, 546, 480, 500, 590, 626, 546, 488],
-    "hash": "ab1a1562712ecbc0"
-  },
-  {
-    "value": { "mixed": 208 },
-    "level": "L",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 2,
-    "penalties": [1913, 2097, 1680, 1886, 1815, 1885, 1710, 1768],
-    "hash": "6f99e78bd8d23446"
-  },
-  {
-    "value": { "mixed": 209 },
-    "level": "M",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 2,
-    "penalties": [942, 727, 709, 930, 842, 868, 862, 846],
-    "hash": "04fbad61556f16b6"
-  },
-  {
-    "value": { "mixed": 210 },
-    "level": "Q",
-    "size": 61,
-    "version": 11,
-    "maskPattern": 0,
-    "penalties": [2441, 2815, 2665, 2622, 2657, 2618, 2712, 2708],
-    "hash": "4ebee435eabc6647"
-  },
-  {
-    "value": { "mixed": 211 },
-    "level": "H",
-    "size": 53,
-    "version": 9,
-    "maskPattern": 2,
-    "penalties": [2187, 2221, 2043, 2131, 2153, 2161, 2119, 2101],
-    "hash": "a2580123b5f504ea"
-  },
-  {
-    "value": { "mixed": 212 },
-    "level": "L",
-    "size": 57,
-    "version": 10,
-    "maskPattern": 2,
-    "penalties": [2641, 2653, 1877, 2355, 2359, 2365, 2271, 2340],
-    "hash": "f4fd75efef0d2a51"
-  },
-  {
-    "value": { "mixed": 213 },
-    "level": "M",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 3,
-    "penalties": [683, 724, 684, 604, 793, 822, 653, 818],
-    "hash": "0d320159cba73626"
-  },
-  {
-    "value": { "mixed": 214 },
-    "level": "Q",
-    "size": 61,
-    "version": 11,
-    "maskPattern": 4,
-    "penalties": [2468, 2605, 2587, 2622, 2357, 2536, 2783, 2607],
-    "hash": "a02628c89042ee5f"
-  },
-  {
-    "value": { "mixed": 215 },
-    "level": "H",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 3,
-    "penalties": [1779, 1951, 1738, 1731, 1805, 1946, 1771, 1954],
-    "hash": "5a71ed91a85e3b42"
-  },
-  {
-    "value": { "mixed": 216 },
-    "level": "L",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 3,
-    "penalties": [1775, 2015, 1683, 1629, 1754, 1891, 1673, 1771],
-    "hash": "be419e7f71fa0080"
-  },
-  {
-    "value": { "mixed": 217 },
-    "level": "M",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 4,
-    "penalties": [1424, 1277, 1276, 1162, 1019, 1422, 1225, 1256],
-    "hash": "cfbac5f2eb33566c"
-  },
-  {
-    "value": { "mixed": 218 },
-    "level": "Q",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 0,
-    "penalties": [260, 479, 458, 494, 489, 598, 417, 397],
-    "hash": "6536fc9efc438ca6"
-  },
-  {
-    "value": { "mixed": 219 },
-    "level": "H",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 3,
-    "penalties": [2004, 1941, 1545, 1542, 1870, 2002, 1684, 1618],
-    "hash": "e8946c3bc101b70e"
-  },
-  {
-    "value": { "mixed": 220 },
-    "level": "L",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 3,
-    "penalties": [364, 429, 408, 340, 487, 455, 416, 502],
-    "hash": "281b6e7cea11b4aa"
-  },
-  {
-    "value": { "mixed": 221 },
-    "level": "M",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 5,
-    "penalties": [944, 1180, 1058, 1087, 1158, 844, 855, 1217],
-    "hash": "b83c1e989f936424"
-  },
-  {
-    "value": { "mixed": 222 },
-    "level": "Q",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 6,
-    "penalties": [383, 517, 403, 454, 396, 476, 285, 571],
-    "hash": "a4a5bb6da4fb13d6"
-  },
-  {
-    "value": { "mixed": 223 },
-    "level": "H",
-    "size": 69,
-    "version": 13,
-    "maskPattern": 2,
-    "penalties": [3363, 3626, 3202, 3304, 3568, 3297, 3224, 3398],
-    "hash": "70f2eda907ebed35"
-  },
-  {
-    "value": { "mixed": 224 },
-    "level": "L",
-    "size": 25,
-    "version": 2,
-    "maskPattern": 2,
-    "penalties": [559, 695, 475, 575, 579, 683, 485, 513],
-    "hash": "eb2903472df857da"
-  },
-  {
-    "value": { "mixed": 225 },
-    "level": "M",
-    "size": 53,
-    "version": 9,
-    "maskPattern": 0,
-    "penalties": [1783, 1975, 2102, 1851, 1954, 2121, 2105, 2114],
-    "hash": "2a134df66193e357"
-  },
-  {
-    "value": { "mixed": 226 },
-    "level": "Q",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 2,
-    "penalties": [595, 788, 550, 605, 599, 762, 777, 686],
-    "hash": "ec20f71dbf5185ee"
-  },
-  {
-    "value": { "mixed": 227 },
-    "level": "H",
-    "size": 77,
-    "version": 15,
-    "maskPattern": 0,
-    "penalties": [3559, 4149, 3933, 4512, 3986, 4125, 4263, 4292],
-    "hash": "ceeb09d0cf4bef1a"
-  },
-  {
-    "value": { "mixed": 228 },
-    "level": "L",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 2,
-    "penalties": [407, 677, 332, 343, 454, 506, 510, 364],
-    "hash": "72b55534fac281cf"
-  },
-  {
-    "value": { "mixed": 229 },
-    "level": "M",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 2,
-    "penalties": [1824, 1915, 1656, 1692, 1806, 1970, 1946, 1938],
-    "hash": "73a0b95f5e3f5c97"
-  },
-  {
-    "value": { "mixed": 230 },
-    "level": "Q",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 4,
-    "penalties": [994, 1228, 1066, 1236, 977, 1259, 989, 1039],
-    "hash": "21505d0bd9762157"
-  },
-  {
-    "value": { "mixed": 231 },
-    "level": "H",
-    "size": 77,
-    "version": 15,
-    "maskPattern": 6,
-    "penalties": [4038, 4198, 4179, 4167, 4122, 4094, 3871, 4037],
-    "hash": "bfe13c2f4d220333"
-  },
-  {
-    "value": { "mixed": 232 },
-    "level": "L",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 4,
-    "penalties": [597, 597, 588, 770, 579, 677, 708, 760],
-    "hash": "3fe7d862f36d0bf9"
-  },
-  {
-    "value": { "mixed": 233 },
-    "level": "M",
-    "size": 45,
-    "version": 7,
-    "maskPattern": 7,
-    "penalties": [1447, 1457, 1315, 1506, 1331, 1606, 1432, 1257],
-    "hash": "b98686e976ebd555"
-  },
-  {
-    "value": { "mixed": 234 },
-    "level": "Q",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 0,
-    "penalties": [748, 1027, 1073, 980, 1197, 897, 902, 1029],
-    "hash": "809813d1d3a49cca"
-  },
-  {
-    "value": { "mixed": 235 },
-    "level": "H",
-    "size": 81,
-    "version": 16,
-    "maskPattern": 6,
-    "penalties": [4613, 4616, 4530, 4802, 4596, 4822, 4507, 4812],
-    "hash": "33682b1c425b56ff"
-  },
-  {
-    "value": { "mixed": 236 },
-    "level": "L",
-    "size": 25,
-    "version": 2,
-    "maskPattern": 1,
-    "penalties": [534, 448, 612, 710, 500, 558, 512, 653],
-    "hash": "c99316017df11bc2"
-  },
-  {
-    "value": { "mixed": 237 },
-    "level": "M",
-    "size": 61,
-    "version": 11,
-    "maskPattern": 2,
-    "penalties": [2507, 3151, 2414, 2435, 2690, 2845, 2690, 2484],
-    "hash": "a53511c8d34adadd"
-  },
-  {
-    "value": { "mixed": 238 },
-    "level": "Q",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 3,
-    "penalties": [630, 803, 690, 592, 697, 1076, 654, 700],
-    "hash": "ad272a447a8a9a55"
-  },
-  {
-    "value": { "mixed": 239 },
-    "level": "H",
-    "size": 69,
-    "version": 13,
-    "maskPattern": 6,
-    "penalties": [3306, 3221, 3276, 3300, 3416, 3323, 3012, 3656],
-    "hash": "51b449bf91cb8e4c"
-  },
-  {
-    "value": { "mixed": 240 },
-    "level": "L",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 6,
-    "penalties": [989, 1094, 1093, 926, 944, 1148, 907, 1052],
-    "hash": "374213109f22b868"
-  },
-  {
-    "value": { "mixed": 241 },
-    "level": "M",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 3,
-    "penalties": [1185, 1381, 1028, 991, 1151, 1440, 1074, 1124],
-    "hash": "555af923c5fa1d9d"
-  },
-  {
-    "value": { "mixed": 242 },
-    "level": "Q",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 0,
-    "penalties": [1097, 1329, 1289, 1296, 1202, 1305, 1121, 1336],
-    "hash": "d66edc50f38a88bc"
-  },
-  {
-    "value": { "mixed": 243 },
-    "level": "H",
-    "size": 81,
-    "version": 16,
-    "maskPattern": 2,
-    "penalties": [4617, 4610, 4245, 4814, 4858, 4612, 4912, 4583],
-    "hash": "b78ba2c04004ebac"
-  },
-  {
-    "value": { "mixed": 244 },
-    "level": "L",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 7,
-    "penalties": [801, 959, 740, 842, 946, 818, 790, 698],
-    "hash": "7923f35cc5647336"
-  },
-  {
-    "value": { "mixed": 245 },
-    "level": "M",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 4,
-    "penalties": [867, 768, 920, 758, 747, 1018, 862, 882],
-    "hash": "7dbb26fb9cb89444"
-  },
-  {
-    "value": { "mixed": 246 },
-    "level": "Q",
-    "size": 65,
-    "version": 12,
-    "maskPattern": 7,
-    "penalties": [2637, 3300, 2820, 2954, 3030, 3128, 3133, 2630],
-    "hash": "7431f6d8bdbb82ff"
-  },
-  {
-    "value": { "mixed": 247 },
-    "level": "H",
-    "size": 85,
-    "version": 17,
-    "maskPattern": 4,
-    "penalties": [5244, 5141, 5064, 4951, 4569, 4875, 4814, 5080],
-    "hash": "e14ac894940cf590"
-  },
-  {
-    "value": { "mixed": 248 },
-    "level": "L",
-    "size": 45,
-    "version": 7,
-    "maskPattern": 3,
-    "penalties": [1349, 1723, 1455, 1253, 1373, 1389, 1554, 1264],
-    "hash": "38df9f07928209e1"
-  },
-  {
-    "value": { "mixed": 249 },
-    "level": "M",
-    "size": 45,
-    "version": 7,
-    "maskPattern": 3,
-    "penalties": [1399, 1555, 1457, 1393, 1484, 1486, 1525, 1516],
-    "hash": "72892d672520f3cc"
-  },
-  {
-    "value": { "mixed": 250 },
-    "level": "Q",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 2,
-    "penalties": [1960, 1897, 1586, 1853, 1746, 1973, 1712, 1847],
-    "hash": "5c0f3d5ed9ff3860"
-  },
-  {
-    "value": { "mixed": 251 },
-    "level": "H",
-    "size": 65,
-    "version": 12,
-    "maskPattern": 6,
-    "penalties": [2888, 2950, 3006, 3140, 3065, 2814, 2743, 2765],
-    "hash": "5ff27c80c1cb4d1b"
-  },
-  {
-    "value": { "mixed": 252 },
-    "level": "L",
-    "size": 45,
-    "version": 7,
-    "maskPattern": 2,
-    "penalties": [1539, 1622, 1215, 1389, 1498, 1793, 1575, 1408],
-    "hash": "b6894d9967a200ac"
-  },
-  {
-    "value": { "mixed": 253 },
-    "level": "M",
-    "size": 25,
-    "version": 2,
-    "maskPattern": 2,
-    "penalties": [538, 653, 493, 711, 556, 522, 592, 748],
-    "hash": "c73eedfa64c85c7c"
-  },
-  {
-    "value": { "mixed": 254 },
-    "level": "Q",
-    "size": 69,
-    "version": 13,
-    "maskPattern": 0,
-    "penalties": [2982, 3090, 3226, 3484, 3538, 3284, 3298, 3345],
-    "hash": "6357998b86007e9d"
-  },
-  {
-    "value": { "mixed": 255 },
-    "level": "H",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 7,
-    "penalties": [865, 791, 720, 980, 984, 1065, 822, 678],
-    "hash": "71b29836f0c75ef5"
-  },
-  {
-    "value": { "mixed": 256 },
-    "level": "L",
-    "size": 57,
-    "version": 10,
-    "maskPattern": 2,
-    "penalties": [2114, 2741, 2072, 2315, 2525, 2237, 2141, 2289],
-    "hash": "f41d49b3973786ee"
-  },
-  {
-    "value": { "mixed": 257 },
-    "level": "M",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 6,
-    "penalties": [534, 469, 440, 514, 472, 448, 361, 673],
-    "hash": "3a007542175a2e9f"
-  },
-  {
-    "value": { "mixed": 258 },
-    "level": "Q",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 7,
-    "penalties": [1817, 1819, 1848, 1907, 1798, 2006, 1685, 1667],
-    "hash": "78e6c31c5ecdb5c4"
-  },
-  {
-    "value": { "mixed": 259 },
-    "level": "H",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 3,
-    "penalties": [628, 620, 614, 595, 724, 673, 649, 685],
-    "hash": "3144820cafd33413"
-  },
-  {
-    "value": { "mixed": 260 },
-    "level": "L",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 0,
-    "penalties": [668, 1115, 842, 762, 1009, 871, 872, 846],
-    "hash": "9475004e83dc1841"
-  },
-  {
-    "value": { "mixed": 261 },
-    "level": "M",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 0,
-    "penalties": [522, 651, 523, 573, 789, 750, 634, 557],
-    "hash": "c6da20efbf426e42"
-  },
-  {
-    "value": { "mixed": 262 },
-    "level": "Q",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 7,
-    "penalties": [985, 1035, 849, 985, 905, 1222, 853, 847],
-    "hash": "ee9ae74ad219f262"
-  },
-  {
-    "value": { "mixed": 263 },
-    "level": "H",
-    "size": 45,
-    "version": 7,
-    "maskPattern": 3,
-    "penalties": [1489, 1742, 1381, 1379, 1702, 1446, 1475, 1539],
-    "hash": "3f77d25e8933d9f7"
-  },
-  {
-    "value": { "mixed": 264 },
-    "level": "L",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 3,
-    "penalties": [1056, 1119, 995, 833, 869, 1206, 1071, 992],
-    "hash": "813fcc8f41ed98df"
-  },
-  {
-    "value": { "mixed": 265 },
-    "level": "M",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 2,
-    "penalties": [458, 441, 346, 549, 437, 508, 459, 459],
-    "hash": "18b6978d24bfd4e7"
-  },
-  {
-    "value": { "mixed": 266 },
-    "level": "Q",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 6,
-    "penalties": [1160, 1104, 1141, 1326, 1102, 1257, 1101, 1367],
-    "hash": "20784061f76bee89"
-  },
-  {
-    "value": { "mixed": 267 },
-    "level": "H",
-    "size": 61,
-    "version": 11,
-    "maskPattern": 7,
-    "penalties": [2872, 2481, 2571, 2979, 2834, 2659, 2716, 2368],
-    "hash": "c71cf98c02e157aa"
-  },
-  {
-    "value": { "mixed": 268 },
-    "level": "L",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 6,
-    "penalties": [1182, 1279, 1235, 1139, 1368, 1426, 1018, 1092],
-    "hash": "1ac6eee6ad2f6033"
-  },
-  {
-    "value": { "mixed": 269 },
-    "level": "M",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 1,
-    "penalties": [632, 559, 746, 625, 778, 708, 789, 774],
-    "hash": "5beae6c7fbeb9728"
-  },
-  {
-    "value": { "mixed": 270 },
-    "level": "Q",
-    "size": 69,
-    "version": 13,
-    "maskPattern": 0,
-    "penalties": [3137, 3572, 3198, 3418, 3228, 3319, 3266, 3570],
-    "hash": "f8d205173d067411"
-  },
-  {
-    "value": { "mixed": 271 },
-    "level": "H",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 5,
-    "penalties": [415, 476, 513, 483, 463, 396, 398, 519],
-    "hash": "c896a972397fc1b4"
-  },
-  {
-    "value": { "mixed": 272 },
-    "level": "L",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 6,
-    "penalties": [999, 1061, 983, 1020, 1137, 1148, 968, 1115],
-    "hash": "cea198359d5a5819"
-  },
-  {
-    "value": { "mixed": 273 },
-    "level": "M",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 0,
-    "penalties": [619, 691, 629, 811, 828, 636, 663, 779],
-    "hash": "6849b7b5e61c8beb"
-  },
-  {
-    "value": { "mixed": 274 },
-    "level": "Q",
-    "size": 77,
-    "version": 15,
-    "maskPattern": 6,
-    "penalties": [3794, 4241, 4015, 4245, 4081, 3983, 3733, 3749],
-    "hash": "a1421ced68af2c5e"
-  },
-  {
-    "value": { "mixed": 275 },
-    "level": "H",
-    "size": 77,
-    "version": 15,
-    "maskPattern": 1,
-    "penalties": [3902, 3728, 3980, 4018, 4212, 4090, 4245, 4111],
-    "hash": "d3f950831a3069c5"
-  },
-  {
-    "value": { "mixed": 276 },
-    "level": "L",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 0,
-    "penalties": [733, 1029, 973, 1001, 1126, 902, 1147, 930],
-    "hash": "a058ed19a444802f"
-  },
-  {
-    "value": { "mixed": 277 },
-    "level": "M",
-    "size": 33,
-    "version": 4,
-    "maskPattern": 0,
-    "penalties": [756, 981, 816, 926, 1088, 1055, 901, 1003],
-    "hash": "e91afe675e5e73c4"
-  },
-  {
-    "value": { "mixed": 278 },
-    "level": "Q",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 0,
-    "penalties": [1717, 1908, 1754, 1890, 1725, 1882, 1930, 1861],
-    "hash": "6a9dbe4f58dc557e"
-  },
-  {
-    "value": { "mixed": 279 },
-    "level": "H",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 2,
-    "penalties": [1429, 1359, 1034, 1353, 1198, 1209, 1271, 1263],
-    "hash": "535826e280f34688"
-  },
-  {
-    "value": { "mixed": 280 },
-    "level": "L",
-    "size": 57,
-    "version": 10,
-    "maskPattern": 0,
-    "penalties": [2028, 2839, 2171, 2177, 2344, 2631, 2351, 2199],
-    "hash": "bbb790f976c0bd21"
-  },
-  {
-    "value": { "mixed": 281 },
-    "level": "M",
-    "size": 29,
-    "version": 3,
-    "maskPattern": 1,
-    "penalties": [712, 573, 659, 811, 681, 784, 711, 787],
-    "hash": "0f5c69851b694efc"
-  },
-  {
-    "value": { "mixed": 282 },
-    "level": "Q",
-    "size": 65,
-    "version": 12,
-    "maskPattern": 3,
-    "penalties": [3187, 2954, 2889, 2724, 3143, 2890, 2891, 3113],
-    "hash": "121f39033804acfc"
-  },
-  {
-    "value": { "mixed": 283 },
-    "level": "H",
-    "size": 53,
-    "version": 9,
-    "maskPattern": 1,
-    "penalties": [2041, 1884, 2110, 2054, 2154, 2243, 2131, 2129],
-    "hash": "19e034d3e43e005e"
-  },
-  {
-    "value": { "mixed": 284 },
-    "level": "L",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 0,
-    "penalties": [1393, 1772, 1738, 1707, 1931, 1834, 1861, 1624],
-    "hash": "b3a57680a9228426"
-  },
-  {
-    "value": { "mixed": 285 },
-    "level": "M",
-    "size": 25,
-    "version": 2,
-    "maskPattern": 0,
-    "penalties": [443, 460, 519, 535, 502, 752, 595, 560],
-    "hash": "58ac47d2f6cf96d4"
-  },
-  {
-    "value": { "mixed": 286 },
-    "level": "Q",
-    "size": 65,
-    "version": 12,
-    "maskPattern": 4,
-    "penalties": [2932, 3180, 2844, 3181, 2808, 3066, 2814, 3279],
-    "hash": "d71e1dc66fc79c12"
-  },
-  {
-    "value": { "mixed": 287 },
-    "level": "H",
-    "size": 25,
-    "version": 2,
-    "maskPattern": 3,
-    "penalties": [654, 480, 496, 437, 612, 467, 481, 607],
-    "hash": "e47003a6996d018b"
-  },
-  {
-    "value": { "mixed": 288 },
-    "level": "L",
-    "size": 57,
-    "version": 10,
-    "maskPattern": 2,
-    "penalties": [2219, 2580, 2056, 2247, 2399, 2247, 2200, 2466],
-    "hash": "0f6426abe747e111"
-  },
-  {
-    "value": { "mixed": 289 },
-    "level": "M",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 6,
-    "penalties": [1107, 1244, 1047, 1055, 1087, 1115, 931, 1390],
-    "hash": "c2d3f8b4e593b288"
-  },
-  {
-    "value": { "mixed": 290 },
-    "level": "Q",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 0,
-    "penalties": [380, 434, 523, 524, 561, 560, 382, 412],
-    "hash": "625e6440c63fd7ca"
-  },
-  {
-    "value": { "mixed": 291 },
-    "level": "H",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 6,
-    "penalties": [1051, 1062, 913, 1156, 1178, 1042, 859, 1256],
-    "hash": "86ed3364b84245eb"
-  },
-  {
-    "value": { "mixed": 292 },
-    "level": "L",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 7,
-    "penalties": [475, 428, 483, 379, 505, 414, 437, 341],
-    "hash": "e277d1db10cd23b8"
-  },
-  {
-    "value": { "mixed": 293 },
-    "level": "M",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 7,
-    "penalties": [1862, 1840, 1701, 1861, 1782, 1884, 1997, 1607],
-    "hash": "2e67ccc413548311"
-  },
-  {
-    "value": { "mixed": 294 },
-    "level": "Q",
-    "size": 25,
-    "version": 2,
-    "maskPattern": 4,
-    "penalties": [526, 532, 539, 487, 481, 656, 629, 577],
-    "hash": "8fef4d00ce36d063"
-  },
-  {
-    "value": { "mixed": 295 },
-    "level": "H",
-    "size": 61,
-    "version": 11,
-    "maskPattern": 4,
-    "penalties": [2401, 2561, 2469, 2556, 2323, 2650, 2644, 2403],
-    "hash": "985582e4aabeebbe"
-  },
-  {
-    "value": { "mixed": 296 },
-    "level": "L",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 7,
-    "penalties": [463, 474, 490, 326, 378, 393, 370, 301],
-    "hash": "45ea41cce9d51f00"
-  },
-  {
-    "value": { "mixed": 297 },
-    "level": "M",
-    "size": 45,
-    "version": 7,
-    "maskPattern": 2,
-    "penalties": [1409, 1441, 1221, 1444, 1470, 1253, 1405, 1745],
-    "hash": "6618a28d8373d4a5"
-  },
-  {
-    "value": { "mixed": 298 },
-    "level": "Q",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 3,
-    "penalties": [1060, 1134, 1057, 993, 1014, 1081, 1095, 999],
-    "hash": "a42539654a1149ab"
-  },
-  {
-    "value": { "mixed": 299 },
-    "level": "H",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 2,
-    "penalties": [1117, 1299, 1113, 1178, 1584, 1127, 1148, 1179],
-    "hash": "6c61c6706b4b7a9f"
-  },
-  {
-    "value": { "mixed": 300 },
-    "level": "L",
-    "size": 25,
-    "version": 2,
-    "maskPattern": 1,
-    "penalties": [559, 484, 522, 605, 587, 538, 549, 591],
-    "hash": "8802b9f84bec8644"
-  },
-  {
-    "value": { "seed": 1, "length": 1764 },
-    "level": "L",
-    "size": 141,
-    "version": 31,
-    "maskPattern": 4,
-    "penalties": [15019, 13002, 14040, 13749, 12918, 13817, 13559, 13840],
-    "hash": "c82591df7005f0bc"
-  },
-  {
-    "value": { "seed": 1, "length": 381 },
-    "level": "H",
-    "size": 97,
-    "version": 20,
-    "maskPattern": 3,
-    "penalties": [6466, 6597, 6341, 6201, 6802, 6656, 6574, 7031],
-    "hash": "a99fbd2948e95d38"
-  },
-  {
-    "value": { "seed": 2, "length": 1602 },
-    "level": "L",
-    "size": 133,
-    "version": 29,
-    "maskPattern": 1,
-    "penalties": [13853, 11422, 12543, 12152, 12090, 12443, 12782, 12493],
-    "hash": "c7fd68f95a03d07b"
-  },
-  {
-    "value": { "seed": 2, "length": 1257 },
-    "level": "H",
-    "size": 177,
-    "version": 40,
-    "maskPattern": 4,
-    "penalties": [22769, 21454, 22316, 21824, 21236, 21606, 22224, 21809],
-    "hash": "5b35f5684238d3da"
-  },
-  {
-    "value": { "seed": 3, "length": 1985 },
-    "level": "L",
-    "size": 149,
-    "version": 33,
-    "maskPattern": 4,
-    "penalties": [16908, 14793, 15584, 15296, 14460, 15269, 15692, 14929],
-    "hash": "09fd557b7db6a05e"
-  },
-  {
-    "value": { "seed": 3, "length": 674 },
-    "level": "H",
-    "size": 133,
-    "version": 29,
-    "maskPattern": 6,
-    "penalties": [13296, 12390, 12182, 11947, 12438, 12027, 11421, 12707],
-    "hash": "f1d93920787fad7a"
-  },
-  {
-    "value": { "seed": 4, "length": 2569 },
-    "level": "L",
-    "size": 169,
-    "version": 38,
-    "maskPattern": 5,
-    "penalties": [21566, 19202, 20531, 20255, 19958, 19060, 20439, 20494],
-    "hash": "a33df847b4eb71a6"
-  },
-  {
-    "value": { "seed": 4, "length": 1166 },
-    "level": "H",
-    "size": 173,
-    "version": 39,
-    "maskPattern": 1,
-    "penalties": [21208, 20721, 21917, 20964, 20961, 20951, 20757, 22033],
-    "hash": "6bf2fa1549050b4e"
-  },
-  {
-    "value": { "seed": 5, "length": 221 },
-    "level": "L",
-    "size": 53,
-    "version": 9,
-    "maskPattern": 3,
-    "penalties": [2356, 1884, 2007, 1728, 1852, 1966, 1942, 1895],
-    "hash": "85ea32691508973a"
-  },
-  {
-    "value": { "seed": 5, "length": 1270 },
-    "level": "H",
-    "size": 177,
-    "version": 40,
-    "maskPattern": 4,
-    "penalties": [22933, 21682, 21629, 22595, 21541, 21734, 21916, 22240],
-    "hash": "dca2d4b9d9a23f70"
-  },
-  {
-    "value": { "seed": 6, "length": 620 },
-    "level": "L",
-    "size": 85,
-    "version": 17,
-    "maskPattern": 6,
-    "penalties": [5289, 5113, 5229, 5340, 5085, 5285, 4830, 5027],
-    "hash": "647eeac06c3ab438"
-  },
-  {
-    "value": { "seed": 6, "length": 247 },
-    "level": "H",
-    "size": 81,
-    "version": 16,
-    "maskPattern": 1,
-    "penalties": [4747, 4335, 4840, 4679, 4864, 4954, 4728, 4683],
-    "hash": "753b5b97ce547f3c"
-  },
-  {
-    "value": { "seed": 7, "length": 2932 },
-    "level": "L",
-    "size": 177,
-    "version": 40,
-    "maskPattern": 1,
-    "penalties": [24217, 20784, 22813, 21902, 21745, 21582, 21872, 22480],
-    "hash": "22f408629f48da5a"
-  },
-  {
-    "value": { "seed": 7, "length": 76 },
-    "level": "H",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 6,
-    "penalties": [2117, 1839, 1708, 1815, 1945, 2036, 1687, 1934],
-    "hash": "6ed6ca8a87d96e34"
-  },
-  {
-    "value": { "seed": 8, "length": 1135 },
-    "level": "L",
-    "size": 113,
-    "version": 24,
-    "maskPattern": 4,
-    "penalties": [9425, 8559, 9419, 8688, 8494, 8809, 9280, 8854],
-    "hash": "8c0f18330404ac31"
-  },
-  {
-    "value": { "seed": 8, "length": 39 },
-    "level": "H",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 2,
-    "penalties": [1046, 1061, 920, 1056, 1062, 1220, 1132, 1103],
-    "hash": "600729acdf1c8a2e"
-  },
-  {
-    "value": { "seed": 9, "length": 213 },
-    "level": "L",
-    "size": 53,
-    "version": 9,
-    "maskPattern": 1,
-    "penalties": [2058, 1751, 1933, 1858, 1869, 1905, 1885, 2123],
-    "hash": "3919d3823fbeaf24"
-  },
-  {
-    "value": { "seed": 9, "length": 858 },
-    "level": "H",
-    "size": 149,
-    "version": 33,
-    "maskPattern": 1,
-    "penalties": [16346, 15044, 15771, 15383, 15874, 15047, 15486, 15264],
-    "hash": "26b30bbcf6278275"
-  },
-  {
-    "value": { "seed": 10, "length": 2729 },
-    "level": "L",
-    "size": 173,
-    "version": 39,
-    "maskPattern": 3,
-    "penalties": [22577, 20593, 21445, 20518, 20526, 20709, 20562, 21455],
-    "hash": "6f15651445b64837"
-  },
-  {
-    "value": { "seed": 10, "length": 1031 },
-    "level": "H",
-    "size": 161,
-    "version": 36,
-    "maskPattern": 5,
-    "penalties": [19181, 18163, 17810, 18291, 18112, 17243, 17809, 17815],
-    "hash": "9a4d4eeb83daa876"
-  },
-  {
-    "value": { "seed": 11, "length": 2189 },
-    "level": "L",
-    "size": 157,
-    "version": 35,
-    "maskPattern": 1,
-    "penalties": [18644, 16028, 17265, 16212, 16951, 16669, 17148, 17177],
-    "hash": "164f86103bb110f5"
-  },
-  {
-    "value": { "seed": 11, "length": 82 },
-    "level": "H",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 5,
-    "penalties": [1943, 1858, 1941, 1917, 1897, 1821, 1888, 2049],
-    "hash": "9861a78925fa85f7"
-  },
-  {
-    "value": { "seed": 12, "length": 1826 },
-    "level": "L",
-    "size": 141,
-    "version": 31,
-    "maskPattern": 1,
-    "penalties": [15178, 12968, 13985, 13758, 13224, 13240, 14125, 13638],
-    "hash": "74d9df67036dac56"
-  },
-  {
-    "value": { "seed": 12, "length": 632 },
-    "level": "H",
-    "size": 129,
-    "version": 28,
-    "maskPattern": 3,
-    "penalties": [11731, 11590, 11854, 11240, 11303, 12250, 11527, 11634],
-    "hash": "f6a0489c2d6747b5"
-  },
-  {
-    "value": { "seed": 13, "length": 603 },
-    "level": "L",
-    "size": 85,
-    "version": 17,
-    "maskPattern": 4,
-    "penalties": [5488, 4998, 5165, 4922, 4750, 4908, 5121, 5025],
-    "hash": "5b32969e68ff3749"
-  },
-  {
-    "value": { "seed": 13, "length": 1136 },
-    "level": "H",
-    "size": 169,
-    "version": 38,
-    "maskPattern": 1,
-    "penalties": [20623, 18871, 21005, 19915, 19153, 19487, 19565, 20568],
-    "hash": "b214e70ccab7704e"
-  },
-  {
-    "value": { "seed": 14, "length": 204 },
-    "level": "L",
-    "size": 53,
-    "version": 9,
-    "maskPattern": 2,
-    "penalties": [2354, 2041, 1923, 1975, 1947, 2058, 2019, 2297],
-    "hash": "7f8c97511c4d45eb"
-  },
-  {
-    "value": { "seed": 14, "length": 1022 },
-    "level": "H",
-    "size": 161,
-    "version": 36,
-    "maskPattern": 1,
-    "penalties": [18985, 17110, 18155, 18939, 18065, 17408, 18029, 19091],
-    "hash": "b5432e0d2a7670cf"
-  },
-  {
-    "value": { "seed": 15, "length": 433 },
-    "level": "L",
-    "size": 73,
-    "version": 14,
-    "maskPattern": 3,
-    "penalties": [3742, 3592, 3957, 3423, 3604, 3890, 3895, 3729],
-    "hash": "9533c29b128338e4"
-  },
-  {
-    "value": { "seed": 15, "length": 35 },
-    "level": "H",
-    "size": 37,
-    "version": 5,
-    "maskPattern": 6,
-    "penalties": [1019, 1069, 1148, 1093, 1200, 1049, 925, 1077],
-    "hash": "21fe334a57a066e2"
-  },
-  {
-    "value": { "seed": 16, "length": 2116 },
-    "level": "L",
-    "size": 153,
-    "version": 34,
-    "maskPattern": 4,
-    "penalties": [17291, 15536, 17331, 16020, 15345, 16211, 16457, 16103],
-    "hash": "aecd953ae01263f1"
-  },
-  {
-    "value": { "seed": 16, "length": 941 },
-    "level": "H",
-    "size": 153,
-    "version": 34,
-    "maskPattern": 1,
-    "penalties": [16869, 15872, 16373, 16445, 15998, 16361, 16320, 17070],
-    "hash": "9b69dd7f0f1da825"
-  },
-  {
-    "value": { "seed": 17, "length": 2550 },
-    "level": "L",
-    "size": 165,
-    "version": 37,
-    "maskPattern": 1,
-    "penalties": [20503, 17509, 19468, 19290, 18416, 18409, 19006, 19681],
-    "hash": "f7118c8ef3bc1459"
-  },
-  {
-    "value": { "seed": 17, "length": 1041 },
-    "level": "H",
-    "size": 161,
-    "version": 36,
-    "maskPattern": 5,
-    "penalties": [19133, 16883, 17913, 18477, 17518, 16842, 17998, 18205],
-    "hash": "2cf65cce527d4d77"
-  },
-  {
-    "value": { "seed": 18, "length": 2469 },
-    "level": "L",
-    "size": 165,
-    "version": 37,
-    "maskPattern": 4,
-    "penalties": [21719, 18282, 19000, 19108, 18195, 18952, 19094, 20006],
-    "hash": "c09cac2eff5f6f66"
-  },
-  {
-    "value": { "seed": 18, "length": 946 },
-    "level": "H",
-    "size": 153,
-    "version": 34,
-    "maskPattern": 1,
-    "penalties": [16983, 15554, 16600, 15781, 15714, 15800, 16062, 16429],
-    "hash": "d4931311b4bae5e7"
-  },
-  {
-    "value": { "seed": 19, "length": 107 },
-    "level": "L",
-    "size": 41,
-    "version": 6,
-    "maskPattern": 7,
-    "penalties": [1337, 1300, 1203, 1193, 1317, 1238, 1318, 1165],
-    "hash": "b759ed0dcca8bcfc"
-  },
-  {
-    "value": { "seed": 19, "length": 432 },
-    "level": "H",
-    "size": 105,
-    "version": 22,
-    "maskPattern": 4,
-    "penalties": [8196, 7643, 7694, 7917, 7173, 7260, 7535, 7994],
-    "hash": "549a00cce6d8ce71"
-  },
-  {
-    "value": { "seed": 20, "length": 444 },
-    "level": "L",
-    "size": 73,
-    "version": 14,
-    "maskPattern": 3,
-    "penalties": [4177, 3785, 3805, 3494, 3620, 3844, 3575, 3755],
-    "hash": "3d3547863661fcad"
-  },
-  {
-    "value": { "seed": 20, "length": 839 },
-    "level": "H",
-    "size": 145,
-    "version": 32,
-    "maskPattern": 1,
-    "penalties": [15183, 14115, 14420, 14581, 14850, 14449, 14867, 14495],
-    "hash": "3de1ecb356927831"
-  },
-  {
-    "value": { "seed": 21, "length": 1132 },
-    "level": "L",
-    "size": 113,
-    "version": 24,
-    "maskPattern": 3,
-    "penalties": [9592, 8592, 8823, 8311, 8680, 8537, 9279, 8673],
-    "hash": "3500ba98570b127e"
-  },
-  {
-    "value": { "seed": 21, "length": 382 },
-    "level": "H",
-    "size": 97,
-    "version": 20,
-    "maskPattern": 1,
-    "penalties": [6969, 6367, 6814, 6549, 6888, 6521, 6760, 6711],
-    "hash": "d4a43bcd5375d7e5"
-  },
-  {
-    "value": { "seed": 22, "length": 2334 },
-    "level": "L",
-    "size": 161,
-    "version": 36,
-    "maskPattern": 1,
-    "penalties": [19883, 16815, 18831, 17894, 17721, 17816, 18618, 18197],
-    "hash": "840939d44b3c91f6"
-  },
-  {
-    "value": { "seed": 22, "length": 399 },
-    "level": "H",
-    "size": 101,
-    "version": 21,
-    "maskPattern": 3,
-    "penalties": [7475, 6823, 7332, 6791, 7098, 6885, 6839, 7221],
-    "hash": "ac5b56654d02c761"
-  },
-  {
-    "value": { "seed": 23, "length": 2583 },
-    "level": "L",
-    "size": 169,
-    "version": 38,
-    "maskPattern": 1,
-    "penalties": [22616, 18737, 20916, 19888, 19135, 19174, 20169, 20415],
-    "hash": "6b3ae0c641658a3c"
-  },
-  {
-    "value": { "seed": 23, "length": 711 },
-    "level": "H",
-    "size": 137,
-    "version": 30,
-    "maskPattern": 7,
-    "penalties": [13756, 13332, 12712, 13032, 12925, 12979, 12736, 12622],
-    "hash": "c8890d49fdced468"
-  },
-  {
-    "value": { "seed": 24, "length": 593 },
-    "level": "L",
-    "size": 85,
-    "version": 17,
-    "maskPattern": 1,
-    "penalties": [5557, 4680, 4995, 4890, 5181, 5143, 5185, 5224],
-    "hash": "b2c540233996616c"
-  },
-  {
-    "value": { "seed": 24, "length": 589 },
-    "level": "H",
-    "size": 121,
-    "version": 26,
-    "maskPattern": 1,
-    "penalties": [10408, 9435, 10122, 9863, 10130, 9832, 9916, 9685],
-    "hash": "ffdc55056924e18d"
-  },
-  {
-    "value": { "seed": 25, "length": 1696 },
-    "level": "L",
-    "size": 137,
-    "version": 30,
-    "maskPattern": 1,
-    "penalties": [13658, 12338, 13125, 12558, 12471, 13221, 12788, 13185],
-    "hash": "a38d13a9b90a6caa"
-  },
-  {
-    "value": { "seed": 25, "length": 529 },
-    "level": "H",
-    "size": 117,
-    "version": 25,
-    "maskPattern": 3,
-    "penalties": [9468, 9471, 10611, 9174, 9497, 9867, 9820, 9802],
-    "hash": "dad36643cf0b1274"
-  },
-  {
-    "value": { "seed": 26, "length": 881 },
-    "level": "L",
-    "size": 101,
-    "version": 21,
-    "maskPattern": 5,
-    "penalties": [7634, 7190, 7000, 7030, 6833, 6624, 7468, 7488],
-    "hash": "5642446677b37c01"
-  },
-  {
-    "value": { "seed": 26, "length": 1070 },
-    "level": "H",
-    "size": 165,
-    "version": 37,
-    "maskPattern": 3,
-    "penalties": [19448, 18712, 19172, 18403, 18899, 18416, 18808, 19551],
-    "hash": "d1b429b848f8522d"
-  },
-  {
-    "value": { "seed": 27, "length": 1775 },
-    "level": "L",
-    "size": 141,
-    "version": 31,
-    "maskPattern": 7,
-    "penalties": [14974, 13282, 13971, 13643, 13585, 13337, 13862, 13272],
-    "hash": "a34bee4a1ae10d1a"
-  },
-  {
-    "value": { "seed": 27, "length": 450 },
-    "level": "H",
-    "size": 109,
-    "version": 23,
-    "maskPattern": 6,
-    "penalties": [8504, 7879, 8329, 8099, 7935, 8162, 7833, 8177],
-    "hash": "1174cd498c3a0ef0"
-  },
-  {
-    "value": { "seed": 28, "length": 2119 },
-    "level": "L",
-    "size": 153,
-    "version": 34,
-    "maskPattern": 1,
-    "penalties": [17101, 15402, 17248, 15663, 15454, 16264, 16008, 16593],
-    "hash": "79dec902f8b0e8ec"
-  },
-  {
-    "value": { "seed": 28, "length": 748 },
-    "level": "H",
-    "size": 141,
-    "version": 31,
-    "maskPattern": 2,
-    "penalties": [14155, 13651, 13368, 13416, 14276, 13530, 13587, 14011],
-    "hash": "419e801b961a8963"
-  },
-  {
-    "value": { "seed": 29, "length": 1180 },
-    "level": "L",
-    "size": 117,
-    "version": 25,
-    "maskPattern": 4,
-    "penalties": [10222, 9268, 9981, 9436, 8174, 9385, 9714, 10023],
-    "hash": "7426f7e9bf60bca3"
-  },
-  {
-    "value": { "seed": 29, "length": 731 },
-    "level": "H",
-    "size": 137,
-    "version": 30,
-    "maskPattern": 1,
-    "penalties": [13491, 12670, 12941, 12672, 12831, 12694, 13097, 12728],
-    "hash": "7a3b0242518e0392"
-  },
-  {
-    "value": { "seed": 30, "length": 701 },
-    "level": "L",
-    "size": 89,
-    "version": 18,
-    "maskPattern": 3,
-    "penalties": [5745, 5559, 5578, 5137, 5226, 5802, 5762, 5700],
-    "hash": "082d8e63659bbfe0"
-  },
-  {
-    "value": { "seed": 30, "length": 110 },
-    "level": "H",
-    "size": 57,
-    "version": 10,
-    "maskPattern": 1,
-    "penalties": [2433, 2061, 2314, 2284, 2261, 2189, 2408, 2430],
-    "hash": "c13e0cd1533e4455"
-  },
-  {
-    "value": { "seed": 31, "length": 1747 },
-    "level": "L",
-    "size": 141,
-    "version": 31,
-    "maskPattern": 1,
-    "penalties": [15669, 12854, 14510, 13981, 13300, 14100, 14274, 14857],
-    "hash": "c243ab25eae6ef06"
-  },
-  {
-    "value": { "seed": 31, "length": 669 },
-    "level": "H",
-    "size": 133,
-    "version": 29,
-    "maskPattern": 1,
-    "penalties": [12407, 11507, 12500, 12075, 12420, 12767, 12292, 12268],
-    "hash": "47b91ab7a9535534"
-  },
-  {
-    "value": { "seed": 32, "length": 1343 },
-    "level": "L",
-    "size": 121,
-    "version": 26,
-    "maskPattern": 5,
-    "penalties": [10931, 9530, 9945, 9638, 10223, 9459, 9928, 10451],
-    "hash": "abedacc7866c0afa"
-  },
-  {
-    "value": { "seed": 32, "length": 376 },
-    "level": "H",
-    "size": 97,
-    "version": 20,
-    "maskPattern": 5,
-    "penalties": [6540, 6132, 7017, 6423, 6119, 6111, 6309, 6468],
-    "hash": "608843cb6c38fdab"
-  },
-  {
-    "value": { "seed": 33, "length": 1335 },
-    "level": "L",
-    "size": 121,
-    "version": 26,
-    "maskPattern": 1,
-    "penalties": [10604, 9460, 10493, 9850, 10277, 9870, 10272, 10469],
-    "hash": "9aac39f7c27e56a4"
-  },
-  {
-    "value": { "seed": 33, "length": 102 },
-    "level": "H",
-    "size": 57,
-    "version": 10,
-    "maskPattern": 6,
-    "penalties": [2493, 2356, 2114, 2613, 2622, 2299, 2083, 2157],
-    "hash": "7e9e00e9ea16018c"
-  },
-  {
-    "value": { "seed": 34, "length": 2278 },
-    "level": "L",
-    "size": 157,
-    "version": 35,
-    "maskPattern": 1,
-    "penalties": [18464, 16322, 18149, 16888, 16504, 16876, 17362, 17434],
-    "hash": "575053d46a2f4914"
-  },
-  {
-    "value": { "seed": 34, "length": 258 },
-    "level": "H",
-    "size": 85,
-    "version": 17,
-    "maskPattern": 3,
-    "penalties": [5053, 5018, 5076, 4912, 5112, 5232, 4934, 5213],
-    "hash": "84482923c94305e4"
-  },
-  {
-    "value": { "seed": 35, "length": 357 },
-    "level": "L",
-    "size": 65,
-    "version": 12,
-    "maskPattern": 4,
-    "penalties": [3605, 2817, 2904, 2923, 2441, 2884, 2817, 3058],
-    "hash": "8db0393774c31305"
-  },
-  {
-    "value": { "seed": 35, "length": 1083 },
-    "level": "H",
-    "size": 165,
-    "version": 37,
-    "maskPattern": 1,
-    "penalties": [19486, 18235, 20601, 18741, 18266, 18846, 18873, 19033],
-    "hash": "b61587f3e9275c0a"
-  },
-  {
-    "value": { "seed": 36, "length": 1784 },
-    "level": "L",
-    "size": 141,
-    "version": 31,
-    "maskPattern": 1,
-    "penalties": [15292, 12964, 13937, 13491, 12973, 13761, 13781, 14340],
-    "hash": "b4c516ea0a00d08d"
-  },
-  {
-    "value": { "seed": 36, "length": 787 },
-    "level": "H",
-    "size": 141,
-    "version": 31,
-    "maskPattern": 1,
-    "penalties": [14391, 12924, 14721, 13682, 13587, 13860, 14105, 13426],
-    "hash": "b1aabedd17b5bb47"
-  },
-  {
-    "value": { "seed": 37, "length": 2753 },
-    "level": "L",
-    "size": 173,
-    "version": 39,
-    "maskPattern": 1,
-    "penalties": [23049, 20125, 20302, 20464, 20243, 20358, 21465, 21486],
-    "hash": "c557b9bf26ea39a7"
-  },
-  {
-    "value": { "seed": 37, "length": 317 },
-    "level": "H",
-    "size": 93,
-    "version": 19,
-    "maskPattern": 2,
-    "penalties": [5692, 6251, 5413, 5992, 5885, 5680, 5958, 5718],
-    "hash": "ef41d05d0357e327"
-  },
-  {
-    "value": { "seed": 38, "length": 1419 },
-    "level": "L",
-    "size": 125,
-    "version": 27,
-    "maskPattern": 1,
-    "penalties": [11454, 10110, 11537, 10581, 10806, 10959, 10853, 10799],
-    "hash": "b734f8d4326ee47f"
-  },
-  {
-    "value": { "seed": 38, "length": 501 },
-    "level": "H",
-    "size": 113,
-    "version": 24,
-    "maskPattern": 3,
-    "penalties": [9337, 8754, 8990, 8623, 8759, 8763, 8721, 8864],
-    "hash": "fcdb2d03d54311f3"
-  },
-  {
-    "value": { "seed": 39, "length": 1866 },
-    "level": "L",
-    "size": 145,
-    "version": 32,
-    "maskPattern": 1,
-    "penalties": [15962, 13504, 15052, 14530, 14407, 14735, 14756, 15022],
-    "hash": "3f6dac33a61a0e5f"
-  },
-  {
-    "value": { "seed": 39, "length": 866 },
-    "level": "H",
-    "size": 149,
-    "version": 33,
-    "maskPattern": 3,
-    "penalties": [16623, 15217, 15559, 15188, 15451, 15929, 15785, 15419],
-    "hash": "3eed0f010d20c608"
-  },
-  {
-    "value": { "seed": 40, "length": 685 },
-    "level": "L",
-    "size": 89,
-    "version": 18,
-    "maskPattern": 3,
-    "penalties": [6091, 5371, 5521, 5354, 5746, 5355, 5432, 5379],
-    "hash": "713f149aa9dfd3d5"
-  },
-  {
-    "value": { "seed": 40, "length": 245 },
-    "level": "H",
-    "size": 81,
-    "version": 16,
-    "maskPattern": 2,
-    "penalties": [4508, 4857, 4218, 4511, 4784, 4519, 4614, 4495],
-    "hash": "9f234eef373bad6d"
-  },
-  {
-    "value": { "seed": 41, "length": 1823 },
-    "level": "L",
-    "size": 141,
-    "version": 31,
-    "maskPattern": 1,
-    "penalties": [14960, 12940, 14335, 13620, 13872, 14038, 13707, 14065],
-    "hash": "7366c74402a24c38"
-  },
-  {
-    "value": { "seed": 41, "length": 1 },
-    "level": "H",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 6,
-    "penalties": [431, 417, 459, 456, 425, 335, 308, 492],
-    "hash": "c1a5303676d8fee0"
-  },
-  {
-    "value": { "seed": 42, "length": 837 },
-    "level": "L",
-    "size": 97,
-    "version": 20,
-    "maskPattern": 3,
-    "penalties": [7378, 6238, 6298, 6098, 6332, 6598, 6549, 6107],
-    "hash": "b6d9f8b1c9c46225"
-  },
-  {
-    "value": { "seed": 42, "length": 990 },
-    "level": "H",
-    "size": 161,
-    "version": 36,
-    "maskPattern": 5,
-    "penalties": [19433, 17731, 18396, 18790, 17811, 17358, 17692, 18677],
-    "hash": "4e0f02621098963e"
-  },
-  {
-    "value": { "seed": 43, "length": 2263 },
-    "level": "L",
-    "size": 157,
-    "version": 35,
-    "maskPattern": 3,
-    "penalties": [18582, 16471, 17562, 16263, 16737, 16590, 18001, 18065],
-    "hash": "ae01bfb0622acc6d"
-  },
-  {
-    "value": { "seed": 43, "length": 551 },
-    "level": "H",
-    "size": 121,
-    "version": 26,
-    "maskPattern": 1,
-    "penalties": [10096, 9639, 10335, 9836, 10222, 10230, 10326, 9877],
-    "hash": "ebaac899d4947719"
-  },
-  {
-    "value": { "seed": 44, "length": 1085 },
-    "level": "L",
-    "size": 109,
-    "version": 23,
-    "maskPattern": 5,
-    "penalties": [8601, 7908, 8330, 7857, 7764, 7610, 8126, 7893],
-    "hash": "3fbf677ecdb0622d"
-  },
-  {
-    "value": { "seed": 44, "length": 649 },
-    "level": "H",
-    "size": 129,
-    "version": 28,
-    "maskPattern": 1,
-    "penalties": [12539, 10959, 11256, 11440, 11240, 11242, 11669, 12332],
-    "hash": "e5a208eca5a6345c"
-  },
-  {
-    "value": { "seed": 45, "length": 750 },
-    "level": "L",
-    "size": 93,
-    "version": 19,
-    "maskPattern": 1,
-    "penalties": [6712, 5669, 5975, 5907, 5683, 5960, 6222, 6204],
-    "hash": "7db72fa7301f32ec"
-  },
-  {
-    "value": { "seed": 45, "length": 373 },
-    "level": "H",
-    "size": 97,
-    "version": 20,
-    "maskPattern": 3,
-    "penalties": [6486, 6429, 6447, 6354, 6579, 6498, 6576, 6393],
-    "hash": "7c53aefa47a898cd"
-  },
-  {
-    "value": { "seed": 46, "length": 2491 },
-    "level": "L",
-    "size": 165,
-    "version": 37,
-    "maskPattern": 1,
-    "penalties": [21010, 17711, 19473, 18782, 18567, 19249, 19250, 19673],
-    "hash": "4f0f67c862a7d13f"
-  },
-  {
-    "value": { "seed": 46, "length": 360 },
-    "level": "H",
-    "size": 97,
-    "version": 20,
-    "maskPattern": 1,
-    "penalties": [6657, 6609, 6851, 6685, 7007, 6882, 6684, 7080],
-    "hash": "7ec62e6c24632802"
-  },
-  {
-    "value": { "seed": 47, "length": 1757 },
-    "level": "L",
-    "size": 141,
-    "version": 31,
-    "maskPattern": 1,
-    "penalties": [15013, 13217, 13919, 14304, 13854, 13360, 13250, 14116],
-    "hash": "a2933e6d6bca7cbc"
-  },
-  {
-    "value": { "seed": 47, "length": 75 },
-    "level": "H",
-    "size": 49,
-    "version": 8,
-    "maskPattern": 6,
-    "penalties": [1998, 1736, 1841, 1835, 1666, 1821, 1583, 2082],
-    "hash": "4a2cd3cd59a0c6a7"
-  },
-  {
-    "value": { "seed": 48, "length": 2586 },
-    "level": "L",
-    "size": 169,
-    "version": 38,
-    "maskPattern": 1,
-    "penalties": [21797, 19062, 20875, 19341, 19297, 19953, 20089, 19914],
-    "hash": "c7c31ca1cfcabd3b"
-  },
-  {
-    "value": { "seed": 48, "length": 875 },
-    "level": "H",
-    "size": 149,
-    "version": 33,
-    "maskPattern": 1,
-    "penalties": [15823, 14668, 15699, 15537, 15043, 14858, 14745, 15488],
-    "hash": "de826f035f6ec435"
-  },
-  {
-    "value": { "seed": 49, "length": 1325 },
-    "level": "L",
-    "size": 121,
-    "version": 26,
-    "maskPattern": 1,
-    "penalties": [11017, 9551, 10402, 9823, 9643, 9797, 9968, 10556],
-    "hash": "c34980ea8384efcd"
-  },
-  {
-    "value": { "seed": 49, "length": 222 },
-    "level": "H",
-    "size": 81,
-    "version": 16,
-    "maskPattern": 4,
-    "penalties": [4770, 4669, 4842, 4629, 4351, 4660, 4369, 4601],
-    "hash": "8733513f8e67777a"
-  },
-  {
-    "value": { "seed": 50, "length": 2444 },
-    "level": "L",
-    "size": 165,
-    "version": 37,
-    "maskPattern": 1,
-    "penalties": [20957, 18060, 19716, 19164, 18073, 18261, 19618, 19427],
-    "hash": "808e2fd1fe0c4465"
-  },
-  {
-    "value": { "seed": 50, "length": 367 },
-    "level": "H",
-    "size": 97,
-    "version": 20,
-    "maskPattern": 4,
-    "penalties": [6543, 6248, 6480, 6714, 5853, 6690, 6275, 6121],
-    "hash": "384d4116c36c0db2"
-  },
-  {
-    "value": { "seed": 51, "length": 654 },
-    "level": "L",
-    "size": 89,
-    "version": 18,
-    "maskPattern": 4,
-    "penalties": [5941, 5552, 5582, 5476, 5325, 5922, 5967, 5439],
-    "hash": "95b4a3ce18290552"
-  },
-  {
-    "value": { "seed": 51, "length": 580 },
-    "level": "H",
-    "size": 121,
-    "version": 26,
-    "maskPattern": 1,
-    "penalties": [10080, 9448, 10660, 9968, 9799, 10215, 9884, 9734],
-    "hash": "1f55833ec3660f29"
-  },
-  {
-    "value": { "seed": 52, "length": 2288 },
-    "level": "L",
-    "size": 157,
-    "version": 35,
-    "maskPattern": 1,
-    "penalties": [19037, 16041, 17738, 16250, 16688, 17735, 17812, 17731],
-    "hash": "bbae18a756daf95b"
-  },
-  {
-    "value": { "seed": 52, "length": 464 },
-    "level": "H",
-    "size": 113,
-    "version": 24,
-    "maskPattern": 3,
-    "penalties": [8853, 8738, 9321, 8506, 9202, 9013, 8987, 8802],
-    "hash": "0129aa12b714d0a4"
-  },
-  {
-    "value": { "seed": 53, "length": 4 },
-    "level": "L",
-    "size": 21,
-    "version": 1,
-    "maskPattern": 3,
-    "penalties": [434, 408, 360, 288, 445, 452, 368, 345],
-    "hash": "0eb82cd981c76a20"
-  },
-  {
-    "value": { "seed": 53, "length": 537 },
-    "level": "H",
-    "size": 121,
-    "version": 26,
-    "maskPattern": 4,
-    "penalties": [10144, 9810, 10444, 10151, 8990, 9600, 10045, 9788],
-    "hash": "0b9ba2a845dc2c25"
-  },
-  {
-    "value": { "seed": 54, "length": 320 },
-    "level": "L",
-    "size": 61,
-    "version": 11,
-    "maskPattern": 4,
-    "penalties": [2906, 2628, 2543, 2464, 2398, 2536, 2757, 2929],
-    "hash": "eb1fbfb8f6a972f4"
-  },
-  {
-    "value": { "seed": 54, "length": 1261 },
-    "level": "H",
-    "size": 177,
-    "version": 40,
-    "maskPattern": 1,
-    "penalties": [22715, 21466, 21584, 21719, 22217, 21502, 21475, 22598],
-    "hash": "fac161627e0d1a0b"
-  },
-  {
-    "value": { "seed": 55, "length": 820 },
-    "level": "L",
-    "size": 97,
-    "version": 20,
-    "maskPattern": 7,
-    "penalties": [7297, 6398, 6487, 6651, 6404, 6276, 6741, 6069],
-    "hash": "87d1fed64b2bd337"
-  },
-  {
-    "value": { "seed": 55, "length": 734 },
-    "level": "H",
-    "size": 137,
-    "version": 30,
-    "maskPattern": 4,
-    "penalties": [13454, 12765, 13021, 13339, 12259, 12797, 12497, 12948],
-    "hash": "b7dfe1279add2b6a"
-  },
-  {
-    "value": { "seed": 56, "length": 1751 },
-    "level": "L",
-    "size": 141,
-    "version": 31,
-    "maskPattern": 4,
-    "penalties": [15329, 13425, 14604, 14092, 13129, 13626, 13827, 14003],
-    "hash": "06d0e878d8bc3694"
-  },
-  {
-    "value": { "seed": 56, "length": 1145 },
-    "level": "H",
-    "size": 173,
-    "version": 39,
-    "maskPattern": 4,
-    "penalties": [21735, 20431, 21781, 19962, 19725, 21168, 20937, 20892],
-    "hash": "253a6272537c4284"
-  },
-  {
-    "value": { "seed": 57, "length": 2130 },
-    "level": "L",
-    "size": 153,
-    "version": 34,
-    "maskPattern": 1,
-    "penalties": [17932, 16008, 16234, 16110, 16321, 16224, 16777, 16159],
-    "hash": "ad74dd0497c0a37e"
-  },
-  {
-    "value": { "seed": 57, "length": 1241 },
-    "level": "H",
-    "size": 177,
-    "version": 40,
-    "maskPattern": 5,
-    "penalties": [23600, 21788, 21617, 21935, 21380, 21202, 21348, 22042],
-    "hash": "22c333b17e74f988"
-  },
-  {
-    "value": { "seed": 58, "length": 759 },
-    "level": "L",
-    "size": 93,
-    "version": 19,
-    "maskPattern": 2,
-    "penalties": [7220, 6070, 5910, 5950, 6027, 6043, 6131, 6150],
-    "hash": "044cc3c9df7cb1ce"
-  },
-  {
-    "value": { "seed": 58, "length": 289 },
-    "level": "H",
-    "size": 89,
-    "version": 18,
-    "maskPattern": 2,
-    "penalties": [5911, 5673, 5070, 5494, 5409, 5762, 5491, 5519],
-    "hash": "f6046718a0f604f9"
-  },
-  {
-    "value": { "seed": 59, "length": 1464 },
-    "level": "L",
-    "size": 125,
-    "version": 27,
-    "maskPattern": 1,
-    "penalties": [11806, 10346, 11491, 10999, 10440, 10645, 11484, 10562],
-    "hash": "f1a265e7f223726b"
-  },
-  {
-    "value": { "seed": 59, "length": 502 },
-    "level": "H",
-    "size": 113,
-    "version": 24,
-    "maskPattern": 1,
-    "penalties": [9120, 8521, 9006, 8859, 8851, 9138, 9100, 8636],
-    "hash": "a048ef7c56b97428"
-  },
-  {
-    "value": { "seed": 60, "length": 2322 },
-    "level": "L",
-    "size": 161,
-    "version": 36,
-    "maskPattern": 1,
-    "penalties": [19797, 15979, 18479, 17697, 16701, 17614, 18331, 18169],
-    "hash": "44f53446149f5880"
-  },
-  {
-    "value": { "seed": 60, "length": 645 },
-    "level": "H",
-    "size": 129,
-    "version": 28,
-    "maskPattern": 5,
-    "penalties": [12219, 11621, 11681, 11951, 11282, 11166, 11722, 11926],
-    "hash": "c591092f1e877e36"
-  },
-  {
-    "value": { "seed": 61, "length": 2788 },
-    "level": "L",
-    "size": 173,
-    "version": 39,
-    "maskPattern": 1,
-    "penalties": [22919, 19403, 21421, 20718, 19765, 20478, 20992, 21060],
-    "hash": "9006d383bb78192f"
-  },
-  {
-    "value": { "seed": 61, "length": 992 },
-    "level": "H",
-    "size": 161,
-    "version": 36,
-    "maskPattern": 1,
-    "penalties": [18914, 17576, 18544, 18016, 18218, 17716, 17691, 18187],
-    "hash": "2c16d847013ca4ee"
-  },
-  {
-    "value": { "seed": 62, "length": 1489 },
-    "level": "L",
-    "size": 129,
-    "version": 28,
-    "maskPattern": 1,
-    "penalties": [12228, 11132, 11785, 11220, 11303, 11328, 11633, 11592],
-    "hash": "9aa0c3a8e0fb937f"
-  },
-  {
-    "value": { "seed": 62, "length": 1165 },
-    "level": "H",
-    "size": 173,
-    "version": 39,
-    "maskPattern": 5,
-    "penalties": [22454, 20731, 20798, 20744, 21218, 20312, 20809, 21279],
-    "hash": "f741ddd8c7196610"
-  },
-  {
-    "value": { "seed": 63, "length": 1151 },
-    "level": "L",
-    "size": 113,
-    "version": 24,
-    "maskPattern": 5,
-    "penalties": [9585, 8368, 9190, 8864, 8710, 8204, 8589, 8940],
-    "hash": "1ef6b1a97bf722fa"
-  },
-  {
-    "value": { "seed": 63, "length": 744 },
-    "level": "H",
-    "size": 141,
-    "version": 31,
-    "maskPattern": 6,
-    "penalties": [14301, 13633, 14405, 13721, 13643, 13448, 13348, 14164],
-    "hash": "dfad03015935081c"
-  },
-  {
-    "value": { "seed": 64, "length": 2625 },
-    "level": "L",
-    "size": 169,
-    "version": 38,
-    "maskPattern": 1,
-    "penalties": [21633, 18296, 20886, 19689, 19764, 19811, 20264, 19537],
-    "hash": "5bae65f5e5df27c9"
-  },
-  {
-    "value": { "seed": 64, "length": 589 },
-    "level": "H",
-    "size": 121,
-    "version": 26,
-    "maskPattern": 2,
-    "penalties": [10938, 10006, 9913, 10641, 10655, 9946, 10191, 10731],
-    "hash": "fff01ee17a25cb45"
-  },
-  {
-    "value": { "seed": 65, "length": 998 },
-    "level": "L",
-    "size": 105,
-    "version": 22,
-    "maskPattern": 4,
-    "penalties": [8589, 7109, 7786, 7872, 7101, 7707, 7925, 8081],
-    "hash": "d7b480685e3fb28b"
-  },
-  {
-    "value": { "seed": 65, "length": 948 },
-    "level": "H",
-    "size": 153,
-    "version": 34,
-    "maskPattern": 4,
-    "penalties": [17810, 16098, 16678, 15630, 15265, 16025, 16679, 16634],
-    "hash": "f4c1f3fbef932824"
-  },
-  {
-    "value": { "seed": 66, "length": 2654 },
-    "level": "L",
-    "size": 169,
-    "version": 38,
-    "maskPattern": 1,
-    "penalties": [22145, 18641, 20274, 19590, 18642, 19471, 19918, 19730],
-    "hash": "0a0551412de93fb0"
-  },
-  {
-    "value": { "seed": 66, "length": 1113 },
-    "level": "H",
-    "size": 169,
-    "version": 38,
-    "maskPattern": 1,
-    "penalties": [20338, 18879, 21113, 19959, 20352, 19474, 19313, 19612],
-    "hash": "eec607ff2f8db1f1"
-  },
-  {
-    "value": { "seed": 67, "length": 533 },
-    "level": "L",
-    "size": 81,
-    "version": 16,
-    "maskPattern": 1,
-    "penalties": [5106, 4395, 4539, 4852, 4445, 4616, 4610, 4779],
-    "hash": "64cea5a40b66c866"
-  },
-  {
-    "value": { "seed": 67, "length": 313 },
-    "level": "H",
-    "size": 93,
-    "version": 19,
-    "maskPattern": 2,
-    "penalties": [6070, 6200, 5724, 6021, 6432, 6175, 6489, 6044],
-    "hash": "b3881ffca3c69150"
-  },
-  {
-    "value": { "seed": 68, "length": 1007 },
-    "level": "L",
-    "size": 109,
-    "version": 23,
-    "maskPattern": 4,
-    "penalties": [8928, 7852, 8398, 7706, 7282, 8050, 8064, 8068],
-    "hash": "98e05938b21e49af"
-  },
-  {
-    "value": { "seed": 68, "length": 63 },
-    "level": "H",
-    "size": 45,
-    "version": 7,
-    "maskPattern": 4,
-    "penalties": [1345, 1362, 1564, 1496, 1341, 1475, 1518, 1423],
-    "hash": "24e3687baae5f962"
-  },
-  {
-    "value": { "seed": 69, "length": 403 },
-    "level": "L",
-    "size": 69,
-    "version": 13,
-    "maskPattern": 3,
-    "penalties": [3670, 3394, 3447, 3157, 3446, 3528, 3472, 3275],
-    "hash": "e4a982ff154bee44"
-  },
-  {
-    "value": { "seed": 69, "length": 843 },
-    "level": "H",
-    "size": 149,
-    "version": 33,
-    "maskPattern": 6,
-    "penalties": [15693, 15346, 15678, 15216, 15041, 15157, 14708, 16122],
-    "hash": "a5bba18b9dc81836"
-  },
-  {
-    "value": { "seed": 70, "length": 2409 },
-    "level": "L",
-    "size": 161,
-    "version": 36,
-    "maskPattern": 1,
-    "penalties": [19918, 17055, 18936, 17509, 17964, 17855, 19190, 18293],
-    "hash": "6cb6fe0a661fc5ea"
-  },
-  {
-    "value": { "seed": 70, "length": 300 },
-    "level": "H",
-    "size": 89,
-    "version": 18,
-    "maskPattern": 7,
-    "penalties": [5663, 5477, 5821, 5756, 5360, 5719, 5488, 5328],
-    "hash": "0597940997079b5a"
-  },
-  {
-    "value": { "seed": 71, "length": 1632 },
-    "level": "L",
-    "size": 137,
-    "version": 30,
-    "maskPattern": 4,
-    "penalties": [14214, 13278, 12994, 12516, 12240, 12949, 12928, 12820],
-    "hash": "0e8bf15f684a940e"
-  },
-  {
-    "value": { "seed": 71, "length": 364 },
-    "level": "H",
-    "size": 97,
-    "version": 20,
-    "maskPattern": 7,
-    "penalties": [6811, 7253, 6651, 6380, 6875, 6669, 6813, 6307],
-    "hash": "e5daca62f8ec555c"
-  },
-  {
-    "value": { "seed": 72, "length": 549 },
-    "level": "L",
-    "size": 81,
-    "version": 16,
-    "maskPattern": 4,
-    "penalties": [5015, 4301, 4568, 4728, 4112, 4244, 4713, 4729],
-    "hash": "bffbc6564c79b5e3"
-  },
-  {
-    "value": { "seed": 72, "length": 766 },
-    "level": "H",
-    "size": 141,
-    "version": 31,
-    "maskPattern": 1,
-    "penalties": [14296, 13309, 14026, 14423, 13607, 13998, 14273, 14375],
-    "hash": "82a017a2697e03d3"
-  },
-  {
-    "value": { "seed": 73, "length": 1899 },
-    "level": "L",
-    "size": 145,
-    "version": 32,
-    "maskPattern": 1,
-    "penalties": [15547, 13897, 15336, 14509, 14313, 14715, 15010, 14955],
-    "hash": "8c81f6f694903830"
-  },
-  {
-    "value": { "seed": 73, "length": 1168 },
-    "level": "H",
-    "size": 173,
-    "version": 39,
-    "maskPattern": 6,
-    "penalties": [21664, 19603, 21656, 21645, 20508, 19782, 19483, 22009],
-    "hash": "2c77cc4598bb2f2c"
-  },
-  {
-    "value": { "seed": 74, "length": 2693 },
-    "level": "L",
-    "size": 169,
-    "version": 38,
-    "maskPattern": 4,
-    "penalties": [21451, 19580, 19816, 20001, 19014, 20179, 19365, 20399],
-    "hash": "ee31837b32ef1b32"
-  },
-  {
-    "value": { "seed": 74, "length": 313 },
-    "level": "H",
-    "size": 93,
-    "version": 19,
-    "maskPattern": 7,
-    "penalties": [6235, 6111, 5647, 5874, 6059, 5921, 5971, 5576],
-    "hash": "9ad40601086c9dfa"
-  },
-  {
-    "value": { "seed": 75, "length": 2012 },
-    "level": "L",
-    "size": 149,
-    "version": 33,
-    "maskPattern": 4,
-    "penalties": [16657, 15508, 15633, 14970, 14827, 15682, 15857, 14916],
-    "hash": "b2113a3294ee5a26"
-  },
-  {
-    "value": { "seed": 75, "length": 152 },
-    "level": "H",
-    "size": 65,
-    "version": 12,
-    "maskPattern": 1,
-    "penalties": [2936, 2590, 3202, 2835, 2938, 3133, 2887, 2963],
-    "hash": "0cca4c99abe68d94"
-  },
-  {
-    "value": { "seed": 76, "length": 2432 },
-    "level": "L",
-    "size": 165,
-    "version": 37,
-    "maskPattern": 4,
-    "penalties": [21523, 18343, 19618, 19124, 17679, 18569, 19047, 19565],
-    "hash": "cdff6b75d0372bb5"
-  },
-  {
-    "value": { "seed": 76, "length": 426 },
-    "level": "H",
-    "size": 105,
-    "version": 22,
-    "maskPattern": 6,
-    "penalties": [7822, 6894, 8118, 7496, 7752, 7355, 6787, 7580],
-    "hash": "9f61aaa6614e2d89"
-  },
-  {
-    "value": { "seed": 77, "length": 922 },
-    "level": "L",
-    "size": 101,
-    "version": 21,
-    "maskPattern": 2,
-    "penalties": [8073, 7062, 6706, 7285, 6719, 7068, 7241, 7227],
-    "hash": "26b75600011385e4"
-  },
-  {
-    "value": { "seed": 77, "length": 883 },
-    "level": "H",
-    "size": 149,
-    "version": 33,
-    "maskPattern": 7,
-    "penalties": [15775, 15360, 15497, 15397, 15345, 15660, 15188, 15150],
-    "hash": "331614d072f82251"
-  },
-  {
-    "value": { "seed": 78, "length": 328 },
-    "level": "L",
-    "size": 65,
-    "version": 12,
-    "maskPattern": 4,
-    "penalties": [3165, 2903, 2845, 2773, 2724, 3135, 3007, 2861],
-    "hash": "ed20fbd339e36329"
-  },
-  {
-    "value": { "seed": 78, "length": 1076 },
-    "level": "H",
-    "size": 165,
-    "version": 37,
-    "maskPattern": 1,
-    "penalties": [19197, 17716, 19516, 18810, 18966, 18850, 18722, 19244],
-    "hash": "381e7c4c333b7e0f"
-  },
-  {
-    "value": { "seed": 79, "length": 1049 },
-    "level": "L",
-    "size": 109,
-    "version": 23,
-    "maskPattern": 4,
-    "penalties": [8924, 8175, 8591, 8135, 7495, 8124, 8221, 8600],
-    "hash": "c81bd7b90a0b0c8e"
-  },
-  {
-    "value": { "seed": 79, "length": 351 },
-    "level": "H",
-    "size": 97,
-    "version": 20,
-    "maskPattern": 7,
-    "penalties": [6379, 6843, 6553, 6652, 6804, 6763, 6326, 6232],
-    "hash": "3f95577a964e30c9"
-  },
-  {
-    "value": { "seed": 80, "length": 1807 },
-    "level": "L",
-    "size": 141,
-    "version": 31,
-    "maskPattern": 3,
-    "penalties": [14665, 13737, 13910, 13125, 13772, 13922, 13498, 13340],
-    "hash": "005d459e84f5ee3e"
-  },
-  {
-    "value": { "seed": 80, "length": 603 },
-    "level": "H",
-    "size": 125,
-    "version": 27,
-    "maskPattern": 5,
-    "penalties": [11474, 11100, 10704, 11212, 11023, 10431, 10671, 11587],
-    "hash": "19d47dd2e5b1ae75"
-  }
+{"value":"a","level":"L","size":21,"version":1,"maskPattern":3,"penalties":[388,485,467,382,479,466,557,399],"hash":"becbf8de70b53eef"},
+{"value":"a","level":"M","size":21,"version":1,"maskPattern":5,"penalties":[526,534,358,412,350,318,423,487],"hash":"20c5121183b26a4b"},
+{"value":"a","level":"Q","size":21,"version":1,"maskPattern":0,"penalties":[256,455,393,491,419,540,447,472],"hash":"41f6b53f4ca482b5"},
+{"value":"a","level":"H","size":21,"version":1,"maskPattern":0,"penalties":[340,470,382,466,606,485,359,418],"hash":"065a337d89595ef5"},
+{"value":"0","level":"L","size":21,"version":1,"maskPattern":3,"penalties":[392,742,417,350,447,597,529,414],"hash":"5741b5bac3eeb90d"},
+{"value":"0","level":"M","size":21,"version":1,"maskPattern":4,"penalties":[406,348,359,355,330,387,385,568],"hash":"39fd928bee9648c1"},
+{"value":"0","level":"Q","size":21,"version":1,"maskPattern":0,"penalties":[334,445,395,469,445,447,418,465],"hash":"4a7275cecabfb044"},
+{"value":"0","level":"H","size":21,"version":1,"maskPattern":4,"penalties":[415,616,449,402,388,629,563,451],"hash":"1e45550c9b9a1f84"},
+{"value":"A","level":"L","size":21,"version":1,"maskPattern":0,"penalties":[335,550,457,400,518,469,483,382],"hash":"8e629321a12bf985"},
+{"value":"A","level":"M","size":21,"version":1,"maskPattern":3,"penalties":[371,471,375,352,428,462,428,547],"hash":"496d01fb163efa09"},
+{"value":"A","level":"Q","size":21,"version":1,"maskPattern":2,"penalties":[390,428,377,451,377,511,397,420],"hash":"7afa985a291db430"},
+{"value":"A","level":"H","size":21,"version":1,"maskPattern":4,"penalties":[341,505,545,435,301,454,545,397],"hash":"c91392998c8a2d04"},
+{"value":" ","level":"L","size":21,"version":1,"maskPattern":0,"penalties":[369,661,459,414,498,545,440,375],"hash":"a23ee73a490cea66"},
+{"value":" ","level":"M","size":21,"version":1,"maskPattern":2,"penalties":[496,453,339,459,397,391,433,486],"hash":"d25df3ef5cf825a2"},
+{"value":" ","level":"Q","size":21,"version":1,"maskPattern":6,"penalties":[433,416,503,459,417,595,342,494],"hash":"ba39b7a0af987c53"},
+{"value":" ","level":"H","size":21,"version":1,"maskPattern":1,"penalties":[358,335,461,559,403,364,487,355],"hash":"528f1918e709c90a"},
+{"value":"01234567890123456789","level":"L","size":21,"version":1,"maskPattern":3,"penalties":[341,552,359,295,499,471,386,365],"hash":"08bcec2839087011"},
+{"value":"01234567890123456789","level":"M","size":21,"version":1,"maskPattern":4,"penalties":[354,407,421,517,327,407,348,469],"hash":"7bd8b9c90e1475e7"},
+{"value":"01234567890123456789","level":"Q","size":21,"version":1,"maskPattern":3,"penalties":[385,522,356,302,366,449,304,330],"hash":"cbf0b601284842b0"},
+{"value":"01234567890123456789","level":"H","size":25,"version":2,"maskPattern":1,"penalties":[494,491,610,527,762,535,600,499],"hash":"473f82f6ba253d78"},
+{"value":"https://qrcode.reactiive.io","level":"L","size":25,"version":2,"maskPattern":3,"penalties":[602,540,653,503,557,647,513,610],"hash":"c51857a7bcf4c0c6"},
+{"value":"https://qrcode.reactiive.io","level":"M","size":29,"version":3,"maskPattern":2,"penalties":[609,730,507,642,687,594,735,638],"hash":"ce5475a42b2e4eb2"},
+{"value":"https://qrcode.reactiive.io","level":"Q","size":29,"version":3,"maskPattern":7,"penalties":[706,788,769,690,571,682,592,552],"hash":"0f2c4821996182a2"},
+{"value":"https://qrcode.reactiive.io","level":"H","size":33,"version":4,"maskPattern":2,"penalties":[910,859,680,957,810,901,733,922],"hash":"a1a6aea39286a13b"},
+{"value":"HTTPS://QRCODE.REACTIIVE.IO/ABC","level":"L","size":25,"version":2,"maskPattern":0,"penalties":[453,621,685,474,538,499,535,471],"hash":"01457800faa458f0"},
+{"value":"HTTPS://QRCODE.REACTIIVE.IO/ABC","level":"M","size":25,"version":2,"maskPattern":2,"penalties":[591,522,503,620,660,525,535,742],"hash":"cca093414be8e1da"},
+{"value":"HTTPS://QRCODE.REACTIIVE.IO/ABC","level":"Q","size":29,"version":3,"maskPattern":3,"penalties":[712,734,726,508,791,783,783,717],"hash":"2240ad421bcdbc5d"},
+{"value":"HTTPS://QRCODE.REACTIIVE.IO/ABC","level":"H","size":29,"version":3,"maskPattern":6,"penalties":[814,733,775,869,750,798,656,861],"hash":"248dd88c5573a778"},
+{"value":"WIFI:S:My Network;T:WPA;P:p@ss;;","level":"L","size":25,"version":2,"maskPattern":0,"penalties":[477,699,637,512,742,564,570,590],"hash":"08e399b0e8cfd1bf"},
+{"value":"WIFI:S:My Network;T:WPA;P:p@ss;;","level":"M","size":29,"version":3,"maskPattern":3,"penalties":[794,699,684,623,763,875,638,762],"hash":"35a8ce55fa21c214"},
+{"value":"WIFI:S:My Network;T:WPA;P:p@ss;;","level":"Q","size":29,"version":3,"maskPattern":1,"penalties":[589,530,606,768,655,674,646,655],"hash":"4565e169be73bf16"},
+{"value":"WIFI:S:My Network;T:WPA;P:p@ss;;","level":"H","size":33,"version":4,"maskPattern":7,"penalties":[894,771,892,780,923,814,855,727],"hash":"03e06e942e56f875"},
+{"value":"mailto:a@b.co?subject=Hi 123","level":"L","size":25,"version":2,"maskPattern":3,"penalties":[538,733,516,417,525,629,568,474],"hash":"f078734dae7c35ab"},
+{"value":"mailto:a@b.co?subject=Hi 123","level":"M","size":29,"version":3,"maskPattern":2,"penalties":[643,787,583,746,843,702,704,863],"hash":"9f9ad3a78547dfca"},
+{"value":"mailto:a@b.co?subject=Hi 123","level":"Q","size":29,"version":3,"maskPattern":7,"penalties":[708,798,686,599,686,670,725,561],"hash":"1a951cf65365b15e"},
+{"value":"mailto:a@b.co?subject=Hi 123","level":"H","size":33,"version":4,"maskPattern":1,"penalties":[864,736,888,833,774,784,765,1031],"hash":"512879069bd136f7"},
+{"value":"","level":"L","error":"No input text"},
+{"value":"","level":"M","error":"No input text"},
+{"value":"","level":"Q","error":"No input text"},
+{"value":"","level":"H","error":"No input text"},
+{"value":"\ud800","level":"L","error":"URI malformed"},
+{"value":"\ud800","level":"M","error":"URI malformed"},
+{"value":"\ud800","level":"Q","error":"URI malformed"},
+{"value":"\ud800","level":"H","error":"URI malformed"},
+{"value":{"repeat":"🐨","count":200},"level":"L","size":97,"version":20,"maskPattern":0,"penalties":[4689,6252,6568,6487,6270,6033,6332,6819],"hash":"3cbdf128f18f7a7f"},
+{"value":{"repeat":"🐨","count":200},"level":"M","size":109,"version":23,"maskPattern":0,"penalties":[6283,8640,7322,7826,9636,7847,7728,8241],"hash":"2ae4f9098ed138c3"},
+{"value":{"repeat":"🐨","count":200},"level":"Q","size":125,"version":27,"maskPattern":0,"penalties":[9086,10752,10414,10268,11149,10552,11029,9997],"hash":"c858712f7081fc54"},
+{"value":{"repeat":"🐨","count":200},"level":"H","size":145,"version":32,"maskPattern":0,"penalties":[12056,13022,15758,13916,14412,14214,13577,14085],"hash":"d8adf6cebcf7a5b4"},
+{"value":{"repeat":"1","count":7089},"level":"L","size":177,"version":40,"maskPattern":2,"penalties":[24553,29989,16237,22068,20234,23311,21891,22093],"hash":"47fce7acd47e69d3"},
+{"value":{"repeat":"1","count":7089},"level":"M","error":"The amount of data is too big to be stored in a QR Code"},
+{"value":{"repeat":"1","count":7089},"level":"Q","error":"The amount of data is too big to be stored in a QR Code"},
+{"value":{"repeat":"1","count":7089},"level":"H","error":"The amount of data is too big to be stored in a QR Code"},
+{"value":{"repeat":"A","count":4296},"level":"L","size":177,"version":40,"maskPattern":2,"penalties":[30602,39916,12608,23022,24003,22332,22093,21578],"hash":"cb13b77a7a71f572"},
+{"value":{"repeat":"A","count":4296},"level":"M","error":"The amount of data is too big to be stored in a QR Code"},
+{"value":{"repeat":"A","count":4296},"level":"Q","error":"The amount of data is too big to be stored in a QR Code"},
+{"value":{"repeat":"A","count":4296},"level":"H","error":"The amount of data is too big to be stored in a QR Code"},
+{"value":{"repeat":"a","count":2953},"level":"L","size":177,"version":40,"maskPattern":1,"penalties":[27160,10341,19732,22084,22671,19235,20081,22775],"hash":"5ba0700979176094"},
+{"value":{"repeat":"a","count":2953},"level":"M","error":"The amount of data is too big to be stored in a QR Code"},
+{"value":{"repeat":"a","count":2953},"level":"Q","error":"The amount of data is too big to be stored in a QR Code"},
+{"value":{"repeat":"a","count":2953},"level":"H","error":"The amount of data is too big to be stored in a QR Code"},
+{"value":{"repeat":"1","count":7090},"level":"L","error":"The amount of data is too big to be stored in a QR Code"},
+{"value":{"repeat":"1","count":7090},"level":"M","error":"The amount of data is too big to be stored in a QR Code"},
+{"value":{"repeat":"1","count":7090},"level":"Q","error":"The amount of data is too big to be stored in a QR Code"},
+{"value":{"repeat":"1","count":7090},"level":"H","error":"The amount of data is too big to be stored in a QR Code"},
+{"value":"hello","level":"h","size":21,"version":1,"maskPattern":0,"penalties":[400,634,469,478,483,406,409,461],"hash":"b00451d6d19abe14"},
+{"value":"hello","level":"high","size":21,"version":1,"maskPattern":0,"penalties":[400,634,469,478,483,406,409,461],"hash":"b00451d6d19abe14"},
+{"value":"hello","level":"Quartile","size":21,"version":1,"maskPattern":0,"penalties":[333,372,411,435,432,510,509,345],"hash":"e1fdee54f7bbe4ca"},
+{"value":"hello","level":"low","size":21,"version":1,"maskPattern":7,"penalties":[365,485,385,328,510,625,464,293],"hash":"16fcb7e586dec1c5"},
+{"value":"hello","level":"invalid","size":21,"version":1,"maskPattern":0,"penalties":[288,400,300,450,540,380,407,359],"hash":"19cb2fb2c3452552"},
+{"value":{"mixed":1},"level":"M","size":45,"version":7,"maskPattern":7,"penalties":[1500,1599,1323,1395,1390,1475,1656,1275],"hash":"b4445e35f593b54b"},
+{"value":{"mixed":2},"level":"Q","size":21,"version":1,"maskPattern":2,"penalties":[466,463,361,544,412,518,494,501],"hash":"8a2c3c5ed4711010"},
+{"value":{"mixed":3},"level":"H","size":53,"version":9,"maskPattern":2,"penalties":[2002,2028,1831,2072,2179,2019,1838,1957],"hash":"35246f44948f12d5"},
+{"value":{"mixed":4},"level":"L","size":21,"version":1,"maskPattern":2,"penalties":[493,556,322,376,531,553,560,348],"hash":"c8fb1c49ae076da4"},
+{"value":{"mixed":5},"level":"M","size":61,"version":11,"maskPattern":0,"penalties":[2359,3121,2364,2413,2698,2880,2882,2860],"hash":"f7a884ca185f1cb9"},
+{"value":{"mixed":6},"level":"Q","size":29,"version":3,"maskPattern":7,"penalties":[619,819,637,791,768,685,659,527],"hash":"37a3087652898842"},
+{"value":{"mixed":7},"level":"H","size":57,"version":10,"maskPattern":4,"penalties":[2319,2246,2252,2401,2041,2070,2180,2203],"hash":"753b9c90b272bfce"},
+{"value":{"mixed":8},"level":"L","size":21,"version":1,"maskPattern":3,"penalties":[370,381,374,353,402,381,364,425],"hash":"e99c38aaed61f0fc"},
+{"value":{"mixed":9},"level":"M","size":57,"version":10,"maskPattern":0,"penalties":[2156,2204,2406,2278,2240,2531,2264,2364],"hash":"42bdaf02806e193e"},
+{"value":{"mixed":10},"level":"Q","size":25,"version":2,"maskPattern":2,"penalties":[561,610,466,530,677,695,558,505],"hash":"1dd8a519ab6c1b05"},
+{"value":{"mixed":11},"level":"H","size":65,"version":12,"maskPattern":1,"penalties":[2758,2513,2802,2789,2828,2654,2791,2621],"hash":"e6faebd4443bc493"},
+{"value":{"mixed":12},"level":"L","size":33,"version":4,"maskPattern":0,"penalties":[680,833,802,821,1009,881,861,915],"hash":"9db69adc95f82c4d"},
+{"value":{"mixed":13},"level":"M","size":41,"version":6,"maskPattern":3,"penalties":[1149,1155,1210,990,1293,1531,1049,1318],"hash":"0ea64de97f9711bc"},
+{"value":{"mixed":14},"level":"Q","size":33,"version":4,"maskPattern":7,"penalties":[879,855,929,906,706,898,734,581],"hash":"d97f3fa450a00e86"},
+{"value":{"mixed":15},"level":"H","size":57,"version":10,"maskPattern":7,"penalties":[2408,2251,2465,2230,2377,2243,2371,2089],"hash":"c0da3782303ad309"},
+{"value":{"mixed":16},"level":"L","size":25,"version":2,"maskPattern":1,"penalties":[561,504,563,543,663,603,570,507],"hash":"bda225c216f545c7"},
+{"value":{"mixed":17},"level":"M","size":53,"version":9,"maskPattern":5,"penalties":[2048,1872,1930,2135,2008,1720,1995,2313],"hash":"745e27e55e77e3a5"},
+{"value":{"mixed":18},"level":"Q","size":29,"version":3,"maskPattern":0,"penalties":[555,743,635,844,780,741,657,712],"hash":"4f6db7e1dcad06c1"},
+{"value":{"mixed":19},"level":"H","size":73,"version":14,"maskPattern":7,"penalties":[3862,3845,3860,3871,4089,4009,4040,3718],"hash":"16cfa372b2805af8"},
+{"value":{"mixed":20},"level":"L","size":25,"version":2,"maskPattern":0,"penalties":[478,619,514,484,545,500,677,530],"hash":"e87f06d8f2a63988"},
+{"value":{"mixed":21},"level":"M","size":53,"version":9,"maskPattern":2,"penalties":[2244,1940,1829,2059,1989,1858,1868,1904],"hash":"7594a2dd2a318cc1"},
+{"value":{"mixed":22},"level":"Q","size":29,"version":3,"maskPattern":3,"penalties":[665,720,812,548,659,811,675,776],"hash":"3e2c5abb5c2ff151"},
+{"value":{"mixed":23},"level":"H","size":81,"version":16,"maskPattern":3,"penalties":[4760,4943,4686,4591,4672,5178,4756,4766],"hash":"55fed5f6dcf04308"},
+{"value":{"mixed":24},"level":"L","size":29,"version":3,"maskPattern":6,"penalties":[693,697,696,662,832,644,579,909],"hash":"ca2f701921ef05b7"},
+{"value":{"mixed":25},"level":"M","size":37,"version":5,"maskPattern":2,"penalties":[1053,1149,936,1061,1072,1086,1033,962],"hash":"882a71340dd764ca"},
+{"value":{"mixed":26},"level":"Q","size":45,"version":7,"maskPattern":3,"penalties":[1242,1548,1347,1214,1690,1364,1358,1365],"hash":"a4d4ebc6ae4b64d8"},
+{"value":{"mixed":27},"level":"H","size":49,"version":8,"maskPattern":3,"penalties":[1900,1879,1738,1734,2005,1768,1799,1853],"hash":"fced817695088b18"},
+{"value":{"mixed":28},"level":"L","size":29,"version":3,"maskPattern":0,"penalties":[608,692,634,730,876,745,689,729],"hash":"9bff6cfa42a2a941"},
+{"value":{"mixed":29},"level":"M","size":57,"version":10,"maskPattern":4,"penalties":[2604,2421,2315,2290,2201,2464,2343,2401],"hash":"68f5274a645e74d5"},
+{"value":{"mixed":30},"level":"Q","size":57,"version":10,"maskPattern":0,"penalties":[1887,2389,2022,2287,2496,2425,2109,2140],"hash":"d06b219c2ba46428"},
+{"value":{"mixed":31},"level":"H","size":57,"version":10,"maskPattern":2,"penalties":[2375,2314,2103,2274,2368,2474,2235,2273],"hash":"5e54ed57674d45ee"},
+{"value":{"mixed":32},"level":"L","size":29,"version":3,"maskPattern":0,"penalties":[639,701,665,662,697,771,645,661],"hash":"22c18a0d022fac7a"},
+{"value":{"mixed":33},"level":"M","size":73,"version":14,"maskPattern":0,"penalties":[3315,3870,3842,4051,4264,3836,3765,3670],"hash":"2887aaa626352ee5"},
+{"value":{"mixed":34},"level":"Q","size":49,"version":8,"maskPattern":7,"penalties":[1801,1963,1770,1866,1909,1894,1905,1625],"hash":"5fc0fe429221e0d1"},
+{"value":{"mixed":35},"level":"H","size":93,"version":19,"maskPattern":3,"penalties":[6216,6117,5945,5774,5874,5937,5939,5861],"hash":"c4f912ce4aee6a2c"},
+{"value":{"mixed":36},"level":"L","size":49,"version":8,"maskPattern":2,"penalties":[1715,1945,1587,1728,1848,1695,1642,1835],"hash":"2e7f258671c5a482"},
+{"value":{"mixed":37},"level":"M","size":41,"version":6,"maskPattern":5,"penalties":[1345,1392,1440,1487,1278,1242,1332,1277],"hash":"155b6f45409eae12"},
+{"value":{"mixed":38},"level":"Q","size":33,"version":4,"maskPattern":4,"penalties":[735,904,1045,938,722,938,780,809],"hash":"e1b1214b90063960"},
+{"value":{"mixed":39},"level":"H","size":57,"version":10,"maskPattern":2,"penalties":[2260,2379,2074,2342,2594,2389,2183,2231],"hash":"fce9775b4dd30318"},
+{"value":{"mixed":40},"level":"L","size":49,"version":8,"maskPattern":2,"penalties":[1753,2049,1680,1725,1739,2110,1981,1919],"hash":"622d404b007c120a"},
+{"value":{"mixed":41},"level":"M","size":21,"version":1,"maskPattern":0,"penalties":[292,468,381,375,545,526,348,504],"hash":"3bfb90ec843996c3"},
+{"value":{"mixed":42},"level":"Q","size":41,"version":6,"maskPattern":3,"penalties":[1311,1347,1365,1078,1439,1588,1307,1290],"hash":"7198ff4c73362ce8"},
+{"value":{"mixed":43},"level":"H","size":29,"version":3,"maskPattern":5,"penalties":[583,730,585,782,666,551,694,686],"hash":"a19df851ab4ecd0e"},
+{"value":{"mixed":44},"level":"L","size":33,"version":4,"maskPattern":4,"penalties":[835,877,763,826,689,731,741,994],"hash":"ac042de2e45e0e38"},
+{"value":{"mixed":45},"level":"M","size":21,"version":1,"maskPattern":4,"penalties":[367,358,291,484,287,382,454,415],"hash":"eb33a42935977d96"},
+{"value":{"mixed":46},"level":"Q","size":41,"version":6,"maskPattern":2,"penalties":[1327,1272,1154,1406,1444,1294,1350,1281],"hash":"c2f708aa2619f443"},
+{"value":{"mixed":47},"level":"H","size":37,"version":5,"maskPattern":3,"penalties":[1228,1005,962,957,1087,1108,1120,997],"hash":"4f4431c115fc4fb3"},
+{"value":{"mixed":48},"level":"L","size":41,"version":6,"maskPattern":2,"penalties":[1345,1211,1016,1269,1339,1243,1192,1181],"hash":"de4bc6e228bc09e0"},
+{"value":{"mixed":49},"level":"M","size":29,"version":3,"maskPattern":0,"penalties":[659,782,788,683,851,810,779,967],"hash":"76a65e78eee52b2d"},
+{"value":{"mixed":50},"level":"Q","size":53,"version":9,"maskPattern":0,"penalties":[1782,2075,1999,2050,1810,2161,1868,1950],"hash":"2d81c3ed2ef99389"},
+{"value":{"mixed":51},"level":"H","size":37,"version":5,"maskPattern":4,"penalties":[1096,979,1036,946,868,1038,1081,966],"hash":"2eb7ab5b85ef1ccc"},
+{"value":{"mixed":52},"level":"L","size":33,"version":4,"maskPattern":7,"penalties":[868,876,813,752,832,750,821,719],"hash":"ca38c4067ab222ad"},
+{"value":{"mixed":53},"level":"M","size":21,"version":1,"maskPattern":0,"penalties":[368,531,464,460,403,469,383,507],"hash":"c11d8adbfecd4b74"},
+{"value":{"mixed":54},"level":"Q","size":57,"version":10,"maskPattern":6,"penalties":[2399,2508,2061,2414,2497,2340,2052,2392],"hash":"38d723a020f09b9a"},
+{"value":{"mixed":55},"level":"H","size":41,"version":6,"maskPattern":2,"penalties":[1242,1422,1003,1187,1290,1147,1165,1230],"hash":"a06356d4f4873802"},
+{"value":{"mixed":56},"level":"L","size":53,"version":9,"maskPattern":2,"penalties":[1804,2348,1745,1996,2088,2229,2151,2025],"hash":"9651ec407043fe34"},
+{"value":{"mixed":57},"level":"M","size":49,"version":8,"maskPattern":4,"penalties":[1718,1778,1684,1785,1666,1950,1880,1735],"hash":"cbf79e7492ef6756"},
+{"value":{"mixed":58},"level":"Q","size":49,"version":8,"maskPattern":2,"penalties":[1757,1766,1611,2034,1853,1741,1849,1858],"hash":"eba8cd2d68a62e11"},
+{"value":{"mixed":59},"level":"H","size":49,"version":8,"maskPattern":6,"penalties":[1779,1952,1923,1825,1954,1904,1716,1835],"hash":"da185b70c0712a5d"},
+{"value":{"mixed":60},"level":"L","size":37,"version":5,"maskPattern":2,"penalties":[967,1047,901,996,1244,1248,1176,1097],"hash":"ddb7667f0604490d"},
+{"value":{"mixed":61},"level":"M","size":41,"version":6,"maskPattern":3,"penalties":[1199,1457,1211,1124,1231,1261,1187,1436],"hash":"df80cea77382a9a4"},
+{"value":{"mixed":62},"level":"Q","size":77,"version":15,"maskPattern":6,"penalties":[3955,3895,4243,4330,4174,4260,3891,4097],"hash":"7d4a78653765bae1"},
+{"value":{"mixed":63},"level":"H","size":65,"version":12,"maskPattern":2,"penalties":[3029,2764,2692,3020,2752,2934,2817,2910],"hash":"e51985bebc6d55f9"},
+{"value":{"mixed":64},"level":"L","size":49,"version":8,"maskPattern":2,"penalties":[1885,2229,1527,1836,1879,1847,1908,1625],"hash":"cde5a7478278c917"},
+{"value":{"mixed":65},"level":"M","size":37,"version":5,"maskPattern":2,"penalties":[1098,1059,835,1080,1030,1026,1056,1058],"hash":"da369db43671568b"},
+{"value":{"mixed":66},"level":"Q","size":41,"version":6,"maskPattern":7,"penalties":[1259,1366,1301,1281,1194,1604,1321,1123],"hash":"8c05c2721ee5ca53"},
+{"value":{"mixed":67},"level":"H","size":37,"version":5,"maskPattern":7,"penalties":[960,1048,1026,1170,1031,1149,954,915],"hash":"e3f6cd7b468d3c95"},
+{"value":{"mixed":68},"level":"L","size":33,"version":4,"maskPattern":2,"penalties":[715,987,699,750,900,1009,880,927],"hash":"a33f9c31a20dfef8"},
+{"value":{"mixed":69},"level":"M","size":29,"version":3,"maskPattern":2,"penalties":[789,814,569,665,605,805,781,661],"hash":"3b55f93ce35b25af"},
+{"value":{"mixed":70},"level":"Q","size":41,"version":6,"maskPattern":6,"penalties":[1042,1176,1359,1238,1191,1078,1039,1209],"hash":"872c37c1428ca1f7"},
+{"value":{"mixed":71},"level":"H","size":73,"version":14,"maskPattern":2,"penalties":[3771,3798,3691,3827,3768,4334,3736,3876],"hash":"2ae1b8682e105168"},
+{"value":{"mixed":72},"level":"L","size":37,"version":5,"maskPattern":7,"penalties":[1023,1118,916,973,1038,1178,1102,914],"hash":"fc07189979dcd3c3"},
+{"value":{"mixed":73},"level":"M","size":37,"version":5,"maskPattern":3,"penalties":[1118,1068,1251,900,1006,1101,1116,986],"hash":"9a2d5494349bad94"},
+{"value":{"mixed":74},"level":"Q","size":21,"version":1,"maskPattern":4,"penalties":[358,534,480,401,348,522,428,491],"hash":"a13828f5c8e6807e"},
+{"value":{"mixed":75},"level":"H","size":53,"version":9,"maskPattern":6,"penalties":[1964,1986,2282,2103,1980,2417,1921,2143],"hash":"e391f7aea0a2c94f"},
+{"value":{"mixed":76},"level":"L","size":21,"version":1,"maskPattern":0,"penalties":[287,525,447,321,426,396,373,401],"hash":"070d8877e28a864d"},
+{"value":{"mixed":77},"level":"M","size":45,"version":7,"maskPattern":4,"penalties":[1458,1782,1371,1395,1362,1464,1436,1578],"hash":"82cfca43cb487fba"},
+{"value":{"mixed":78},"level":"Q","size":25,"version":2,"maskPattern":0,"penalties":[431,590,521,588,667,691,650,566],"hash":"3d53dd4bbe12e6d3"},
+{"value":{"mixed":79},"level":"H","size":61,"version":11,"maskPattern":0,"penalties":[2343,2690,2405,2553,3151,2645,2416,2455],"hash":"755037a7a6cfd4a0"},
+{"value":{"mixed":80},"level":"L","size":41,"version":6,"maskPattern":6,"penalties":[1237,1317,1250,1095,1171,1305,1059,1194],"hash":"3454e2e0189c160b"},
+{"value":{"mixed":81},"level":"M","size":41,"version":6,"maskPattern":2,"penalties":[1407,1374,992,1275,1346,1200,1019,1348],"hash":"11bdd96b54853b5d"},
+{"value":{"mixed":82},"level":"Q","size":41,"version":6,"maskPattern":2,"penalties":[1388,1357,1103,1252,1223,1393,1247,1339],"hash":"82717b027d7a596a"},
+{"value":{"mixed":83},"level":"H","size":57,"version":10,"maskPattern":3,"penalties":[2180,2330,2379,2177,2339,2378,2302,2457],"hash":"a65b28a76b866eb3"},
+{"value":{"mixed":84},"level":"L","size":25,"version":2,"maskPattern":6,"penalties":[534,641,681,648,509,580,470,695],"hash":"a3d752cfc36d9e4f"},
+{"value":{"mixed":85},"level":"M","size":53,"version":9,"maskPattern":2,"penalties":[2024,2178,1665,2223,2248,2088,1859,2328],"hash":"ef6e73a171ac1d7f"},
+{"value":{"mixed":86},"level":"Q","size":29,"version":3,"maskPattern":3,"penalties":[624,751,692,575,669,787,589,638],"hash":"b09a6aaf31df846f"},
+{"value":{"mixed":87},"level":"H","size":57,"version":10,"maskPattern":5,"penalties":[2285,2510,2346,2432,2268,2215,2373,2536],"hash":"0f4c000c599a8cf9"},
+{"value":{"mixed":88},"level":"L","size":25,"version":2,"maskPattern":7,"penalties":[516,570,589,471,521,921,628,470],"hash":"0f7a54d667e1c5f2"},
+{"value":{"mixed":89},"level":"M","size":57,"version":10,"maskPattern":2,"penalties":[2465,2364,2110,2230,2436,2159,2336,2271],"hash":"cb31a52d5a727dfe"},
+{"value":{"mixed":90},"level":"Q","size":29,"version":3,"maskPattern":2,"penalties":[690,827,649,661,714,866,716,759],"hash":"06e866523b3a47cf"},
+{"value":{"mixed":91},"level":"H","size":45,"version":7,"maskPattern":3,"penalties":[1462,1540,1431,1349,1598,1614,1491,1482],"hash":"d68ad15ea0ee27a8"},
+{"value":{"mixed":92},"level":"L","size":33,"version":4,"maskPattern":3,"penalties":[801,956,932,786,786,903,806,808],"hash":"e5f1e7a8dc384bd5"},
+{"value":{"mixed":93},"level":"M","size":49,"version":8,"maskPattern":0,"penalties":[1819,2126,1873,2047,1830,1865,2057,1977],"hash":"8a6aadd5fd30f317"},
+{"value":{"mixed":94},"level":"Q","size":45,"version":7,"maskPattern":0,"penalties":[1287,1624,1379,1651,1532,1354,1571,1367],"hash":"303d4327211be9f5"},
+{"value":{"mixed":95},"level":"H","size":81,"version":16,"maskPattern":3,"penalties":[4789,4740,4726,4403,4720,4657,4728,4805],"hash":"d61f1040b4f51d9d"},
+{"value":{"mixed":96},"level":"L","size":29,"version":3,"maskPattern":5,"penalties":[822,627,653,777,652,607,754,653],"hash":"f03b9416f216f454"},
+{"value":{"mixed":97},"level":"M","size":53,"version":9,"maskPattern":2,"penalties":[2172,2238,1763,2097,2132,2218,2291,2032],"hash":"da341d62ca8cb327"},
+{"value":{"mixed":98},"level":"Q","size":37,"version":5,"maskPattern":4,"penalties":[1122,1104,933,923,866,974,1004,880],"hash":"66cd67ce51d22abd"},
+{"value":{"mixed":99},"level":"H","size":65,"version":12,"maskPattern":2,"penalties":[2725,2733,2623,2687,3230,2821,2951,2769],"hash":"919d481c62f36e54"},
+{"value":{"mixed":100},"level":"L","size":29,"version":3,"maskPattern":2,"penalties":[638,745,585,727,727,680,658,621],"hash":"257516cb52c39593"},
+{"value":{"mixed":101},"level":"M","size":49,"version":8,"maskPattern":2,"penalties":[1801,1889,1679,1818,1998,1783,1916,2084],"hash":"e1479c9bee040020"},
+{"value":{"mixed":102},"level":"Q","size":41,"version":6,"maskPattern":0,"penalties":[1169,1222,1340,1331,1276,1502,1194,1259],"hash":"3c8c006c80506f9c"},
+{"value":{"mixed":103},"level":"H","size":73,"version":14,"maskPattern":0,"penalties":[3426,3542,3859,3901,3830,3816,3866,3772],"hash":"b69a4b72916fa9f9"},
+{"value":{"mixed":104},"level":"L","size":45,"version":7,"maskPattern":3,"penalties":[1526,1355,1376,1333,1445,1464,1446,1411],"hash":"865e3fdd34b23b26"},
+{"value":{"mixed":105},"level":"M","size":45,"version":7,"maskPattern":2,"penalties":[1274,1454,1153,1457,1415,1442,1332,1423],"hash":"3f67a42a3971d7df"},
+{"value":{"mixed":106},"level":"Q","size":33,"version":4,"maskPattern":2,"penalties":[885,920,849,919,896,944,1108,969],"hash":"74b4ad0b09362d5f"},
+{"value":{"mixed":107},"level":"H","size":69,"version":13,"maskPattern":1,"penalties":[3338,3241,3345,3475,3467,3366,3292,3424],"hash":"6cc865a49dacebbd"},
+{"value":{"mixed":108},"level":"L","size":53,"version":9,"maskPattern":3,"penalties":[2140,2545,1944,1702,2007,2191,1932,1846],"hash":"2037e7d42c5748b1"},
+{"value":{"mixed":109},"level":"M","size":21,"version":1,"maskPattern":0,"penalties":[320,450,327,356,335,436,351,476],"hash":"a1e3af50d461b7c9"},
+{"value":{"mixed":110},"level":"Q","size":49,"version":8,"maskPattern":0,"penalties":[1636,1939,1724,1849,1821,1981,1641,1974],"hash":"29befac2a9969576"},
+{"value":{"mixed":111},"level":"H","size":21,"version":1,"maskPattern":1,"penalties":[422,368,435,515,446,434,377,423],"hash":"5ad2a40205c89b54"},
+{"value":{"mixed":112},"level":"L","size":29,"version":3,"maskPattern":4,"penalties":[658,707,668,592,590,672,755,643],"hash":"040403d3399f0f03"},
+{"value":{"mixed":113},"level":"M","size":21,"version":1,"maskPattern":2,"penalties":[460,610,315,401,523,482,513,497],"hash":"e9e4396e74d720d7"},
+{"value":{"mixed":114},"level":"Q","size":41,"version":6,"maskPattern":0,"penalties":[1043,1246,1469,1083,1210,1503,1204,1121],"hash":"0cfb13fef407fb38"},
+{"value":{"mixed":115},"level":"H","size":25,"version":2,"maskPattern":2,"penalties":[612,615,499,779,651,537,510,574],"hash":"f1616a97b8d06311"},
+{"value":{"mixed":116},"level":"L","size":29,"version":3,"maskPattern":0,"penalties":[578,688,775,861,883,812,791,794],"hash":"420ea5f643e9f981"},
+{"value":{"mixed":117},"level":"M","size":21,"version":1,"maskPattern":0,"penalties":[303,462,433,517,402,399,418,450],"hash":"11e6b67422347d94"},
+{"value":{"mixed":118},"level":"Q","size":33,"version":4,"maskPattern":3,"penalties":[880,837,758,718,851,890,876,880],"hash":"fb4384e3f24c1308"},
+{"value":{"mixed":119},"level":"H","size":37,"version":5,"maskPattern":2,"penalties":[1090,981,860,1043,1297,1043,1131,1066],"hash":"4148fc615650125f"},
+{"value":{"mixed":120},"level":"L","size":33,"version":4,"maskPattern":5,"penalties":[845,944,785,723,801,694,717,723],"hash":"186a75340e56731f"},
+{"value":{"mixed":121},"level":"M","size":25,"version":2,"maskPattern":0,"penalties":[453,674,517,591,535,565,508,528],"hash":"4abfd078926871a9"},
+{"value":{"mixed":122},"level":"Q","size":41,"version":6,"maskPattern":7,"penalties":[1067,1259,1134,1110,1382,1284,1206,1032],"hash":"e2dfdc70e1410ea6"},
+{"value":{"mixed":123},"level":"H","size":41,"version":6,"maskPattern":0,"penalties":[1056,1319,1120,1230,1353,1156,1180,1147],"hash":"b104ef6a03b9ebf2"},
+{"value":{"mixed":124},"level":"L","size":37,"version":5,"maskPattern":0,"penalties":[943,1142,983,1112,1046,1084,1009,1161],"hash":"a7e5bb2a58eb4c7f"},
+{"value":{"mixed":125},"level":"M","size":33,"version":4,"maskPattern":2,"penalties":[866,1024,749,862,765,1022,858,844],"hash":"13865458977b9f3c"},
+{"value":{"mixed":126},"level":"Q","size":65,"version":12,"maskPattern":2,"penalties":[3099,3428,2557,2981,3278,2911,2825,3007],"hash":"bb08b592ca02cb67"},
+{"value":{"mixed":127},"level":"H","size":33,"version":4,"maskPattern":1,"penalties":[999,713,903,842,927,875,1025,1152],"hash":"3725bb0577b58ad0"},
+{"value":{"mixed":128},"level":"L","size":37,"version":5,"maskPattern":5,"penalties":[980,1091,908,973,993,874,1014,1146],"hash":"37612c419b6a8536"},
+{"value":{"mixed":129},"level":"M","size":49,"version":8,"maskPattern":2,"penalties":[1926,2124,1513,1682,1906,1989,1812,1920],"hash":"348b7e1573f27cf2"},
+{"value":{"mixed":130},"level":"Q","size":69,"version":13,"maskPattern":7,"penalties":[3291,3713,3243,3224,3528,3353,3214,3054],"hash":"654766fd652f0fa0"},
+{"value":{"mixed":131},"level":"H","size":57,"version":10,"maskPattern":2,"penalties":[2488,2581,2044,2288,2500,2240,2249,2174],"hash":"2532e84c716bb3af"},
+{"value":{"mixed":132},"level":"L","size":37,"version":5,"maskPattern":2,"penalties":[841,986,807,1039,1010,971,903,1095],"hash":"21225f80af5e7117"},
+{"value":{"mixed":133},"level":"M","size":37,"version":5,"maskPattern":6,"penalties":[1095,983,1025,1299,1024,1089,850,1174],"hash":"bffddce1dac7ae9a"},
+{"value":{"mixed":134},"level":"Q","size":61,"version":11,"maskPattern":0,"penalties":[2372,2637,2758,2597,2909,2779,2651,2548],"hash":"cad973b6301f1336"},
+{"value":{"mixed":135},"level":"H","size":53,"version":9,"maskPattern":5,"penalties":[1993,2274,1999,2026,1964,1883,2018,1995],"hash":"2f4c50cb7af6b200"},
+{"value":{"mixed":136},"level":"L","size":33,"version":4,"maskPattern":0,"penalties":[724,935,825,880,909,918,873,737],"hash":"d5d2aba80026686a"},
+{"value":{"mixed":137},"level":"M","size":45,"version":7,"maskPattern":2,"penalties":[1545,1625,1341,1582,1488,1796,1343,1601],"hash":"27d17fc91afbfe43"},
+{"value":{"mixed":138},"level":"Q","size":65,"version":12,"maskPattern":0,"penalties":[2759,3173,3065,3287,2934,3068,2887,2965],"hash":"aa458f049bb909b0"},
+{"value":{"mixed":139},"level":"H","size":49,"version":8,"maskPattern":6,"penalties":[1891,2056,1795,1846,2173,2153,1703,1841],"hash":"23716abdd0f5f8fb"},
+{"value":{"mixed":140},"level":"L","size":61,"version":11,"maskPattern":2,"penalties":[2552,2766,2307,2592,2867,2394,2356,2535],"hash":"6e43a2d892fe6cfe"},
+{"value":{"mixed":141},"level":"M","size":33,"version":4,"maskPattern":0,"penalties":[781,913,852,834,925,1039,849,912],"hash":"42aa2271bd2619b5"},
+{"value":{"mixed":142},"level":"Q","size":53,"version":9,"maskPattern":4,"penalties":[1988,2024,1905,1942,1778,1981,1965,2040],"hash":"c1ee71db61bf7ccd"},
+{"value":{"mixed":143},"level":"H","size":57,"version":10,"maskPattern":2,"penalties":[2316,2596,1974,2386,2623,2241,2217,2480],"hash":"005b8cc3eeeb36cb"},
+{"value":{"mixed":144},"level":"L","size":37,"version":5,"maskPattern":7,"penalties":[963,1048,1215,1059,1100,1168,963,935],"hash":"749e7f2610d65122"},
+{"value":{"mixed":145},"level":"M","size":53,"version":9,"maskPattern":2,"penalties":[2157,2541,1568,2084,1738,1925,1887,1863],"hash":"4d54e13cc3d6cdab"},
+{"value":{"mixed":146},"level":"Q","size":29,"version":3,"maskPattern":6,"penalties":[919,756,765,717,762,761,683,835],"hash":"7ff2a237d1d0146c"},
+{"value":{"mixed":147},"level":"H","size":33,"version":4,"maskPattern":6,"penalties":[957,928,893,888,796,879,730,1015],"hash":"e556d39909fff665"},
+{"value":{"mixed":148},"level":"L","size":21,"version":1,"maskPattern":3,"penalties":[388,485,467,382,479,466,557,399],"hash":"becbf8de70b53eef"},
+{"value":{"mixed":149},"level":"M","size":33,"version":4,"maskPattern":3,"penalties":[990,806,814,753,889,861,763,881],"hash":"1347ba74df6cf0fd"},
+{"value":{"mixed":150},"level":"Q","size":29,"version":3,"maskPattern":6,"penalties":[697,675,653,798,645,695,599,683],"hash":"56f8b2c4780944db"},
+{"value":{"mixed":151},"level":"H","size":49,"version":8,"maskPattern":1,"penalties":[1843,1649,1813,1999,1717,1969,1739,1772],"hash":"24ab2f43aa0d6902"},
+{"value":{"mixed":152},"level":"L","size":37,"version":5,"maskPattern":0,"penalties":[845,997,1040,1180,1144,1127,1097,1035],"hash":"368eb52d4436eab1"},
+{"value":{"mixed":153},"level":"M","size":49,"version":8,"maskPattern":6,"penalties":[1870,1972,1710,1692,1839,1896,1540,1724],"hash":"86f67823aa7e7912"},
+{"value":{"mixed":154},"level":"Q","size":25,"version":2,"maskPattern":6,"penalties":[436,572,607,560,433,587,414,570],"hash":"6f16c6cc81a70295"},
+{"value":{"mixed":155},"level":"H","size":61,"version":11,"maskPattern":6,"penalties":[2787,2743,2670,2946,2761,2689,2487,2797],"hash":"ce0afac0c3fb6d14"},
+{"value":{"mixed":156},"level":"L","size":41,"version":6,"maskPattern":0,"penalties":[974,1373,1135,1178,1400,1179,1447,1057],"hash":"6a2ab9de738359d4"},
+{"value":{"mixed":157},"level":"M","size":45,"version":7,"maskPattern":4,"penalties":[1433,1337,1451,1503,1307,1587,1470,1576],"hash":"0bb3f35994ac490b"},
+{"value":{"mixed":158},"level":"Q","size":41,"version":6,"maskPattern":0,"penalties":[1118,1247,1161,1310,1122,1325,1179,1195],"hash":"d873e6ba5f315b1d"},
+{"value":{"mixed":159},"level":"H","size":73,"version":14,"maskPattern":5,"penalties":[3762,3608,3632,3948,3984,3555,3811,3863],"hash":"79c545e8cf97d88d"},
+{"value":{"mixed":160},"level":"L","size":29,"version":3,"maskPattern":7,"penalties":[633,658,652,731,667,685,763,595],"hash":"0d246e475eb79f09"},
+{"value":{"mixed":161},"level":"M","size":37,"version":5,"maskPattern":7,"penalties":[1070,1206,1117,948,1026,1005,1112,855],"hash":"772d56fb7dbc5fd0"},
+{"value":{"mixed":162},"level":"Q","size":33,"version":4,"maskPattern":3,"penalties":[898,760,740,645,1021,885,818,888],"hash":"5820b75674ba24a0"},
+{"value":{"mixed":163},"level":"H","size":77,"version":15,"maskPattern":2,"penalties":[4460,4119,3882,4443,4245,4192,3964,4025],"hash":"59b643f9a829b3b2"},
+{"value":{"mixed":164},"level":"L","size":37,"version":5,"maskPattern":3,"penalties":[858,1145,1077,837,1389,1113,1158,990],"hash":"16f9c6b6e5d41ac0"},
+{"value":{"mixed":165},"level":"M","size":49,"version":8,"maskPattern":2,"penalties":[2003,1843,1527,1855,1978,1869,1955,1928],"hash":"361a0cd160b4fbca"},
+{"value":{"mixed":166},"level":"Q","size":33,"version":4,"maskPattern":3,"penalties":[806,872,947,762,834,1087,850,856],"hash":"228299a3ac757467"},
+{"value":{"mixed":167},"level":"H","size":53,"version":9,"maskPattern":7,"penalties":[1955,1941,2225,1915,1962,2110,2146,1711],"hash":"3902dbeca968b08b"},
+{"value":{"mixed":168},"level":"L","size":25,"version":2,"maskPattern":7,"penalties":[420,676,521,412,621,734,735,411],"hash":"3657fc00c45e5569"},
+{"value":{"mixed":169},"level":"M","size":37,"version":5,"maskPattern":3,"penalties":[1025,970,1109,946,989,997,957,1071],"hash":"bb1b74b54c533831"},
+{"value":{"mixed":170},"level":"Q","size":33,"version":4,"maskPattern":2,"penalties":[897,791,724,761,826,885,882,876],"hash":"92a2a8ce6e5542af"},
+{"value":{"mixed":171},"level":"H","size":49,"version":8,"maskPattern":1,"penalties":[1748,1642,2031,1724,1787,1901,1813,1694],"hash":"8ae7e8b76b4250a8"},
+{"value":{"mixed":172},"level":"L","size":29,"version":3,"maskPattern":3,"penalties":[611,723,596,490,801,546,738,706],"hash":"ee988bf4e427069a"},
+{"value":{"mixed":173},"level":"M","size":57,"version":10,"maskPattern":2,"penalties":[2695,2507,1954,2619,2315,2442,2197,2560],"hash":"8cb6c6ffb5e79cc5"},
+{"value":{"mixed":174},"level":"Q","size":45,"version":7,"maskPattern":0,"penalties":[1330,1441,1724,1425,1499,1485,1478,1429],"hash":"b1a038ecd17af716"},
+{"value":{"mixed":175},"level":"H","size":77,"version":15,"maskPattern":0,"penalties":[3760,3968,4269,4168,4684,4114,4094,4291],"hash":"cc075d627a55328e"},
+{"value":{"mixed":176},"level":"L","size":49,"version":8,"maskPattern":1,"penalties":[1705,1661,1881,1815,1865,1763,1728,2065],"hash":"55829df2dc1d8e8d"},
+{"value":{"mixed":177},"level":"M","size":53,"version":9,"maskPattern":2,"penalties":[1796,1884,1609,1998,2061,1847,1932,2226],"hash":"f1d786d4dba6605e"},
+{"value":{"mixed":178},"level":"Q","size":65,"version":12,"maskPattern":0,"penalties":[2475,3099,2873,2900,2934,2890,2766,2909],"hash":"9a807bcd347c611b"},
+{"value":{"mixed":179},"level":"H","size":77,"version":15,"maskPattern":2,"penalties":[3997,4144,3964,4322,4234,4122,3977,4081],"hash":"8aaada0a1c47f11b"},
+{"value":{"mixed":180},"level":"L","size":41,"version":6,"maskPattern":3,"penalties":[1227,1289,1266,1023,1177,1257,1275,1198],"hash":"9116f12ab5f4c3c0"},
+{"value":{"mixed":181},"level":"M","size":25,"version":2,"maskPattern":2,"penalties":[477,749,475,481,674,739,513,595],"hash":"31781544900746a5"},
+{"value":{"mixed":182},"level":"Q","size":37,"version":5,"maskPattern":7,"penalties":[960,959,1069,949,1070,1344,940,922],"hash":"29428606a4937d14"},
+{"value":{"mixed":183},"level":"H","size":37,"version":5,"maskPattern":7,"penalties":[1036,1147,953,977,1054,1306,1147,947],"hash":"8200d1231250b51b"},
+{"value":{"mixed":184},"level":"L","size":53,"version":9,"maskPattern":7,"penalties":[1880,2347,2045,1884,2121,2111,2156,1853],"hash":"79fcb5e9375eb2c1"},
+{"value":{"mixed":185},"level":"M","size":29,"version":3,"maskPattern":2,"penalties":[651,649,598,836,694,663,710,778],"hash":"24262c5f45227e3d"},
+{"value":{"mixed":186},"level":"Q","size":45,"version":7,"maskPattern":0,"penalties":[1320,1641,1393,1599,1589,1628,1328,1368],"hash":"3e3bb3c6c8a71cf2"},
+{"value":{"mixed":187},"level":"H","size":25,"version":2,"maskPattern":7,"penalties":[529,485,514,538,622,688,552,439],"hash":"5aa6ca0711c6f276"},
+{"value":{"mixed":188},"level":"L","size":33,"version":4,"maskPattern":2,"penalties":[886,970,735,896,851,964,963,824],"hash":"a61fcdc685924faf"},
+{"value":{"mixed":189},"level":"M","size":21,"version":1,"maskPattern":0,"penalties":[390,425,402,404,419,595,460,463],"hash":"566baa3c2564bb5d"},
+{"value":{"mixed":190},"level":"Q","size":53,"version":9,"maskPattern":0,"penalties":[1963,2027,2098,1980,2144,2169,1986,2059],"hash":"b4cb88cbc078a5e8"},
+{"value":{"mixed":191},"level":"H","size":29,"version":3,"maskPattern":3,"penalties":[701,783,664,625,806,668,737,796],"hash":"79f947eb439aaa83"},
+{"value":{"mixed":192},"level":"L","size":41,"version":6,"maskPattern":1,"penalties":[1262,1050,1145,1178,1158,1164,1271,1350],"hash":"560cc73fa3e7bc77"},
+{"value":{"mixed":193},"level":"M","size":25,"version":2,"maskPattern":2,"penalties":[564,599,499,593,566,675,554,608],"hash":"d13b26d1b724264c"},
+{"value":{"mixed":194},"level":"Q","size":61,"version":11,"maskPattern":6,"penalties":[2687,2900,2641,2912,2791,2740,2444,2630],"hash":"1caf5a87d9da3225"},
+{"value":{"mixed":195},"level":"H","size":29,"version":3,"maskPattern":0,"penalties":[590,603,858,788,645,739,749,622],"hash":"631ddfeccad29bd1"},
+{"value":{"mixed":196},"level":"L","size":41,"version":6,"maskPattern":5,"penalties":[1439,1146,1163,1069,1253,1059,1082,1312],"hash":"d802a66d4ca46080"},
+{"value":{"mixed":197},"level":"M","size":21,"version":1,"maskPattern":0,"penalties":[350,432,358,420,431,431,376,418],"hash":"f274b5cf0468c718"},
+{"value":{"mixed":198},"level":"Q","size":57,"version":10,"maskPattern":4,"penalties":[2315,2480,2202,2335,2140,2443,2280,2478],"hash":"6230b22b4fecc1b7"},
+{"value":{"mixed":199},"level":"H","size":21,"version":1,"maskPattern":2,"penalties":[459,577,308,528,517,354,362,589],"hash":"168fa771c1fef109"},
+{"value":{"mixed":200},"level":"L","size":37,"version":5,"maskPattern":2,"penalties":[990,1093,823,1070,1080,1001,914,1039],"hash":"09f594cf42f8f1bc"},
+{"value":{"mixed":201},"level":"M","size":29,"version":3,"maskPattern":2,"penalties":[768,829,534,686,693,748,574,834],"hash":"1fdd4a7e56a22705"},
+{"value":{"mixed":202},"level":"Q","size":69,"version":13,"maskPattern":5,"penalties":[3311,3599,2944,3442,3572,2865,3077,3261],"hash":"9985f4e5f9745378"},
+{"value":{"mixed":203},"level":"H","size":37,"version":5,"maskPattern":7,"penalties":[1097,1091,991,1130,1058,1099,1296,906],"hash":"173dffeae2896802"},
+{"value":{"mixed":204},"level":"L","size":49,"version":8,"maskPattern":2,"penalties":[1839,2050,1430,1572,1904,1776,1879,1676],"hash":"8d7cca6234ed81ea"},
+{"value":{"mixed":205},"level":"M","size":33,"version":4,"maskPattern":2,"penalties":[905,850,665,895,761,864,764,964],"hash":"e3399b6543a73776"},
+{"value":{"mixed":206},"level":"Q","size":53,"version":9,"maskPattern":4,"penalties":[2034,2171,2010,2097,1884,2510,2064,1945],"hash":"0457c8f881321569"},
+{"value":{"mixed":207},"level":"H","size":25,"version":2,"maskPattern":2,"penalties":[486,546,480,500,590,626,546,488],"hash":"ab1a1562712ecbc0"},
+{"value":{"mixed":208},"level":"L","size":49,"version":8,"maskPattern":2,"penalties":[1913,2097,1680,1886,1815,1885,1710,1768],"hash":"6f99e78bd8d23446"},
+{"value":{"mixed":209},"level":"M","size":33,"version":4,"maskPattern":2,"penalties":[942,727,709,930,842,868,862,846],"hash":"04fbad61556f16b6"},
+{"value":{"mixed":210},"level":"Q","size":61,"version":11,"maskPattern":0,"penalties":[2441,2815,2665,2622,2657,2618,2712,2708],"hash":"4ebee435eabc6647"},
+{"value":{"mixed":211},"level":"H","size":53,"version":9,"maskPattern":2,"penalties":[2187,2221,2043,2131,2153,2161,2119,2101],"hash":"a2580123b5f504ea"},
+{"value":{"mixed":212},"level":"L","size":57,"version":10,"maskPattern":2,"penalties":[2641,2653,1877,2355,2359,2365,2271,2340],"hash":"f4fd75efef0d2a51"},
+{"value":{"mixed":213},"level":"M","size":29,"version":3,"maskPattern":3,"penalties":[683,724,684,604,793,822,653,818],"hash":"0d320159cba73626"},
+{"value":{"mixed":214},"level":"Q","size":61,"version":11,"maskPattern":4,"penalties":[2468,2605,2587,2622,2357,2536,2783,2607],"hash":"a02628c89042ee5f"},
+{"value":{"mixed":215},"level":"H","size":49,"version":8,"maskPattern":3,"penalties":[1779,1951,1738,1731,1805,1946,1771,1954],"hash":"5a71ed91a85e3b42"},
+{"value":{"mixed":216},"level":"L","size":49,"version":8,"maskPattern":3,"penalties":[1775,2015,1683,1629,1754,1891,1673,1771],"hash":"be419e7f71fa0080"},
+{"value":{"mixed":217},"level":"M","size":41,"version":6,"maskPattern":4,"penalties":[1424,1277,1276,1162,1019,1422,1225,1256],"hash":"cfbac5f2eb33566c"},
+{"value":{"mixed":218},"level":"Q","size":21,"version":1,"maskPattern":0,"penalties":[260,479,458,494,489,598,417,397],"hash":"6536fc9efc438ca6"},
+{"value":{"mixed":219},"level":"H","size":49,"version":8,"maskPattern":3,"penalties":[2004,1941,1545,1542,1870,2002,1684,1618],"hash":"e8946c3bc101b70e"},
+{"value":{"mixed":220},"level":"L","size":21,"version":1,"maskPattern":3,"penalties":[364,429,408,340,487,455,416,502],"hash":"281b6e7cea11b4aa"},
+{"value":{"mixed":221},"level":"M","size":37,"version":5,"maskPattern":5,"penalties":[944,1180,1058,1087,1158,844,855,1217],"hash":"b83c1e989f936424"},
+{"value":{"mixed":222},"level":"Q","size":21,"version":1,"maskPattern":6,"penalties":[383,517,403,454,396,476,285,571],"hash":"a4a5bb6da4fb13d6"},
+{"value":{"mixed":223},"level":"H","size":69,"version":13,"maskPattern":2,"penalties":[3363,3626,3202,3304,3568,3297,3224,3398],"hash":"70f2eda907ebed35"},
+{"value":{"mixed":224},"level":"L","size":25,"version":2,"maskPattern":2,"penalties":[559,695,475,575,579,683,485,513],"hash":"eb2903472df857da"},
+{"value":{"mixed":225},"level":"M","size":53,"version":9,"maskPattern":0,"penalties":[1783,1975,2102,1851,1954,2121,2105,2114],"hash":"2a134df66193e357"},
+{"value":{"mixed":226},"level":"Q","size":29,"version":3,"maskPattern":2,"penalties":[595,788,550,605,599,762,777,686],"hash":"ec20f71dbf5185ee"},
+{"value":{"mixed":227},"level":"H","size":77,"version":15,"maskPattern":0,"penalties":[3559,4149,3933,4512,3986,4125,4263,4292],"hash":"ceeb09d0cf4bef1a"},
+{"value":{"mixed":228},"level":"L","size":21,"version":1,"maskPattern":2,"penalties":[407,677,332,343,454,506,510,364],"hash":"72b55534fac281cf"},
+{"value":{"mixed":229},"level":"M","size":49,"version":8,"maskPattern":2,"penalties":[1824,1915,1656,1692,1806,1970,1946,1938],"hash":"73a0b95f5e3f5c97"},
+{"value":{"mixed":230},"level":"Q","size":37,"version":5,"maskPattern":4,"penalties":[994,1228,1066,1236,977,1259,989,1039],"hash":"21505d0bd9762157"},
+{"value":{"mixed":231},"level":"H","size":77,"version":15,"maskPattern":6,"penalties":[4038,4198,4179,4167,4122,4094,3871,4037],"hash":"bfe13c2f4d220333"},
+{"value":{"mixed":232},"level":"L","size":29,"version":3,"maskPattern":4,"penalties":[597,597,588,770,579,677,708,760],"hash":"3fe7d862f36d0bf9"},
+{"value":{"mixed":233},"level":"M","size":45,"version":7,"maskPattern":7,"penalties":[1447,1457,1315,1506,1331,1606,1432,1257],"hash":"b98686e976ebd555"},
+{"value":{"mixed":234},"level":"Q","size":37,"version":5,"maskPattern":0,"penalties":[748,1027,1073,980,1197,897,902,1029],"hash":"809813d1d3a49cca"},
+{"value":{"mixed":235},"level":"H","size":81,"version":16,"maskPattern":6,"penalties":[4613,4616,4530,4802,4596,4822,4507,4812],"hash":"33682b1c425b56ff"},
+{"value":{"mixed":236},"level":"L","size":25,"version":2,"maskPattern":1,"penalties":[534,448,612,710,500,558,512,653],"hash":"c99316017df11bc2"},
+{"value":{"mixed":237},"level":"M","size":61,"version":11,"maskPattern":2,"penalties":[2507,3151,2414,2435,2690,2845,2690,2484],"hash":"a53511c8d34adadd"},
+{"value":{"mixed":238},"level":"Q","size":29,"version":3,"maskPattern":3,"penalties":[630,803,690,592,697,1076,654,700],"hash":"ad272a447a8a9a55"},
+{"value":{"mixed":239},"level":"H","size":69,"version":13,"maskPattern":6,"penalties":[3306,3221,3276,3300,3416,3323,3012,3656],"hash":"51b449bf91cb8e4c"},
+{"value":{"mixed":240},"level":"L","size":37,"version":5,"maskPattern":6,"penalties":[989,1094,1093,926,944,1148,907,1052],"hash":"374213109f22b868"},
+{"value":{"mixed":241},"level":"M","size":41,"version":6,"maskPattern":3,"penalties":[1185,1381,1028,991,1151,1440,1074,1124],"hash":"555af923c5fa1d9d"},
+{"value":{"mixed":242},"level":"Q","size":41,"version":6,"maskPattern":0,"penalties":[1097,1329,1289,1296,1202,1305,1121,1336],"hash":"d66edc50f38a88bc"},
+{"value":{"mixed":243},"level":"H","size":81,"version":16,"maskPattern":2,"penalties":[4617,4610,4245,4814,4858,4612,4912,4583],"hash":"b78ba2c04004ebac"},
+{"value":{"mixed":244},"level":"L","size":33,"version":4,"maskPattern":7,"penalties":[801,959,740,842,946,818,790,698],"hash":"7923f35cc5647336"},
+{"value":{"mixed":245},"level":"M","size":33,"version":4,"maskPattern":4,"penalties":[867,768,920,758,747,1018,862,882],"hash":"7dbb26fb9cb89444"},
+{"value":{"mixed":246},"level":"Q","size":65,"version":12,"maskPattern":7,"penalties":[2637,3300,2820,2954,3030,3128,3133,2630],"hash":"7431f6d8bdbb82ff"},
+{"value":{"mixed":247},"level":"H","size":85,"version":17,"maskPattern":4,"penalties":[5244,5141,5064,4951,4569,4875,4814,5080],"hash":"e14ac894940cf590"},
+{"value":{"mixed":248},"level":"L","size":45,"version":7,"maskPattern":3,"penalties":[1349,1723,1455,1253,1373,1389,1554,1264],"hash":"38df9f07928209e1"},
+{"value":{"mixed":249},"level":"M","size":45,"version":7,"maskPattern":3,"penalties":[1399,1555,1457,1393,1484,1486,1525,1516],"hash":"72892d672520f3cc"},
+{"value":{"mixed":250},"level":"Q","size":49,"version":8,"maskPattern":2,"penalties":[1960,1897,1586,1853,1746,1973,1712,1847],"hash":"5c0f3d5ed9ff3860"},
+{"value":{"mixed":251},"level":"H","size":65,"version":12,"maskPattern":6,"penalties":[2888,2950,3006,3140,3065,2814,2743,2765],"hash":"5ff27c80c1cb4d1b"},
+{"value":{"mixed":252},"level":"L","size":45,"version":7,"maskPattern":2,"penalties":[1539,1622,1215,1389,1498,1793,1575,1408],"hash":"b6894d9967a200ac"},
+{"value":{"mixed":253},"level":"M","size":25,"version":2,"maskPattern":2,"penalties":[538,653,493,711,556,522,592,748],"hash":"c73eedfa64c85c7c"},
+{"value":{"mixed":254},"level":"Q","size":69,"version":13,"maskPattern":0,"penalties":[2982,3090,3226,3484,3538,3284,3298,3345],"hash":"6357998b86007e9d"},
+{"value":{"mixed":255},"level":"H","size":33,"version":4,"maskPattern":7,"penalties":[865,791,720,980,984,1065,822,678],"hash":"71b29836f0c75ef5"},
+{"value":{"mixed":256},"level":"L","size":57,"version":10,"maskPattern":2,"penalties":[2114,2741,2072,2315,2525,2237,2141,2289],"hash":"f41d49b3973786ee"},
+{"value":{"mixed":257},"level":"M","size":21,"version":1,"maskPattern":6,"penalties":[534,469,440,514,472,448,361,673],"hash":"3a007542175a2e9f"},
+{"value":{"mixed":258},"level":"Q","size":49,"version":8,"maskPattern":7,"penalties":[1817,1819,1848,1907,1798,2006,1685,1667],"hash":"78e6c31c5ecdb5c4"},
+{"value":{"mixed":259},"level":"H","size":29,"version":3,"maskPattern":3,"penalties":[628,620,614,595,724,673,649,685],"hash":"3144820cafd33413"},
+{"value":{"mixed":260},"level":"L","size":33,"version":4,"maskPattern":0,"penalties":[668,1115,842,762,1009,871,872,846],"hash":"9475004e83dc1841"},
+{"value":{"mixed":261},"level":"M","size":29,"version":3,"maskPattern":0,"penalties":[522,651,523,573,789,750,634,557],"hash":"c6da20efbf426e42"},
+{"value":{"mixed":262},"level":"Q","size":37,"version":5,"maskPattern":7,"penalties":[985,1035,849,985,905,1222,853,847],"hash":"ee9ae74ad219f262"},
+{"value":{"mixed":263},"level":"H","size":45,"version":7,"maskPattern":3,"penalties":[1489,1742,1381,1379,1702,1446,1475,1539],"hash":"3f77d25e8933d9f7"},
+{"value":{"mixed":264},"level":"L","size":37,"version":5,"maskPattern":3,"penalties":[1056,1119,995,833,869,1206,1071,992],"hash":"813fcc8f41ed98df"},
+{"value":{"mixed":265},"level":"M","size":21,"version":1,"maskPattern":2,"penalties":[458,441,346,549,437,508,459,459],"hash":"18b6978d24bfd4e7"},
+{"value":{"mixed":266},"level":"Q","size":41,"version":6,"maskPattern":6,"penalties":[1160,1104,1141,1326,1102,1257,1101,1367],"hash":"20784061f76bee89"},
+{"value":{"mixed":267},"level":"H","size":61,"version":11,"maskPattern":7,"penalties":[2872,2481,2571,2979,2834,2659,2716,2368],"hash":"c71cf98c02e157aa"},
+{"value":{"mixed":268},"level":"L","size":41,"version":6,"maskPattern":6,"penalties":[1182,1279,1235,1139,1368,1426,1018,1092],"hash":"1ac6eee6ad2f6033"},
+{"value":{"mixed":269},"level":"M","size":29,"version":3,"maskPattern":1,"penalties":[632,559,746,625,778,708,789,774],"hash":"5beae6c7fbeb9728"},
+{"value":{"mixed":270},"level":"Q","size":69,"version":13,"maskPattern":0,"penalties":[3137,3572,3198,3418,3228,3319,3266,3570],"hash":"f8d205173d067411"},
+{"value":{"mixed":271},"level":"H","size":21,"version":1,"maskPattern":5,"penalties":[415,476,513,483,463,396,398,519],"hash":"c896a972397fc1b4"},
+{"value":{"mixed":272},"level":"L","size":37,"version":5,"maskPattern":6,"penalties":[999,1061,983,1020,1137,1148,968,1115],"hash":"cea198359d5a5819"},
+{"value":{"mixed":273},"level":"M","size":29,"version":3,"maskPattern":0,"penalties":[619,691,629,811,828,636,663,779],"hash":"6849b7b5e61c8beb"},
+{"value":{"mixed":274},"level":"Q","size":77,"version":15,"maskPattern":6,"penalties":[3794,4241,4015,4245,4081,3983,3733,3749],"hash":"a1421ced68af2c5e"},
+{"value":{"mixed":275},"level":"H","size":77,"version":15,"maskPattern":1,"penalties":[3902,3728,3980,4018,4212,4090,4245,4111],"hash":"d3f950831a3069c5"},
+{"value":{"mixed":276},"level":"L","size":37,"version":5,"maskPattern":0,"penalties":[733,1029,973,1001,1126,902,1147,930],"hash":"a058ed19a444802f"},
+{"value":{"mixed":277},"level":"M","size":33,"version":4,"maskPattern":0,"penalties":[756,981,816,926,1088,1055,901,1003],"hash":"e91afe675e5e73c4"},
+{"value":{"mixed":278},"level":"Q","size":49,"version":8,"maskPattern":0,"penalties":[1717,1908,1754,1890,1725,1882,1930,1861],"hash":"6a9dbe4f58dc557e"},
+{"value":{"mixed":279},"level":"H","size":41,"version":6,"maskPattern":2,"penalties":[1429,1359,1034,1353,1198,1209,1271,1263],"hash":"535826e280f34688"},
+{"value":{"mixed":280},"level":"L","size":57,"version":10,"maskPattern":0,"penalties":[2028,2839,2171,2177,2344,2631,2351,2199],"hash":"bbb790f976c0bd21"},
+{"value":{"mixed":281},"level":"M","size":29,"version":3,"maskPattern":1,"penalties":[712,573,659,811,681,784,711,787],"hash":"0f5c69851b694efc"},
+{"value":{"mixed":282},"level":"Q","size":65,"version":12,"maskPattern":3,"penalties":[3187,2954,2889,2724,3143,2890,2891,3113],"hash":"121f39033804acfc"},
+{"value":{"mixed":283},"level":"H","size":53,"version":9,"maskPattern":1,"penalties":[2041,1884,2110,2054,2154,2243,2131,2129],"hash":"19e034d3e43e005e"},
+{"value":{"mixed":284},"level":"L","size":49,"version":8,"maskPattern":0,"penalties":[1393,1772,1738,1707,1931,1834,1861,1624],"hash":"b3a57680a9228426"},
+{"value":{"mixed":285},"level":"M","size":25,"version":2,"maskPattern":0,"penalties":[443,460,519,535,502,752,595,560],"hash":"58ac47d2f6cf96d4"},
+{"value":{"mixed":286},"level":"Q","size":65,"version":12,"maskPattern":4,"penalties":[2932,3180,2844,3181,2808,3066,2814,3279],"hash":"d71e1dc66fc79c12"},
+{"value":{"mixed":287},"level":"H","size":25,"version":2,"maskPattern":3,"penalties":[654,480,496,437,612,467,481,607],"hash":"e47003a6996d018b"},
+{"value":{"mixed":288},"level":"L","size":57,"version":10,"maskPattern":2,"penalties":[2219,2580,2056,2247,2399,2247,2200,2466],"hash":"0f6426abe747e111"},
+{"value":{"mixed":289},"level":"M","size":37,"version":5,"maskPattern":6,"penalties":[1107,1244,1047,1055,1087,1115,931,1390],"hash":"c2d3f8b4e593b288"},
+{"value":{"mixed":290},"level":"Q","size":21,"version":1,"maskPattern":0,"penalties":[380,434,523,524,561,560,382,412],"hash":"625e6440c63fd7ca"},
+{"value":{"mixed":291},"level":"H","size":37,"version":5,"maskPattern":6,"penalties":[1051,1062,913,1156,1178,1042,859,1256],"hash":"86ed3364b84245eb"},
+{"value":{"mixed":292},"level":"L","size":21,"version":1,"maskPattern":7,"penalties":[475,428,483,379,505,414,437,341],"hash":"e277d1db10cd23b8"},
+{"value":{"mixed":293},"level":"M","size":49,"version":8,"maskPattern":7,"penalties":[1862,1840,1701,1861,1782,1884,1997,1607],"hash":"2e67ccc413548311"},
+{"value":{"mixed":294},"level":"Q","size":25,"version":2,"maskPattern":4,"penalties":[526,532,539,487,481,656,629,577],"hash":"8fef4d00ce36d063"},
+{"value":{"mixed":295},"level":"H","size":61,"version":11,"maskPattern":4,"penalties":[2401,2561,2469,2556,2323,2650,2644,2403],"hash":"985582e4aabeebbe"},
+{"value":{"mixed":296},"level":"L","size":21,"version":1,"maskPattern":7,"penalties":[463,474,490,326,378,393,370,301],"hash":"45ea41cce9d51f00"},
+{"value":{"mixed":297},"level":"M","size":45,"version":7,"maskPattern":2,"penalties":[1409,1441,1221,1444,1470,1253,1405,1745],"hash":"6618a28d8373d4a5"},
+{"value":{"mixed":298},"level":"Q","size":37,"version":5,"maskPattern":3,"penalties":[1060,1134,1057,993,1014,1081,1095,999],"hash":"a42539654a1149ab"},
+{"value":{"mixed":299},"level":"H","size":41,"version":6,"maskPattern":2,"penalties":[1117,1299,1113,1178,1584,1127,1148,1179],"hash":"6c61c6706b4b7a9f"},
+{"value":{"mixed":300},"level":"L","size":25,"version":2,"maskPattern":1,"penalties":[559,484,522,605,587,538,549,591],"hash":"8802b9f84bec8644"},
+{"value":{"seed":1,"length":1764},"level":"L","size":141,"version":31,"maskPattern":4,"penalties":[15019,13002,14040,13749,12918,13817,13559,13840],"hash":"c82591df7005f0bc"},
+{"value":{"seed":1,"length":381},"level":"H","size":97,"version":20,"maskPattern":3,"penalties":[6466,6597,6341,6201,6802,6656,6574,7031],"hash":"a99fbd2948e95d38"},
+{"value":{"seed":2,"length":1602},"level":"L","size":133,"version":29,"maskPattern":1,"penalties":[13853,11422,12543,12152,12090,12443,12782,12493],"hash":"c7fd68f95a03d07b"},
+{"value":{"seed":2,"length":1257},"level":"H","size":177,"version":40,"maskPattern":4,"penalties":[22769,21454,22316,21824,21236,21606,22224,21809],"hash":"5b35f5684238d3da"},
+{"value":{"seed":3,"length":1985},"level":"L","size":149,"version":33,"maskPattern":4,"penalties":[16908,14793,15584,15296,14460,15269,15692,14929],"hash":"09fd557b7db6a05e"},
+{"value":{"seed":3,"length":674},"level":"H","size":133,"version":29,"maskPattern":6,"penalties":[13296,12390,12182,11947,12438,12027,11421,12707],"hash":"f1d93920787fad7a"},
+{"value":{"seed":4,"length":2569},"level":"L","size":169,"version":38,"maskPattern":5,"penalties":[21566,19202,20531,20255,19958,19060,20439,20494],"hash":"a33df847b4eb71a6"},
+{"value":{"seed":4,"length":1166},"level":"H","size":173,"version":39,"maskPattern":1,"penalties":[21208,20721,21917,20964,20961,20951,20757,22033],"hash":"6bf2fa1549050b4e"},
+{"value":{"seed":5,"length":221},"level":"L","size":53,"version":9,"maskPattern":3,"penalties":[2356,1884,2007,1728,1852,1966,1942,1895],"hash":"85ea32691508973a"},
+{"value":{"seed":5,"length":1270},"level":"H","size":177,"version":40,"maskPattern":4,"penalties":[22933,21682,21629,22595,21541,21734,21916,22240],"hash":"dca2d4b9d9a23f70"},
+{"value":{"seed":6,"length":620},"level":"L","size":85,"version":17,"maskPattern":6,"penalties":[5289,5113,5229,5340,5085,5285,4830,5027],"hash":"647eeac06c3ab438"},
+{"value":{"seed":6,"length":247},"level":"H","size":81,"version":16,"maskPattern":1,"penalties":[4747,4335,4840,4679,4864,4954,4728,4683],"hash":"753b5b97ce547f3c"},
+{"value":{"seed":7,"length":2932},"level":"L","size":177,"version":40,"maskPattern":1,"penalties":[24217,20784,22813,21902,21745,21582,21872,22480],"hash":"22f408629f48da5a"},
+{"value":{"seed":7,"length":76},"level":"H","size":49,"version":8,"maskPattern":6,"penalties":[2117,1839,1708,1815,1945,2036,1687,1934],"hash":"6ed6ca8a87d96e34"},
+{"value":{"seed":8,"length":1135},"level":"L","size":113,"version":24,"maskPattern":4,"penalties":[9425,8559,9419,8688,8494,8809,9280,8854],"hash":"8c0f18330404ac31"},
+{"value":{"seed":8,"length":39},"level":"H","size":37,"version":5,"maskPattern":2,"penalties":[1046,1061,920,1056,1062,1220,1132,1103],"hash":"600729acdf1c8a2e"},
+{"value":{"seed":9,"length":213},"level":"L","size":53,"version":9,"maskPattern":1,"penalties":[2058,1751,1933,1858,1869,1905,1885,2123],"hash":"3919d3823fbeaf24"},
+{"value":{"seed":9,"length":858},"level":"H","size":149,"version":33,"maskPattern":1,"penalties":[16346,15044,15771,15383,15874,15047,15486,15264],"hash":"26b30bbcf6278275"},
+{"value":{"seed":10,"length":2729},"level":"L","size":173,"version":39,"maskPattern":3,"penalties":[22577,20593,21445,20518,20526,20709,20562,21455],"hash":"6f15651445b64837"},
+{"value":{"seed":10,"length":1031},"level":"H","size":161,"version":36,"maskPattern":5,"penalties":[19181,18163,17810,18291,18112,17243,17809,17815],"hash":"9a4d4eeb83daa876"},
+{"value":{"seed":11,"length":2189},"level":"L","size":157,"version":35,"maskPattern":1,"penalties":[18644,16028,17265,16212,16951,16669,17148,17177],"hash":"164f86103bb110f5"},
+{"value":{"seed":11,"length":82},"level":"H","size":49,"version":8,"maskPattern":5,"penalties":[1943,1858,1941,1917,1897,1821,1888,2049],"hash":"9861a78925fa85f7"},
+{"value":{"seed":12,"length":1826},"level":"L","size":141,"version":31,"maskPattern":1,"penalties":[15178,12968,13985,13758,13224,13240,14125,13638],"hash":"74d9df67036dac56"},
+{"value":{"seed":12,"length":632},"level":"H","size":129,"version":28,"maskPattern":3,"penalties":[11731,11590,11854,11240,11303,12250,11527,11634],"hash":"f6a0489c2d6747b5"},
+{"value":{"seed":13,"length":603},"level":"L","size":85,"version":17,"maskPattern":4,"penalties":[5488,4998,5165,4922,4750,4908,5121,5025],"hash":"5b32969e68ff3749"},
+{"value":{"seed":13,"length":1136},"level":"H","size":169,"version":38,"maskPattern":1,"penalties":[20623,18871,21005,19915,19153,19487,19565,20568],"hash":"b214e70ccab7704e"},
+{"value":{"seed":14,"length":204},"level":"L","size":53,"version":9,"maskPattern":2,"penalties":[2354,2041,1923,1975,1947,2058,2019,2297],"hash":"7f8c97511c4d45eb"},
+{"value":{"seed":14,"length":1022},"level":"H","size":161,"version":36,"maskPattern":1,"penalties":[18985,17110,18155,18939,18065,17408,18029,19091],"hash":"b5432e0d2a7670cf"},
+{"value":{"seed":15,"length":433},"level":"L","size":73,"version":14,"maskPattern":3,"penalties":[3742,3592,3957,3423,3604,3890,3895,3729],"hash":"9533c29b128338e4"},
+{"value":{"seed":15,"length":35},"level":"H","size":37,"version":5,"maskPattern":6,"penalties":[1019,1069,1148,1093,1200,1049,925,1077],"hash":"21fe334a57a066e2"},
+{"value":{"seed":16,"length":2116},"level":"L","size":153,"version":34,"maskPattern":4,"penalties":[17291,15536,17331,16020,15345,16211,16457,16103],"hash":"aecd953ae01263f1"},
+{"value":{"seed":16,"length":941},"level":"H","size":153,"version":34,"maskPattern":1,"penalties":[16869,15872,16373,16445,15998,16361,16320,17070],"hash":"9b69dd7f0f1da825"},
+{"value":{"seed":17,"length":2550},"level":"L","size":165,"version":37,"maskPattern":1,"penalties":[20503,17509,19468,19290,18416,18409,19006,19681],"hash":"f7118c8ef3bc1459"},
+{"value":{"seed":17,"length":1041},"level":"H","size":161,"version":36,"maskPattern":5,"penalties":[19133,16883,17913,18477,17518,16842,17998,18205],"hash":"2cf65cce527d4d77"},
+{"value":{"seed":18,"length":2469},"level":"L","size":165,"version":37,"maskPattern":4,"penalties":[21719,18282,19000,19108,18195,18952,19094,20006],"hash":"c09cac2eff5f6f66"},
+{"value":{"seed":18,"length":946},"level":"H","size":153,"version":34,"maskPattern":1,"penalties":[16983,15554,16600,15781,15714,15800,16062,16429],"hash":"d4931311b4bae5e7"},
+{"value":{"seed":19,"length":107},"level":"L","size":41,"version":6,"maskPattern":7,"penalties":[1337,1300,1203,1193,1317,1238,1318,1165],"hash":"b759ed0dcca8bcfc"},
+{"value":{"seed":19,"length":432},"level":"H","size":105,"version":22,"maskPattern":4,"penalties":[8196,7643,7694,7917,7173,7260,7535,7994],"hash":"549a00cce6d8ce71"},
+{"value":{"seed":20,"length":444},"level":"L","size":73,"version":14,"maskPattern":3,"penalties":[4177,3785,3805,3494,3620,3844,3575,3755],"hash":"3d3547863661fcad"},
+{"value":{"seed":20,"length":839},"level":"H","size":145,"version":32,"maskPattern":1,"penalties":[15183,14115,14420,14581,14850,14449,14867,14495],"hash":"3de1ecb356927831"},
+{"value":{"seed":21,"length":1132},"level":"L","size":113,"version":24,"maskPattern":3,"penalties":[9592,8592,8823,8311,8680,8537,9279,8673],"hash":"3500ba98570b127e"},
+{"value":{"seed":21,"length":382},"level":"H","size":97,"version":20,"maskPattern":1,"penalties":[6969,6367,6814,6549,6888,6521,6760,6711],"hash":"d4a43bcd5375d7e5"},
+{"value":{"seed":22,"length":2334},"level":"L","size":161,"version":36,"maskPattern":1,"penalties":[19883,16815,18831,17894,17721,17816,18618,18197],"hash":"840939d44b3c91f6"},
+{"value":{"seed":22,"length":399},"level":"H","size":101,"version":21,"maskPattern":3,"penalties":[7475,6823,7332,6791,7098,6885,6839,7221],"hash":"ac5b56654d02c761"},
+{"value":{"seed":23,"length":2583},"level":"L","size":169,"version":38,"maskPattern":1,"penalties":[22616,18737,20916,19888,19135,19174,20169,20415],"hash":"6b3ae0c641658a3c"},
+{"value":{"seed":23,"length":711},"level":"H","size":137,"version":30,"maskPattern":7,"penalties":[13756,13332,12712,13032,12925,12979,12736,12622],"hash":"c8890d49fdced468"},
+{"value":{"seed":24,"length":593},"level":"L","size":85,"version":17,"maskPattern":1,"penalties":[5557,4680,4995,4890,5181,5143,5185,5224],"hash":"b2c540233996616c"},
+{"value":{"seed":24,"length":589},"level":"H","size":121,"version":26,"maskPattern":1,"penalties":[10408,9435,10122,9863,10130,9832,9916,9685],"hash":"ffdc55056924e18d"},
+{"value":{"seed":25,"length":1696},"level":"L","size":137,"version":30,"maskPattern":1,"penalties":[13658,12338,13125,12558,12471,13221,12788,13185],"hash":"a38d13a9b90a6caa"},
+{"value":{"seed":25,"length":529},"level":"H","size":117,"version":25,"maskPattern":3,"penalties":[9468,9471,10611,9174,9497,9867,9820,9802],"hash":"dad36643cf0b1274"},
+{"value":{"seed":26,"length":881},"level":"L","size":101,"version":21,"maskPattern":5,"penalties":[7634,7190,7000,7030,6833,6624,7468,7488],"hash":"5642446677b37c01"},
+{"value":{"seed":26,"length":1070},"level":"H","size":165,"version":37,"maskPattern":3,"penalties":[19448,18712,19172,18403,18899,18416,18808,19551],"hash":"d1b429b848f8522d"},
+{"value":{"seed":27,"length":1775},"level":"L","size":141,"version":31,"maskPattern":7,"penalties":[14974,13282,13971,13643,13585,13337,13862,13272],"hash":"a34bee4a1ae10d1a"},
+{"value":{"seed":27,"length":450},"level":"H","size":109,"version":23,"maskPattern":6,"penalties":[8504,7879,8329,8099,7935,8162,7833,8177],"hash":"1174cd498c3a0ef0"},
+{"value":{"seed":28,"length":2119},"level":"L","size":153,"version":34,"maskPattern":1,"penalties":[17101,15402,17248,15663,15454,16264,16008,16593],"hash":"79dec902f8b0e8ec"},
+{"value":{"seed":28,"length":748},"level":"H","size":141,"version":31,"maskPattern":2,"penalties":[14155,13651,13368,13416,14276,13530,13587,14011],"hash":"419e801b961a8963"},
+{"value":{"seed":29,"length":1180},"level":"L","size":117,"version":25,"maskPattern":4,"penalties":[10222,9268,9981,9436,8174,9385,9714,10023],"hash":"7426f7e9bf60bca3"},
+{"value":{"seed":29,"length":731},"level":"H","size":137,"version":30,"maskPattern":1,"penalties":[13491,12670,12941,12672,12831,12694,13097,12728],"hash":"7a3b0242518e0392"},
+{"value":{"seed":30,"length":701},"level":"L","size":89,"version":18,"maskPattern":3,"penalties":[5745,5559,5578,5137,5226,5802,5762,5700],"hash":"082d8e63659bbfe0"},
+{"value":{"seed":30,"length":110},"level":"H","size":57,"version":10,"maskPattern":1,"penalties":[2433,2061,2314,2284,2261,2189,2408,2430],"hash":"c13e0cd1533e4455"},
+{"value":{"seed":31,"length":1747},"level":"L","size":141,"version":31,"maskPattern":1,"penalties":[15669,12854,14510,13981,13300,14100,14274,14857],"hash":"c243ab25eae6ef06"},
+{"value":{"seed":31,"length":669},"level":"H","size":133,"version":29,"maskPattern":1,"penalties":[12407,11507,12500,12075,12420,12767,12292,12268],"hash":"47b91ab7a9535534"},
+{"value":{"seed":32,"length":1343},"level":"L","size":121,"version":26,"maskPattern":5,"penalties":[10931,9530,9945,9638,10223,9459,9928,10451],"hash":"abedacc7866c0afa"},
+{"value":{"seed":32,"length":376},"level":"H","size":97,"version":20,"maskPattern":5,"penalties":[6540,6132,7017,6423,6119,6111,6309,6468],"hash":"608843cb6c38fdab"},
+{"value":{"seed":33,"length":1335},"level":"L","size":121,"version":26,"maskPattern":1,"penalties":[10604,9460,10493,9850,10277,9870,10272,10469],"hash":"9aac39f7c27e56a4"},
+{"value":{"seed":33,"length":102},"level":"H","size":57,"version":10,"maskPattern":6,"penalties":[2493,2356,2114,2613,2622,2299,2083,2157],"hash":"7e9e00e9ea16018c"},
+{"value":{"seed":34,"length":2278},"level":"L","size":157,"version":35,"maskPattern":1,"penalties":[18464,16322,18149,16888,16504,16876,17362,17434],"hash":"575053d46a2f4914"},
+{"value":{"seed":34,"length":258},"level":"H","size":85,"version":17,"maskPattern":3,"penalties":[5053,5018,5076,4912,5112,5232,4934,5213],"hash":"84482923c94305e4"},
+{"value":{"seed":35,"length":357},"level":"L","size":65,"version":12,"maskPattern":4,"penalties":[3605,2817,2904,2923,2441,2884,2817,3058],"hash":"8db0393774c31305"},
+{"value":{"seed":35,"length":1083},"level":"H","size":165,"version":37,"maskPattern":1,"penalties":[19486,18235,20601,18741,18266,18846,18873,19033],"hash":"b61587f3e9275c0a"},
+{"value":{"seed":36,"length":1784},"level":"L","size":141,"version":31,"maskPattern":1,"penalties":[15292,12964,13937,13491,12973,13761,13781,14340],"hash":"b4c516ea0a00d08d"},
+{"value":{"seed":36,"length":787},"level":"H","size":141,"version":31,"maskPattern":1,"penalties":[14391,12924,14721,13682,13587,13860,14105,13426],"hash":"b1aabedd17b5bb47"},
+{"value":{"seed":37,"length":2753},"level":"L","size":173,"version":39,"maskPattern":1,"penalties":[23049,20125,20302,20464,20243,20358,21465,21486],"hash":"c557b9bf26ea39a7"},
+{"value":{"seed":37,"length":317},"level":"H","size":93,"version":19,"maskPattern":2,"penalties":[5692,6251,5413,5992,5885,5680,5958,5718],"hash":"ef41d05d0357e327"},
+{"value":{"seed":38,"length":1419},"level":"L","size":125,"version":27,"maskPattern":1,"penalties":[11454,10110,11537,10581,10806,10959,10853,10799],"hash":"b734f8d4326ee47f"},
+{"value":{"seed":38,"length":501},"level":"H","size":113,"version":24,"maskPattern":3,"penalties":[9337,8754,8990,8623,8759,8763,8721,8864],"hash":"fcdb2d03d54311f3"},
+{"value":{"seed":39,"length":1866},"level":"L","size":145,"version":32,"maskPattern":1,"penalties":[15962,13504,15052,14530,14407,14735,14756,15022],"hash":"3f6dac33a61a0e5f"},
+{"value":{"seed":39,"length":866},"level":"H","size":149,"version":33,"maskPattern":3,"penalties":[16623,15217,15559,15188,15451,15929,15785,15419],"hash":"3eed0f010d20c608"},
+{"value":{"seed":40,"length":685},"level":"L","size":89,"version":18,"maskPattern":3,"penalties":[6091,5371,5521,5354,5746,5355,5432,5379],"hash":"713f149aa9dfd3d5"},
+{"value":{"seed":40,"length":245},"level":"H","size":81,"version":16,"maskPattern":2,"penalties":[4508,4857,4218,4511,4784,4519,4614,4495],"hash":"9f234eef373bad6d"},
+{"value":{"seed":41,"length":1823},"level":"L","size":141,"version":31,"maskPattern":1,"penalties":[14960,12940,14335,13620,13872,14038,13707,14065],"hash":"7366c74402a24c38"},
+{"value":{"seed":41,"length":1},"level":"H","size":21,"version":1,"maskPattern":6,"penalties":[431,417,459,456,425,335,308,492],"hash":"c1a5303676d8fee0"},
+{"value":{"seed":42,"length":837},"level":"L","size":97,"version":20,"maskPattern":3,"penalties":[7378,6238,6298,6098,6332,6598,6549,6107],"hash":"b6d9f8b1c9c46225"},
+{"value":{"seed":42,"length":990},"level":"H","size":161,"version":36,"maskPattern":5,"penalties":[19433,17731,18396,18790,17811,17358,17692,18677],"hash":"4e0f02621098963e"},
+{"value":{"seed":43,"length":2263},"level":"L","size":157,"version":35,"maskPattern":3,"penalties":[18582,16471,17562,16263,16737,16590,18001,18065],"hash":"ae01bfb0622acc6d"},
+{"value":{"seed":43,"length":551},"level":"H","size":121,"version":26,"maskPattern":1,"penalties":[10096,9639,10335,9836,10222,10230,10326,9877],"hash":"ebaac899d4947719"},
+{"value":{"seed":44,"length":1085},"level":"L","size":109,"version":23,"maskPattern":5,"penalties":[8601,7908,8330,7857,7764,7610,8126,7893],"hash":"3fbf677ecdb0622d"},
+{"value":{"seed":44,"length":649},"level":"H","size":129,"version":28,"maskPattern":1,"penalties":[12539,10959,11256,11440,11240,11242,11669,12332],"hash":"e5a208eca5a6345c"},
+{"value":{"seed":45,"length":750},"level":"L","size":93,"version":19,"maskPattern":1,"penalties":[6712,5669,5975,5907,5683,5960,6222,6204],"hash":"7db72fa7301f32ec"},
+{"value":{"seed":45,"length":373},"level":"H","size":97,"version":20,"maskPattern":3,"penalties":[6486,6429,6447,6354,6579,6498,6576,6393],"hash":"7c53aefa47a898cd"},
+{"value":{"seed":46,"length":2491},"level":"L","size":165,"version":37,"maskPattern":1,"penalties":[21010,17711,19473,18782,18567,19249,19250,19673],"hash":"4f0f67c862a7d13f"},
+{"value":{"seed":46,"length":360},"level":"H","size":97,"version":20,"maskPattern":1,"penalties":[6657,6609,6851,6685,7007,6882,6684,7080],"hash":"7ec62e6c24632802"},
+{"value":{"seed":47,"length":1757},"level":"L","size":141,"version":31,"maskPattern":1,"penalties":[15013,13217,13919,14304,13854,13360,13250,14116],"hash":"a2933e6d6bca7cbc"},
+{"value":{"seed":47,"length":75},"level":"H","size":49,"version":8,"maskPattern":6,"penalties":[1998,1736,1841,1835,1666,1821,1583,2082],"hash":"4a2cd3cd59a0c6a7"},
+{"value":{"seed":48,"length":2586},"level":"L","size":169,"version":38,"maskPattern":1,"penalties":[21797,19062,20875,19341,19297,19953,20089,19914],"hash":"c7c31ca1cfcabd3b"},
+{"value":{"seed":48,"length":875},"level":"H","size":149,"version":33,"maskPattern":1,"penalties":[15823,14668,15699,15537,15043,14858,14745,15488],"hash":"de826f035f6ec435"},
+{"value":{"seed":49,"length":1325},"level":"L","size":121,"version":26,"maskPattern":1,"penalties":[11017,9551,10402,9823,9643,9797,9968,10556],"hash":"c34980ea8384efcd"},
+{"value":{"seed":49,"length":222},"level":"H","size":81,"version":16,"maskPattern":4,"penalties":[4770,4669,4842,4629,4351,4660,4369,4601],"hash":"8733513f8e67777a"},
+{"value":{"seed":50,"length":2444},"level":"L","size":165,"version":37,"maskPattern":1,"penalties":[20957,18060,19716,19164,18073,18261,19618,19427],"hash":"808e2fd1fe0c4465"},
+{"value":{"seed":50,"length":367},"level":"H","size":97,"version":20,"maskPattern":4,"penalties":[6543,6248,6480,6714,5853,6690,6275,6121],"hash":"384d4116c36c0db2"},
+{"value":{"seed":51,"length":654},"level":"L","size":89,"version":18,"maskPattern":4,"penalties":[5941,5552,5582,5476,5325,5922,5967,5439],"hash":"95b4a3ce18290552"},
+{"value":{"seed":51,"length":580},"level":"H","size":121,"version":26,"maskPattern":1,"penalties":[10080,9448,10660,9968,9799,10215,9884,9734],"hash":"1f55833ec3660f29"},
+{"value":{"seed":52,"length":2288},"level":"L","size":157,"version":35,"maskPattern":1,"penalties":[19037,16041,17738,16250,16688,17735,17812,17731],"hash":"bbae18a756daf95b"},
+{"value":{"seed":52,"length":464},"level":"H","size":113,"version":24,"maskPattern":3,"penalties":[8853,8738,9321,8506,9202,9013,8987,8802],"hash":"0129aa12b714d0a4"},
+{"value":{"seed":53,"length":4},"level":"L","size":21,"version":1,"maskPattern":3,"penalties":[434,408,360,288,445,452,368,345],"hash":"0eb82cd981c76a20"},
+{"value":{"seed":53,"length":537},"level":"H","size":121,"version":26,"maskPattern":4,"penalties":[10144,9810,10444,10151,8990,9600,10045,9788],"hash":"0b9ba2a845dc2c25"},
+{"value":{"seed":54,"length":320},"level":"L","size":61,"version":11,"maskPattern":4,"penalties":[2906,2628,2543,2464,2398,2536,2757,2929],"hash":"eb1fbfb8f6a972f4"},
+{"value":{"seed":54,"length":1261},"level":"H","size":177,"version":40,"maskPattern":1,"penalties":[22715,21466,21584,21719,22217,21502,21475,22598],"hash":"fac161627e0d1a0b"},
+{"value":{"seed":55,"length":820},"level":"L","size":97,"version":20,"maskPattern":7,"penalties":[7297,6398,6487,6651,6404,6276,6741,6069],"hash":"87d1fed64b2bd337"},
+{"value":{"seed":55,"length":734},"level":"H","size":137,"version":30,"maskPattern":4,"penalties":[13454,12765,13021,13339,12259,12797,12497,12948],"hash":"b7dfe1279add2b6a"},
+{"value":{"seed":56,"length":1751},"level":"L","size":141,"version":31,"maskPattern":4,"penalties":[15329,13425,14604,14092,13129,13626,13827,14003],"hash":"06d0e878d8bc3694"},
+{"value":{"seed":56,"length":1145},"level":"H","size":173,"version":39,"maskPattern":4,"penalties":[21735,20431,21781,19962,19725,21168,20937,20892],"hash":"253a6272537c4284"},
+{"value":{"seed":57,"length":2130},"level":"L","size":153,"version":34,"maskPattern":1,"penalties":[17932,16008,16234,16110,16321,16224,16777,16159],"hash":"ad74dd0497c0a37e"},
+{"value":{"seed":57,"length":1241},"level":"H","size":177,"version":40,"maskPattern":5,"penalties":[23600,21788,21617,21935,21380,21202,21348,22042],"hash":"22c333b17e74f988"},
+{"value":{"seed":58,"length":759},"level":"L","size":93,"version":19,"maskPattern":2,"penalties":[7220,6070,5910,5950,6027,6043,6131,6150],"hash":"044cc3c9df7cb1ce"},
+{"value":{"seed":58,"length":289},"level":"H","size":89,"version":18,"maskPattern":2,"penalties":[5911,5673,5070,5494,5409,5762,5491,5519],"hash":"f6046718a0f604f9"},
+{"value":{"seed":59,"length":1464},"level":"L","size":125,"version":27,"maskPattern":1,"penalties":[11806,10346,11491,10999,10440,10645,11484,10562],"hash":"f1a265e7f223726b"},
+{"value":{"seed":59,"length":502},"level":"H","size":113,"version":24,"maskPattern":1,"penalties":[9120,8521,9006,8859,8851,9138,9100,8636],"hash":"a048ef7c56b97428"},
+{"value":{"seed":60,"length":2322},"level":"L","size":161,"version":36,"maskPattern":1,"penalties":[19797,15979,18479,17697,16701,17614,18331,18169],"hash":"44f53446149f5880"},
+{"value":{"seed":60,"length":645},"level":"H","size":129,"version":28,"maskPattern":5,"penalties":[12219,11621,11681,11951,11282,11166,11722,11926],"hash":"c591092f1e877e36"},
+{"value":{"seed":61,"length":2788},"level":"L","size":173,"version":39,"maskPattern":1,"penalties":[22919,19403,21421,20718,19765,20478,20992,21060],"hash":"9006d383bb78192f"},
+{"value":{"seed":61,"length":992},"level":"H","size":161,"version":36,"maskPattern":1,"penalties":[18914,17576,18544,18016,18218,17716,17691,18187],"hash":"2c16d847013ca4ee"},
+{"value":{"seed":62,"length":1489},"level":"L","size":129,"version":28,"maskPattern":1,"penalties":[12228,11132,11785,11220,11303,11328,11633,11592],"hash":"9aa0c3a8e0fb937f"},
+{"value":{"seed":62,"length":1165},"level":"H","size":173,"version":39,"maskPattern":5,"penalties":[22454,20731,20798,20744,21218,20312,20809,21279],"hash":"f741ddd8c7196610"},
+{"value":{"seed":63,"length":1151},"level":"L","size":113,"version":24,"maskPattern":5,"penalties":[9585,8368,9190,8864,8710,8204,8589,8940],"hash":"1ef6b1a97bf722fa"},
+{"value":{"seed":63,"length":744},"level":"H","size":141,"version":31,"maskPattern":6,"penalties":[14301,13633,14405,13721,13643,13448,13348,14164],"hash":"dfad03015935081c"},
+{"value":{"seed":64,"length":2625},"level":"L","size":169,"version":38,"maskPattern":1,"penalties":[21633,18296,20886,19689,19764,19811,20264,19537],"hash":"5bae65f5e5df27c9"},
+{"value":{"seed":64,"length":589},"level":"H","size":121,"version":26,"maskPattern":2,"penalties":[10938,10006,9913,10641,10655,9946,10191,10731],"hash":"fff01ee17a25cb45"},
+{"value":{"seed":65,"length":998},"level":"L","size":105,"version":22,"maskPattern":4,"penalties":[8589,7109,7786,7872,7101,7707,7925,8081],"hash":"d7b480685e3fb28b"},
+{"value":{"seed":65,"length":948},"level":"H","size":153,"version":34,"maskPattern":4,"penalties":[17810,16098,16678,15630,15265,16025,16679,16634],"hash":"f4c1f3fbef932824"},
+{"value":{"seed":66,"length":2654},"level":"L","size":169,"version":38,"maskPattern":1,"penalties":[22145,18641,20274,19590,18642,19471,19918,19730],"hash":"0a0551412de93fb0"},
+{"value":{"seed":66,"length":1113},"level":"H","size":169,"version":38,"maskPattern":1,"penalties":[20338,18879,21113,19959,20352,19474,19313,19612],"hash":"eec607ff2f8db1f1"},
+{"value":{"seed":67,"length":533},"level":"L","size":81,"version":16,"maskPattern":1,"penalties":[5106,4395,4539,4852,4445,4616,4610,4779],"hash":"64cea5a40b66c866"},
+{"value":{"seed":67,"length":313},"level":"H","size":93,"version":19,"maskPattern":2,"penalties":[6070,6200,5724,6021,6432,6175,6489,6044],"hash":"b3881ffca3c69150"},
+{"value":{"seed":68,"length":1007},"level":"L","size":109,"version":23,"maskPattern":4,"penalties":[8928,7852,8398,7706,7282,8050,8064,8068],"hash":"98e05938b21e49af"},
+{"value":{"seed":68,"length":63},"level":"H","size":45,"version":7,"maskPattern":4,"penalties":[1345,1362,1564,1496,1341,1475,1518,1423],"hash":"24e3687baae5f962"},
+{"value":{"seed":69,"length":403},"level":"L","size":69,"version":13,"maskPattern":3,"penalties":[3670,3394,3447,3157,3446,3528,3472,3275],"hash":"e4a982ff154bee44"},
+{"value":{"seed":69,"length":843},"level":"H","size":149,"version":33,"maskPattern":6,"penalties":[15693,15346,15678,15216,15041,15157,14708,16122],"hash":"a5bba18b9dc81836"},
+{"value":{"seed":70,"length":2409},"level":"L","size":161,"version":36,"maskPattern":1,"penalties":[19918,17055,18936,17509,17964,17855,19190,18293],"hash":"6cb6fe0a661fc5ea"},
+{"value":{"seed":70,"length":300},"level":"H","size":89,"version":18,"maskPattern":7,"penalties":[5663,5477,5821,5756,5360,5719,5488,5328],"hash":"0597940997079b5a"},
+{"value":{"seed":71,"length":1632},"level":"L","size":137,"version":30,"maskPattern":4,"penalties":[14214,13278,12994,12516,12240,12949,12928,12820],"hash":"0e8bf15f684a940e"},
+{"value":{"seed":71,"length":364},"level":"H","size":97,"version":20,"maskPattern":7,"penalties":[6811,7253,6651,6380,6875,6669,6813,6307],"hash":"e5daca62f8ec555c"},
+{"value":{"seed":72,"length":549},"level":"L","size":81,"version":16,"maskPattern":4,"penalties":[5015,4301,4568,4728,4112,4244,4713,4729],"hash":"bffbc6564c79b5e3"},
+{"value":{"seed":72,"length":766},"level":"H","size":141,"version":31,"maskPattern":1,"penalties":[14296,13309,14026,14423,13607,13998,14273,14375],"hash":"82a017a2697e03d3"},
+{"value":{"seed":73,"length":1899},"level":"L","size":145,"version":32,"maskPattern":1,"penalties":[15547,13897,15336,14509,14313,14715,15010,14955],"hash":"8c81f6f694903830"},
+{"value":{"seed":73,"length":1168},"level":"H","size":173,"version":39,"maskPattern":6,"penalties":[21664,19603,21656,21645,20508,19782,19483,22009],"hash":"2c77cc4598bb2f2c"},
+{"value":{"seed":74,"length":2693},"level":"L","size":169,"version":38,"maskPattern":4,"penalties":[21451,19580,19816,20001,19014,20179,19365,20399],"hash":"ee31837b32ef1b32"},
+{"value":{"seed":74,"length":313},"level":"H","size":93,"version":19,"maskPattern":7,"penalties":[6235,6111,5647,5874,6059,5921,5971,5576],"hash":"9ad40601086c9dfa"},
+{"value":{"seed":75,"length":2012},"level":"L","size":149,"version":33,"maskPattern":4,"penalties":[16657,15508,15633,14970,14827,15682,15857,14916],"hash":"b2113a3294ee5a26"},
+{"value":{"seed":75,"length":152},"level":"H","size":65,"version":12,"maskPattern":1,"penalties":[2936,2590,3202,2835,2938,3133,2887,2963],"hash":"0cca4c99abe68d94"},
+{"value":{"seed":76,"length":2432},"level":"L","size":165,"version":37,"maskPattern":4,"penalties":[21523,18343,19618,19124,17679,18569,19047,19565],"hash":"cdff6b75d0372bb5"},
+{"value":{"seed":76,"length":426},"level":"H","size":105,"version":22,"maskPattern":6,"penalties":[7822,6894,8118,7496,7752,7355,6787,7580],"hash":"9f61aaa6614e2d89"},
+{"value":{"seed":77,"length":922},"level":"L","size":101,"version":21,"maskPattern":2,"penalties":[8073,7062,6706,7285,6719,7068,7241,7227],"hash":"26b75600011385e4"},
+{"value":{"seed":77,"length":883},"level":"H","size":149,"version":33,"maskPattern":7,"penalties":[15775,15360,15497,15397,15345,15660,15188,15150],"hash":"331614d072f82251"},
+{"value":{"seed":78,"length":328},"level":"L","size":65,"version":12,"maskPattern":4,"penalties":[3165,2903,2845,2773,2724,3135,3007,2861],"hash":"ed20fbd339e36329"},
+{"value":{"seed":78,"length":1076},"level":"H","size":165,"version":37,"maskPattern":1,"penalties":[19197,17716,19516,18810,18966,18850,18722,19244],"hash":"381e7c4c333b7e0f"},
+{"value":{"seed":79,"length":1049},"level":"L","size":109,"version":23,"maskPattern":4,"penalties":[8924,8175,8591,8135,7495,8124,8221,8600],"hash":"c81bd7b90a0b0c8e"},
+{"value":{"seed":79,"length":351},"level":"H","size":97,"version":20,"maskPattern":7,"penalties":[6379,6843,6553,6652,6804,6763,6326,6232],"hash":"3f95577a964e30c9"},
+{"value":{"seed":80,"length":1807},"level":"L","size":141,"version":31,"maskPattern":3,"penalties":[14665,13737,13910,13125,13772,13922,13498,13340],"hash":"005d459e84f5ee3e"},
+{"value":{"seed":80,"length":603},"level":"H","size":125,"version":27,"maskPattern":5,"penalties":[11474,11100,10704,11212,11023,10431,10671,11587],"hash":"19d47dd2e5b1ae75"}
 ]
