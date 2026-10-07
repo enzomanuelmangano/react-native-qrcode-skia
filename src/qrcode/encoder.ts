@@ -2,20 +2,70 @@
 
 // QR code encoder.
 //
-// A port of the encoder of `qrcode` (https://github.com/soldair/node-qrcode,
-// MIT License, Copyright (c) 2012 Ryan Day, itself based on the QR Code
-// generator by Kazuhiko Arase, MIT License), including the shortest path search
-// of `dijkstrajs` (https://github.com/tcort/dijkstrajs, MIT License) it uses to
-// split the input into segments.
+// A port of the encoder of `qrcode` 1.5.3 (https://github.com/soldair/node-qrcode),
+// itself based on the QR Code generator by Kazuhiko Arase, including the
+// shortest path search of `dijkstrajs` (https://github.com/tcort/dijkstrajs) it
+// uses to split the input into segments. Their notices follow.
 //
 // It produces exactly the same symbols as `QRCode.create(value, {
 // errorCorrectionLevel })` (same segments, version, mask and modules; checked
-// by the tests against `qrcode` itself), but works on flat typed arrays and
-// scores the 8 mask patterns without re-masking the matrix through per-module
-// method calls, which is what made `qrcode` slow without a JIT (Hermes).
+// by the tests against fixtures generated with `qrcode`), but works on flat
+// typed arrays and scores the 8 mask patterns without re-masking the matrix
+// through per-module method calls, which is what made `qrcode` slow without a
+// JIT (Hermes).
 //
 // Kanji mode is not supported: like `qrcode` without a `toSJISFunc`, Kanji
 // characters are encoded in byte mode.
+//
+// ---------------------------------------------------------------------------
+// qrcode
+//
+// The MIT License (MIT)
+//
+// Copyright (c) 2012 Ryan Day
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+//
+// QR Code generator for JavaScript: Copyright (c) 2009 Kazuhiko Arase
+// (http://www.d-project.com/), licensed under the MIT license. The word
+// "QR Code" is a registered trademark of DENSO WAVE INCORPORATED.
+//
+// ---------------------------------------------------------------------------
+// dijkstrajs
+//
+// Dijkstra path-finding functions. Adapted from the Dijkstar Python project.
+//
+// Copyright (C) 2008
+//   Wyatt Baldwin <self@wyattbaldwin.com>
+//   All rights reserved
+//
+// Licensed under the MIT license.
+//
+//   http://www.opensource.org/licenses/mit-license.php
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 // ---------------------------------------------------------------------------
 // Modes and error correction levels
@@ -1138,6 +1188,10 @@ const encodeSymbol = (
 ): QRSymbol => {
   if (typeof value === 'undefined' || value === '') {
     throw new Error('No input text');
+  }
+  // `qrcode` also accepted an array of segments, which this port doesn't.
+  if (typeof value !== 'string') {
+    throw new Error('Invalid data');
   }
   const level = levelFrom(errorCorrectionLevel);
 

@@ -82,6 +82,14 @@ describe('encoder', () => {
     expect(new Set(symbols.map((f) => f.maskPattern)).size).toBe(8);
   });
 
+  it('rejects non-string values like qrcode', () => {
+    for (const value of [123, 0, null, {}]) {
+      expect(() => encodeSymbol(value as unknown as string, 'M')).toThrow(
+        'Invalid data'
+      );
+    }
+  });
+
   it.each(fixtures as Fixture[])(
     'matches qrcode for %j',
     ({ value, ...expected }) => {

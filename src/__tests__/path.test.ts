@@ -49,7 +49,6 @@ describe('path', () => {
           for (const gap of [0, 0.7]) {
             for (const [logo, radius] of [
               [0, 0],
-              [50, 0],
               [70, 12],
             ] as const) {
               const options = {

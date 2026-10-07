@@ -158,7 +158,9 @@ const buildCellStyle = (
   const cached = cellStyleCache.get(key);
   if (cached) return cached;
 
-  const entries = ENTRIES[shape] ?? ENTRIES.square;
+  const entries = Object.prototype.hasOwnProperty.call(ENTRIES, shape)
+    ? ENTRIES[shape]
+    : ENTRIES.square;
   const effectiveCellSize = cellSize - cellGap;
   const radius = formatNumber(effectiveCellSize / 2);
   const diameter = formatNumber(effectiveCellSize);
