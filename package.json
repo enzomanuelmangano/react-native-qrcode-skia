@@ -60,7 +60,7 @@
     "@release-it/conventional-changelog": "^10.0.0",
     "@shopify/react-native-skia": "2.6.2",
     "@types/jest": "^29.5.14",
-    "@types/qrcode": "^1.5.5",
+    "@types/node": "^22.19.11",
     "@types/react": "^19.2.0",
     "commitlint": "^19.0.0",
     "del-cli": "^6.0.0",
@@ -151,8 +151,5 @@
         }
       ]
     ]
-  },
-  "dependencies": {
-    "qrcode": "^1.5.3"
   }
 }

@@ -1,7 +1,7 @@
 {
   "extends": "./tsconfig",
   "compilerOptions": {
-    "types": ["jest", "qrcode", "react"]
+    "types": ["jest", "node", "react"]
   },
   "exclude": ["example", "node_modules"]
 }

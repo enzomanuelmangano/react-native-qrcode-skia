@@ -1,0 +1,2 @@
+# Written by scripts/generate-encoder-fixtures.mjs
+src/__fixtures__/qrcode-symbols.json

@@ -1,11 +1,33 @@
 import React, { useMemo } from 'react';
 
-import { Skia, Canvas, Path as SkiaPath, Group } from './skia';
+import { Canvas, Path as SkiaPath, Group } from './skia';
 
-import { generateMatrix } from './qrcode/generate-matrix';
-import { transformMatrixIntoPath } from './qrcode/transform-matrix-into-path';
+import { buildPath } from './qrcode/build-path';
 import type { QRCodeProps } from './types';
 import { StyleSheet, View } from 'react-native';
+
+// Shallow comparison, except for `shapeOptions` which is compared by value.
+function arePropsEqual(prev: QRCodeProps, next: QRCodeProps): boolean {
+  for (const key in next) {
+    if (key === 'shapeOptions') continue;
+    if (
+      !Object.is(prev[key as keyof QRCodeProps], next[key as keyof QRCodeProps])
+    )
+      return false;
+  }
+  for (const key in prev) {
+    if (!(key in next)) return false;
+  }
+  const a = prev.shapeOptions;
+  const b = next.shapeOptions;
+  return (
+    a === b ||
+    (a?.shape === b?.shape &&
+      a?.eyePatternShape === b?.eyePatternShape &&
+      a?.gap === b?.gap &&
+      a?.eyePatternGap === b?.eyePatternGap)
+  );
+}
 
 const QRCode: React.FC<QRCodeProps> = React.memo(
   ({
@@ -26,26 +48,34 @@ const QRCode: React.FC<QRCodeProps> = React.memo(
     const canvasSize = size;
     const effectiveLogoAreaSize = logoAreaSize ?? (logo ? 70 : 0);
 
-    const computedPath = useMemo(() => {
-      return transformMatrixIntoPath(
-        generateMatrix(value, errorCorrectionLevel),
+    // Depend on the individual options, not on the object: apps commonly pass
+    // `shapeOptions` inline, which is a new object on every render.
+    const { shape, eyePatternShape, gap, eyePatternGap } = shapeOptions ?? {};
+    const path = useMemo(
+      () =>
+        buildPath(
+          value,
+          errorCorrectionLevel,
+          size,
+          shape,
+          eyePatternShape,
+          gap,
+          eyePatternGap,
+          effectiveLogoAreaSize,
+          logoAreaBorderRadius
+        ),
+      [
+        value,
+        errorCorrectionLevel,
         size,
-        shapeOptions,
+        shape,
+        eyePatternShape,
+        gap,
+        eyePatternGap,
         effectiveLogoAreaSize,
-        logoAreaBorderRadius
-      );
-    }, [
-      value,
-      errorCorrectionLevel,
-      size,
-      shapeOptions,
-      effectiveLogoAreaSize,
-      logoAreaBorderRadius,
-    ]);
-
-    const path = useMemo(() => {
-      return Skia.Path.MakeFromSVGString(computedPath.path)!;
-    }, [computedPath]);
+        logoAreaBorderRadius,
+      ]
+    );
 
     const canvasStyle = useMemo(() => {
       return StyleSheet.flatten([
@@ -83,7 +113,8 @@ const QRCode: React.FC<QRCodeProps> = React.memo(
         {Boolean(logo) && <View style={styles.logo}>{logo}</View>}
       </View>
     );
-  }
+  },
+  arePropsEqual
 );
 
 const styles = StyleSheet.create({
