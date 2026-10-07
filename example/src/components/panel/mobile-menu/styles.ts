@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
     maxHeight: '70%',
   } as const,
   backdrop: {
-    ...StyleSheet.absoluteFillObject,
+    ...StyleSheet.absoluteFill,
     backgroundColor: Colors.background,
   },
   menu: {
