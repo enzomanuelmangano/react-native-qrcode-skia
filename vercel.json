@@ -1,14 +1,7 @@
 {
-    "installCommand": "bun install && cd example && bun install",
-    "buildCommand": "cd example && bun run predeploy",
-    "outputDirectory": "example/dist",
-    "devCommand": "expo",
-    "cleanUrls": true,
-    "framework": null,
-    "rewrites": [
-      {
-        "source": "/:path*",
-        "destination": "/"
-      }
-  ]
+  "installCommand": "bun install && cd example && bun install",
+  "buildCommand": "cd example && bun run predeploy",
+  "outputDirectory": "example/dist",
+  "devCommand": "expo",
+  "framework": null
 }

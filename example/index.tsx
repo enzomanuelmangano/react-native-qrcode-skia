@@ -6,8 +6,9 @@ import { Platform } from 'react-native';
 if (Platform.OS === 'web') {
   import('@shopify/react-native-skia/lib/module/web').then(({ LoadSkiaWeb }) => {
     LoadSkiaWeb({
-      locateFile: (file: string) =>
-        `https://cdn.jsdelivr.net/npm/canvaskit-wasm@0.40.0/bin/full/${file}`,
+      // Served from public/ (copied by `setup-skia-web` on install), so it
+      // always matches the CanvasKit version of the installed Skia.
+      locateFile: (file: string) => `/${file}`,
     }).then(() => {
       renderRootComponent(App);
     });
