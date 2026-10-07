@@ -2,12 +2,15 @@ import * as React from 'react';
 import { Redirect } from 'expo-router';
 import { Profiler, useEffect, useReducer, useState } from 'react';
 import { Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { baseline, current, type Impl } from '../bench/impls';
+import { current, type Impl } from '../bench/impls';
 
-// Benchmark screen (not part of the app). Runs automatically and logs
-// `BENCH {json}` lines to the Metro console.
+// Benchmark screen (not part of the app). Measure production JS on a device:
+//   node scripts/bench-collector.mjs
+//   cd example && npx expo start --no-dev --minify   # then open /bench
+// It runs automatically and sends one JSON line per result to the collector
+// (production builds don't forward console logs to Metro).
 
-const IMPLS = [baseline, current];
+const IMPLS: Impl[] = [current];
 const COUNTS = [12, 24, 48];
 const RUNS = 5;
 const SIZE = 80;
@@ -32,7 +35,7 @@ const median = (xs: number[]) =>
 const nextFrame = () =>
   new Promise<void>((r) => requestAnimationFrame(() => r()));
 const log = (o: object) => {
-  // Production builds don't forward console logs: post to a local collector.
+  console.log('BENCH ' + JSON.stringify(o));
   fetch('http://127.0.0.1:8099', {
     method: 'POST',
     body: JSON.stringify(o),
