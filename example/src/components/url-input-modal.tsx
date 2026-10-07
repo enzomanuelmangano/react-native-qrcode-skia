@@ -135,7 +135,7 @@ export const URLInputModal = ({ visible, onClose }: URLInputModalProps) => {
 
 const styles = StyleSheet.create({
   backdrop: {
-    ...StyleSheet.absoluteFillObject,
+    ...StyleSheet.absoluteFill,
     backgroundColor: Colors.backdropBackground,
     justifyContent: 'flex-start',
     alignItems: 'center',

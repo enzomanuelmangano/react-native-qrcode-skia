@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, View, ActivityIndicator } from 'react-native';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import Animated, {
@@ -13,6 +13,10 @@ import { Colors, Sizes } from '../design-tokens';
 
 export const QRCodeDisplay = () => {
   const copyQrCode = useCopyQrCode();
+  // WithSkiaWeb suspends while CanvasKit loads. Mount it only on the client so
+  // static rendering (which now awaits Suspense) emits the loader instead.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
   const active = useSharedValue(false);
 
   const tapGesture = Gesture.Tap()
@@ -42,18 +46,24 @@ export const QRCodeDisplay = () => {
 
   const gestures = Gesture.Simultaneous(tapGesture, hoverGesture);
 
+  const loader = (
+    <View style={styles.loader}>
+      <ActivityIndicator size="small" color={Colors.loaderColor} />
+    </View>
+  );
+
   return (
     <View style={styles.wrapper}>
       <GestureDetector gesture={gestures}>
         <Animated.View style={animatedStyle}>
-          <WithSkiaWeb
-            getComponent={() => import('./qrcode')}
-            fallback={
-              <View style={styles.loader}>
-                <ActivityIndicator size="small" color={Colors.loaderColor} />
-              </View>
-            }
-          />
+          {mounted ? (
+            <WithSkiaWeb
+              getComponent={() => import('./qrcode')}
+              fallback={loader}
+            />
+          ) : (
+            loader
+          )}
         </Animated.View>
       </GestureDetector>
     </View>
