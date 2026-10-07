@@ -35,6 +35,31 @@ jobs:
       - name: Run unit tests
         run: bun run test --maxWorkers=2 --coverage
 
+  skia-compat:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - package: '@shopify/react-native-skia'
+            version: '1'
+          - package: '@shopify/react-native-skia'
+            version: '2.14.0'
+          - package: react-native-skia
+            version: '2'
+          - package: react-native-skia
+            version: '3'
+    name: skia-compat (${{ matrix.package }}@${{ matrix.version }})
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Check Skia API compatibility
+        run: scripts/check-skia-types.sh '${{ matrix.package }}' '${{ matrix.version }}'
+
   build-library:
     runs-on: ubuntu-latest
     steps:

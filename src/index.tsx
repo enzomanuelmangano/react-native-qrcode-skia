@@ -1,11 +1,6 @@
 import React, { useMemo } from 'react';
 
-import {
-  Skia,
-  Canvas,
-  Path as SkiaPath,
-  Group,
-} from '@shopify/react-native-skia';
+import { Skia, Canvas, Path as SkiaPath, Group } from './skia';
 
 import { generateMatrix } from './qrcode/generate-matrix';
 import { transformMatrixIntoPath } from './qrcode/transform-matrix-into-path';
