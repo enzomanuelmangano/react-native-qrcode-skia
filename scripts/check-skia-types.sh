@@ -12,6 +12,15 @@ pkg="${1:?usage: $0 <react-native-skia | @shopify/react-native-skia> [version]}"
 version="${2:-}"
 pkg_dir="node_modules/$pkg"
 
+check="src/skia-compat.check.ts"
+tsconfig="tsconfig.skia-compat.json"
+tmp=""
+cleanup() {
+  rm -f "$check" "$tsconfig"
+  if [[ -n "$tmp" ]]; then rm -rf "$tmp"; fi
+}
+trap cleanup EXIT
+
 if [[ -n "$version" ]]; then
   pkg_dir=".skia-compat/node_modules/$pkg"
   tmp="$(mktemp -d)"
@@ -19,12 +28,7 @@ if [[ -n "$version" ]]; then
   rm -rf "$pkg_dir"
   mkdir -p "$(dirname "$pkg_dir")"
   mv "$tmp/package" "$pkg_dir"
-  rm -rf "$tmp"
 fi
-
-check="src/skia-compat.check.ts"
-tsconfig="tsconfig.skia-compat.json"
-trap 'rm -f "$check" "$tsconfig"' EXIT
 
 cat > "$check" <<TS
 import * as skia from '$pkg';
@@ -34,12 +38,14 @@ import type { SkiaModule } from './skia';
 export const compat: SkiaModule<SkPath> = skia;
 TS
 
-# `paths` replaces the parent's, so merge in the existing aliases.
+# Only the library is checked (not the example). `paths` replaces the
+# parent's, so merge in the existing aliases.
 node -e '
   const [tsconfig, pkg, dir] = process.argv.slice(1);
   const { paths = {} } = require("./tsconfig.json").compilerOptions;
   const config = {
     extends: "./tsconfig.json",
+    include: ["src"],
     compilerOptions: { paths: { ...paths, [pkg]: [`./${dir}`] } },
   };
   require("fs").writeFileSync(tsconfig, JSON.stringify(config, null, 2));
