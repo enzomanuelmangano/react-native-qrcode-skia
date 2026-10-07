@@ -1,40 +1,28 @@
-import QRCode from 'qrcode';
+import { encode, type ErrorCorrectionLevelType, type Modules } from './encoder';
 
-export type ErrorCorrectionLevelType = 'L' | 'H' | 'Q' | 'M';
+export type { ErrorCorrectionLevelType, Modules };
 
-// The purpose of this function is to generate a matrix of 1s and 0s from a string.
-// The matrix is used later to generate a path for the QR code.
-// [1, 1, 1, 1, 1, 1, 1, 0, 1, 0,
-//  1, 0, 1, 1, 0, 0, 0, 0, 1, 1,
-//  1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
-//  0, 1, 0, 1, 0, 1, 0, 1, 1, 0,
-//  1, 0, 0, 1, 0, 0, 0, 0, 0, 1,
-//  1, 0, 1, 1, 1, 0, 1, 0, 1, 0,
-//  0, 1, 0, 0, 1, 0, 1, 0, 1, 0 ...
+// The QR code modules of a value, row by row in a flat array (1 = dark).
+const generateModules = (
+  value: string,
+  errorCorrectionLevel: ErrorCorrectionLevelType
+): Modules => encode(value, errorCorrectionLevel);
 
-// Deeply Inspired by https://github.com/awesomejerry/react-native-qrcode-svg/blob/master/src/genMatrix.js
-
+// The same modules as a matrix of rows:
+// [[1, 1, 1, 1, 1, 1, 1, 0, 1, 0, ...],
+//  [1, 0, 0, 0, 0, 0, 1, 0, 0, 1, ...], ...]
 const generateMatrix = (
   value: string,
   errorCorrectionLevel: ErrorCorrectionLevelType
 ) => {
-  // Convert the QR code data into an array
-  const arr = Array.prototype.slice.call(
-    QRCode.create(value, { errorCorrectionLevel }).modules.data,
-    0
-  );
-
-  // Calculate the square root of the array length
-  const sqrt = Math.sqrt(arr.length);
-
-  // Convert the flat array into a matrix representation
-  return arr.reduce(
-    (rows, key, index) =>
-      (index % sqrt === 0
-        ? rows.push([key])
-        : rows[rows.length - 1].push(key)) && rows,
-    []
-  ) as (1 | 0)[][];
+  const { size, data } = generateModules(value, errorCorrectionLevel);
+  const matrix: (1 | 0)[][] = [];
+  for (let i = 0; i < size; i++) {
+    const row: (1 | 0)[] = [];
+    for (let j = 0; j < size; j++) row.push(data[i * size + j] ? 1 : 0);
+    matrix.push(row);
+  }
+  return matrix;
 };
 
-export { generateMatrix };
+export { generateMatrix, generateModules };
