@@ -82,3 +82,6 @@ lib/
 
 example/dist
 .vercel
+
+# Skia versions downloaded by scripts/check-skia-types.sh
+.skia-compat/

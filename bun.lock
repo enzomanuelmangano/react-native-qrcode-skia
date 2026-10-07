@@ -32,7 +32,12 @@
         "@shopify/react-native-skia": ">=1.0.0",
         "react": "*",
         "react-native": "*",
+        "react-native-skia": ">=2.15.0",
       },
+      "optionalPeers": [
+        "@shopify/react-native-skia",
+        "react-native-skia",
+      ],
     },
     "example": {
       "name": "react-native-qrcode-skia-example",

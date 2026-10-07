@@ -10,11 +10,17 @@ https://github.com/user-attachments/assets/c3b69c77-e4ca-40ee-a554-7b1f13fbe9df
 
 ## Installation
 
-Before installing the package, make sure you have installed [RN Skia](https://shopify.github.io/react-native-skia/). 
+Before installing the package, make sure you have installed [React Native Skia](https://wcandillon.github.io/react-native-skia/). Both package names are supported, so install whichever your app uses:
 
 ```sh
+# v3 (Graphite) and v2.15+
+bun add react-native-skia
+
+# v1 and v2 up to 2.14
 bun add @shopify/react-native-skia
 ```
+
+The library picks up the one that is installed. Don't install both: they ship the same native module.
 
 Then, you can install the package:
 

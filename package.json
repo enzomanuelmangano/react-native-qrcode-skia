@@ -85,8 +85,17 @@
   },
   "peerDependencies": {
     "@shopify/react-native-skia": ">=1.0.0",
+    "react-native-skia": ">=2.15.0",
     "react": "*",
     "react-native": "*"
+  },
+  "peerDependenciesMeta": {
+    "@shopify/react-native-skia": {
+      "optional": true
+    },
+    "react-native-skia": {
+      "optional": true
+    }
   },
   "workspaces": [
     "example"
